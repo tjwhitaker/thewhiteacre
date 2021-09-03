@@ -1,0 +1,160 @@
+/* Chinese Rocks */
+@font-face {
+  font-family: "Chinese Rocks";
+  font-style: normal;
+  font-weight: normal;
+  src: url("./chinese_rocks.woff") format("woff"), url("./chinese_rocks.ttf") format("truetype"), url("./chinese_rocks.svg") format("svg"); }
+
+@font-face {
+  font-family: "Latin Modern";
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: url("./LM-regular.woff2") format("woff2"), url("./LM-regular.woff") format("woff"), url("./LM-regular.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "Latin Modern";
+  font-style: italic;
+  font-weight: normal;
+  font-display: swap;
+  src: url("./LM-italic.woff2") format("woff2"), url("./LM-italic.woff") format("woff"), url("./LM-italic.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "Latin Modern";
+  font-style: normal;
+  font-weight: bold;
+  font-display: swap;
+  src: url("./LM-bold.woff2") format("woff2"), url("./LM-bold.woff") format("woff"), url("./LM-bold.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "Latin Modern";
+  font-style: italic;
+  font-weight: bold;
+  font-display: swap;
+  src: url("./LM-bold-italic.woff2") format("woff2"), url("./LM-bold-italic.woff") format("woff"), url("./LM-bold-italic.ttf") format("truetype"); }
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  max-width: 100%;
+  transition: color 0.2s ease; }
+
+html {
+  font-family: "Latin Modern", Garamond; }
+  html body {
+    color: black;
+    background: #f7f7f7; }
+    html body .wrapper {
+      padding: 1rem;
+      padding-bottom: 5rem;
+      max-width: 60rem;
+      margin: 0 auto;
+      display: grid;
+      grid-template-rows: auto auto;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 1fr);
+      grid-gap: 1rem; }
+      @media screen and (max-width: 50rem) {
+        html body .wrapper {
+          grid-template-rows: auto auto auto;
+          grid-template-columns: 1fr; } }
+      html body .wrapper header {
+        padding-bottom: 1rem;
+        margin: 0;
+        border-bottom: 1px solid #ccc;
+        grid-column: 1 / span 2;
+        grid-row: 1; }
+        html body .wrapper header .logo {
+          color: black;
+          font-size: 2rem;
+          text-decoration: none;
+          font-family: "Chinese Rocks"; }
+          html body .wrapper header .logo:hover {
+            color: #0079d3; }
+      html body .wrapper main {
+        border-right: 1px solid #ccc;
+        grid-column: 1;
+        grid-row: 2;
+        padding-right: 1rem; }
+        @media screen and (max-width: 50rem) {
+          html body .wrapper main {
+            padding-right: 0;
+            border-right: none; } }
+        html body .wrapper main .article-title {
+          font-family: Helvetica;
+          font-size: 4rem;
+          text-transform: uppercase;
+          line-height: 1;
+          letter-spacing: -0.1rem;
+          margin-bottom: 2rem; }
+          @media screen and (max-width: 30rem) {
+            html body .wrapper main .article-title {
+              font-size: 2.5rem; } }
+        html body .wrapper main h1,
+        html body .wrapper main h2,
+        html body .wrapper main h3,
+        html body .wrapper main h4,
+        html body .wrapper main h5,
+        html body .wrapper main h6 {
+          margin-bottom: 1rem;
+          color: black; }
+        html body .wrapper main p {
+          margin-bottom: 1rem; }
+        html body .wrapper main .caption {
+          font-style: italic;
+          text-align: center; }
+        html body .wrapper main blockquote {
+          margin-left: 1rem;
+          margin-top: 2rem;
+          margin-bottom: 2rem;
+          padding: 0 1rem;
+          border-left: 3px solid #ccc; }
+          html body .wrapper main blockquote em {
+            display: block;
+            margin-top: 0.5rem; }
+      html body .wrapper aside {
+        font-size: 0.8;
+        grid-column: 2;
+        grid-row: 2; }
+        @media screen and (max-width: 50rem) {
+          html body .wrapper aside {
+            grid-column: 1;
+            grid-row: 3; } }
+        html body .wrapper aside .meta {
+          margin-bottom: 2rem; }
+          html body .wrapper aside .meta .minion {
+            margin-top: 0; }
+          html body .wrapper aside .meta p {
+            font-size: 0.8rem; }
+        html body .wrapper aside .feed .post {
+          display: block;
+          padding: 1rem 0;
+          border-bottom: 1px solid #ddd;
+          text-decoration: none; }
+          html body .wrapper aside .feed .post h3 {
+            color: black;
+            font-size: 0.8rem; }
+          html body .wrapper aside .feed .post p {
+            color: #222;
+            font-size: 0.8rem;
+            margin: 0.4rem 0; }
+          html body .wrapper aside .feed .post small {
+            font-family: Helvetica;
+            font-size: 0.7rem;
+            color: #666;
+            display: block; }
+          html body .wrapper aside .feed .post:hover h3 {
+            color: #0079d3; }
+          html body .wrapper aside .feed .post:first-of-type {
+            padding-top: 0; }
+
+.minion {
+  font-family: Helvetica;
+  text-transform: uppercase;
+  padding: 1rem 0;
+  margin: 1rem 0;
+  border-bottom: 1px solid #ccc;
+  color: black;
+  font-size: 0.8rem; }

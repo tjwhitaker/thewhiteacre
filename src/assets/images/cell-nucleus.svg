@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="89px" height="99px" viewBox="0 0 89 99" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>science / cell-nucleus</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="44" cy="4" r="3"></circle>
+        <circle id="path-2" cx="44" cy="93" r="3"></circle>
+        <circle id="path-3" cx="83" cy="26" r="3"></circle>
+        <circle id="path-4" cx="4" cy="26" r="3"></circle>
+        <circle id="path-5" cx="83" cy="70" r="3"></circle>
+        <circle id="path-6" cx="4" cy="70" r="3"></circle>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="4" transform="translate(-22.000000, -17.000000)">
+            <g id="science-/-cell-nucleus" transform="translate(23.000000, 18.000000)">
+                <circle id="Oval-9-Copy-18" stroke="#E5E5E5" stroke-linecap="round" stroke-linejoin="round" cx="43.75" cy="49" r="9"></circle>
+                <path d="M79.4489542,28 L52,43.6001882" id="Line-4" stroke="#E5E5E5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M35.4489542,28 L8,43.6001882" id="Line-4-Copy" stroke="#E5E5E5" stroke-linecap="round" stroke-linejoin="round" transform="translate(21.724477, 35.800094) scale(-1, 1) translate(-21.724477, -35.800094) "></path>
+                <polygon id="Polygon" stroke="#E5E5E5" stroke-linecap="round" stroke-linejoin="round" points="43.4041559 3 82.8083117 25.75 82.8083117 71.25 43.4041559 94 4 71.25 4 25.75"></polygon>
+                <g id="Oval-Copy-499" stroke="#FFFFFF">
+                    <circle stroke-width="1.5" stroke-linejoin="square" fill="#515151" fill-rule="evenodd" cx="44" cy="4" r="2.25"></circle>
+                    <use stroke-width="1" xlink:href="#path-1"></use>
+                </g>
+                <g id="Oval-Copy-508" stroke="#FFFFFF">
+                    <circle stroke-width="1.5" stroke-linejoin="square" fill="#515151" fill-rule="evenodd" cx="44" cy="93" r="2.25"></circle>
+                    <use stroke-width="1" xlink:href="#path-2"></use>
+                </g>
+                <g id="Oval-Copy-500" stroke="#FFFFFF">
+                    <circle stroke-width="1.5" stroke-linejoin="square" fill="#515151" fill-rule="evenodd" cx="83" cy="26" r="2.25"></circle>
+                    <use stroke-width="1" xlink:href="#path-3"></use>
+                </g>
+                <g id="Oval-Copy-506" stroke="#FFFFFF">
+                    <circle stroke-width="1.5" stroke-linejoin="square" fill="#515151" fill-rule="evenodd" cx="4" cy="26" r="2.25"></circle>
+                    <use stroke-width="1" xlink:href="#path-4"></use>
+                </g>
+                <g id="Oval-Copy-505" stroke="#FFFFFF">
+                    <circle stroke-width="1.5" stroke-linejoin="square" fill="#515151" fill-rule="evenodd" cx="83" cy="70" r="2.25"></circle>
+                    <use stroke-width="1" xlink:href="#path-5"></use>
+                </g>
+                <g id="Oval-Copy-507" stroke="#FFFFFF">
+                    <circle stroke-width="1.5" stroke-linejoin="square" fill="#515151" fill-rule="evenodd" cx="4" cy="70" r="2.25"></circle>
+                    <use stroke-width="1" xlink:href="#path-6"></use>
+                </g>
+                <circle id="Oval-9-Copy-12" stroke="#E5E5E5" stroke-linecap="round" stroke-linejoin="round" cx="44" cy="4" r="4"></circle>
+                <circle id="Oval-9-Copy-17" stroke="#E5E5E5" stroke-linecap="round" stroke-linejoin="round" cx="44" cy="93" r="4"></circle>
+                <circle id="Oval-9-Copy-13" stroke="#E5E5E5" stroke-linecap="round" stroke-linejoin="round" cx="83" cy="26" r="4"></circle>
+                <circle id="Oval-9-Copy-15" stroke="#E5E5E5" stroke-linecap="round" stroke-linejoin="round" cx="4" cy="26" r="4"></circle>
+                <circle id="Oval-9-Copy-14" stroke="#E5E5E5" stroke-linecap="round" stroke-linejoin="round" cx="83" cy="70" r="4"></circle>
+                <circle id="Oval-9-Copy-16" stroke="#E5E5E5" stroke-linecap="round" stroke-linejoin="round" cx="4" cy="70" r="4"></circle>
+                <path d="M44,58.5 L44,88.516662" id="Line-5" stroke="#E5E5E5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </g>
+        </g>
+    </g>
+</svg>
