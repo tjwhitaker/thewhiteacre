@@ -9,8 +9,9 @@
 (import sxml-serializer)
 (import srfi-19)
 
-;; Import home-template
+;; Import home-template, about-template
 (include "./home.scm")
+(include "./about.scm")
 
 ;; Write html to the intended build file
 (define write-html
@@ -23,6 +24,11 @@
     (define html (serialize-sxml (home-template) indent: #f method: 'html'))
     (write-html "../build/" html)))
 
+(define build-about
+  (lambda ()
+    (define html (serialize-sxml (about-template) indent: #f method: 'html'))
+    (write-html "../build/about" html)))
+
 ;; Run gulp and copy static files to build dir
 (define build-static
   (lambda ()
@@ -32,3 +38,4 @@
 ;; Our main loop
 (build-static)
 (build-home)
+(build-about)

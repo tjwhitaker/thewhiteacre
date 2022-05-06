@@ -47,6 +47,7 @@ html body .home header {
   width: 100%;
   background: white;
   margin: 0;
+  padding: 0.5rem;
 }
 html body .home header .wrapper {
   display: grid;
@@ -75,10 +76,13 @@ html body .home header .wrapper nav a:hover {
 }
 html body .hero {
   width: 100%;
-  background: url(/static/carina.jpg);
-  background-size: cover;
+  background: url(/static/skull.jpg);
+  background-size: contain;
+  background-color: white;
+  background-position: right;
+  background-repeat: no-repeat;
   position: relative;
-  padding: 13rem 0;
+  height: 80vh;
 }
 html body .hero .overlay {
   position: absolute;
@@ -87,11 +91,14 @@ html body .hero .overlay {
   right: 0;
   bottom: 0;
   z-index: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: #eeeeee;
+  opacity: 0.7;
 }
 html body .hero .wrapper {
   position: relative;
   z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
 }
 html body .hero .wrapper h1 {
   font-family: Helvetica;
@@ -100,11 +107,11 @@ html body .hero .wrapper h1 {
   line-height: 1;
   letter-spacing: -0.1rem;
   margin-bottom: 1rem;
-  max-width: 35rem;
-  color: white;
+  max-width: 40rem;
+  color: black;
 }
 html body .hero .wrapper p {
-  color: white;
+  color: black;
   font-size: 1.1rem;
   font-style: italic;
   max-width: 35rem;
@@ -132,6 +139,9 @@ html body .hero .wrapper .button-group .button:nth-child(2) {
   background: white;
   color: black;
 }
+html body .bar {
+  background: white;
+}
 html body .bar .wrapper p {
   color: #bbb;
   text-align: center;
@@ -153,7 +163,7 @@ html body .bar .wrapper .brands img {
   filter: opacity(0.25);
 }
 html body .quantum-neuron-selection {
-  background: #eeeeee;
+  background: white;
   padding: 10rem 0;
   background-image: url(/static/brain.svg);
   background-size: 45vw;
