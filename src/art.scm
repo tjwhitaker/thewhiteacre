@@ -1,12 +1,12 @@
-(define about-template
+(define art-template
   (lambda ()
     `(html
       ((head
-        (title "About | Dead Neuron")
+        (title "Art | Dead Neuron")
         (meta (@ (charset "utf-8")))
         (meta (@ (name "viewport") (content "width=device-width, initial-scale=1")))
         (link (@ (rel "icon") (href "/static/favicon.ico")))
-        (link (@ (rel "stylesheet") (href "/static/about.css")))
+        (link (@ (rel "stylesheet") (href "/static/art.css")))
         (link (@ (rel "stylesheet") (href "https://fonts.googleapis.com/css?family=Fira+Mono:400,500,700|&display=swap")))
         (link (@ (rel "stylesheet") (href "https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css")))
         (script (@ (src "https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js")) ""))
@@ -16,20 +16,30 @@
           (div (@ (class "wrapper"))
             (a (@ (href "/") (class "logo")) (img (@ (src "/static/logo.svg"))))
             (nav 
+              (a (@ (href "/about")) "About")
               (a (@ (href "/art")) "Art")
               (a (@ (href "/#")) "Music")
-              (a (@ (href "/#")) "Writing")
-              (a (@ (href "/about")) "About"))
+              (a (@ (href "/#")) "Contact"))
           ))
         (main
-          (div (@ (class "hero"))
-            (div (@ (class "overlay")) "")
-            (div (@ (class "wrapper"))
-              (h1 "About")
-              (p "I'm Tim and this is my beautiful wife.")
-            )
+          ; (div (@ (class "hero"))
+          ;   (div (@ (class "overlay")) "")
+          ;   (div (@ (class "wrapper"))
+          ;     (h1 "About")
+          ;     (p "I'm Tim and this is my beautiful wife.")
+          ;   )
+          ; )
+          (div (@ (class "gallery"))
+            (div (@ (class "item"))
+              (img (@ (src "/static/van-gogh-proposal.jpg"))))
+            (div (@ (class "item"))
+              (img (@ (src "/static/mushroom.jpg"))))
+            (div (@ (class "item"))
+              (img (@ (src "/static/snake.jpg"))))
+            (div (@ (class "item"))
+              (img (@ (src "/static/river.jpg"))))
           )
-
+          
           (footer 
             (div (@ (class "wrapper"))
               (div (@ (class "column"))

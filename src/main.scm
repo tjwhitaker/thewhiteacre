@@ -12,6 +12,7 @@
 ;; Import home-template, about-template
 (include "./home.scm")
 (include "./about.scm")
+(include "./art.scm")
 
 ;; Write html to the intended build file
 (define write-html
@@ -29,6 +30,11 @@
     (define html (serialize-sxml (about-template) indent: #f method: 'html'))
     (write-html "../build/about" html)))
 
+(define build-art
+  (lambda ()
+    (define html (serialize-sxml (art-template) indent: #f method: 'html'))
+    (write-html "../build/art" html)))
+
 ;; Run gulp and copy static files to build dir
 (define build-static
   (lambda ()
@@ -39,3 +45,4 @@
 (build-static)
 (build-home)
 (build-about)
+(build-art)

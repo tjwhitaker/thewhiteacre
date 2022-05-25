@@ -163,7 +163,7 @@ html body .bar .wrapper .brands img {
   filter: opacity(0.25);
 }
 html body .quantum-neuron-selection {
-  background: white;
+  background: #eeeeee;
   padding: 10rem 0;
   background-image: url(/static/brain.svg);
   background-size: 45vw;
@@ -202,7 +202,7 @@ html body .quantum-neuron-selection .wrapper div .read-more {
   letter-spacing: 1px;
   font-size: 0.8rem;
 }
-html body .there-is-no-magic-subnetwork {
+html body .interpretable-diversity-analysis {
   background: #0f0f0f;
   padding: 10rem 0;
   background-image: url(/static/jewel-stone-diamond.svg);
@@ -210,16 +210,16 @@ html body .there-is-no-magic-subnetwork {
   background-repeat: no-repeat;
   background-position: center right;
 }
-html body .there-is-no-magic-subnetwork .wrapper {
+html body .interpretable-diversity-analysis .wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 2rem;
   align-items: center;
 }
-html body .there-is-no-magic-subnetwork .wrapper div {
+html body .interpretable-diversity-analysis .wrapper div {
   grid-column: 1;
 }
-html body .there-is-no-magic-subnetwork .wrapper div h1 {
+html body .interpretable-diversity-analysis .wrapper div h1 {
   font-family: Helvetica;
   font-size: 3rem;
   text-transform: uppercase;
@@ -228,11 +228,11 @@ html body .there-is-no-magic-subnetwork .wrapper div h1 {
   margin-bottom: 1rem;
   color: white;
 }
-html body .there-is-no-magic-subnetwork .wrapper div p {
+html body .interpretable-diversity-analysis .wrapper div p {
   color: white;
   font-size: 1.1rem;
 }
-html body .there-is-no-magic-subnetwork .wrapper div .read-more {
+html body .interpretable-diversity-analysis .wrapper div .read-more {
   display: inline-block;
   margin: 1rem 0;
   color: white;
@@ -243,7 +243,7 @@ html body .there-is-no-magic-subnetwork .wrapper div .read-more {
   font-size: 0.8rem;
 }
 html body .prune-and-tune-ensembles {
-  background: #eeeeee;
+  background: white;
   padding: 10rem 0;
   background-image: url(/static/cell-nucleus.svg);
   background-size: 45vw;
