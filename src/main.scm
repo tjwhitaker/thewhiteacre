@@ -13,6 +13,7 @@
 (include "./home.scm")
 (include "./about.scm")
 (include "./art.scm")
+(include "./music.scm")
 
 ;; Write html to the intended build file
 (define write-html
@@ -35,6 +36,11 @@
     (define html (serialize-sxml (art-template) indent: #f method: 'html'))
     (write-html "../build/art" html)))
 
+(define build-music
+  (lambda ()
+    (define html (serialize-sxml (music-template) indent: #f method: 'html'))
+    (write-html "../build/music" html)))
+
 ;; Run gulp and copy static files to build dir
 (define build-static
   (lambda ()
@@ -46,3 +52,4 @@
 (build-home)
 (build-about)
 (build-art)
+(build-music)

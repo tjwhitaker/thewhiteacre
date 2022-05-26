@@ -18,8 +18,8 @@
             (nav 
               (a (@ (href "/about")) "About")
               (a (@ (href "/art")) "Art")
-              (a (@ (href "/#")) "Music")
-              (a (@ (href "/#")) "Contact"))
+              (a (@ (href "/music")) "Music")
+              (a (@ (href "/writing")) "Writing"))
           ))
         (main
           ; (div (@ (class "hero"))

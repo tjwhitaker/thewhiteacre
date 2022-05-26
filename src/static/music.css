@@ -1,0 +1,247 @@
+@font-face {
+  font-family: "Latin Modern";
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: url("./LM-regular.woff2") format("woff2"), url("./LM-regular.woff") format("woff"), url("./LM-regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Latin Modern";
+  font-style: italic;
+  font-weight: normal;
+  font-display: swap;
+  src: url("./LM-italic.woff2") format("woff2"), url("./LM-italic.woff") format("woff"), url("./LM-italic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Latin Modern";
+  font-style: normal;
+  font-weight: bold;
+  font-display: swap;
+  src: url("./LM-bold.woff2") format("woff2"), url("./LM-bold.woff") format("woff"), url("./LM-bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Latin Modern";
+  font-style: italic;
+  font-weight: bold;
+  font-display: swap;
+  src: url("./LM-bold-italic.woff2") format("woff2"), url("./LM-bold-italic.woff") format("woff"), url("./LM-bold-italic.ttf") format("truetype");
+}
+@-webkit-keyframes pulse {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+@keyframes pulse {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  max-width: 100%;
+  transition: color 0.2s ease;
+}
+
+html {
+  font-family: "Latin Modern", Garamond;
+}
+html body {
+  color: black;
+  background: #f7f7f7;
+}
+html body .home header {
+  width: 100%;
+  background: white;
+  margin: 0;
+  padding: 0.5rem;
+}
+html body .home header .wrapper {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+}
+html body .home header .wrapper .logo {
+  color: black;
+  font-size: 0;
+}
+html body .home header .wrapper .logo img {
+  height: 100%;
+  max-width: 160px;
+}
+html body .home header .wrapper nav a {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: Helvetica;
+  margin-left: 2rem;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+html body .home header .wrapper nav a:hover {
+  color: #1976d2;
+}
+html body .hero {
+  width: 100%;
+  background: url(https://thewhitakerwedding.com/img/blurry-small-cartoon-crop.e0015576.jpg);
+  background-size: cover;
+  background-color: white;
+  background-position: right;
+  background-repeat: no-repeat;
+  position: relative;
+  height: 80vh;
+}
+html body .hero .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  background: rgba(0, 0, 0, 0);
+}
+html body .hero .wrapper {
+  position: relative;
+  z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+}
+html body .hero .wrapper h1 {
+  font-family: Helvetica;
+  font-size: 4rem;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: -0.1rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+html body .hero .wrapper p {
+  color: white;
+  font-size: 1.1rem;
+  font-style: italic;
+  margin-bottom: 2rem;
+}
+html body .player {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100vw;
+  min-height: 80vh;
+}
+html body .player .sequencer {
+  flex: 0 0 100%;
+  width: 100vw;
+  height: 5px;
+}
+html body .player .launchpad {
+  flex: 0 0 50%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(6, 5rem);
+  grid-template-rows: repeat(6, 5rem);
+  grid-gap: 1rem;
+  grid-auto-flow: column;
+}
+html body .player .launchpad .pad {
+  border-radius: 3px;
+  cursor: pointer;
+}
+html body .player .launchpad .bass {
+  background: rgba(255, 0, 0, 0.1);
+}
+html body .player .launchpad .bass.active {
+  background: rgb(255, 0, 0);
+}
+html body .player .launchpad .bass.pending {
+  animation: pulse 0.5s infinite ease-in-out;
+  background: rgba(255, 0, 0, 0.5);
+}
+html body .player .launchpad .bass.unpending {
+  animation: pulse 1s infinite ease-in-out;
+  background: rgba(255, 0, 0, 0.5);
+}
+html body .player .launchpad .drum {
+  background: rgba(0, 255, 0, 0.1);
+}
+html body .player .launchpad .drum.active {
+  background: rgb(0, 255, 0);
+}
+html body .player .launchpad .drum.pending {
+  animation: pulse 0.5s infinite ease-in-out;
+  background: rgba(0, 255, 0, 0.5);
+}
+html body .player .launchpad .drum.unpending {
+  animation: pulse 1s infinite ease-in-out;
+  background: rgba(0, 255, 0, 0.5);
+}
+html body .player .launchpad .sound {
+  background: rgba(0, 0, 255, 0.1);
+}
+html body .player .launchpad .sound.active {
+  background: rgb(0, 0, 255);
+}
+html body .player .launchpad .sound.pending {
+  animation: pulse 0.5s infinite ease-in-out;
+  background: rgba(0, 0, 255, 0.5);
+}
+html body .player .launchpad .sound.unpending {
+  animation: pulse 1s infinite ease-in-out;
+  background: rgba(0, 0, 255, 0.5);
+}
+html body .player .options {
+  flex: 0 0 50%;
+}
+html body footer {
+  background: #0f0f0f;
+  padding: 2rem 0;
+}
+html body footer .wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 2rem;
+}
+html body footer .wrapper .column h2 {
+  color: white;
+  font-family: Helvetica;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
+}
+html body footer .wrapper .column a {
+  display: block;
+  width: max-content;
+  margin-bottom: 1rem;
+  color: #aaa;
+  font-family: Helvetica;
+  font-size: 0.8rem;
+}
+
+.wrapper {
+  padding: 1rem;
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+@keyframes slide {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-200vw, 0, 0);
+  }
+}

@@ -20,13 +20,13 @@
                 (a (@ (href "/art")) "Art")
                 (a (@ (href "/music")) "Music")
                 (a (@ (href "/writing")) "Writing"))))
-                
+
           (main
             (div (@ (class "hero"))
               (div (@ (class "overlay")) "")
                 (div (@ (class "wrapper"))
                   (h1 "Machine Learning For Science")
-                  (p "Welcome to Wittes Ende! My name is Tim and I'm a computer scientist who is trying to build better neural networks.")))
+                  (p "Welcome to Wittes Ende! My name is Tim and I'm a computer scientist studying neural networks and machine learning. Read on to check out a collection of my research papers.")))
             (div (@ (class "prune-and-tune-ensembles"))
               (div (@ (class "wrapper"))
                 (div
