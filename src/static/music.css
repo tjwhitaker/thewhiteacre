@@ -28,24 +28,24 @@
 }
 @-webkit-keyframes pulse {
   0% {
-    opacity: 0.5;
+    opacity: 0.25;
   }
   50% {
     opacity: 1;
   }
   100% {
-    opacity: 0.5;
+    opacity: 0.25;
   }
 }
 @keyframes pulse {
   0% {
-    opacity: 0.5;
+    opacity: 0.25;
   }
   50% {
     opacity: 1;
   }
   100% {
-    opacity: 0.5;
+    opacity: 0.25;
   }
 }
 *,
@@ -137,16 +137,14 @@ html body .hero .wrapper p {
   font-style: italic;
   margin-bottom: 2rem;
 }
-html body .player {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100vw;
-  min-height: 80vh;
-}
-html body .player .sequencer {
-  flex: 0 0 100%;
+html body .sequencer {
   width: 100vw;
   height: 5px;
+}
+html body .player {
+  display: flex;
+  width: 100vw;
+  min-height: 80vh;
 }
 html body .player .launchpad {
   flex: 0 0 50%;
@@ -154,57 +152,90 @@ html body .player .launchpad {
   display: grid;
   grid-template-columns: repeat(6, 5rem);
   grid-template-rows: repeat(6, 5rem);
-  grid-gap: 1rem;
+  grid-gap: 0.5rem;
   grid-auto-flow: column;
+  padding-right: 1rem;
 }
 html body .player .launchpad .pad {
   border-radius: 3px;
   cursor: pointer;
 }
-html body .player .launchpad .bass {
-  background: rgba(255, 0, 0, 0.1);
-}
-html body .player .launchpad .bass.active {
-  background: rgb(255, 0, 0);
-}
-html body .player .launchpad .bass.pending {
-  animation: pulse 0.5s infinite ease-in-out;
-  background: rgba(255, 0, 0, 0.5);
-}
-html body .player .launchpad .bass.unpending {
-  animation: pulse 1s infinite ease-in-out;
-  background: rgba(255, 0, 0, 0.5);
-}
 html body .player .launchpad .drum {
-  background: rgba(0, 255, 0, 0.1);
+  background: rgba(102, 194, 165, 0.25);
 }
 html body .player .launchpad .drum.active {
-  background: rgb(0, 255, 0);
+  background: rgb(102, 194, 165);
 }
 html body .player .launchpad .drum.pending {
   animation: pulse 0.5s infinite ease-in-out;
-  background: rgba(0, 255, 0, 0.5);
+  background: rgba(102, 194, 165, 0.5);
 }
 html body .player .launchpad .drum.unpending {
   animation: pulse 1s infinite ease-in-out;
-  background: rgba(0, 255, 0, 0.5);
+  background: rgba(102, 194, 165, 0.5);
 }
-html body .player .launchpad .sound {
-  background: rgba(0, 0, 255, 0.1);
+html body .player .launchpad .bass {
+  background: rgba(252, 141, 98, 0.25);
 }
-html body .player .launchpad .sound.active {
-  background: rgb(0, 0, 255);
+html body .player .launchpad .bass.active {
+  background: rgb(252, 141, 98);
 }
-html body .player .launchpad .sound.pending {
+html body .player .launchpad .bass.pending {
   animation: pulse 0.5s infinite ease-in-out;
-  background: rgba(0, 0, 255, 0.5);
+  background: rgba(252, 141, 98, 0.5);
 }
-html body .player .launchpad .sound.unpending {
+html body .player .launchpad .bass.unpending {
   animation: pulse 1s infinite ease-in-out;
-  background: rgba(0, 0, 255, 0.5);
+  background: rgba(252, 141, 98, 0.5);
+}
+html body .player .launchpad .melody {
+  background: rgba(141, 160, 203, 0.25);
+}
+html body .player .launchpad .melody.active {
+  background: rgb(141, 160, 203);
+}
+html body .player .launchpad .melody.pending {
+  animation: pulse 0.5s infinite ease-in-out;
+  background: rgba(141, 160, 203, 0.5);
+}
+html body .player .launchpad .melody.unpending {
+  animation: pulse 1s infinite ease-in-out;
+  background: rgba(141, 160, 203, 0.5);
+}
+html body .player .launchpad .fx {
+  background: rgba(231, 138, 195, 0.25);
+}
+html body .player .launchpad .fx.active {
+  background: rgb(231, 138, 195);
+}
+html body .player .launchpad .fx.pending {
+  animation: pulse 0.5s infinite ease-in-out;
+  background: rgba(231, 138, 195, 0.5);
+}
+html body .player .launchpad .fx.unpending {
+  animation: pulse 1s infinite ease-in-out;
+  background: rgba(231, 138, 195, 0.5);
 }
 html body .player .options {
   flex: 0 0 50%;
+  padding-left: 1rem;
+}
+html body .player .options .controls {
+  display: flex;
+}
+html body .player .options .controls .play {
+  width: 5rem;
+  height: 5rem;
+  background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iNzUycHQiIGhlaWdodD0iNzUycHQiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDc1MiA3NTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiA8cGF0aCBkPSJtMzc2IDE2Mi44OWMtMTE3LjQ1IDAtMjEzLjExIDk1LjE4OC0yMTMuMTEgMjEzLjExczk1LjY2NCAyMTMuMTEgMjEzLjExIDIxMy4xMWMxMTcuNDUgMCAyMTMuMTEtOTUuMTkxIDIxMy4xMS0yMTMuMTEtMC4wMDM5MDctMTE3LjkyLTk1LjY2OC0yMTMuMTEtMjEzLjEyLTIxMy4xMXptLTU3Ljc3NyAzMjIuNTF2LTIxOC43OWwxNzMuMzMgMTA5LjM5eiIvPgo8L3N2Zz4K");
+  background-size: 100% 100%;
+  cursor: pointer;
+}
+html body .player .options .controls .stop {
+  width: 5rem;
+  height: 5rem;
+  background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iNzUycHQiIGhlaWdodD0iNzUycHQiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDc1MiA3NTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiA8cGF0aCBkPSJtMzc2IDE2Mi44OWMtMTE3LjQ1IDAtMjEzLjExIDk1LjE4OC0yMTMuMTEgMjEzLjExczk1LjY2NCAyMTMuMTEgMjEzLjExIDIxMy4xMWMxMTcuNDUgMCAyMTMuMTEtOTUuMTkxIDIxMy4xMS0yMTMuMTEtMC4wMDM5MDctMTE3LjkyLTk1LjY2OC0yMTMuMTEtMjEzLjEyLTIxMy4xMXptODAuNTEyIDI5My42MmgtMTYxLjAydi0xNjEuMDJoMTYxLjAyeiIvPgo8L3N2Zz4K");
+  background-size: 100% 100%;
+  cursor: pointer;
 }
 html body footer {
   background: #0f0f0f;

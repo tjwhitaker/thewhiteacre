@@ -48,12 +48,13 @@ const sounds = new Howl({
 var intervalID = null
 var activeBass = ""
 var activeDrum = ""
-var activeSample = ""
+var activeMelody = ""
+var isPlaying = false
 
 var bar = new ProgressBar.Line(".sequencer", {
   strokeWidth: 3,
-  duration: 4365 / 4,
-  easing: "easeInOut",
+  duration: 4365,
+  easing: "linear",
   color: "#000",
   trailColor: "#eee",
   trailWidth: 1,
@@ -71,8 +72,8 @@ function scheduleSound(event) {
       if (event.target.classList.contains("drum")) {
         activeDrum = ""
       }
-      if (event.target.classList.contains("sound")) {
-        activeSample = ""
+      if (event.target.classList.contains("melody")) {
+        activeMelody = ""
       }
       event.target.classList.add("unpending")
       event.target.classList.remove("active")
@@ -89,13 +90,13 @@ function scheduleSound(event) {
           pending.classList.remove("pending")
         })
         activeDrum = event.target.dataset.sound
-      } else if (event.target.classList.contains("sound")) {
+      } else if (event.target.classList.contains("melody")) {
         let pendings = document.querySelectorAll(".sound.pending")
         pendings.forEach((pending) => {
           pending.classList.remove("pending")
         })
 
-        activeSample = event.target.dataset.sound
+        activeMelody = event.target.dataset.sound
       }
 
       event.target.classList.add("pending")
@@ -111,7 +112,7 @@ function cleanButtons() {
     if (
       pad.dataset.sound != activeBass &&
       pad.dataset.sound != activeDrum &&
-      pad.dataset.sound != activeSample
+      pad.dataset.sound != activeMelody
     ) {
       pad.classList.remove("active")
       pad.classList.remove("unpending")
@@ -120,34 +121,14 @@ function cleanButtons() {
 }
 
 function startSequencer() {
-  bar.set(0)
-
-  sounds.play(activeBass)
-  sounds.play(activeDrum)
-  sounds.play(activeSample)
-
-  let pending = document.querySelectorAll(".pending")
-
-  pending.forEach((item) => {
-    item.classList.remove("pending")
-    item.classList.add("active")
-  })
-
-  bar.animate(0.25, function () {
-    bar.animate(0.5, function () {
-      bar.animate(0.75, function () {
-        bar.animate(1)
-      })
-    })
-  })
-
-  intervalID = setInterval(function () {
+  if (!isPlaying) {
+    isPlaying = true
     bar.set(0)
     cleanButtons()
 
     sounds.play(activeBass)
     sounds.play(activeDrum)
-    sounds.play(activeSample)
+    sounds.play(activeMelody)
 
     let pending = document.querySelectorAll(".pending")
 
@@ -156,18 +137,33 @@ function startSequencer() {
       item.classList.add("active")
     })
 
-    bar.animate(0.25, function () {
-      bar.animate(0.5, function () {
-        bar.animate(0.75, function () {
-          bar.animate(1)
-        })
+    bar.animate(1)
+
+    intervalID = setInterval(function () {
+      bar.set(0)
+      cleanButtons()
+
+      sounds.play(activeBass)
+      sounds.play(activeDrum)
+      sounds.play(activeMelody)
+
+      let pending = document.querySelectorAll(".pending")
+
+      pending.forEach((item) => {
+        item.classList.remove("pending")
+        item.classList.add("active")
       })
-    })
-  }, 4365)
+
+      bar.animate(1)
+    }, 4365)
+  }
 }
 
 function stopSequencer() {
   clearInterval(intervalID)
+  bar.set(0)
+  sounds.stop()
+  isPlaying = false
 }
 
 const launchpad = document.querySelector(".launchpad")
