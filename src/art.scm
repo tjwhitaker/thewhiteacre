@@ -33,7 +33,7 @@
             (div (@ (class "item"))
               (img (@ (src "/static/van-gogh-proposal.jpg"))))
             (div (@ (class "item"))
-              (img (@ (src "/static/mushroom.jpg"))))
+              (img (@ (src "/static/basin.jpg"))))
             (div (@ (class "item"))
               (img (@ (src "/static/snake.jpg"))))
             (div (@ (class "item"))

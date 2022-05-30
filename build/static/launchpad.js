@@ -50,10 +50,12 @@ var activeBass = ""
 var activeDrum = ""
 var activeMelody = ""
 var isPlaying = false
+const tempo = 4365
+var time = 4365
 
 var bar = new ProgressBar.Line(".sequencer", {
   strokeWidth: 3,
-  duration: 4365,
+  duration: time,
   easing: "linear",
   color: "#000",
   trailColor: "#eee",
@@ -108,7 +110,6 @@ function cleanButtons() {
   let pads = document.querySelectorAll(".pad")
 
   pads.forEach((pad) => {
-    console.log(pad.dataset.sound)
     if (
       pad.dataset.sound != activeBass &&
       pad.dataset.sound != activeDrum &&
@@ -130,6 +131,8 @@ function startSequencer() {
     sounds.play(activeDrum)
     sounds.play(activeMelody)
 
+    changeTempo()
+
     let pending = document.querySelectorAll(".pending")
 
     pending.forEach((item) => {
@@ -137,7 +140,7 @@ function startSequencer() {
       item.classList.add("active")
     })
 
-    bar.animate(1)
+    bar.animate(1, { duration: time })
 
     intervalID = setInterval(function () {
       bar.set(0)
@@ -147,6 +150,8 @@ function startSequencer() {
       sounds.play(activeDrum)
       sounds.play(activeMelody)
 
+      changeTempo()
+
       let pending = document.querySelectorAll(".pending")
 
       pending.forEach((item) => {
@@ -154,8 +159,8 @@ function startSequencer() {
         item.classList.add("active")
       })
 
-      bar.animate(1)
-    }, 4365)
+      bar.animate(1, { duration: time })
+    }, time)
   }
 }
 
@@ -164,6 +169,13 @@ function stopSequencer() {
   bar.set(0)
   sounds.stop()
   isPlaying = false
+}
+
+function changeTempo() {
+  v = document.querySelector(".tempo input").value
+  rate = v / 100
+  time = tempo / rate
+  sounds.rate(rate)
 }
 
 const launchpad = document.querySelector(".launchpad")

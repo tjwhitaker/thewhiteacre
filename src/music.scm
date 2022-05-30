@@ -104,8 +104,9 @@
                 (div (@ (class "controls"))
                   (div (@ (class "play")) "")
                   (div (@ (class "stop")) "")
-                  (div (@ (class "volume")) "Volume")
-                  (div (@ (class "tempo")) "Tempo"))))))
+                  (div (@ (class "tempo"))
+                    (p "Tempo") 
+                    (input (@ (type "text") (value "100")))))))))
 
           (footer 
             (div (@ (class "wrapper"))
@@ -130,4 +131,4 @@
 
           (script (@ (src "/static/progressbar.min.js")) "")
           (script (@ (src "/static/howler.min.js")) "")
-          (script (@ (src "/static/music.js")) "")))))))
+          (script (@ (src "/static/launchpad.js")) "")))))))

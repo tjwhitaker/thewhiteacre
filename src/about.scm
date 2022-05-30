@@ -29,6 +29,11 @@
               (p "I'm Tim and this is my beautiful wife.")
             )
           )
+          
+          (div (@ (class "chess"))
+            (div (@ (class "wrapper"))
+              (h2 "Chess")
+              (iframe (@ (src "https://lichess.org/training/frame?theme=brown&bg=dark") (style "width: 400px; height: 444px;") (allowtransparency "true") (frameborder "0")) "")))
 
           (footer 
             (div (@ (class "wrapper"))
