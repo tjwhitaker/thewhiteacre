@@ -15,11 +15,7 @@
           (header
             (div (@ (class "wrapper"))
               (a (@ (href "/") (class "logo")) (img (@ (src "/static/logo.svg"))))
-              (nav
-                (a (@ (href "/about")) "About")
-                (a (@ (href "/art")) "Art")
-                (a (@ (href "/music")) "Music")
-                (a (@ (href "/writing")) "Writing"))))
+              (nav "")))
 
           (main
             (div (@ (class "hero"))
@@ -45,6 +41,7 @@
                   (h1 "Quantum Neuron Selection")
                   (p "Gradient descent methods have long been the de facto standard for training deep neural networks. Millions of training samples are fed into models with billions of parameters, which are slowly updated over hundreds of epochs. Recently, it's been shown that large, randomly initialized, neural networks contain subnetworks that perform as well as fully trained models. This insight offers a promising avenue for...")
                   (a (@ (href "/static/quantum-neuron-selection.pdf") (class "read-more")) "Read More")))))
+
 
           (footer
             (div (@ (class "wrapper"))
