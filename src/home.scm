@@ -21,7 +21,7 @@
             (div (@ (class "hero"))
               (div (@ (class "overlay")) "")
                 (div (@ (class "wrapper"))
-                  (h1 "Learn How To Build Better Neural Networksc")
+                  (h1 "Learn How To Build Better Neural Networks")
                   (p "Welcome to Dead Neuron! My name is Tim and I'm a computer scientist studying neural networks and machine learning. Read on to check out a collection of my research papers.")))
             (div (@ (class "prune-and-tune-ensembles"))
               (div (@ (class "wrapper"))
