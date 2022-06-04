@@ -15,6 +15,7 @@
 (include "./art.scm")
 (include "./music.scm")
 (include "./writing.scm")
+(include "./architectures.scm")
 
 ;; Write html to the intended build file
 (define write-html
@@ -31,6 +32,11 @@
   (lambda ()
     (define html (serialize-sxml (about-template) indent: #f method: 'html'))
     (write-html "../build/about" html)))
+
+(define build-architectures
+  (lambda ()
+    (define html (serialize-sxml (architectures-template) indent: #f method: 'html'))
+    (write-html "../build/architectures" html)))
 
 (define build-art
   (lambda ()
@@ -57,6 +63,7 @@
 (build-static)
 (build-home)
 (build-about)
+(build-architectures)
 (build-art)
 (build-music)
 (build-writing)
