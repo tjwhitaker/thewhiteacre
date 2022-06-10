@@ -6,6 +6,8 @@
 (include "./models/echo-state.scm")
 (include "./models/alexnet.scm")
 
+(include "./models/placeholder.scm")
+
 (define architectures-template
   (lambda ()
     `(html
@@ -97,69 +99,93 @@
 
               (div (@ (class "model"))
                 (div (@ (class "wrapper"))
-                  (div
+                  (div (@ (class "content"))
                     (h1 "Inception (2014)")
-                    (p "Translation invariance is one of the reasons that convolutional networks are so successful at working with images. Inception networks are an attempt at taking that idea and encoding scale invariance into convolutional networks. Rather than choosing a single kernel size at each convolutional layer, why not use several kernel sizes and concatenate their results together."))))
+                    (p "Translation invariance is one of the reasons that convolutional networks are so successful at working with images. Inception networks are an attempt at taking that idea and encoding scale invariance into convolutional networks. Rather than choosing a single kernel size at each convolutional layer, why not use several kernel sizes and concatenate their results together."))
+                  (div (@ (class "code"))
+                    (pre (code (@ (class "language-python")) (unquote placeholder))))))
 
               (div (@ (class "model"))
                 (div (@ (class "wrapper"))
-                  (div
+                  (div (@ (class "content"))
                     (h1 "VGG (2014)")
-                    (p "VGG, named after the Visual Geometry Group, is probably the canonical example of the first modern deep neural network. VGG was wildy successful and they showed that 3c3 kernels were all you needed. Prior to this, networks were typically composed of different size kernels, gradually decreasing as you moved deeper into the network. The composition of stacked layers and 3x3 kernels enabled significantly larger networks and better generalization."))))
+                    (p "VGG, named after the Visual Geometry Group, is probably the canonical example of the first modern deep neural network. VGG was wildy successful and they showed that 3c3 kernels were all you needed. Prior to this, networks were typically composed of different size kernels, gradually decreasing as you moved deeper into the network. The composition of stacked layers and 3x3 kernels enabled significantly larger networks and better generalization."))
+                  (div (@ (class "code"))
+                    (pre (code (@ (class "language-python")) (unquote placeholder))))))
+
 
               (div (@ (class "model"))
                 (div (@ (class "wrapper"))
-                  (div
+                  (div (@ (class "content"))
                     (h1 "ResNet (2015)")
-                    (p "Residual Networks utilize skip connections to eliminate the vanishing gradient problem and enable ultra deep neural networks. ResNets are extremely powerful as the extra depth affords more predictive power and the skip connections allows for better optimization of early layers in the network."))))
+                    (p "Residual Networks utilize skip connections to eliminate the vanishing gradient problem and enable ultra deep neural networks. ResNets are extremely powerful as the extra depth affords more predictive power and the skip connections allows for better optimization of early layers in the network."))
+                  (div (@ (class "code"))
+                    (pre (code (@ (class "language-python")) (unquote placeholder))))))
 
               (div (@ (class "model"))
                 (div (@ (class "wrapper"))
-                  (div
+                  (div (@ (class "content"))
                     (h1 "ResNeXt (2016)")
-                    (p "."))))
+                    (p "."))
+                  (div (@ (class "code"))
+                    (pre (code (@ (class "language-python")) (unquote placeholder))))))
 
               (div (@ (class "model"))
                 (div (@ (class "wrapper"))
-                  (div
+                  (div (@ (class "content"))
                     (h1 "DenseNet (2016)")
-                    (p "DenseNet is special for configuration of skip connections between layers. The output of each convolutional layer is passed to every single successive convolutional layer. All of these extra inputs are concatenated together."))))
+                    (p "DenseNet is special for configuration of skip connections between layers. The output of each convolutional layer is passed to every single successive convolutional layer. All of these extra inputs are concatenated together."))
+                  (div (@ (class "code"))
+                    (pre (code (@ (class "language-python")) (unquote placeholder))))))
 
               (div (@ (class "model"))
                 (div (@ (class "wrapper"))
-                  (div
+                  (div (@ (class "content"))
                     (h1 "SqueezeNet (2016)")
-                    (p "."))))
+                    (p "."))
+                  (div (@ (class "code"))
+                    (pre (code (@ (class "language-python")) (unquote placeholder))))))
 
               (div (@ (class "model"))
                 (div (@ (class "wrapper"))
-                  (div
+                  (div (@ (class "content"))
                     (h1 "MobileNet (2017)")
-                    (p "."))))
+                    (p "."))
+                  (div (@ (class "code"))
+                    (pre (code (@ (class "language-python")) (unquote placeholder))))))
 
               (div (@ (class "model"))
                 (div (@ (class "wrapper"))
-                  (div
+                  (div (@ (class "content"))
                     (h1 "Transformer (2017)")
-                    (p "."))))
+                    (p "."))
+                  (div (@ (class "code"))
+                    (pre (code (@ (class "language-python")) (unquote placeholder))))))
                     
               (div (@ (class "model"))
                 (div (@ (class "wrapper"))
-                  (div
+                  (div (@ (class "content"))
                     (h1 "MLP Mixer (2021)")
-                    (p "."))))
+                    (p "."))
+                  (div (@ (class "code"))
+                    (pre (code (@ (class "language-python")) (unquote placeholder))))))
                     
               (div (@ (class "model"))
                 (div (@ (class "wrapper"))
-                  (div
+                  (div (@ (class "content"))
                     (h1 "EfficientNet (2019)")
-                    (p "."))))
+                    (p "."))
+                  (div (@ (class "code"))
+                    (pre (code (@ (class "language-python")) (unquote placeholder))))))
                     
               (div (@ (class "model"))
                 (div (@ (class "wrapper"))
-                  (div
+                  (div (@ (class "content"))
                     (h1 "ConvNeXt (2022)")
-                    (p "."))))))
+                    (p "."))
+                  (div (@ (class "code"))
+                    (pre (code (@ (class "language-python")) (unquote placeholder))))))))
+
           (script (@ (src "/static/prism.js")) "")
           (script (@ (src "/static/prism-python.min.js")) "")
           (footer
