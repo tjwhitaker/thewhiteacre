@@ -1,3 +1,11 @@
+(include "./models/perceptron.scm")
+(include "./models/lenet.scm")
+(include "./models/hopfield.scm")
+(include "./models/lstm.scm")
+(include "./models/boltzmann.scm")
+(include "./models/echo-state.scm")
+(include "./models/alexnet.scm")
+
 (define architectures-template
   (lambda ()
     `(html
@@ -36,28 +44,7 @@
                     (h2 "Frank Rosenblatt")
                     (p "The first neural network so to speak."))
                   (div (@ (class "code"))
-                    (pre  (code (@ (class "language-python")) "import torch
-import torch.nn as nn
-
-
-class MLP(nn.Module):
-    def __init__(self, n_features=784, n_outputs=10, layer_configuration=[50,40,30]):
-        super(Net, self).__init__()
-        layers = [
-          nn.Linear(n_features, layer_configuration[0]),
-          nn.ReLU(),
-        ]
-
-        for i in range(len(layer_configuration) - 1):
-          layers.append(nn.Linear(layer_configuration[i], layer_configuration[i+1]))
-          layers.append(nn.ReLU())
-
-        layers.append(nn.Linear(layer_configuration[-1], n_outputs))
-
-        self.layers = nn.Sequential(layers)
-
-    def forward(self, x):
-        return self.layers(x)")))))
+                    (pre  (code (@ (class "language-python")) (unquote perceptron))))))
               
               (div (@ (class "model"))
                 (div (@ (class "wrapper"))
@@ -65,59 +52,48 @@ class MLP(nn.Module):
                     (h1 "LeNet (1989)")
                     (p "LeNet was one of the first convolutional neural networks, introduced in 1989 by Yann LeCun at Bell Labs, and it has been a foundational piece of work in the field of computer vision. LeNet laid the groundwork for how convolutional architectures will be structured for the next several decades."))
                   (div (@ (class "code"))
-                    (pre (code (@ (class "language-python")) "import torch
-import torch.nn as nn
-import torch.nn.functional as F
-
-
-class LeNet(nn.Module):
-    def __init__(self):
-        super(Net, self).__init__()
-        self.conv1 = nn.Conv2d(1, 6, 5)
-        self.conv2 = nn.Conv2d(6, 16, 5)
-        self.pool = nn.MaxPool2d(kernel_size=2)
-        self.fc1 = nn.Linear(256, 120)
-        self.fc2(120, 84)
-        self.fc3 = nn.Linear(84, 10)
-
-    def forward(self, x):
-        x = self.pool(F.relu(self.conv1(x)))
-        x = self.pool(F.relu(self.conv2(x)))
-        x = x.view(x.size(0), -1)
-        x = F.relu(self.fc1(x))
-        x = F.relu(self.fc2(x))
-        x = self.fc3(x)
-        return x")))))
+                    (pre (code (@ (class "language-python")) (unquote lenet))))))
               
               (div (@ (class "model"))
                 (div (@ (class "wrapper"))
-                  (div
+                  (div (@ (class "content"))
                     (h1 "Hopfield Network (1982)")
-                    (p "."))))
+                    (p "."))
+                  (div (@ (class "code"))
+                    (pre (code (@ (class "language-python")) (unquote hopfield))))))
               
               (div (@ (class "model"))
                 (div (@ (class "wrapper"))
-                  (div
+                  (div (@ (class "content"))
                     (h1 "Long Short-Term Memory (1997)")
-                    (p "LSTM networks were introduced by J. Schmidhuber in 1997. LSTMs are a large improvement over the standard recurrent neural network as they enabled a way for better processing of historical data and a kind of solution to the vanishing gradient problem that plagued vanilla RNNs. LSTMs use quite a complex architecture which involves the use of several gates that we call the input, output and forget gates. These gates are composed into a cell and the composition of them allow for memory over arbitrary time intervals."))))
+                    (p "LSTM networks were introduced by J. Schmidhuber in 1997. LSTMs are a large improvement over the standard recurrent neural network as they enabled a way for better processing of historical data and a kind of solution to the vanishing gradient problem that plagued vanilla RNNs. LSTMs use quite a complex architecture which involves the use of several gates that we call the input, output and forget gates. These gates are composed into a cell and the composition of them allow for memory over arbitrary time intervals."))
+                  (div (@ (class "code"))
+                    (pre (code (@ (class "language-python")) (unquote lstm))))))
 
               (div (@ (class "model"))
                 (div (@ (class "wrapper"))
-                  (div
+                  (div (@ (class "content"))
                     (h1 "Boltzmann Machine (1986)")
-                    (p "."))))
+                    (p "."))
+                  (div (@ (class "code"))
+                    (pre (code (@ (class "language-python")) (unquote boltzmann))))))
 
               (div (@ (class "model"))
                 (div (@ (class "wrapper"))
-                  (div
+                  (div (@ (class "content"))
                     (h1 "Echo State Network (2004)")
-                    (p "Echo State Networks belong to a class of networks called reservoir computing models. Echo State Networks are composed of a reservoir (or reservoirs in deep variants) that consist of a moderate amount of sparse and randomly connected neurons. The weights and the connections between the neurons are fixed. The output of this reservoir is piped back in to the reservoir in a recurrent fasion. The connectivity of the neuron is initialized such that the spectral radius of the reservoir is less than 1. This property ensures that the recurrent state that is passed back into the reservoir slowly decays over time (like an echo). The reservoir is then passed to fully connected neurons with learned weights. Echo State Networks are very fast and well suited for simplistic series data. The chaotic and cyclical behavior of the reservoir makes it especially suited to time series forecasting."))))
+                    (p "Echo State Networks belong to a class of networks called reservoir computing models. Echo State Networks are composed of a reservoir (or reservoirs in deep variants) that consist of a moderate amount of sparse and randomly connected neurons. The weights and the connections between the neurons are fixed. The output of this reservoir is piped back in to the reservoir in a recurrent fasion. The connectivity of the neuron is initialized such that the spectral radius of the reservoir is less than 1. This property ensures that the recurrent state that is passed back into the reservoir slowly decays over time (like an echo). The reservoir is then passed to fully connected neurons with learned weights. Echo State Networks are very fast and well suited for simplistic series data. The chaotic and cyclical behavior of the reservoir makes it especially suited to time series forecasting."))
+                  (div (@ (class "code"))
+                    (pre (code (@ (class "language-python")) (unquote echo-state))))))
               
               (div (@ (class "model"))
                 (div (@ (class "wrapper"))
-                  (div
+                  (div (@ (class "content"))
                     (h1 "AlexNet (2012)")
-                    (p "AlexNet started the deep learning revolution at a time when the computational capacity of neural networks was limited. At the time, the compute required for deep networks was just infeasible, and the memory available on GPUs was not very much. While the architecture itself is not so revolutionary, and in fact it is very much a variant of LeNet, AlexNet utilized some clever tricks that allowed them to split the network onto two GPUs. AlexNet also popularized a new activation function, ReLU, which will come to be the de-facto standard for deep neural networks until today. ReLU offered an advantage with it's unbounded activation such that deep neural networks would not suffer from the vanishing gradient problem."))))
+                    (p "AlexNet started the deep learning revolution at a time when the computational capacity of neural networks was limited. At the time, the compute required for deep networks was just infeasible, and the memory available on GPUs was not very much. While the architecture itself is not so revolutionary, and in fact it is very much a variant of LeNet, AlexNet utilized some clever tricks that allowed them to split the network onto two GPUs. AlexNet also popularized a new activation function, ReLU, which will come to be the de-facto standard for deep neural networks until today. ReLU offered an advantage with it's unbounded activation such that deep neural networks would not suffer from the vanishing gradient problem."))
+                  (div (@ (class "code"))
+                    (pre (code (@ (class "language-python")) (unquote alexnet))))))
+
 
               (div (@ (class "model"))
                 (div (@ (class "wrapper"))

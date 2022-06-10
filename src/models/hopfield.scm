@@ -1,47 +1,5 @@
-<!DOCTYPE html><html><head><title>Network Architectures | Dead Neuron</title><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><link rel="icon" href="/static/favicon.ico" /><link rel="stylesheet" href="/static/architectures.css" /><link rel="stylesheet" href="/static/prism.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,500,700|&amp;display=swap" /><link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css" /><script src="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js"></script></head><body><div class="home"><header><div class="wrapper"><a href="/" class="logo"><img src="/static/logo.svg" /></a><nav><a href="/about">About</a><a href="/architectures">Architectures</a><a href="/research">Research</a></nav></div></header><main><div class="hero"><div class="overlay"></div><div class="wrapper"><h1>Neural Network Architectures</h1><p>There are a lot of network architectures being released every year. This is an attempt at cataloging architectures and the ideas they introduced.</p></div></div><div class="catalog"><div class="model"><div class="wrapper"><div class="content"><h1>Perceptron (1958)</h1><h2>Frank Rosenblatt</h2><p>The first neural network so to speak.</p></div><div class="code"><pre><code class="language-python">import torch
-import torch.nn as nn
-
-
-class MLP(nn.Module):
-    def __init__(self, n_features=784, n_outputs=10, layer_configuration=[50,40,30]):
-        super(Net, self).__init__()
-        layers = [
-          nn.Linear(n_features, layer_configuration[0]),
-          nn.ReLU(),
-        ]
-
-        for i in range(len(layer_configuration) - 1):
-          layers.append(nn.Linear(layer_configuration[i], layer_configuration[i+1]))
-          layers.append(nn.ReLU())
-
-        layers.append(nn.Linear(layer_configuration[-1], n_outputs))
-
-        self.layers = nn.Sequential(layers)
-
-    def forward(self, x):
-        return self.layers(x)</code></pre></div></div></div><div class="model"><div class="wrapper"><div class="content"><h1>LeNet (1989)</h1><p>LeNet was one of the first convolutional neural networks, introduced in 1989 by Yann LeCun at Bell Labs, and it has been a foundational piece of work in the field of computer vision. LeNet laid the groundwork for how convolutional architectures will be structured for the next several decades.</p></div><div class="code"><pre><code class="language-python">import torch
-import torch.nn as nn
-import torch.nn.functional as F
-
-
-class LeNet(nn.Module):
-    def __init__(self):
-        super(Net, self).__init__()
-        self.conv1 = nn.Conv2d(1, 6, 5)
-        self.conv2 = nn.Conv2d(6, 16, 5)
-        self.pool = nn.MaxPool2d(kernel_size=2)
-        self.fc1 = nn.Linear(256, 120)
-        self.fc2(120, 84)
-        self.fc3 = nn.Linear(84, 10)
-
-    def forward(self, x):
-        x = self.pool(F.relu(self.conv1(x)))
-        x = self.pool(F.relu(self.conv2(x)))
-        x = x.view(x.size(0), -1)
-        x = F.relu(self.fc1(x))
-        x = F.relu(self.fc2(x))
-        x = self.fc3(x)
-        return x</code></pre></div></div></div><div class="model"><div class="wrapper"><div class="content"><h1>Hopfield Network (1982)</h1><p>.</p></div><div class="code"><pre><code class="language-python">import torch
+(define hopfield #<<END
+import torch
 import torch.nn as nn
 
 from math import sqrt
@@ -185,14 +143,14 @@ class Hopfield(Module):
         if self.association_core.static_execution:
             self.__scaling = 1.0 if scaling is None else scaling
         else:
-            assert self.association_core.head_dim &gt; 0, f'invalid hidden dimension encountered.'
+            assert self.association_core.head_dim > 0, f'invalid hidden dimension encountered.'
             self.__scaling = (1.0 / sqrt(self.association_core.head_dim)) if scaling is None else scaling
         self.__batch_first = batch_first
         self.__update_steps_max = update_steps_max
         self.__update_steps_eps = update_steps_eps
         self.reset_parameters()
 
-    def reset_parameters(self) -&gt; None:
+    def reset_parameters(self) -> None:
         """
         Reset Hopfield association.
 
@@ -203,7 +161,7 @@ class Hopfield(Module):
             if hasattr(module, r'reset_parameters'):
                 module.reset_parameters()
 
-    def _maybe_transpose(self, *args: Tuple[Tensor, ...]) -&gt; Union[Tensor, Tuple[Tensor, ...]]:
+    def _maybe_transpose(self, *args: Tuple[Tensor, ...]) -> Union[Tensor, Tuple[Tensor, ...]]:
         """
         Eventually transpose specified data.
 
@@ -216,7 +174,7 @@ class Hopfield(Module):
     def _associate(self, data: Union[Tensor, Tuple[Tensor, Tensor, Tensor]],
                    return_raw_associations: bool = False, return_projected_patterns: bool = False,
                    stored_pattern_padding_mask: Optional[Tensor] = None,
-                   association_mask: Optional[Tensor] = None) -&gt; Tuple[Optional[Tensor], ...]:
+                   association_mask: Optional[Tensor] = None) -> Tuple[Optional[Tensor], ...]:
         """
         Apply Hopfield association module on specified data.
 
@@ -263,7 +221,7 @@ class Hopfield(Module):
 
     def forward(self, input: Union[Tensor, Tuple[Tensor, Tensor, Tensor]],
                 stored_pattern_padding_mask: Optional[Tensor] = None,
-                association_mask: Optional[Tensor] = None) -&gt; Tensor:
+                association_mask: Optional[Tensor] = None) -> Tensor:
         """
         Apply Hopfield association on specified data.
 
@@ -282,7 +240,7 @@ class Hopfield(Module):
 
     def get_association_matrix(self, input: Union[Tensor, Tuple[Tensor, Tensor, Tensor]],
                                stored_pattern_padding_mask: Optional[Tensor] = None,
-                               association_mask: Optional[Tensor] = None) -&gt; Tensor:
+                               association_mask: Optional[Tensor] = None) -> Tensor:
         """
         Fetch Hopfield association matrix gathered by passing through the specified data.
 
@@ -299,7 +257,7 @@ class Hopfield(Module):
 
     def get_projected_pattern_matrix(self, input: Union[Tensor, Tuple[Tensor, Tensor, Tensor]],
                                      stored_pattern_padding_mask: Optional[Tensor] = None,
-                                     association_mask: Optional[Tensor] = None) -&gt; Tensor:
+                                     association_mask: Optional[Tensor] = None) -> Tensor:
         """
         Fetch Hopfield projected pattern matrix gathered by passing through the specified data.
 
@@ -315,91 +273,91 @@ class Hopfield(Module):
                 association_mask=association_mask)[3]
 
     @property
-    def batch_first(self) -&gt; bool:
+    def batch_first(self) -> bool:
         return self.__batch_first
 
     @property
-    def scaling(self) -&gt; Union[float, Tensor]:
+    def scaling(self) -> Union[float, Tensor]:
         return self.__scaling.clone() if type(self.__scaling) == Tensor else self.__scaling
 
     @property
-    def stored_pattern_dim(self) -&gt; Optional[int]:
+    def stored_pattern_dim(self) -> Optional[int]:
         return self.association_core.kdim
 
     @property
-    def state_pattern_dim(self) -&gt; Optional[int]:
+    def state_pattern_dim(self) -> Optional[int]:
         return self.association_core.embed_dim
 
     @property
-    def pattern_projection_dim(self) -&gt; Optional[int]:
+    def pattern_projection_dim(self) -> Optional[int]:
         return self.association_core.vdim
 
     @property
-    def input_size(self) -&gt; Optional[int]:
+    def input_size(self) -> Optional[int]:
         return self.state_pattern_dim
 
     @property
-    def hidden_size(self) -&gt; Optional[int]:
+    def hidden_size(self) -> Optional[int]:
         return self.association_core.head_dim
 
     @property
-    def output_size(self) -&gt; Optional[int]:
+    def output_size(self) -> Optional[int]:
         return self.association_core.out_dim
 
     @property
-    def pattern_size(self) -&gt; Optional[int]:
+    def pattern_size(self) -> Optional[int]:
         return self.association_core.pattern_dim
 
     @property
-    def update_steps_max(self) -&gt; Optional[Union[int, Tensor]]:
+    def update_steps_max(self) -> Optional[Union[int, Tensor]]:
         return self.__update_steps_max.clone() if type(self.__update_steps_max) == Tensor else self.__update_steps_max
 
     @property
-    def update_steps_eps(self) -&gt; Optional[Union[float, Tensor]]:
+    def update_steps_eps(self) -> Optional[Union[float, Tensor]]:
         return self.__update_steps_eps.clone() if type(self.__update_steps_eps) == Tensor else self.__update_steps_eps
 
     @property
-    def stored_pattern_as_static(self) -&gt; bool:
+    def stored_pattern_as_static(self) -> bool:
         return self.association_core.key_as_static
 
     @property
-    def state_pattern_as_static(self) -&gt; bool:
+    def state_pattern_as_static(self) -> bool:
         return self.association_core.query_as_static
 
     @property
-    def pattern_projection_as_static(self) -&gt; bool:
+    def pattern_projection_as_static(self) -> bool:
         return self.association_core.value_as_static
 
     @property
-    def normalize_stored_pattern(self) -&gt; bool:
+    def normalize_stored_pattern(self) -> bool:
         return self.norm_stored_pattern is not None
 
     @property
-    def normalize_stored_pattern_affine(self) -&gt; bool:
+    def normalize_stored_pattern_affine(self) -> bool:
         return self.normalize_stored_pattern and self.norm_stored_pattern.elementwise_affine
 
     @property
-    def normalize_state_pattern(self) -&gt; bool:
+    def normalize_state_pattern(self) -> bool:
         return self.norm_state_pattern is not None
 
     @property
-    def normalize_state_pattern_affine(self) -&gt; bool:
+    def normalize_state_pattern_affine(self) -> bool:
         return self.normalize_state_pattern and self.norm_state_pattern.elementwise_affine
 
     @property
-    def normalize_pattern_projection(self) -&gt; bool:
+    def normalize_pattern_projection(self) -> bool:
         return self.norm_pattern_projection is not None
 
     @property
-    def normalize_pattern_projection_affine(self) -&gt; bool:
+    def normalize_pattern_projection_affine(self) -> bool:
         return self.normalize_pattern_projection and self.norm_pattern_projection.elementwise_affine
 
     @property
-    def normalize_hopfield_space(self) -&gt; bool:
+    def normalize_hopfield_space(self) -> bool:
         return self.hopfield.normalize_hopfield_space
 
     @property
-    def normalize_hopfield_space_affine(self) -&gt; bool:
+    def normalize_hopfield_space_affine(self) -> bool:
         return self.hopfield.normalize_hopfield_space_affine
 
 
@@ -505,7 +463,7 @@ class HopfieldPooling(Module):
         ), input_size if pooling_weight_size is None else pooling_weight_size)), requires_grad=trainable)
         self.reset_parameters()
 
-    def reset_parameters(self) -&gt; None:
+    def reset_parameters(self) -> None:
         """
         Reset pooling weights and underlying Hopfield association.
 
@@ -517,7 +475,7 @@ class HopfieldPooling(Module):
         # Explicitly initialise pooling weights.
         nn.init.normal_(self.pooling_weights, mean=0.0, std=0.02)
 
-    def _prepare_input(self, input: Union[Tensor, Tuple[Tensor, Tensor]]) -&gt; Tuple[Tensor, Tensor, Tensor]:
+    def _prepare_input(self, input: Union[Tensor, Tuple[Tensor, Tensor]]) -> Tuple[Tensor, Tensor, Tensor]:
         """
         Prepare input for Hopfield association.
 
@@ -538,7 +496,7 @@ class HopfieldPooling(Module):
         ), self.pooling_weights.shape[2])), pattern_projection
 
     def forward(self, input: Union[Tensor, Tuple[Tensor, Tensor]], stored_pattern_padding_mask: Optional[Tensor] = None,
-                association_mask: Optional[Tensor] = None) -&gt; Tensor:
+                association_mask: Optional[Tensor] = None) -> Tensor:
         """
         Compute Hopfield-based pooling on specified data.
 
@@ -554,7 +512,7 @@ class HopfieldPooling(Module):
 
     def get_association_matrix(self, input: Union[Tensor, Tuple[Tensor, Tensor]],
                                stored_pattern_padding_mask: Optional[Tensor] = None,
-                               association_mask: Optional[Tensor] = None) -&gt; Tensor:
+                               association_mask: Optional[Tensor] = None) -> Tensor:
         """
         Fetch Hopfield association matrix used for pooling gathered by passing through the specified data.
 
@@ -571,7 +529,7 @@ class HopfieldPooling(Module):
 
     def get_projected_pattern_matrix(self, input: Union[Tensor, Tuple[Tensor, Tensor]],
                                      stored_pattern_padding_mask: Optional[Tensor] = None,
-                                     association_mask: Optional[Tensor] = None) -&gt; Tensor:
+                                     association_mask: Optional[Tensor] = None) -> Tensor:
         """
         Fetch Hopfield projected pattern matrix gathered by passing through the specified data.
 
@@ -587,87 +545,87 @@ class HopfieldPooling(Module):
                 association_mask=association_mask)
 
     @property
-    def batch_first(self) -&gt; bool:
+    def batch_first(self) -> bool:
         return self.hopfield.batch_first
 
     @property
-    def scaling(self) -&gt; Union[float, Tensor]:
+    def scaling(self) -> Union[float, Tensor]:
         return self.hopfield.scaling
 
     @property
-    def stored_pattern_dim(self) -&gt; Optional[int]:
+    def stored_pattern_dim(self) -> Optional[int]:
         return self.hopfield.stored_pattern_dim
 
     @property
-    def state_pattern_dim(self) -&gt; Optional[int]:
+    def state_pattern_dim(self) -> Optional[int]:
         return self.hopfield.state_pattern_dim
 
     @property
-    def pattern_projection_dim(self) -&gt; Optional[int]:
+    def pattern_projection_dim(self) -> Optional[int]:
         return self.hopfield.pattern_projection_dim
 
     @property
-    def input_size(self) -&gt; Optional[int]:
+    def input_size(self) -> Optional[int]:
         return self.hopfield.input_size
 
     @property
-    def hidden_size(self) -&gt; int:
+    def hidden_size(self) -> int:
         return self.hopfield.hidden_size
 
     @property
-    def output_size(self) -&gt; Optional[int]:
+    def output_size(self) -> Optional[int]:
         return self.hopfield.output_size
 
     @property
-    def pattern_size(self) -&gt; Optional[int]:
+    def pattern_size(self) -> Optional[int]:
         return self.hopfield.pattern_size
 
     @property
-    def quantity(self) -&gt; int:
+    def quantity(self) -> int:
         return self._quantity
 
     @property
-    def update_steps_max(self) -&gt; Optional[Union[int, Tensor]]:
+    def update_steps_max(self) -> Optional[Union[int, Tensor]]:
         return self.hopfield.update_steps_max
 
     @property
-    def update_steps_eps(self) -&gt; Optional[Union[float, Tensor]]:
+    def update_steps_eps(self) -> Optional[Union[float, Tensor]]:
         return self.hopfield.update_steps_eps
 
     @property
-    def stored_pattern_as_static(self) -&gt; bool:
+    def stored_pattern_as_static(self) -> bool:
         return self.hopfield.stored_pattern_as_static
 
     @property
-    def state_pattern_as_static(self) -&gt; bool:
+    def state_pattern_as_static(self) -> bool:
         return self.hopfield.state_pattern_as_static
 
     @property
-    def pattern_projection_as_static(self) -&gt; bool:
+    def pattern_projection_as_static(self) -> bool:
         return self.hopfield.pattern_projection_as_static
 
     @property
-    def normalize_stored_pattern(self) -&gt; bool:
+    def normalize_stored_pattern(self) -> bool:
         return self.hopfield.normalize_stored_pattern
 
     @property
-    def normalize_stored_pattern_affine(self) -&gt; bool:
+    def normalize_stored_pattern_affine(self) -> bool:
         return self.hopfield.normalize_stored_pattern_affine
 
     @property
-    def normalize_state_pattern(self) -&gt; bool:
+    def normalize_state_pattern(self) -> bool:
         return self.hopfield.normalize_state_pattern
 
     @property
-    def normalize_state_pattern_affine(self) -&gt; bool:
+    def normalize_state_pattern_affine(self) -> bool:
         return self.hopfield.normalize_state_pattern_affine
 
     @property
-    def normalize_pattern_projection(self) -&gt; bool:
+    def normalize_pattern_projection(self) -> bool:
         return self.hopfield.normalize_pattern_projection
 
     @property
-    def normalize_pattern_projection_affine(self) -&gt; bool:
+    def normalize_pattern_projection_affine(self) -> bool:
         return self.hopfield.normalize_pattern_projection_affine
 
 
@@ -786,7 +744,7 @@ class HopfieldLayer(Module):
             self.register_parameter(name=r'target_weights', param=None)
         self.reset_parameters()
 
-    def reset_parameters(self) -&gt; None:
+    def reset_parameters(self) -> None:
         """
         Reset lookup and lookup target weights, including underlying Hopfield association.
 
@@ -800,7 +758,7 @@ class HopfieldLayer(Module):
         if self.target_weights is not None:
             nn.init.normal_(self.target_weights, mean=0.0, std=0.02)
 
-    def _prepare_input(self, input: Tensor) -&gt; Tuple[Tensor, Tensor, Tensor]:
+    def _prepare_input(self, input: Tensor) -> Tuple[Tensor, Tensor, Tensor]:
         """
         Prepare input for Hopfield association.
 
@@ -821,7 +779,7 @@ class HopfieldLayer(Module):
         return stored_pattern, input, pattern_projection
 
     def forward(self, input: Tensor, stored_pattern_padding_mask: Optional[Tensor] = None,
-                association_mask: Optional[Tensor] = None) -&gt; Tensor:
+                association_mask: Optional[Tensor] = None) -> Tensor:
         """
         Compute Hopfield-based lookup on specified data.
 
@@ -836,7 +794,7 @@ class HopfieldLayer(Module):
             association_mask=association_mask)
 
     def get_association_matrix(self, input: Tensor, stored_pattern_padding_mask: Optional[Tensor] = None,
-                               association_mask: Optional[Tensor] = None) -&gt; Tensor:
+                               association_mask: Optional[Tensor] = None) -> Tensor:
         """
         Fetch Hopfield association matrix used for lookup gathered by passing through the specified data.
 
@@ -853,7 +811,7 @@ class HopfieldLayer(Module):
 
     def get_projected_pattern_matrix(self, input: Union[Tensor, Tuple[Tensor, Tensor]],
                                      stored_pattern_padding_mask: Optional[Tensor] = None,
-                                     association_mask: Optional[Tensor] = None) -&gt; Tensor:
+                                     association_mask: Optional[Tensor] = None) -> Tensor:
         """
         Fetch Hopfield projected pattern matrix gathered by passing through the specified data.
 
@@ -869,593 +827,87 @@ class HopfieldLayer(Module):
                 association_mask=association_mask)
 
     @property
-    def batch_first(self) -&gt; bool:
+    def batch_first(self) -> bool:
         return self.hopfield.batch_first
 
     @property
-    def scaling(self) -&gt; Union[float, Tensor]:
+    def scaling(self) -> Union[float, Tensor]:
         return self.hopfield.scaling
 
     @property
-    def stored_pattern_dim(self) -&gt; Optional[int]:
+    def stored_pattern_dim(self) -> Optional[int]:
         return self.hopfield.stored_pattern_dim
 
     @property
-    def state_pattern_dim(self) -&gt; Optional[int]:
+    def state_pattern_dim(self) -> Optional[int]:
         return self.hopfield.state_pattern_dim
 
     @property
-    def pattern_projection_dim(self) -&gt; Optional[int]:
+    def pattern_projection_dim(self) -> Optional[int]:
         return self.hopfield.pattern_projection_dim
 
     @property
-    def input_size(self) -&gt; Optional[int]:
+    def input_size(self) -> Optional[int]:
         return self.hopfield.input_size
 
     @property
-    def hidden_size(self) -&gt; int:
+    def hidden_size(self) -> int:
         return self.hopfield.hidden_size
 
     @property
-    def output_size(self) -&gt; Optional[int]:
+    def output_size(self) -> Optional[int]:
         return self.hopfield.output_size
 
     @property
-    def pattern_size(self) -&gt; Optional[int]:
+    def pattern_size(self) -> Optional[int]:
         return self.hopfield.pattern_size
 
     @property
-    def quantity(self) -&gt; int:
+    def quantity(self) -> int:
         return self._quantity
 
     @property
-    def update_steps_max(self) -&gt; Optional[Union[int, Tensor]]:
+    def update_steps_max(self) -> Optional[Union[int, Tensor]]:
         return self.hopfield.update_steps_max
 
     @property
-    def update_steps_eps(self) -&gt; Optional[Union[float, Tensor]]:
+    def update_steps_eps(self) -> Optional[Union[float, Tensor]]:
         return self.hopfield.update_steps_eps
 
     @property
-    def stored_pattern_as_static(self) -&gt; bool:
+    def stored_pattern_as_static(self) -> bool:
         return self.hopfield.stored_pattern_as_static
 
     @property
-    def state_pattern_as_static(self) -&gt; bool:
+    def state_pattern_as_static(self) -> bool:
         return self.hopfield.state_pattern_as_static
 
     @property
-    def pattern_projection_as_static(self) -&gt; bool:
+    def pattern_projection_as_static(self) -> bool:
         return self.hopfield.pattern_projection_as_static
 
     @property
-    def normalize_stored_pattern(self) -&gt; bool:
+    def normalize_stored_pattern(self) -> bool:
         return self.hopfield.normalize_stored_pattern
 
     @property
-    def normalize_stored_pattern_affine(self) -&gt; bool:
+    def normalize_stored_pattern_affine(self) -> bool:
         return self.hopfield.normalize_stored_pattern_affine
 
     @property
-    def normalize_state_pattern(self) -&gt; bool:
+    def normalize_state_pattern(self) -> bool:
         return self.hopfield.normalize_state_pattern
 
     @property
-    def normalize_state_pattern_affine(self) -&gt; bool:
+    def normalize_state_pattern_affine(self) -> bool:
         return self.hopfield.normalize_state_pattern_affine
 
     @property
-    def normalize_pattern_projection(self) -&gt; bool:
+    def normalize_pattern_projection(self) -> bool:
         return self.hopfield.normalize_pattern_projection
 
     @property
-    def normalize_pattern_projection_affine(self) -&gt; bool:
-        return self.hopfield.normalize_pattern_projection_affine</code></pre></div></div></div><div class="model"><div class="wrapper"><div class="content"><h1>Long Short-Term Memory (1997)</h1><p>LSTM networks were introduced by J. Schmidhuber in 1997. LSTMs are a large improvement over the standard recurrent neural network as they enabled a way for better processing of historical data and a kind of solution to the vanishing gradient problem that plagued vanilla RNNs. LSTMs use quite a complex architecture which involves the use of several gates that we call the input, output and forget gates. These gates are composed into a cell and the composition of them allow for memory over arbitrary time intervals.</p></div><div class="code"><pre><code class="language-python">import torch
-import torch.autograd as autograd
-import torch.nn as nn
-import torch.functional as F
-import torch.optim as optim
-
-from torch.nn.utils.rnn import pack_padded_sequence, pad_packed_sequence
-
-
-class LSTMClassifier(nn.Module):
-
-	def __init__(self, vocab_size, embedding_dim, hidden_dim, output_size):
-
-		super(LSTMClassifier, self).__init__()
-
-		self.embedding_dim = embedding_dim
-		self.hidden_dim = hidden_dim
-		self.vocab_size = vocab_size
-
-		self.embedding = nn.Embedding(vocab_size, embedding_dim)
-		self.lstm = nn.LSTM(embedding_dim, hidden_dim, num_layers=1)
-
-		self.hidden2out = nn.Linear(hidden_dim, output_size)
-		self.softmax = nn.LogSoftmax()
-
-		self.dropout_layer = nn.Dropout(p=0.2)
-
-
-	def init_hidden(self, batch_size):
-		return(autograd.Variable(torch.randn(1, batch_size, self.hidden_dim)),
-						autograd.Variable(torch.randn(1, batch_size, self.hidden_dim)))
-
-
-	def forward(self, batch, lengths):
-		
-		self.hidden = self.init_hidden(batch.size(-1))
-
-		embeds = self.embedding(batch)
-		packed_input = pack_padded_sequence(embeds, lengths)
-		outputs, (ht, ct) = self.lstm(packed_input, self.hidden)
-
-		# ht is the last hidden state of the sequences
-		# ht = (1 x batch_size x hidden_dim)
-		# ht[-1] = (batch_size x hidden_dim)
-		output = self.dropout_layer(ht[-1])
-		output = self.hidden2out(output)
-		output = self.softmax(output)
-
-		return output</code></pre></div></div></div><div class="model"><div class="wrapper"><div class="content"><h1>Boltzmann Machine (1986)</h1><p>.</p></div><div class="code"><pre><code class="language-python">import torch
-import torch.nn as nn
-import torch.nn.functional as F
-import torch.utils.data
-
-
-class RBM(nn.Module):
-    r"""Restricted Boltzmann Machine.
-    Args:
-        n_vis (int, optional): The size of visible layer. Defaults to 784.
-        n_hid (int, optional): The size of hidden layer. Defaults to 128.
-        k (int, optional): The number of Gibbs sampling. Defaults to 1.
-    """
-
-    def __init__(self, n_vis=784, n_hid=128, k=1):
-        """Create a RBM."""
-        super(RBM, self).__init__()
-        self.v = nn.Parameter(torch.randn(1, n_vis))
-        self.h = nn.Parameter(torch.randn(1, n_hid))
-        self.W = nn.Parameter(torch.randn(n_hid, n_vis))
-        self.k = k
-
-    def visible_to_hidden(self, v):
-        r"""Conditional sampling a hidden variable given a visible variable.
-        Args:
-            v (Tensor): The visible variable.
-        Returns:
-            Tensor: The hidden variable.
-        """
-        p = torch.sigmoid(F.linear(v, self.W, self.h))
-        return p.bernoulli()
-
-    def hidden_to_visible(self, h):
-        r"""Conditional sampling a visible variable given a hidden variable.
-        Args:
-            h (Tendor): The hidden variable.
-        Returns:
-            Tensor: The visible variable.
-        """
-        p = torch.sigmoid(F.linear(h, self.W.t(), self.v))
-        return p.bernoulli()
-
-    def free_energy(self, v):
-        r"""Free energy function.
-        .. math::
-            \begin{align}
-                F(x) &amp;= -\log \sum_h \exp (-E(x, h)) \\
-                &amp;= -a^\top x - \sum_j \log (1 + \exp(W^{\top}_jx + b_j))\,.
-            \end{align}
-        Args:
-            v (Tensor): The visible variable.
-        Returns:
-            FloatTensor: The free energy value.
-        """
-        v_term = torch.matmul(v, self.v.t())
-        w_x_h = F.linear(v, self.W, self.h)
-        h_term = torch.sum(F.softplus(w_x_h), dim=1)
-        return torch.mean(-h_term - v_term)
-
-    def forward(self, v):
-        r"""Compute the real and generated examples.
-        Args:
-            v (Tensor): The visible variable.
-        Returns:
-            (Tensor, Tensor): The real and generagted variables.
-        """
-        h = self.visible_to_hidden(v)
-        for _ in range(self.k):
-            v_gibb = self.hidden_to_visible(h)
-            h = self.visible_to_hidden(v_gibb)
-        return v, v_gibb</code></pre></div></div></div><div class="model"><div class="wrapper"><div class="content"><h1>Echo State Network (2004)</h1><p>Echo State Networks belong to a class of networks called reservoir computing models. Echo State Networks are composed of a reservoir (or reservoirs in deep variants) that consist of a moderate amount of sparse and randomly connected neurons. The weights and the connections between the neurons are fixed. The output of this reservoir is piped back in to the reservoir in a recurrent fasion. The connectivity of the neuron is initialized such that the spectral radius of the reservoir is less than 1. This property ensures that the recurrent state that is passed back into the reservoir slowly decays over time (like an echo). The reservoir is then passed to fully connected neurons with learned weights. Echo State Networks are very fast and well suited for simplistic series data. The chaotic and cyclical behavior of the reservoir makes it especially suited to time series forecasting.</p></div><div class="code"><pre><code class="language-python">import torch
-import torch.nn as nn
-from torch.nn.utils.rnn import PackedSequence, pad_packed_sequence
-from .reservoir import Reservoir
-from ..utils import washout_tensor
-
-
-class ESN(nn.Module):
-    """ Applies an Echo State Network to an input sequence. Multi-layer Echo
-    State Network is based on paper
-    Deep Echo State Network (DeepESN): A Brief Survey - Gallicchio, Micheli 2017
-
-    Args:
-        input_size: The number of expected features in the input x.
-        hidden_size: The number of features in the hidden state h.
-        output_size: The number of expected features in the output y.
-        num_layers: Number of recurrent layers. Default: 1
-        nonlinearity: The non-linearity to use ['tanh'|'relu'|'id'].
-            Default: 'tanh'
-        batch_first: If ``True``, then the input and output tensors are provided
-            as (batch, seq, feature). Default: ``False``
-        leaking_rate: Leaking rate of reservoir's neurons. Default: 1
-        spectral_radius: Desired spectral radius of recurrent weight matrix.
-            Default: 0.9
-        w_ih_scale: Scale factor for first layer's input weights (w_ih_l0). It
-            can be a number or a tensor of size '1 + input_size' and first element
-            is the bias' scale factor. Default: 1
-        lambda_reg: Ridge regression's shrinkage parameter. Default: 1
-        density: Recurrent weight matrix's density. Default: 1
-        w_io: If 'True', then the network uses trainable input-to-output
-            connections. Default: ``False``
-        readout_training: Readout's traning algorithm ['gd'|'svd'|'cholesky'|'inv'].
-            If 'gd', gradients are accumulated during backward
-            pass. If 'svd', 'cholesky' or 'inv', the network will learn readout's
-            parameters during the forward pass using ridge regression. The
-            coefficients are computed using SVD, Cholesky decomposition or
-            standard ridge regression formula. 'gd', 'cholesky' and 'inv'
-            permit the usage of mini-batches to train the readout.
-            If 'inv' and matrix is singular, pseudoinverse is used.
-        output_steps: defines how the reservoir's output will be used by ridge
-            regression method ['all', 'mean', 'last'].
-            If 'all', the entire reservoir output matrix will be used.
-            If 'mean', the mean of reservoir output matrix along the timesteps
-            dimension will be used.
-            If 'last', only the last timestep of the reservoir output matrix
-            will be used.
-            'mean' and 'last' are useful for classification tasks.
-
-    Inputs: input, washout, h_0, target
-        input (seq_len, batch, input_size): tensor containing the features of
-            the input sequence. The input can also be a packed variable length
-            sequence. See `torch.nn.utils.rnn.pack_padded_sequence`
-        washout (batch): number of initial timesteps during which output of the
-            reservoir is not forwarded to the readout. One value per batch's
-            sample.
-        h_0 (num_layers, batch, hidden_size): tensor containing
-             the initial reservoir's hidden state for each element in the batch.
-             Defaults to zero if not provided.
-
-        target (seq_len*batch - washout*batch, output_size): tensor containing
-            the features of the batch's target sequences rolled out along one
-            axis, minus the washouts and the padded values. It is only needed
-            for readout's training in offline mode. Use `prepare_target` to
-            compute it.
-
-    Outputs: output, h_n
-        - output (seq_len, batch, hidden_size): tensor containing the output
-        features (h_k) from the readout, for each k.
-        - **h_n** (num_layers * num_directions, batch, hidden_size): tensor
-          containing the reservoir's hidden state for k=seq_len.
-    """
-
-    def __init__(self, input_size, hidden_size, output_size, num_layers=1,
-                 nonlinearity='tanh', batch_first=False, leaking_rate=1,
-                 spectral_radius=0.9, w_ih_scale=1, lambda_reg=0, density=1,
-                 w_io=False, readout_training='svd', output_steps='all'):
-        super(ESN, self).__init__()
-
-        self.input_size = input_size
-        self.hidden_size = hidden_size
-        self.output_size = output_size
-        self.num_layers = num_layers
-        if nonlinearity == 'tanh':
-            mode = 'RES_TANH'
-        elif nonlinearity == 'relu':
-            mode = 'RES_RELU'
-        elif nonlinearity == 'id':
-            mode = 'RES_ID'
-        else:
-            raise ValueError("Unknown nonlinearity '{}'".format(nonlinearity))
-        self.batch_first = batch_first
-        self.leaking_rate = leaking_rate
-        self.spectral_radius = spectral_radius
-        if type(w_ih_scale) != torch.Tensor:
-            self.w_ih_scale = torch.ones(input_size + 1)
-            self.w_ih_scale *= w_ih_scale
-        else:
-            self.w_ih_scale = w_ih_scale
-
-        self.lambda_reg = lambda_reg
-        self.density = density
-        self.w_io = w_io
-        if readout_training in {'gd', 'svd', 'cholesky', 'inv'}:
-            self.readout_training = readout_training
-        else:
-            raise ValueError("Unknown readout training algorithm '{}'".format(
-                readout_training))
-
-        self.reservoir = Reservoir(mode, input_size, hidden_size, num_layers,
-                                   leaking_rate, spectral_radius,
-                                   self.w_ih_scale, density,
-                                   batch_first=batch_first)
-
-        if w_io:
-            self.readout = nn.Linear(input_size + hidden_size * num_layers,
-                                     output_size)
-        else:
-            self.readout = nn.Linear(hidden_size * num_layers, output_size)
-        if readout_training == 'offline':
-            self.readout.weight.requires_grad = False
-
-        if output_steps in {'all', 'mean', 'last'}:
-            self.output_steps = output_steps
-        else:
-            raise ValueError("Unknown task '{}'".format(
-                output_steps))
-
-        self.XTX = None
-        self.XTy = None
-        self.X = None
-
-    def forward(self, input, washout, h_0=None, target=None):
-        with torch.no_grad():
-            is_packed = isinstance(input, PackedSequence)
-
-            output, hidden = self.reservoir(input, h_0)
-            if is_packed:
-                output, seq_lengths = pad_packed_sequence(output,
-                                                          batch_first=self.batch_first)
-            else:
-                if self.batch_first:
-                    seq_lengths = output.size(0) * [output.size(1)]
-                else:
-                    seq_lengths = output.size(1) * [output.size(0)]
-
-            if self.batch_first:
-                output = output.transpose(0, 1)
-
-            output, seq_lengths = washout_tensor(output, washout, seq_lengths)
-
-            if self.w_io:
-                if is_packed:
-                    input, input_lengths = pad_packed_sequence(input,
-                                                          batch_first=self.batch_first)
-                else:
-                    input_lengths = [input.size(0)] * input.size(1)
-
-                if self.batch_first:
-                    input = input.transpose(0, 1)
-
-                input, _ = washout_tensor(input, washout, input_lengths)
-                output = torch.cat([input, output], -1)
-
-            if self.readout_training == 'gd' or target is None:
-                with torch.enable_grad():
-                    output = self.readout(output)
-
-                    if is_packed:
-                        for i in range(output.size(1)):
-                            if seq_lengths[i] &lt; output.size(0):
-                                output[seq_lengths[i]:, i] = 0
-
-                    if self.batch_first:
-                        output = output.transpose(0, 1)
-
-                    # Uncomment if you want packed output.
-                    # if is_packed:
-                    #     output = pack_padded_sequence(output, seq_lengths,
-                    #                                   batch_first=self.batch_first)
-
-                    return output, hidden
-
-            else:
-                batch_size = output.size(1)
-
-                X = torch.ones(target.size(0), 1 + output.size(2), device=target.device)
-                row = 0
-                for s in range(batch_size):
-                    if self.output_steps == 'all':
-                        X[row:row + seq_lengths[s], 1:] = output[:seq_lengths[s],
-                                                          s]
-                        row += seq_lengths[s]
-                    elif self.output_steps == 'mean':
-                        X[row, 1:] = torch.mean(output[:seq_lengths[s], s], 0)
-                        row += 1
-                    elif self.output_steps == 'last':
-                        X[row, 1:] = output[seq_lengths[s] - 1, s]
-                        row += 1
-
-                if self.readout_training == 'cholesky':
-                    if self.XTX is None:
-                        self.XTX = torch.mm(X.t(), X)
-                        self.XTy = torch.mm(X.t(), target)
-                    else:
-                        self.XTX += torch.mm(X.t(), X)
-                        self.XTy += torch.mm(X.t(), target)
-
-                elif self.readout_training == 'svd':
-                    # Scikit-Learn SVD solver for ridge regression.
-                    U, s, V = torch.svd(X)
-                    idx = s &gt; 1e-15  # same default value as scipy.linalg.pinv
-                    s_nnz = s[idx][:, None]
-                    UTy = torch.mm(U.t(), target)
-                    d = torch.zeros(s.size(0), 1, device=X.device)
-                    d[idx] = s_nnz / (s_nnz ** 2 + self.lambda_reg)
-                    d_UT_y = d * UTy
-                    W = torch.mm(V, d_UT_y).t()
-
-                    self.readout.bias = nn.Parameter(W[:, 0])
-                    self.readout.weight = nn.Parameter(W[:, 1:])
-                elif self.readout_training == 'inv':
-                    self.X = X
-                    if self.XTX is None:
-                        self.XTX = torch.mm(X.t(), X)
-                        self.XTy = torch.mm(X.t(), target)
-                    else:
-                        self.XTX += torch.mm(X.t(), X)
-                        self.XTy += torch.mm(X.t(), target)
-
-                return None, None
-
-    def fit(self):
-        if self.readout_training in {'gd', 'svd'}:
-            return
-
-        if self.readout_training == 'cholesky':
-            W = torch.solve(self.XTy,
-                           self.XTX + self.lambda_reg * torch.eye(
-                               self.XTX.size(0), device=self.XTX.device))[0].t()
-            self.XTX = None
-            self.XTy = None
-
-            self.readout.bias = nn.Parameter(W[:, 0])
-            self.readout.weight = nn.Parameter(W[:, 1:])
-        elif self.readout_training == 'inv':
-            I = (self.lambda_reg * torch.eye(self.XTX.size(0))).to(
-                self.XTX.device)
-            A = self.XTX + I
-            X_rank = torch.linalg.matrix_rank(A).item()
-
-            if X_rank == self.X.size(0):
-                W = torch.mm(torch.inverse(A), self.XTy).t()
-            else:
-                W = torch.mm(torch.pinverse(A), self.XTy).t()
-
-            self.readout.bias = nn.Parameter(W[:, 0])
-            self.readout.weight = nn.Parameter(W[:, 1:])
-
-            self.XTX = None
-            self.XTy = None
-
-    def reset_parameters(self):
-        self.reservoir.reset_parameters()
-        self.readout.reset_parameters()</code></pre></div></div></div><div class="model"><div class="wrapper"><div class="content"><h1>AlexNet (2012)</h1><p>AlexNet started the deep learning revolution at a time when the computational capacity of neural networks was limited. At the time, the compute required for deep networks was just infeasible, and the memory available on GPUs was not very much. While the architecture itself is not so revolutionary, and in fact it is very much a variant of LeNet, AlexNet utilized some clever tricks that allowed them to split the network onto two GPUs. AlexNet also popularized a new activation function, ReLU, which will come to be the de-facto standard for deep neural networks until today. ReLU offered an advantage with it's unbounded activation such that deep neural networks would not suffer from the vanishing gradient problem.</p></div><div class="code"><pre><code class="language-python">from functools import partial
-from typing import Any, Optional
-
-import torch
-import torch.nn as nn
-
-from ..transforms._presets import ImageClassification
-from ..utils import _log_api_usage_once
-from ._api import WeightsEnum, Weights
-from ._meta import _IMAGENET_CATEGORIES
-from ._utils import handle_legacy_interface, _ovewrite_named_param
-
-
-__all__ = ["AlexNet", "AlexNet_Weights", "alexnet"]
-
-
-class AlexNet(nn.Module):
-    def __init__(self, num_classes: int = 1000, dropout: float = 0.5) -&gt; None:
-        super().__init__()
-        _log_api_usage_once(self)
-        self.features = nn.Sequential(
-            nn.Conv2d(3, 64, kernel_size=11, stride=4, padding=2),
-            nn.ReLU(inplace=True),
-            nn.MaxPool2d(kernel_size=3, stride=2),
-            nn.Conv2d(64, 192, kernel_size=5, padding=2),
-            nn.ReLU(inplace=True),
-            nn.MaxPool2d(kernel_size=3, stride=2),
-            nn.Conv2d(192, 384, kernel_size=3, padding=1),
-            nn.ReLU(inplace=True),
-            nn.Conv2d(384, 256, kernel_size=3, padding=1),
-            nn.ReLU(inplace=True),
-            nn.Conv2d(256, 256, kernel_size=3, padding=1),
-            nn.ReLU(inplace=True),
-            nn.MaxPool2d(kernel_size=3, stride=2),
-        )
-        self.avgpool = nn.AdaptiveAvgPool2d((6, 6))
-        self.classifier = nn.Sequential(
-            nn.Dropout(p=dropout),
-            nn.Linear(256 * 6 * 6, 4096),
-            nn.ReLU(inplace=True),
-            nn.Dropout(p=dropout),
-            nn.Linear(4096, 4096),
-            nn.ReLU(inplace=True),
-            nn.Linear(4096, num_classes),
-        )
-
-    def forward(self, x: torch.Tensor) -&gt; torch.Tensor:
-        x = self.features(x)
-        x = self.avgpool(x)
-        x = torch.flatten(x, 1)
-        x = self.classifier(x)
-        return x
-
-
-class AlexNet_Weights(WeightsEnum):
-    IMAGENET1K_V1 = Weights(
-        url="https://download.pytorch.org/models/alexnet-owt-7be5be79.pth",
-        transforms=partial(ImageClassification, crop_size=224),
-        meta={
-            "num_params": 61100840,
-            "min_size": (63, 63),
-            "categories": _IMAGENET_CATEGORIES,
-            "recipe": "https://github.com/pytorch/vision/tree/main/references/classification#alexnet-and-vgg",
-            "_metrics": {
-                "ImageNet-1K": {
-                    "acc@1": 56.522,
-                    "acc@5": 79.066,
-                }
-            },
-            "_docs": """
-                These weights reproduce closely the results of the paper using a simplified training recipe.
-            """,
-        },
-    )
-    DEFAULT = IMAGENET1K_V1
-
-
-@handle_legacy_interface(weights=("pretrained", AlexNet_Weights.IMAGENET1K_V1))
-def alexnet(*, weights: Optional[AlexNet_Weights] = None, progress: bool = True, **kwargs: Any) -&gt; AlexNet:
-    """AlexNet model architecture from `One weird trick for parallelizing convolutional neural networks &lt;https://arxiv.org/abs/1404.5997&gt;`__.
-
-    .. note::
-        AlexNet was originally introduced in the `ImageNet Classification with
-        Deep Convolutional Neural Networks
-        &lt;https://papers.nips.cc/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html&gt;`__
-        paper. Our implementation is based instead on the "One weird trick"
-        paper above.
-
-    Args:
-        weights (:class:`~torchvision.models.AlexNet_Weights`, optional): The
-            pretrained weights to use. See
-            :class:`~torchvision.models.AlexNet_Weights` below for
-            more details, and possible values. By default, no pre-trained
-            weights are used.
-        progress (bool, optional): If True, displays a progress bar of the
-            download to stderr. Default is True.
-        **kwargs: parameters passed to the ``torchvision.models.squeezenet.AlexNet``
-            base class. Please refer to the `source code
-            &lt;https://github.com/pytorch/vision/blob/main/torchvision/models/alexnet.py&gt;`_
-            for more details about this class.
-
-    .. autoclass:: torchvision.models.AlexNet_Weights
-        :members:
-    """
-
-    weights = AlexNet_Weights.verify(weights)
-
-    if weights is not None:
-        _ovewrite_named_param(kwargs, "num_classes", len(weights.meta["categories"]))
-
-    model = AlexNet(**kwargs)
-
-    if weights is not None:
-        model.load_state_dict(weights.get_state_dict(progress=progress))
-
-    return model
-
-
-# The dictionary below is internal implementation detail and will be removed in v0.15
-from ._utils import _ModelURLs
-
-
-model_urls = _ModelURLs(
-    {
-        "alexnet": AlexNet_Weights.IMAGENET1K_V1.url,
-    }
+    def normalize_pattern_projection_affine(self) -> bool:
+        return self.hopfield.normalize_pattern_projection_affine
+END
 )
-</code></pre></div></div></div><div class="model"><div class="wrapper"><div><h1>Inception (2014)</h1><p>Translation invariance is one of the reasons that convolutional networks are so successful at working with images. Inception networks are an attempt at taking that idea and encoding scale invariance into convolutional networks. Rather than choosing a single kernel size at each convolutional layer, why not use several kernel sizes and concatenate their results together.</p></div></div></div><div class="model"><div class="wrapper"><div><h1>VGG (2014)</h1><p>VGG, named after the Visual Geometry Group, is probably the canonical example of the first modern deep neural network. VGG was wildy successful and they showed that 3c3 kernels were all you needed. Prior to this, networks were typically composed of different size kernels, gradually decreasing as you moved deeper into the network. The composition of stacked layers and 3x3 kernels enabled significantly larger networks and better generalization.</p></div></div></div><div class="model"><div class="wrapper"><div><h1>ResNet (2015)</h1><p>Residual Networks utilize skip connections to eliminate the vanishing gradient problem and enable ultra deep neural networks. ResNets are extremely powerful as the extra depth affords more predictive power and the skip connections allows for better optimization of early layers in the network.</p></div></div></div><div class="model"><div class="wrapper"><div><h1>ResNeXt (2016)</h1><p>.</p></div></div></div><div class="model"><div class="wrapper"><div><h1>DenseNet (2016)</h1><p>DenseNet is special for configuration of skip connections between layers. The output of each convolutional layer is passed to every single successive convolutional layer. All of these extra inputs are concatenated together.</p></div></div></div><div class="model"><div class="wrapper"><div><h1>SqueezeNet (2016)</h1><p>.</p></div></div></div><div class="model"><div class="wrapper"><div><h1>MobileNet (2017)</h1><p>.</p></div></div></div><div class="model"><div class="wrapper"><div><h1>Transformer (2017)</h1><p>.</p></div></div></div><div class="model"><div class="wrapper"><div><h1>MLP Mixer (2021)</h1><p>.</p></div></div></div><div class="model"><div class="wrapper"><div><h1>EfficientNet (2019)</h1><p>.</p></div></div></div><div class="model"><div class="wrapper"><div><h1>ConvNeXt (2022)</h1><p>.</p></div></div></div></div></main><script src="/static/prism.js"></script><script src="/static/prism-python.min.js"></script><footer><div class="wrapper"><div class="column"><h2>Site</h2><a href="/about">About</a><a href="/art">Art</a><a href="/music">Music</a><a href="">Contact</a></div><div class="column"><h2>Links</h2><a href="">Hello</a><a href="">Hello</a></div><div class="column"><h2>Hello World</h2></div></div></footer></div></body></html>
