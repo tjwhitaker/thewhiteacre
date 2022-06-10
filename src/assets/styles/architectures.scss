@@ -171,8 +171,31 @@ html {
     }
 
     .catalog {
-      & > :nth-child(odd) {
-        background: white;
+      .model {
+        padding: 0 10rem;
+
+        .wrapper {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-gap: 2rem;
+          align-items: center;
+
+          .content {
+          }
+          .code {
+            font-size: 0.7rem;
+            max-height: 20rem;
+            overflow: auto;
+
+            pre {
+              code {
+              }
+            }
+          }
+        }
+        &:nth-child(odd) {
+          background: white;
+        }
       }
     }
 

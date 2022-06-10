@@ -15,12 +15,11 @@
         (header
           (div (@ (class "wrapper"))
             (a (@ (href "/") (class "logo")) (img (@ (src "/static/logo.svg"))))
-            (nav
-              (a (@ (href "/about")) "About")
-              (a (@ (href "/art")) "Art")
-              (a (@ (href "/music")) "Music")
-              (a (@ (href "/writing")) "Writing"))
-          )) 
+              (nav 
+                (a (@ (href "/about")) "About")
+                (a (@ (href "/architectures")) "Architectures")
+                (a (@ (href "/research")) "Research"))))
+
         (main
           (div (@ (class "hero"))
             (div (@ (class "overlay")) "")
