@@ -76,10 +76,10 @@ html body .home header .wrapper nav a:hover {
 }
 html body .hero {
   width: 100%;
-  background: url(https://thewhitakerwedding.com/img/blurry-small-cartoon-crop.e0015576.jpg);
+  background: url(/static/blurry-small-cartoon.jpg);
   background-size: cover;
   background-color: white;
-  background-position: right;
+  background-position: right 70%;
   background-repeat: no-repeat;
   position: relative;
   height: 80vh;
