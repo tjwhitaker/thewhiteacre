@@ -28,6 +28,66 @@
               (p "I'm Tim and this is my beautiful wife.")
             )
           )
+
+          (div (@ (class "education"))
+            (div (@ (class "wrapper"))
+              (div
+                (h1 "Doctor of Philosophy in Computer Science")
+                (p "Colorado State University"))
+              (div
+                (h1 "Master of Science in Computer Science")
+                (p "Colorado State University"))
+              (div 
+                (h1 "Bachelor of Science in Computer Science")
+                (p "California State University, Chico"))
+              (div
+                (h1 "Relevant Coursework"))
+              (div 
+                (h1 "Awards + Publications")
+
+                (h1 "1st Place out of ~500 competitors on CoinRun in 2020 OpenAI Procgen Competition")
+                (h1 "11th Place out of ~700 competitors on All Environments in 2020 OpenAI Procgen Competition")
+
+
+                (h1 "Artificial Intelligence and Evolutionary Computation Fellowship"))
+                (p "2021")
+
+                (h1 "Prune and Tune Ensembles")
+                (p "AAAI 2022")
+
+                (h1 "Quantum Neuron Selection")
+                (p "GECCO 2022")
+
+                (h1 "Interpretable Diversity Analysis")
+                (p "Hopefully NeurIPS")
+
+                (h1 "Sparse Networks and Neuroregeneration")
+                (p "Hopefully Something")
+            )
+          )
+
+          (div (@ (class "experience"))
+            (div (@ (class "wrapper"))
+              (div 
+                (h1 "Graduate Researcher")
+                (p "2019 - Present"))
+              (div 
+                (h1 "Software Engineer")
+                (p "2015 - 2019"))
+              (div 
+                (h1 "Web Developer")
+                (p "2012 - 2014"))
+              (div
+                (h1 "Web Developer")
+                (p "2012"))
+            )
+          )
+
+          (div (@ (class "skills"))
+            (div (@ (class "wrapper"))))
+
+          (div (@ (class "interests"))
+            (div (@ (class "wrapper"))))
           
           (div (@ (class "chess"))
             (div (@ (class "wrapper"))
