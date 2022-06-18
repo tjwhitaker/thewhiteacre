@@ -76,23 +76,12 @@ html body .home header .wrapper nav a:hover {
 }
 html body .hero {
   width: 100%;
-  background: url(/static/skull.jpg);
-  background-size: contain;
-  background-color: white;
+  background-size: cover;
   background-position: right;
   background-repeat: no-repeat;
+  background-color: black;
   position: relative;
-  height: 80vh;
-}
-html body .hero .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 0;
-  background: #eeeeee;
-  opacity: 0.7;
+  height: 60vh;
 }
 html body .hero .wrapper {
   position: relative;
@@ -108,10 +97,10 @@ html body .hero .wrapper h1 {
   letter-spacing: -0.1rem;
   margin-bottom: 1rem;
   max-width: 42rem;
-  color: black;
+  color: white;
 }
 html body .hero .wrapper p {
-  color: black;
+  color: white;
   font-size: 1.1rem;
   font-style: italic;
   max-width: 35rem;
