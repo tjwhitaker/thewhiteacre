@@ -115,6 +115,43 @@ html body .hero .wrapper p {
   font-style: italic;
   margin-bottom: 2rem;
 }
+html body .education {
+  padding: 5rem 0;
+}
+html body .education h1 {
+  border-bottom: 1px solid black;
+}
+html body .education .entry {
+  padding: 2rem 0;
+}
+html body .awards {
+  padding: 5rem 0;
+  background: #eee;
+}
+html body .awards h1 {
+  border-bottom: 1px solid black;
+}
+html body .experience {
+  padding: 5rem 0;
+  background: white;
+}
+html body .experience h1 {
+  border-bottom: 1px solid black;
+}
+html body .skills {
+  padding: 5rem 0;
+  background: #eee;
+}
+html body .skills h1 {
+  border-bottom: 1px solid black;
+}
+html body .interests {
+  padding: 5rem 0;
+  background: white;
+}
+html body .interests h1 {
+  border-bottom: 1px solid black;
+}
 html body footer {
   background: #0f0f0f;
   padding: 2rem 0;

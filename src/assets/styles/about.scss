@@ -144,6 +144,56 @@ html {
       }
     }
 
+    .education {
+      padding: 5rem 0;
+      h1 {
+        border-bottom: 1px solid black;
+      }
+      .entry {
+        padding: 2rem 0;
+      }
+    }
+
+    .awards {
+      padding: 5rem 0;
+
+      h1 {
+        border-bottom: 1px solid black;
+      }
+
+      background: #eee;
+    }
+
+    .experience {
+      padding: 5rem 0;
+
+      h1 {
+        border-bottom: 1px solid black;
+      }
+
+      background: white;
+    }
+
+    .skills {
+      padding: 5rem 0;
+
+      h1 {
+        border-bottom: 1px solid black;
+      }
+
+      background: #eee;
+    }
+
+    .interests {
+      padding: 5rem 0;
+
+      h1 {
+        border-bottom: 1px solid black;
+      }
+
+      background: white;
+    }
+
     footer {
       background: #0f0f0f;
       padding: 2rem 0;

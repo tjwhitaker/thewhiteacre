@@ -32,69 +32,74 @@
 
           (div (@ (class "education"))
             (div (@ (class "wrapper"))
-              (div
-                (h1 "Doctor of Philosophy in Computer Science")
+              (h1 "Education")
+              (div (@ (class "entry"))
+                (h2 "Doctor of Philosophy in Computer Science")
                 (p "Colorado State University"))
-              (div
-                (h1 "Master of Science in Computer Science")
+              (div (@ (class "entry"))
+                (h2 "Master of Science in Computer Science")
                 (p "Colorado State University"))
-              (div 
-                (h1 "Bachelor of Science in Computer Science")
+              (div (@ (class "entry"))
+                (h2 "Bachelor of Science in Computer Science")
                 (p "California State University, Chico"))
-              (div
-                (h1 "Relevant Coursework"))
-              (div 
+              (div (@ (class "entry"))
+                (h2 "Relevant Coursework"))))
+
+          (div (@ (class "awards"))
+              (div (@ (class "wrapper"))
                 (h1 "Awards + Publications")
 
-                (h1 "1st Place out of ~500 competitors on CoinRun in 2020 OpenAI Procgen Competition")
-                (h1 "11th Place out of ~700 competitors on All Environments in 2020 OpenAI Procgen Competition")
+                (ul
+                  (li "1st Place out of ~500 competitors on CoinRun in 2020 OpenAI Procgen Competition")
+                  
+                  (li "11th Place out of ~700 competitors on All Environments in 2020 OpenAI Procgen Competition")
 
+                  (li "Artificial Intelligence and Evolutionary Computation Fellowship")
+                  (p "2021")
 
-                (h1 "Artificial Intelligence and Evolutionary Computation Fellowship"))
-                (p "2021")
+                  (li "Prune and Tune Ensembles")
+                  (p "AAAI 2022")
 
-                (h1 "Prune and Tune Ensembles")
-                (p "AAAI 2022")
+                  (li "Quantum Neuron Selection")
+                  (p "GECCO 2022")
 
-                (h1 "Quantum Neuron Selection")
-                (p "GECCO 2022")
+                  (li "Interpretable Diversity Analysis")
+                  (p "Hopefully NeurIPS")
 
-                (h1 "Interpretable Diversity Analysis")
-                (p "Hopefully NeurIPS")
-
-                (h1 "Sparse Networks and Neuroregeneration")
-                (p "Hopefully Something")
+                  (li "Sparse Networks and Neuroregeneration")
+                  (p "Hopefully Something")
+                )
             )
           )
 
           (div (@ (class "experience"))
             (div (@ (class "wrapper"))
-              (div 
-                (h1 "Graduate Researcher")
+              (h1 "Experience")
+              (div (@ (class "entry"))
+                (h2 "Graduate Researcher")
                 (p "2019 - Present"))
-              (div 
-                (h1 "Software Engineer")
+              (div (@ (class "entry"))
+                (h2 "Software Engineer")
                 (p "2015 - 2019"))
-              (div 
-                (h1 "Web Developer")
+              (div (@ (class "entry"))
+                (h2 "Web Developer")
                 (p "2012 - 2014"))
-              (div
-                (h1 "Web Developer")
+              (div (@ (class "entry"))
+                (h2 "Web Developer")
                 (p "2012"))
             )
           )
 
           (div (@ (class "skills"))
-            (div (@ (class "wrapper"))))
+            (div (@ (class "wrapper"))
+              (h1 "Skills")
+            ))
 
           (div (@ (class "interests"))
-            (div (@ (class "wrapper"))))
-          
-          (div (@ (class "chess"))
             (div (@ (class "wrapper"))
-              (h2 "Chess")
-              (iframe (@ (src "https://lichess.org/training/frame?theme=brown&bg=dark") (style "width: 400px; height: 444px;") (allowtransparency "true") (frameborder "0")) "")))
-
+              (h1 "Interests")
+            ))
+          
           (footer 
             (div (@ (class "wrapper"))
               (div (@ (class "column"))
