@@ -22,11 +22,11 @@
                 (a (@ (href "/research")) "Research"))))
 
           (main
-            (div (@ (class "hero"))
-              (div (@ (class "overlay")) "")
-                (div (@ (class "wrapper"))
-                  (h1 "Research")
-                  (p "Read on to check out a collection of my research papers.")))
+            ; (div (@ (class "hero"))
+            ;   (div (@ (class "overlay")) "")
+            ;     (div (@ (class "wrapper"))
+            ;       (h1 "Research")
+            ;       (p "Read on to check out a collection of my research papers.")))
 
             (div (@ (class "prune-and-tune-ensembles"))
               (div (@ (class "wrapper"))

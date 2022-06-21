@@ -140,6 +140,30 @@ html .gallery .item:nth-child(4) {
   grid-row-start: 4;
   grid-row-end: 7;
 }
+html .gallery .item:nth-child(5) {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 7;
+  grid-row-end: 9;
+}
+html .gallery .item:nth-child(6) {
+  grid-column-start: 3;
+  grid-column-end: 5;
+  grid-row-start: 7;
+  grid-row-end: 9;
+}
+html .gallery .item:nth-child(7) {
+  grid-column-start: 5;
+  grid-column-end: 7;
+  grid-row-start: 7;
+  grid-row-end: 9;
+}
+html .gallery .item:nth-child(8) {
+  grid-column-start: 7;
+  grid-column-end: 9;
+  grid-row-start: 7;
+  grid-row-end: 9;
+}
 html footer {
   background: white;
   padding: 2rem 0;

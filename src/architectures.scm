@@ -33,11 +33,11 @@
                 (a (@ (href "/research")) "Research"))))
 
           (main
-            (div (@ (class "hero"))
-              (div (@ (class "overlay")) "")
-                (div (@ (class "wrapper"))
-                  (h1 "Neural Network Architectures")
-                  (p "There are a lot of network architectures being released every year. This is an attempt at cataloging architectures and the ideas they introduced.")))
+            ; (div (@ (class "hero"))
+            ;   (div (@ (class "overlay")) "")
+            ;     (div (@ (class "wrapper"))
+            ;       (h1 "Neural Network Architectures")
+            ;       (p "There are a lot of network architectures being released every year. This is an attempt at cataloging architectures and the ideas they introduced.")))
 
             (div (@ (class "catalog"))
               (div (@ (class "model"))

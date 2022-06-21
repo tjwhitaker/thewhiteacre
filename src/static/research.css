@@ -152,7 +152,7 @@ html body .bar .wrapper .brands img {
   filter: opacity(0.25);
 }
 html body .quantum-neuron-selection {
-  background: #eeeeee;
+  background: white;
   padding: 10rem 0;
   background-image: url(/static/brain.svg);
   background-size: 45vw;
@@ -232,7 +232,7 @@ html body .interpretable-diversity-analysis .wrapper div .read-more {
   font-size: 0.8rem;
 }
 html body .prune-and-tune-ensembles {
-  background: white;
+  background: 0f0f0f;
   padding: 10rem 0;
   background-image: url(/static/cell-nucleus.svg);
   background-size: 45vw;

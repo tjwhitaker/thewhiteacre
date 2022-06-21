@@ -152,7 +152,7 @@ html body .catalog .model .wrapper .code {
   max-height: 20rem;
   overflow: auto;
 }
-html body .catalog .model:nth-child(odd) {
+html body .catalog .model:nth-child(even) {
   background: white;
 }
 html body .quantum-neuron-selection {
