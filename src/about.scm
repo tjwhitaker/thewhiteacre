@@ -22,13 +22,13 @@
                 (a (@ (href "/research")) "Research"))))
 
         (main
-          ; (div (@ (class "hero"))
-          ;   (div (@ (class "overlay")) "")
-          ;   (div (@ (class "wrapper"))
-          ;     (h1 "About")
-          ;     (p "I'm Tim and this is my beautiful wife.")
-          ;   )
-          ; )
+          (div (@ (class "hero"))
+            (div (@ (class "overlay")) "")
+            (div (@ (class "wrapper"))
+              (h1 " ")
+              (p " ")
+            )
+          )
 
           (div (@ (class "education"))
             (div (@ (class "wrapper"))
