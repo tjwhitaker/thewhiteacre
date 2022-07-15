@@ -1,12 +1,12 @@
-(define home-template
+(define guides-template
   (lambda ()
     `(html
       ((head
-        (title "Dead Neurons")
+        (title "Guides | Dead Neurons")
         (meta (@ (charset "utf-8")))
         (meta (@ (name "viewport") (content "width=device-width, initial-scale=1")))
         (link (@ (rel "icon") (href "/static/favicon.ico")))
-        (link (@ (rel "stylesheet") (href "/static/home.css")))
+        (link (@ (rel "stylesheet") (href "/static/research.css")))
         (link (@ (rel "stylesheet") (href "https://fonts.googleapis.com/css?family=Fira+Mono:400,500,700|&display=swap")))
         (link (@ (rel "stylesheet") (href "https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css")))
         (script (@ (src "https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js")) ""))
@@ -22,23 +22,18 @@
                 (a (@ (href "/research")) "Research"))))
 
           (main
-            (div (@ (class "hero"))
-              (div (@ (class "overlay")) "")
-                (div (@ (class "wrapper"))
-                  (h1 "Learn How To Build Better Neural Networks")
-                  (p "Welcome to Dead Neuron! My name is Tim and I'm a computer scientist studying neural networks and machine learning. Read on to check out a collection of my research papers.")))
+            ; (div (@ (class "hero"))
+            ;   (div (@ (class "overlay")) "")
+            ;     (div (@ (class "wrapper"))
+            ;       (h1 "Research")
+            ;       (p "Read on to check out a collection of my research papers.")))
+
             (div (@ (class "prune-and-tune-ensembles"))
               (div (@ (class "wrapper"))
                 (div
-                  (h1 "Prune and Tune Ensembles")
+                  (h1 "Deriving Back Propagation")
                   (p "Ensemble Learning is an effective method for improving generalization in machine learning. However, as state-of-the-art neural networks grow larger, the computational cost associated with training several independent networks becomes expensive. We introduce a fast, low-cost method for creating diverse ensembles of neural networks without needing to train multiple models from scratch. We do this by first training a single parent network. We then create child networks by cloning the parent and...")
                   (a (@ (href "/static/prune-and-tune-ensembles.pdf") (class "read-more")) "Read More"))))
-            (div (@ (class "interpretable-diversity-analysis"))
-              (div (@ (class "wrapper"))
-                (div
-                  (h1 "Interpretable Diversity Analysis")
-                  (p "Diversity is an important consideration in the construction of robust neural network ensembles. A collection of well trained models will generalize better to unseen data if they are diverse in the patterns they respond to and the predictions they make. Encouraging diversity becomes especially important for low-cost ensemble methods, as members often share network structure or training epochs in order to avoid training several independent networks from scratch...")
-                  (a (@ (href "/static/there-is-no-magic-subnetwork.pdf") (class "read-more")) "Read More"))))
             (div (@ (class "quantum-neuron-selection"))
               (div (@ (class "wrapper"))
                 (div

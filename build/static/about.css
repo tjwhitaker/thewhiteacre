@@ -91,7 +91,7 @@ html body .hero .overlay {
   right: 0;
   bottom: 0;
   z-index: 0;
-  background: rgba(0, 0, 0, 0);
+  background: rgba(0, 0, 0, 0.2);
 }
 html body .hero .wrapper {
   position: relative;
@@ -107,12 +107,37 @@ html body .hero .wrapper h1 {
   letter-spacing: -0.1rem;
   margin-bottom: 1rem;
   color: white;
+  max-width: 38rem;
 }
 html body .hero .wrapper p {
   color: white;
   font-size: 1.1rem;
   font-style: italic;
   margin-bottom: 2rem;
+  max-width: 38rem;
+}
+html body .intro {
+  display: flex;
+  align-items: center;
+}
+html body .intro .content {
+  flex: 0 0 50%;
+}
+html body .intro .image {
+  flex: 0 0 50%;
+}
+html body .climbing {
+  display: flex;
+  align-items: center;
+}
+html body .climbing .content {
+  flex: 0 0 50%;
+}
+html body .climbing .image {
+  flex: 0 0 50%;
+}
+html body .climbing .image img {
+  display: block;
 }
 html body .education {
   padding: 5rem 0;

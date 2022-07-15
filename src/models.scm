@@ -8,11 +8,11 @@
 
 (include "./models/placeholder.scm")
 
-(define architectures-template
+(define models-template
   (lambda ()
     `(html
       ((head
-        (title "Network Architectures | Dead Neuron")
+        (title "Network Architectures | Dead Neurons")
         (meta (@ (charset "utf-8")))
         (meta (@ (name "viewport") (content "width=device-width, initial-scale=1")))
         (link (@ (rel "icon") (href "/static/favicon.ico")))
@@ -25,11 +25,11 @@
         (div (@ (class "home"))
           (header
             (div (@ (class "wrapper"))
-              (a (@ (href "/") (class "logo")) (img (@ (src "/static/logo.svg"))))
+              (a (@ (href "/") (class "logo")) (img (@ (src "/static/willow.svg"))))
               (nav 
                 (a (@ (href "/about")) "About")
-                (a (@ (href "/art")) "Art")
-                (a (@ (href "/architectures")) "Models")
+                (a (@ (href "/models")) "Models")
+                (a (@ (href "/guides")) "Guides")
                 (a (@ (href "/research")) "Research"))))
 
           (main

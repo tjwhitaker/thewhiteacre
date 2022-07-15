@@ -2,7 +2,7 @@
   (lambda ()
     `(html
       ((head
-        (title "About | Dead Neuron")
+        (title "About | Dead Neurons")
         (meta (@ (charset "utf-8")))
         (meta (@ (name "viewport") (content "width=device-width, initial-scale=1")))
         (link (@ (rel "icon") (href "/static/favicon.ico")))
@@ -14,18 +14,41 @@
       (div (@ (class "home"))
         (header
           (div (@ (class "wrapper"))
-            (a (@ (href "/") (class "logo")) (img (@ (src "/static/logo.svg"))))
+            (a (@ (href "/") (class "logo")) (img (@ (src "/static/willow.svg"))))
               (nav 
                 (a (@ (href "/about")) "About")
-                (a (@ (href "/architectures")) "Models")
+                (a (@ (href "/models")) "Models")
+                (a (@ (href "/guides")) "Guides")
                 (a (@ (href "/research")) "Research"))))
 
         (main
           (div (@ (class "hero"))
             (div (@ (class "overlay")) "")
             (div (@ (class "wrapper"))
-              (h1 "")
-              (p " ")
+              (h1 "Welcome")
+              (p "My name is Tim and I'm a PhD student at Colorado State University. Dead Neurons is a website I started to share some of my neural network and machine learning research.")
+            )
+          )
+
+          ; (div (@ (class "intro"))
+          ;   (div (@ (class "content"))
+          ;     (h1 "Personal Stuff")
+          ;     (p "My name is Tim and Dead Neurons is a project I'm starting to share my passion for neural networks.")
+          ;   )
+          ;   (div (@ (class "image"))
+          ;     (img (@ (src "/static/basin.jpg")))
+          ;   )
+          ; )
+
+          (div (@ (class "climbing"))
+            (div (@ (class "content"))
+              (div (@ (class "wrapper"))
+                (h1 "Climbing")
+                (p "I love to rock climb")
+              )
+            )
+            (div (@ (class "image"))
+              (img (@ (src "/static/evilution.jpg")))
             )
           )
           

@@ -12,10 +12,8 @@
 ;; Import home-template, about-template
 (include "./home.scm")
 (include "./about.scm")
-(include "./art.scm")
-(include "./music.scm")
-(include "./writing.scm")
-(include "./architectures.scm")
+(include "./models.scm")
+(include "./guides.scm")
 (include "./research.scm")
 
 ;; Write html to the intended build file
@@ -34,25 +32,20 @@
     (define html (serialize-sxml (about-template) indent: #f method: 'html'))
     (write-html "../build/about" html)))
 
-(define build-architectures
+(define build-models
   (lambda ()
-    (define html (serialize-sxml (architectures-template) indent: #f method: 'html'))
-    (write-html "../build/architectures" html)))
+    (define html (serialize-sxml (models-template) indent: #f method: 'html'))
+    (write-html "../build/models" html)))
+
+(define build-guides
+  (lambda ()
+    (define html (serialize-sxml (guides-template) indent: #f method: 'html'))
+    (write-html "../build/guides" html)))
 
 (define build-research
   (lambda ()
     (define html (serialize-sxml (research-template) indent: #f method: 'html'))
     (write-html "../build/research" html)))
-
-(define build-art
-  (lambda ()
-    (define html (serialize-sxml (art-template) indent: #f method: 'html'))
-    (write-html "../build/art" html)))
-
-(define build-music
-  (lambda ()
-    (define html (serialize-sxml (music-template) indent: #f method: 'html'))
-    (write-html "../build/music" html)))
 
 (define build-writing
   (lambda ()
@@ -69,8 +62,6 @@
 (build-static)
 (build-home)
 (build-about)
-(build-architectures)
-(build-art)
-(build-music)
-(build-writing)
+(build-models)
+(build-guides)
 (build-research)
