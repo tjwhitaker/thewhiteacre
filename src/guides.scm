@@ -33,8 +33,8 @@
                 (div (@ (class "wrapper"))
                   (div
                     (h1 "Deriving Back Propagation")
-                    (p "Ensemble Learning is an effective method for improving generalization in machine learning. However, as state-of-the-art neural networks grow larger, the computational cost associated with training several independent networks becomes expensive. We introduce a fast, low-cost method for creating diverse ensembles of neural networks without needing to train multiple models from scratch. We do this by first training a single parent network. We then create child networks by cloning the parent and...")
-                    (a (@ (href "/static/prune-and-tune-ensembles.pdf") (class "read-more")) "Read More"))))))
+                    (p "Coming soon...")
+                    (a (@ (href "#") (class "read-more")) "Read More"))))))
 
 
           (footer

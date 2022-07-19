@@ -133,11 +133,31 @@ html body .personal {
 html body .personal .content {
   flex: 0 0 50%;
 }
+html body .personal .content .wrapper {
+  max-width: 60%;
+}
+html body .personal .content .wrapper p {
+  margin-bottom: 1rem;
+}
 html body .personal .image {
   flex: 0 0 50%;
 }
 html body .personal .image img {
   display: block;
+}
+html body .professional .education .item {
+  padding: 1rem 0;
+}
+html body .professional .education .item .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+html body .professional .education .item .header h2 {
+  font-size: 1rem;
+}
+html body .professional .education .item .header span {
+  font-weight: bold;
 }
 html body .gallery {
   background: black;
