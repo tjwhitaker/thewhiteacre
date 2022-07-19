@@ -261,7 +261,7 @@ html {
     }
 
     footer {
-      background: #0f0f0f;
+      background: white;
       padding: 2rem 0;
 
       .wrapper {
@@ -271,7 +271,7 @@ html {
 
         .column {
           h2 {
-            color: white;
+            color: black;
             font-family: Helvetica;
             text-transform: uppercase;
             margin-bottom: 1rem;
@@ -281,7 +281,7 @@ html {
             display: block;
             width: max-content;
             margin-bottom: 1rem;
-            color: #aaa;
+            color: black;
             font-family: Helvetica;
             font-size: 0.8rem;
           }
