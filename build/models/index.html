@@ -1,47 +1,37 @@
-<!DOCTYPE html><html><head><title>Network Architectures | Dead Neurons</title><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><link rel="icon" href="/static/favicon.ico" /><link rel="stylesheet" href="/static/architectures.css" /><link rel="stylesheet" href="/static/prism.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,500,700|&amp;display=swap" /><link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css" /><script src="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js"></script></head><body><div class="home"><header><div class="wrapper"><a href="/" class="logo"><img src="/static/willow.svg" /></a><nav><a href="/about">About</a><a href="/models">Models</a><a href="/guides">Guides</a><a href="/research">Research</a></nav></div></header><main><div class="catalog"><div class="model"><div class="wrapper"><div class="content"><h1>Perceptron (1958)</h1><h2>Frank Rosenblatt</h2><p>The first neural network so to speak.</p></div><div class="code"><pre><code class="language-python">import torch
-import torch.nn as nn
+<!DOCTYPE html><html><head><title>Network Architectures | Dead Neurons</title><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><link rel="icon" href="/static/favicon.ico" /><link rel="stylesheet" href="/static/architectures.css" /><link rel="stylesheet" href="/static/prism.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,500,700|&amp;display=swap" /><link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css" /><script src="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js"></script></head><body><div class="home"><header><div class="wrapper"><a href="/" class="logo"><img src="/static/willow.svg" /></a><nav><a href="/about">About</a><a href="/models">Models</a><a href="/guides">Guides</a><a href="/research">Research</a></nav></div></header><main><div class="catalog"><div class="model"><div class="wrapper"><div class="content"><h1>Perceptron (1958)</h1><h2>Frank Rosenblatt</h2><p>The first neural network so to speak.</p></div><div class="code"><pre><code class="language-julia">using Flux: Chain, Dense, relu
 
+function mlp(i::Int, d::Int, w::Int, o::Int)
+  hidden_layers = [Dense(w =&gt; w, relu) for _ in 1:d]
+  
+  return Chain(
+    Dense(i =&gt; w, relu),
+    hidden_layers...,
+    Dense(w, o)
+  )
+end</code></pre></div></div></div><div class="model"><div class="wrapper"><div class="content"><h1>LeNet (1989)</h1><p>LeNet was one of the first convolutional neural networks, introduced in 1989 by Yann LeCun at Bell Labs, and it has been a foundational piece of work in the field of computer vision. LeNet laid the groundwork for how convolutional architectures will be structured for the next several decades.</p></div><div class="code"><pre><code class="language-julia">using Flux: Chain, Conv, Dense, MaxPool, flatten, relu
 
-class MLP(nn.Module):
-    def __init__(self, n_features=784, n_outputs=10, layer_configuration=[50,40,30]):
-        super(Net, self).__init__()
-        layers = [
-          nn.Linear(n_features, layer_configuration[0]),
-          nn.ReLU(),
-        ]
+function lenet(i::Tuple{Int, Int, Int}, o::Int)
+  conv_layers = [
+    Conv((5, 5), i[end] =&gt; 6, relu),
+    MaxPool((2,2)),
+    Conv((5, 5), 6 =&gt; 16, relu),
+    MaxPool((2,2))
+  ]
 
-        for i in range(len(layer_configuration) - 1):
-          layers.append(nn.Linear(layer_configuration[i], layer_configuration[i+1]))
-          layers.append(nn.ReLU())
+  conv_output_size = prod(Flux.outputsize(conv_layers, i, padbatch=true))
 
-        layers.append(nn.Linear(layer_configuration[-1], n_outputs))
+  dense_layers = [
+    flatten,
+    Dense(conv_output_size =&gt; 120, relu),
+    Dense(120 =&gt; 84, relu),
+    Dense(84, o)
+  ]
 
-        self.layers = nn.Sequential(layers)
-
-    def forward(self, x):
-        return self.layers(x)</code></pre></div></div></div><div class="model"><div class="wrapper"><div class="content"><h1>LeNet (1989)</h1><p>LeNet was one of the first convolutional neural networks, introduced in 1989 by Yann LeCun at Bell Labs, and it has been a foundational piece of work in the field of computer vision. LeNet laid the groundwork for how convolutional architectures will be structured for the next several decades.</p></div><div class="code"><pre><code class="language-python">import torch
-import torch.nn as nn
-import torch.nn.functional as F
-
-
-class LeNet(nn.Module):
-    def __init__(self):
-        super(Net, self).__init__()
-        self.conv1 = nn.Conv2d(1, 6, 5)
-        self.conv2 = nn.Conv2d(6, 16, 5)
-        self.pool = nn.MaxPool2d(kernel_size=2)
-        self.fc1 = nn.Linear(256, 120)
-        self.fc2(120, 84)
-        self.fc3 = nn.Linear(84, 10)
-
-    def forward(self, x):
-        x = self.pool(F.relu(self.conv1(x)))
-        x = self.pool(F.relu(self.conv2(x)))
-        x = x.view(x.size(0), -1)
-        x = F.relu(self.fc1(x))
-        x = F.relu(self.fc2(x))
-        x = self.fc3(x)
-        return x</code></pre></div></div></div><div class="model"><div class="wrapper"><div class="content"><h1>Hopfield Network (1982)</h1><p>.</p></div><div class="code"><pre><code class="language-python">import torch
+  return Chain(
+    conv_layers...,
+    dense_layers...
+  )
+end</code></pre></div></div></div><div class="model"><div class="wrapper"><div class="content"><h1>Hopfield Network (1982)</h1><p>.</p></div><div class="code"><pre><code class="language-python">import torch
 import torch.nn as nn
 
 from math import sqrt
@@ -1458,4 +1448,4 @@ model_urls = _ModelURLs(
         "alexnet": AlexNet_Weights.IMAGENET1K_V1.url,
     }
 )
-</code></pre></div></div></div><div class="model"><div class="wrapper"><div class="content"><h1>Inception (2014)</h1><p>Translation invariance is one of the reasons that convolutional networks are so successful at working with images. Inception networks are an attempt at taking that idea and encoding scale invariance into convolutional networks. Rather than choosing a single kernel size at each convolutional layer, why not use several kernel sizes and concatenate their results together.</p></div><div class="code"><pre><code class="language-python">Coming Soon...</code></pre></div></div></div><div class="model"><div class="wrapper"><div class="content"><h1>VGG (2014)</h1><p>VGG, named after the Visual Geometry Group, is probably the canonical example of the first modern deep neural network. VGG was wildy successful and they showed that 3c3 kernels were all you needed. Prior to this, networks were typically composed of different size kernels, gradually decreasing as you moved deeper into the network. The composition of stacked layers and 3x3 kernels enabled significantly larger networks and better generalization.</p></div><div class="code"><pre><code class="language-python">Coming Soon...</code></pre></div></div></div><div class="model"><div class="wrapper"><div class="content"><h1>ResNet (2015)</h1><p>Residual Networks utilize skip connections to eliminate the vanishing gradient problem and enable ultra deep neural networks. ResNets are extremely powerful as the extra depth affords more predictive power and the skip connections allows for better optimization of early layers in the network.</p></div><div class="code"><pre><code class="language-python">Coming Soon...</code></pre></div></div></div><div class="model"><div class="wrapper"><div class="content"><h1>ResNeXt (2016)</h1><p>.</p></div><div class="code"><pre><code class="language-python">Coming Soon...</code></pre></div></div></div><div class="model"><div class="wrapper"><div class="content"><h1>DenseNet (2016)</h1><p>DenseNet is special for configuration of skip connections between layers. The output of each convolutional layer is passed to every single successive convolutional layer. All of these extra inputs are concatenated together.</p></div><div class="code"><pre><code class="language-python">Coming Soon...</code></pre></div></div></div><div class="model"><div class="wrapper"><div class="content"><h1>SqueezeNet (2016)</h1><p>.</p></div><div class="code"><pre><code class="language-python">Coming Soon...</code></pre></div></div></div><div class="model"><div class="wrapper"><div class="content"><h1>MobileNet (2017)</h1><p>.</p></div><div class="code"><pre><code class="language-python">Coming Soon...</code></pre></div></div></div><div class="model"><div class="wrapper"><div class="content"><h1>Transformer (2017)</h1><p>.</p></div><div class="code"><pre><code class="language-python">Coming Soon...</code></pre></div></div></div><div class="model"><div class="wrapper"><div class="content"><h1>MLP Mixer (2021)</h1><p>.</p></div><div class="code"><pre><code class="language-python">Coming Soon...</code></pre></div></div></div><div class="model"><div class="wrapper"><div class="content"><h1>EfficientNet (2019)</h1><p>.</p></div><div class="code"><pre><code class="language-python">Coming Soon...</code></pre></div></div></div><div class="model"><div class="wrapper"><div class="content"><h1>ConvNeXt (2022)</h1><p>.</p></div><div class="code"><pre><code class="language-python">Coming Soon...</code></pre></div></div></div></div></main><script src="/static/prism.js"></script><script src="/static/prism-python.min.js"></script><footer><div class="wrapper"><div class="column"><h2>Site</h2><a href="/about">About</a><a href="/art">Art</a><a href="/music">Music</a><a href="">Contact</a></div><div class="column"><h2>Links</h2><a href="">Hello</a><a href="">Hello</a></div><div class="column"><h2>Hello World</h2></div></div></footer></div></body></html>
+</code></pre></div></div></div><div class="model"><div class="wrapper"><div class="content"><h1>Inception (2014)</h1><p>Translation invariance is one of the reasons that convolutional networks are so successful at working with images. Inception networks are an attempt at taking that idea and encoding scale invariance into convolutional networks. Rather than choosing a single kernel size at each convolutional layer, why not use several kernel sizes and concatenate their results together.</p></div><div class="code"><pre><code class="language-python">Coming Soon...</code></pre></div></div></div><div class="model"><div class="wrapper"><div class="content"><h1>VGG (2014)</h1><p>VGG, named after the Visual Geometry Group, is probably the canonical example of the first modern deep neural network. VGG was wildy successful and they showed that 3c3 kernels were all you needed. Prior to this, networks were typically composed of different size kernels, gradually decreasing as you moved deeper into the network. The composition of stacked layers and 3x3 kernels enabled significantly larger networks and better generalization.</p></div><div class="code"><pre><code class="language-python">Coming Soon...</code></pre></div></div></div><div class="model"><div class="wrapper"><div class="content"><h1>ResNet (2015)</h1><p>Residual Networks utilize skip connections to eliminate the vanishing gradient problem and enable ultra deep neural networks. ResNets are extremely powerful as the extra depth affords more predictive power and the skip connections allows for better optimization of early layers in the network.</p></div><div class="code"><pre><code class="language-python">Coming Soon...</code></pre></div></div></div><div class="model"><div class="wrapper"><div class="content"><h1>ResNeXt (2016)</h1><p>.</p></div><div class="code"><pre><code class="language-python">Coming Soon...</code></pre></div></div></div><div class="model"><div class="wrapper"><div class="content"><h1>DenseNet (2016)</h1><p>DenseNet is special for configuration of skip connections between layers. The output of each convolutional layer is passed to every single successive convolutional layer. All of these extra inputs are concatenated together.</p></div><div class="code"><pre><code class="language-python">Coming Soon...</code></pre></div></div></div><div class="model"><div class="wrapper"><div class="content"><h1>SqueezeNet (2016)</h1><p>.</p></div><div class="code"><pre><code class="language-python">Coming Soon...</code></pre></div></div></div><div class="model"><div class="wrapper"><div class="content"><h1>MobileNet (2017)</h1><p>.</p></div><div class="code"><pre><code class="language-python">Coming Soon...</code></pre></div></div></div><div class="model"><div class="wrapper"><div class="content"><h1>Transformer (2017)</h1><p>.</p></div><div class="code"><pre><code class="language-python">Coming Soon...</code></pre></div></div></div><div class="model"><div class="wrapper"><div class="content"><h1>MLP Mixer (2021)</h1><p>.</p></div><div class="code"><pre><code class="language-python">Coming Soon...</code></pre></div></div></div><div class="model"><div class="wrapper"><div class="content"><h1>EfficientNet (2019)</h1><p>.</p></div><div class="code"><pre><code class="language-python">Coming Soon...</code></pre></div></div></div><div class="model"><div class="wrapper"><div class="content"><h1>ConvNeXt (2022)</h1><p>.</p></div><div class="code"><pre><code class="language-python">Coming Soon...</code></pre></div></div></div></div></main><script src="/static/prism.js"></script><script src="/static/prism-python.min.js"></script><script src="/static/prism-julia.min.js"></script><footer><div class="wrapper"><div class="column"><h2>Site</h2><a href="/about">About</a><a href="/art">Art</a><a href="/music">Music</a><a href="">Contact</a></div><div class="column"><h2>Links</h2><a href="">Hello</a><a href="">Hello</a></div><div class="column"><h2>Hello World</h2></div></div></footer></div></body></html>

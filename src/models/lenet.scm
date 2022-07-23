@@ -1,26 +1,27 @@
 (define lenet #<<END
-import torch
-import torch.nn as nn
-import torch.nn.functional as F
+using Flux: Chain, Conv, Dense, MaxPool, flatten, outputsize relu
 
+function lenet(i::Tuple{Int, Int, Int}, o::Int)
+  conv_layers = [
+    Conv((5, 5), i[end] => 6, relu),
+    MaxPool((2, 2)),
+    Conv((5, 5), 6 => 16, relu),
+    MaxPool((2, 2))
+  ]
 
-class LeNet(nn.Module):
-    def __init__(self):
-        super(Net, self).__init__()
-        self.conv1 = nn.Conv2d(1, 6, 5)
-        self.conv2 = nn.Conv2d(6, 16, 5)
-        self.pool = nn.MaxPool2d(kernel_size=2)
-        self.fc1 = nn.Linear(256, 120)
-        self.fc2(120, 84)
-        self.fc3 = nn.Linear(84, 10)
+  conv_output_size = prod(outputsize(conv_layers, i, padbatch=true))
 
-    def forward(self, x):
-        x = self.pool(F.relu(self.conv1(x)))
-        x = self.pool(F.relu(self.conv2(x)))
-        x = x.view(x.size(0), -1)
-        x = F.relu(self.fc1(x))
-        x = F.relu(self.fc2(x))
-        x = self.fc3(x)
-        return x
+  dense_layers = [
+    flatten,
+    Dense(conv_output_size => 120, relu),
+    Dense(120 => 84, relu),
+    Dense(84, o)
+  ]
+
+  return Chain(
+    conv_layers...,
+    dense_layers...
+  )
+end
 END
 )

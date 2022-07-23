@@ -47,7 +47,7 @@
                     (h2 "Frank Rosenblatt")
                     (p "The first neural network so to speak."))
                   (div (@ (class "code"))
-                    (pre  (code (@ (class "language-python")) (unquote perceptron))))))
+                    (pre  (code (@ (class "language-julia")) (unquote perceptron))))))
               
               (div (@ (class "model"))
                 (div (@ (class "wrapper"))
@@ -55,7 +55,7 @@
                     (h1 "LeNet (1989)")
                     (p "LeNet was one of the first convolutional neural networks, introduced in 1989 by Yann LeCun at Bell Labs, and it has been a foundational piece of work in the field of computer vision. LeNet laid the groundwork for how convolutional architectures will be structured for the next several decades."))
                   (div (@ (class "code"))
-                    (pre (code (@ (class "language-python")) (unquote lenet))))))
+                    (pre (code (@ (class "language-julia")) (unquote lenet))))))
               
               (div (@ (class "model"))
                 (div (@ (class "wrapper"))
@@ -63,7 +63,7 @@
                     (h1 "Hopfield Network (1982)")
                     (p "."))
                   (div (@ (class "code"))
-                    (pre (code (@ (class "language-python")) (unquote hopfield))))))
+                    (pre (code (@ (class "language-python")) (unquote placeholder))))))
               
               (div (@ (class "model"))
                 (div (@ (class "wrapper"))
@@ -189,6 +189,7 @@
 
           (script (@ (src "/static/prism.js")) "")
           (script (@ (src "/static/prism-python.min.js")) "")
+          (script (@ (src "/static/prism-julia.min.js")) "")
           (footer
             (div (@ (class "wrapper"))
               (div (@ (class "column"))
