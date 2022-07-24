@@ -55,6 +55,9 @@ html {
     color: black;
     background: #f7f7f7;
 
+    main {
+      min-height:75vh;
+    }
     .home {
       header {
         width: 100%;
