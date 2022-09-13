@@ -17,8 +17,7 @@
             (a (@ (href "/") (class "logo")) (img (@ (src "/static/willow.svg"))))
               (nav 
                 (a (@ (href "/about")) "About")
-                (a (@ (href "/models")) "Models")
-                (a (@ (href "/guides")) "Guides")
+                (a (@ (href "/blog")) "Blog")
                 (a (@ (href "/research")) "Research"))))
 
         (main
@@ -34,7 +33,7 @@
             (div (@ (class "content"))
               (div (@ (class "wrapper"))
                 (h1 "About Me")
-                (p "Hi. I'm Tim Whitaker. I am a 30 year old computer scientist trying to find my way in this world. I live in Sacramento, California and I just married my best friend, Alyssa, this last year.")
+                (p "I am a 30 year old computer scientist trying to find my way in this world. I live in Sacramento, California and I just married my best friend, Alyssa, this last year.")
                 (p "I graduated from Chico State University with a B.S. in computer science. I worked as a web developer/software engineer for 5 years before deciding to go back to school to pursue an interest in machine learning and neural networks. I finished my M.S. and am happily pursuing my PhD!")
                 (p "When I am not programming or working on my research, I am probably rock climbing or playing chess!")
               )

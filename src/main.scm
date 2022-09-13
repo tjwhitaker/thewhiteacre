@@ -13,7 +13,8 @@
 (include "./home.scm")
 (include "./about.scm")
 (include "./models.scm")
-(include "./guides.scm")
+(include "./blog.scm")
+(include "./post.scm")
 (include "./research.scm")
 
 ;; Write html to the intended build file
@@ -21,6 +22,53 @@
   (lambda (directory html)
     (create-directory directory #t)
     (call-with-output-file (conc directory "/index.html") (lambda (port) (display (conc "<!DOCTYPE html>" html) port)))))
+
+;; Parse org file for meta tags and content
+(define parse-org-file
+  (lambda (directory filename)
+    (define text 
+      (call-with-input-file 
+        (conc directory filename) 
+        (lambda (port) (read-string #f port))))
+    (define match
+      (irregex-search
+        '(: "TITLE: " (=> title (*? any)) eol (*? any)
+            "DESCRIPTION: " (=> description (*? any)) eol (*? any)
+            "DATE: " (=> date (*? any)) eol) text))
+    `((title ,(irregex-match-substring match 'title))
+      (description ,(irregex-match-substring match 'description))
+      (date ,(irregex-match-substring match 'date))
+      (slug ,(string-chomp filename ".org"))
+      (content ,(capture ,(conc "pandoc articles/" filename " --katex -f org -t html"))))))
+
+(define inject-field
+  (lambda (placeholder template value)
+    (irregex-replace placeholder template value)))
+
+;; Build a feed of all articles
+(define build-feed
+  (lambda ()
+    (define posts 
+      (map 
+        (lambda (x) (parse-org-file "articles/" x)) 
+        (directory "articles")))
+    (sort! posts (lambda (a b)
+      (date<?
+        (string->date (cadr (assoc 'date a)) "~Y-~m-~d")
+        (string->date (cadr (assoc 'date b)) "~Y-~m-~d"))))))
+
+;; Build blog pages
+(define build-articles
+  (lambda (feed)
+    (map 
+      (lambda (article) 
+        (define template (serialize-sxml (article-template feed) indent: #f method: 'html))
+        (define temp (inject-field "<ARTICLE-TITLE />" template (cadr (assoc 'title article))))
+        (define html (inject-field "<ARTICLE-CONTENT />" temp (cadr (assoc 'content article))))
+
+        ; (define html (irregex-replace "<CONTEXT />" template (cadr (assoc 'content article))))
+        (write-html (conc "../build/" (cadr (assoc 'slug article))) html))
+      feed)))
 
 (define build-home
   (lambda ()
@@ -37,10 +85,23 @@
     (define html (serialize-sxml (models-template) indent: #f method: 'html'))
     (write-html "../build/models" html)))
 
-(define build-guides
-  (lambda ()
-    (define html (serialize-sxml (guides-template) indent: #f method: 'html'))
-    (write-html "../build/guides" html)))
+(define build-blog
+  (lambda (feed)
+    (define html (serialize-sxml (blog-template feed) indent: #f method: 'html'))
+    (write-html "../build/blog" html)))
+
+;; Build article pages
+(define build-posts
+  (lambda (feed)
+    (map 
+      (lambda (article) 
+        (define template (serialize-sxml (post-template feed) indent: #f method: 'html))
+        (define temp (inject-field "<ARTICLE-TITLE />" template (cadr (assoc 'title article))))
+        (define html (inject-field "<ARTICLE-CONTENT />" temp (cadr (assoc 'content article))))
+
+        ; (define html (irregex-replace "<CONTEXT />" template (cadr (assoc 'content article))))
+        (write-html (conc "../build/blog/" (cadr (assoc 'slug article))) html))
+      feed)))
 
 (define build-research
   (lambda ()
@@ -59,9 +120,10 @@
     (map (lambda (x) (copy-file (conc "./static/" x) (conc "../build/static/" x) #t)) (directory "./static"))))
 
 ;; Our main loop
-(build-static)
-(build-home)
-(build-about)
-(build-models)
-(build-guides)
-(build-research)
+(let ((feed (build-feed)))
+  (build-static)
+  (build-home)
+  (build-about)
+  (build-research)
+  (build-blog feed)
+  (build-posts feed))

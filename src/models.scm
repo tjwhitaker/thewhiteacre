@@ -1,6 +1,5 @@
 (include "./models/perceptron.scm")
 (include "./models/lenet.scm")
-(include "./models/hopfield.scm")
 (include "./models/lstm.scm")
 (include "./models/boltzmann.scm")
 (include "./models/echo-state.scm")
@@ -28,9 +27,9 @@
               (a (@ (href "/") (class "logo")) (img (@ (src "/static/willow.svg"))))
               (nav 
                 (a (@ (href "/about")) "About")
+                (a (@ (href "/bookmarks")) "Bookmarks")
                 (a (@ (href "/models")) "Models")
-                (a (@ (href "/guides")) "Guides")
-                (a (@ (href "/research")) "Research"))))
+                (a (@ (href "/guides")) "Guides"))))
 
           (main
             ; (div (@ (class "hero"))

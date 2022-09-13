@@ -1,38 +1,31 @@
-/* Chinese Rocks */
-@font-face {
-  font-family: "Chinese Rocks";
-  font-style: normal;
-  font-weight: normal;
-  src: url("./chinese_rocks.woff") format("woff"), url("./chinese_rocks.ttf") format("truetype"), url("./chinese_rocks.svg") format("svg"); }
-
 @font-face {
   font-family: "Latin Modern";
   font-style: normal;
   font-weight: normal;
   font-display: swap;
-  src: url("./LM-regular.woff2") format("woff2"), url("./LM-regular.woff") format("woff"), url("./LM-regular.ttf") format("truetype"); }
-
+  src: url("./LM-regular.woff2") format("woff2"), url("./LM-regular.woff") format("woff"), url("./LM-regular.ttf") format("truetype");
+}
 @font-face {
   font-family: "Latin Modern";
   font-style: italic;
   font-weight: normal;
   font-display: swap;
-  src: url("./LM-italic.woff2") format("woff2"), url("./LM-italic.woff") format("woff"), url("./LM-italic.ttf") format("truetype"); }
-
+  src: url("./LM-italic.woff2") format("woff2"), url("./LM-italic.woff") format("woff"), url("./LM-italic.ttf") format("truetype");
+}
 @font-face {
   font-family: "Latin Modern";
   font-style: normal;
   font-weight: bold;
   font-display: swap;
-  src: url("./LM-bold.woff2") format("woff2"), url("./LM-bold.woff") format("woff"), url("./LM-bold.ttf") format("truetype"); }
-
+  src: url("./LM-bold.woff2") format("woff2"), url("./LM-bold.woff") format("woff"), url("./LM-bold.ttf") format("truetype");
+}
 @font-face {
   font-family: "Latin Modern";
   font-style: italic;
   font-weight: bold;
   font-display: swap;
-  src: url("./LM-bold-italic.woff2") format("woff2"), url("./LM-bold-italic.woff") format("woff"), url("./LM-bold-italic.ttf") format("truetype"); }
-
+  src: url("./LM-bold-italic.woff2") format("woff2"), url("./LM-bold-italic.woff") format("woff"), url("./LM-bold-italic.ttf") format("truetype");
+}
 *,
 *:before,
 *:after {
@@ -40,136 +33,206 @@
   padding: 0;
   box-sizing: border-box;
   max-width: 100%;
-  transition: color 0.2s ease; }
+  transition: color 0.2s ease;
+}
 
 html {
-  font-family: "Latin Modern", Garamond; }
-  html body {
-    color: black;
-    background: #f7f7f7; }
-    html body .wrapper {
-      padding: 1rem;
-      padding-bottom: 5rem;
-      max-width: 65rem;
-      margin: 0 auto;
-      display: grid;
-      grid-template-rows: auto auto;
-      grid-template-columns: minmax(0, 3fr) minmax(0, 1fr);
-      grid-gap: 1rem; }
-      @media screen and (max-width: 50rem) {
-        html body .wrapper {
-          grid-template-rows: auto auto auto;
-          grid-template-columns: 1fr; } }
-      html body .wrapper header {
-        padding-bottom: 1rem;
-        margin: 0;
-        border-bottom: 1px solid #ccc;
-        grid-column: 1 / span 2;
-        grid-row: 1;
-        display: grid;
-        grid-template-columns: 1fr auto;
-        align-items: center; }
-        html body .wrapper header .logo {
-          color: black;
-          font-size: 2rem;
-          text-decoration: none;
-          font-family: "Chinese Rocks"; }
-          html body .wrapper header .logo:hover {
-            color: #1976d2; }
-        html body .wrapper header nav a {
-          color: black;
-          text-decoration: none;
-          font-weight: bold;
-          font-family: Helvetica;
-          margin-left: 2rem;
-          text-transform: uppercase;
-          font-size: 0.8rem; }
-          html body .wrapper header nav a:hover {
-            color: #1976d2; }
-      html body .wrapper main {
-        border-right: 1px solid #ccc;
-        grid-column: 1;
-        grid-row: 2;
-        padding-right: 1rem; }
-        @media screen and (max-width: 50rem) {
-          html body .wrapper main {
-            padding-right: 0;
-            border-right: none; } }
-        html body .wrapper main .article-title {
-          font-family: Helvetica;
-          font-size: 4rem;
-          text-transform: uppercase;
-          line-height: 1;
-          letter-spacing: -0.1rem;
-          margin-bottom: 2rem; }
-          @media screen and (max-width: 30rem) {
-            html body .wrapper main .article-title {
-              font-size: 2.5rem; } }
-          html body .wrapper main .article-title + p {
-            margin-bottom: 2rem; }
-        html body .wrapper main h1,
-        html body .wrapper main h2,
-        html body .wrapper main h3,
-        html body .wrapper main h4,
-        html body .wrapper main h5,
-        html body .wrapper main h6 {
-          margin-bottom: 1rem;
-          color: black; }
-        html body .wrapper main p {
-          margin-bottom: 1rem; }
-        html body .wrapper main .caption {
-          font-style: italic;
-          text-align: center; }
-        html body .wrapper main blockquote {
-          margin-left: 1rem;
-          margin-top: 2rem;
-          margin-bottom: 2rem;
-          padding: 0 1rem;
-          border-left: 3px solid #ccc; }
-          html body .wrapper main blockquote em {
-            display: block;
-            margin-top: 0.5rem; }
-      html body .wrapper aside {
-        font-size: 0.8;
-        grid-column: 2;
-        grid-row: 2; }
-        @media screen and (max-width: 50rem) {
-          html body .wrapper aside {
-            grid-column: 1;
-            grid-row: 3; } }
-        html body .wrapper aside .meta {
-          margin-bottom: 2rem; }
-          html body .wrapper aside .meta .minion {
-            margin-top: 0; }
-          html body .wrapper aside .meta p {
-            font-size: 0.8rem; }
-        html body .wrapper aside .feed .post {
-          display: block;
-          padding: 1rem 0;
-          border-bottom: 1px solid #ddd;
-          text-decoration: none; }
-          html body .wrapper aside .feed .post h3 {
-            color: black;
-            font-size: 0.8rem; }
-          html body .wrapper aside .feed .post p {
-            color: #222;
-            font-size: 0.8rem;
-            margin: 0.4rem 0; }
-          html body .wrapper aside .feed .post small {
-            font-family: Helvetica;
-            font-size: 0.7rem;
-            color: #666;
-            display: block; }
-          html body .wrapper aside .feed .post:hover h3 {
-            color: #1976d2; }
-          html body .wrapper aside .feed .post:first-of-type {
-            padding-top: 0; }
-
-.minion {
+  font-family: "Latin Modern", Garamond;
+}
+html body {
+  color: black;
+  background: #f7f7f7;
+}
+html body main {
+  min-height: 75vh;
+}
+html body header {
+  width: 100%;
+  background: white;
+  margin: 0;
+  padding: 0.5rem;
+}
+html body header .wrapper {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+}
+html body header .wrapper .logo {
+  color: black;
+  font-size: 0;
+}
+html body header .wrapper .logo img {
+  height: 100%;
+  max-width: 160px;
+}
+html body header .wrapper nav a {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: Helvetica;
+  margin-left: 2rem;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+html body header .wrapper nav a:hover {
+  color: #1976d2;
+}
+html body .hero {
+  width: 100%;
+  background: url(/static/library-bg.png);
+  background-size: cover;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-color: black;
+  position: relative;
+  height: 80vh;
+}
+html body .hero .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  background: black;
+  opacity: 0.3;
+}
+html body .hero .wrapper {
+  position: relative;
+  z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
+}
+html body .hero .wrapper h1 {
+  font-family: Helvetica;
+  font-size: 4rem;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: -0.1rem;
+  margin-bottom: 1rem;
+  max-width: 42rem;
+  color: white;
+}
+html body .hero .wrapper p {
+  color: white;
+  font-size: 1.1rem;
+  font-style: italic;
+  max-width: 35rem;
+  margin-bottom: 2rem;
+}
+html body .hero .wrapper .button-group {
+  margin-top: 1rem;
+  display: flex;
+}
+html body .hero .wrapper .button-group .button {
+  background: #1976d2;
+  color: white;
+  padding: 0.5rem 1rem;
+  outline: none;
+  margin-right: 1rem;
+  font-family: Helvetica;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  display: block;
+  text-decoration: none;
+  border-radius: 3px;
+}
+html body .hero .wrapper .button-group .button:nth-child(2) {
+  background: white;
+  color: black;
+}
+html body .bar {
+  background: white;
+}
+html body .bar .wrapper p {
+  color: #bbb;
+  text-align: center;
+  font-family: Helvetica;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.8rem;
+}
+html body .bar .wrapper .brands {
+  padding: 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+html body .bar .wrapper .brands img {
+  max-width: 7rem;
+  max-height: 2rem;
+  filter: opacity(0.25);
+}
+html body .feed .post {
+  background: #f7f7f7;
+  padding: 10rem 0;
+}
+html body .feed .post .wrapper .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: top;
+}
+html body .feed .post .wrapper .header h1 {
+  flex: 0 0 70%;
+  font-family: Helvetica;
+  font-size: 3rem;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: -0.1rem;
+  margin-bottom: 1rem;
+  color: black;
+}
+html body .feed .post .wrapper p {
+  color: black;
+}
+html body .feed .post .wrapper .read-more {
+  display: inline-block;
+  margin: 1rem 0;
+  color: black;
+  font-family: Helvetica;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.8rem;
+}
+html body footer {
+  background: #0f0f0f;
+  padding: 2rem 0;
+}
+html body footer .wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 2rem;
+}
+html body footer .wrapper .column h2 {
+  color: white;
   font-family: Helvetica;
   text-transform: uppercase;
-  padding: 1rem 0;
-  margin: 1rem 0;
-  border-bottom: 1px solid #ccc;
-  color: black;
-  font-size: 0.8rem; }
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
+}
+html body footer .wrapper .column a {
+  display: block;
+  width: max-content;
+  margin-bottom: 1rem;
+  color: #aaa;
+  font-family: Helvetica;
+  font-size: 0.8rem;
+}
+
+.wrapper {
+  padding: 1rem;
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+@keyframes slide {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-200vw, 0, 0);
+  }
+}

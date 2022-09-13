@@ -17,8 +17,7 @@
               (a (@ (href "/") (class "logo")) (img (@ (src "/static/willow.svg"))))
               (nav
                 (a (@ (href "/about")) "About")
-                (a (@ (href "/models")) "Models")
-                (a (@ (href "/guides")) "Guides")
+                (a (@ (href "/blog")) "Blog")
                 (a (@ (href "/research")) "Research"))))
 
           (main
@@ -26,7 +25,19 @@
               (div (@ (class "overlay")) "")
                 (div (@ (class "wrapper"))
                   (h1 "Learn How To Build Better Neural Networks")
-                  (p "Welcome to Dead Neuron! My name is Tim and I'm a computer scientist studying neural networks and machine learning. Read on to check out a collection of my research papers.")))
+                  (p "Welcome to Dead Neurons! My name is Tim and I'm a computer scientist studying neural networks and machine learning. Read on to check out a collection of my research papers.")))
+            ; (div (@ (class "low-cost-ensemble-learning"))
+            ;   (div (@ (class "wrapper"))
+            ;     (div
+            ;       (h1 "Low-Cost Ensemble Learning")
+            ;       (p "Lorem")
+            ;       (a (@ (href "#")) "Read More"))))
+            ; (div (@ (class "sparse-perturbations"))
+            ;   (div (@ (class "wrapper"))
+            ;     (div
+            ;       (h1 "Sparse Perturbations for Evolutionary Strategies")
+            ;       (p "Lorem")
+            ;       (a (@ (href "#")) "Read More"))))
             (div (@ (class "prune-and-tune-ensembles"))
               (div (@ (class "wrapper"))
                 (div
@@ -39,6 +50,12 @@
                   (h1 "Interpretable Diversity Analysis")
                   (p "Diversity is an important consideration in the construction of robust neural network ensembles. A collection of well trained models will generalize better to unseen data if they are diverse in the patterns they respond to and the predictions they make. Encouraging diversity becomes especially important for low-cost ensemble methods, as members often share network structure or training epochs in order to avoid training several independent networks from scratch...")
                   (a (@ (href "/static/there-is-no-magic-subnetwork.pdf") (class "read-more")) "Read More"))))
+            (div (@ (class "synaptic-stripping"))
+              (div (@ (class "wrapper"))
+              (div
+                (h1 "Synaptic Stripping")
+                (p "Rectified Linear Units (ReLU) have long been the default choice for activation functions in deep neural networks. While they demonstrate excellent empirical performance, ReLU activations can fall victim to the dead neuron problem. In these cases, weights end up being pushed into a state where the neuron outputs zero for all reasonable inputs. Consequently, since the gradient for a dead neuron is zero for all inputs, the weights never update and the neuron can not recover. Inspired by a neurological process of the same name...")
+                (a (@ (href "#") ) "Read More"))))
             (div (@ (class "quantum-neuron-selection"))
               (div (@ (class "wrapper"))
                 (div
