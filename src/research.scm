@@ -14,18 +14,19 @@
         (div (@ (class "home"))
           (header
             (div (@ (class "wrapper"))
-              (a (@ (href "/") (class "logo")) (img (@ (src "/static/willow.svg"))))
+              (a (@ (href "/") (class "logo")) (img (@ (src "/static/logo.svg"))))
               (nav
                 (a (@ (href "/about")) "About")
                 (a (@ (href "/blog")) "Blog")
+                (a (@ (href "/code")) "Code")
                 (a (@ (href "/research")) "Research"))))
 
           (main
             (div (@ (class "hero"))
               (div (@ (class "overlay")) "")
                 (div (@ (class "wrapper"))
-                  (h1 "Learn How To Build Better Neural Networks")
-                  (p "Welcome to Dead Neurons! My name is Tim and I'm a computer scientist studying neural networks and machine learning.")))
+                  (h1 "Research")
+                  (p "Below is a collection of some papers I've published and worked on.")))
 
             (div (@ (class "prune-and-tune-ensembles"))
               (div (@ (class "wrapper"))

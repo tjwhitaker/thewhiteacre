@@ -14,10 +14,11 @@
         (div (@ (class "home"))
           (header
             (div (@ (class "wrapper"))
-              (a (@ (href "/") (class "logo")) (img (@ (src "/static/willow.svg"))))
+              (a (@ (href "/") (class "logo")) (img (@ (src "/static/logo.svg"))))
               (nav
                 (a (@ (href "/about")) "About")
                 (a (@ (href "/blog")) "Blog")
+                (a (@ (href "/code")) "Code")
                 (a (@ (href "/research")) "Research"))))
 
           (main
@@ -25,18 +26,20 @@
               (div (@ (class "overlay")) "")
                 (div (@ (class "wrapper"))
                   (h1 "Blog")
-                  (p "Read on to check out a collection of my research papers.")))
+                  (p "Busy writing papers for my PhD. Blog posts coming soon!")))
 
-            (div (@ (class "feed"))
-              ,(map (lambda (post) 
-                `(div (@ (class "post"))
-                  (div (@ (class "wrapper"))
-                    (div (@ (class "header"))
-                      (h1 ,(cadr (assoc 'title post)))
-                      (small ,(cadr (assoc 'date post))))
-                    (p ,(cadr (assoc 'description post)))
-                    (a (@ (href ,(conc "/blog/" (cadr (assoc 'slug post))))) "Read More"))))
-              feed)))
+            ; (div (@ (class "feed"))
+            ;   ,(map (lambda (post) 
+            ;     `(div (@ (class "post"))
+            ;       (div (@ (class "wrapper"))
+            ;         (div (@ (class "header"))
+            ;           (h1 ,(cadr (assoc 'title post)))
+            ;           (small ,(cadr (assoc 'date post))))
+            ;         (p ,(cadr (assoc 'description post)))
+            ;         (a (@ (href ,(conc "/blog/" (cadr (assoc 'slug post))))) "Read More"))))
+            ;   feed))
+              
+              )
 
 
           (footer

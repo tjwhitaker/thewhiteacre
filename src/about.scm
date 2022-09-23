@@ -14,10 +14,11 @@
       (div (@ (class "home"))
         (header
           (div (@ (class "wrapper"))
-            (a (@ (href "/") (class "logo")) (img (@ (src "/static/willow.svg"))))
+            (a (@ (href "/") (class "logo")) (img (@ (src "/static/logo.svg"))))
               (nav 
                 (a (@ (href "/about")) "About")
                 (a (@ (href "/blog")) "Blog")
+                (a (@ (href "/code")) "Code")
                 (a (@ (href "/research")) "Research"))))
 
         (main
@@ -39,7 +40,7 @@
               )
             )
             (div (@ (class "image"))
-              (img (@ (src "/static/profile4small.jpg")))
+              (img (@ (src "/static/about-me-profile.jpg")))
             )
           )
 

@@ -2,7 +2,7 @@
   (lambda ()
     `(html
       ((head
-        (title "Dead Neurons")
+        (title "Wittes Ende")
         (meta (@ (charset "utf-8")))
         (meta (@ (name "viewport") (content "width=device-width, initial-scale=1")))
         (link (@ (rel "icon") (href "/static/favicon.ico")))
@@ -14,18 +14,19 @@
         (div (@ (class "home"))
           (header
             (div (@ (class "wrapper"))
-              (a (@ (href "/") (class "logo")) (img (@ (src "/static/willow.svg"))))
+              (a (@ (href "/") (class "logo")) (img (@ (src "/static/logo.svg"))))
               (nav
                 (a (@ (href "/about")) "About")
                 (a (@ (href "/blog")) "Blog")
+                (a (@ (href "/code")) "Code")
                 (a (@ (href "/research")) "Research"))))
 
           (main
             (div (@ (class "hero"))
               (div (@ (class "overlay")) "")
                 (div (@ (class "wrapper"))
-                  (h1 "Learn How To Build Better Neural Networks")
-                  (p "Welcome to Dead Neurons! My name is Tim and I'm a computer scientist studying neural networks and machine learning. Read on to check out a collection of my research papers.")))
+                  (h1 "Exploring The Magic Of Machine Learning")
+                  (p "Welcome to Wittes Ende! My name is Tim and I'm a computer scientist studying neural networks and machine learning. Read on to check out a collection of my research papers.")))
             ; (div (@ (class "low-cost-ensemble-learning"))
             ;   (div (@ (class "wrapper"))
             ;     (div
