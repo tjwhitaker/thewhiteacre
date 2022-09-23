@@ -2,7 +2,7 @@
   (lambda (feed)
     `(html
       ((head
-        (title "Blog | Dead Neurons")
+        (title "Blog | Wittes Ende")
         (meta (@ (charset "utf-8")))
         (meta (@ (name "viewport") (content "width=device-width, initial-scale=1")))
         (link (@ (rel "icon") (href "/static/favicon.ico")))
