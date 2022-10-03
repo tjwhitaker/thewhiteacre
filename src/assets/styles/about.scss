@@ -113,7 +113,7 @@ html {
         bottom: 0;
         z-index: 0;
         background: black;
-        opacity:0.5;
+        opacity: 0.5;
       }
 
       .wrapper {
@@ -162,10 +162,10 @@ html {
       .content {
         flex: 0 0 50%;
         .wrapper {
-          max-width:60%;
+          max-width: 60%;
 
           p {
-            margin-bottom:1rem;
+            margin-bottom: 1rem;
           }
         }
       }
@@ -180,17 +180,17 @@ html {
     .professional {
       .education {
         .item {
-          padding:1rem 0;
+          padding: 1rem 0;
           .header {
-            display:flex;
+            display: flex;
             align-items: center;
             justify-content: space-between;
 
             h2 {
-              font-size:1rem;
+              font-size: 1rem;
             }
             span {
-              font-weight:bold;
+              font-weight: bold;
             }
           }
         }

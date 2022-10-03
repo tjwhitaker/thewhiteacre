@@ -42,72 +42,70 @@ const sounds = new Howl({
     "sounds.1.14": [144000, 4365.351473922914],
     "sounds.1.15": [150000, 4365.351473922914],
   },
-})
+});
 
 // loop sequencer
-var intervalID = null
-var activeBass = ""
-var activeDrum = ""
-var activeMelody = ""
-var isPlaying = false
-const tempo = 4365
-var time = 4365
+var intervalID = null;
+var activeBass = "";
+var activeDrum = "";
+var activeMelody = "";
+var isPlaying = false;
+const tempo = 4365;
+var time = 4365;
 
 var bar = new ProgressBar.Line(".sequencer", {
   strokeWidth: 3,
   duration: time,
   easing: "linear",
   color: "#000",
-  trailColor: "#eee",
-  trailWidth: 1,
   svgStyle: { width: "100%", height: "100%", display: "block" },
-})
+});
 
 function scheduleSound(event) {
   if (event.target.classList.contains("pad")) {
-    event.preventDefault()
+    event.preventDefault();
 
     if (event.target.classList.contains("active")) {
       if (event.target.classList.contains("bass")) {
-        activeBass = ""
+        activeBass = "";
       }
       if (event.target.classList.contains("drum")) {
-        activeDrum = ""
+        activeDrum = "";
       }
       if (event.target.classList.contains("melody")) {
-        activeMelody = ""
+        activeMelody = "";
       }
-      event.target.classList.add("unpending")
-      event.target.classList.remove("active")
+      event.target.classList.add("unpending");
+      event.target.classList.remove("active");
     } else {
       if (event.target.classList.contains("bass")) {
-        let pendings = document.querySelectorAll(".bass.pending")
+        let pendings = document.querySelectorAll(".bass.pending");
         pendings.forEach((pending) => {
-          pending.classList.remove("pending")
-        })
-        activeBass = event.target.dataset.sound
+          pending.classList.remove("pending");
+        });
+        activeBass = event.target.dataset.sound;
       } else if (event.target.classList.contains("drum")) {
-        let pendings = document.querySelectorAll(".drum.pending")
+        let pendings = document.querySelectorAll(".drum.pending");
         pendings.forEach((pending) => {
-          pending.classList.remove("pending")
-        })
-        activeDrum = event.target.dataset.sound
+          pending.classList.remove("pending");
+        });
+        activeDrum = event.target.dataset.sound;
       } else if (event.target.classList.contains("melody")) {
-        let pendings = document.querySelectorAll(".sound.pending")
+        let pendings = document.querySelectorAll(".sound.pending");
         pendings.forEach((pending) => {
-          pending.classList.remove("pending")
-        })
+          pending.classList.remove("pending");
+        });
 
-        activeMelody = event.target.dataset.sound
+        activeMelody = event.target.dataset.sound;
       }
 
-      event.target.classList.add("pending")
+      event.target.classList.add("pending");
     }
   }
 }
 
 function cleanButtons() {
-  let pads = document.querySelectorAll(".pad")
+  let pads = document.querySelectorAll(".pad");
 
   pads.forEach((pad) => {
     if (
@@ -115,73 +113,73 @@ function cleanButtons() {
       pad.dataset.sound != activeDrum &&
       pad.dataset.sound != activeMelody
     ) {
-      pad.classList.remove("active")
-      pad.classList.remove("unpending")
+      pad.classList.remove("active");
+      pad.classList.remove("unpending");
     }
-  })
+  });
 }
 
 function startSequencer() {
   if (!isPlaying) {
-    isPlaying = true
-    bar.set(0)
-    cleanButtons()
+    isPlaying = true;
+    bar.set(0);
+    cleanButtons();
 
-    sounds.play(activeBass)
-    sounds.play(activeDrum)
-    sounds.play(activeMelody)
+    sounds.play(activeBass);
+    sounds.play(activeDrum);
+    sounds.play(activeMelody);
 
-    changeTempo()
+    changeTempo();
 
-    let pending = document.querySelectorAll(".pending")
+    let pending = document.querySelectorAll(".pending");
 
     pending.forEach((item) => {
-      item.classList.remove("pending")
-      item.classList.add("active")
-    })
+      item.classList.remove("pending");
+      item.classList.add("active");
+    });
 
-    bar.animate(1, { duration: time })
+    bar.animate(1, { duration: time });
 
     intervalID = setInterval(function () {
-      bar.set(0)
-      cleanButtons()
+      bar.set(0);
+      cleanButtons();
 
-      sounds.play(activeBass)
-      sounds.play(activeDrum)
-      sounds.play(activeMelody)
+      sounds.play(activeBass);
+      sounds.play(activeDrum);
+      sounds.play(activeMelody);
 
-      changeTempo()
+      changeTempo();
 
-      let pending = document.querySelectorAll(".pending")
+      let pending = document.querySelectorAll(".pending");
 
       pending.forEach((item) => {
-        item.classList.remove("pending")
-        item.classList.add("active")
-      })
+        item.classList.remove("pending");
+        item.classList.add("active");
+      });
 
-      bar.animate(1, { duration: time })
-    }, time)
+      bar.animate(1, { duration: time });
+    }, time);
   }
 }
 
 function stopSequencer() {
-  clearInterval(intervalID)
-  bar.set(0)
-  sounds.stop()
-  isPlaying = false
+  clearInterval(intervalID);
+  bar.set(0);
+  sounds.stop();
+  isPlaying = false;
 }
 
 function changeTempo() {
-  v = document.querySelector(".tempo input").value
-  rate = v / 100
-  time = tempo / rate
-  sounds.rate(rate)
+  v = document.querySelector(".tempo input").value;
+  rate = v / 100;
+  time = tempo / rate;
+  sounds.rate(rate);
 }
 
-const launchpad = document.querySelector(".launchpad")
-const playButton = document.querySelector(".play")
-const stopButton = document.querySelector(".stop")
+const launchpad = document.querySelector(".launchpad");
+const playButton = document.querySelector(".play");
+const stopButton = document.querySelector(".stop");
 
-launchpad.addEventListener("click", scheduleSound)
-playButton.addEventListener("click", startSequencer)
-stopButton.addEventListener("click", stopSequencer)
+launchpad.addEventListener("click", scheduleSound);
+playButton.addEventListener("click", startSequencer);
+stopButton.addEventListener("click", stopSequencer);
