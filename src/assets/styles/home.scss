@@ -125,7 +125,7 @@ html {
     }
     .hero {
       width: 100%;
-      background: url(/static/cave-bg.png);
+      background: url(/static/mountain-bg.png);
       background-size: cover;
       background-color: white;
       background-position: center;
@@ -195,6 +195,54 @@ html {
       }
     }
 
+    .hero2 {
+      width: 100%;
+      background: url(/static/blurry-small-cartoon-bw.jpg);
+      background-size: cover;
+      background-color: white;
+      background-position: right 70%;
+      background-repeat: no-repeat;
+      position: relative;
+      height: 80vh;
+
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 0;
+        background: black;
+        opacity: 0.5;
+      }
+
+      .wrapper {
+        position: relative;
+        z-index: 1;
+        top: 50%;
+        transform: translateY(-50%);
+
+        h1 {
+          font-family: Helvetica;
+          font-size: 4rem;
+          text-transform: uppercase;
+          line-height: 1;
+          letter-spacing: -0.1rem;
+          margin-bottom: 1rem;
+          color: white;
+          max-width: 38rem;
+        }
+
+        p {
+          color: white;
+          font-size: 1.1rem;
+          font-style: italic;
+          margin-bottom: 2rem;
+          max-width: 38rem;
+        }
+      }
+    }
+
     .post {
       .video {
       }
@@ -245,21 +293,29 @@ html {
     .personal {
       display: flex;
       align-items: center;
+      background-image: url(/static/brain.svg);
+      background-size: 50vw;
+      background-repeat: no-repeat;
+      background-position: -30%;
 
       .content {
         flex: 0 0 50%;
         position: relative;
+
         .wrapper {
-          max-width: 60%;
+          max-width: 100%;
 
-          h1 {
-            font-family: helvetica;
+          blockquote {
+            padding: 1rem;
+            text-align: center;
             font-size: 3rem;
-            text-transform: uppercase;
-          }
-
-          p {
-            margin-bottom: 1rem;
+            font-style: italic;
+            small {
+              text-align: right;
+              font-size: 1rem;
+              color: #999;
+              display: block;
+            }
           }
         }
       }
@@ -271,7 +327,58 @@ html {
       }
     }
 
+    .featured {
+      h1 {
+        font-family: Helvetica;
+        font-size: 3rem;
+        text-transform: uppercase;
+        line-height: 1;
+        letter-spacing: -0.1rem;
+        margin-bottom: 1rem;
+        color: black;
+      }
+
+      .post {
+        background: #f7f7f7;
+        padding: 5rem 0;
+
+        .wrapper {
+          .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: top;
+            h1 {
+              flex: 0 0 70%;
+              font-family: Helvetica;
+              font-size: 3rem;
+              text-transform: uppercase;
+              line-height: 1;
+              letter-spacing: -0.1rem;
+              margin-bottom: 1rem;
+              color: black;
+            }
+            small {
+            }
+          }
+          p {
+            color: black;
+          }
+          .read-more {
+            display: inline-block;
+            margin: 1rem 0;
+            color: black;
+            font-family: Helvetica;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+
     .intro {
+      background: white;
       .wrapper {
         .column-wrapper {
           display: flex;
@@ -281,6 +388,12 @@ html {
 
           .column {
             flex: 0 0 30%;
+            text-align: center;
+
+            img {
+              width: 35%;
+              padding-bottom: 1rem;
+            }
           }
         }
       }
