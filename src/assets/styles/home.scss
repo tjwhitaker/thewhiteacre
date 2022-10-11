@@ -213,6 +213,54 @@ html {
         bottom: 0;
         z-index: 0;
         background: black;
+        opacity: 0.3;
+      }
+
+      .wrapper {
+        position: relative;
+        z-index: 1;
+        top: 50%;
+        transform: translateY(-50%);
+
+        h1 {
+          font-family: Helvetica;
+          font-size: 4rem;
+          text-transform: uppercase;
+          line-height: 1;
+          letter-spacing: -0.1rem;
+          margin-bottom: 1rem;
+          color: white;
+          max-width: 50rem;
+        }
+
+        p {
+          color: white;
+          font-size: 1.1rem;
+          font-style: italic;
+          margin-bottom: 2rem;
+          max-width: 50rem;
+        }
+      }
+    }
+
+    .hero3 {
+      width: 100%;
+      background: url(/static/chess-bg.png);
+      background-size: cover;
+      background-color: white;
+      background-position: right 70%;
+      background-repeat: no-repeat;
+      position: relative;
+      height: 80vh;
+
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 0;
+        background: black;
         opacity: 0.5;
       }
 
@@ -278,8 +326,6 @@ html {
       }
     }
 
-
-
     .personal {
       display: flex;
       align-items: center;
@@ -292,17 +338,16 @@ html {
         flex: 0 0 50%;
         position: relative;
 
-        .wrapper {          
-
+        .wrapper {
           blockquote {
             padding: 1rem;
             text-align: center;
             font-size: 3rem;
             font-style: italic;
-            margin-bottom:1rem;
+            margin-bottom: 1rem;
           }
           p {
-            text-align:center;
+            text-align: center;
           }
         }
       }
@@ -315,41 +360,25 @@ html {
     }
 
     .featured {
-      background:white;
-      h1 {
-        font-family: Helvetica;
+      background: white;
+      padding: 5rem 0;
+
+      blockquote {
+        padding: 1rem;
+        text-align: center;
         font-size: 3rem;
-        text-transform: uppercase;
-        line-height: 1;
-        letter-spacing: -0.1rem;
+        font-style: italic;
         margin-bottom: 1rem;
-        color: black;
       }
 
-      .post {
-        padding: 5rem 0;
+      .wrapper {
+        display: flex;
+        align-items: top;
+        justify-content: space-between;
 
-        .wrapper {
-          .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: top;
-            h1 {
-              flex: 0 0 70%;
-              font-family: Helvetica;
-              font-size: 3rem;
-              text-transform: uppercase;
-              line-height: 1;
-              letter-spacing: -0.1rem;
-              margin-bottom: 1rem;
-              color: black;
-            }
-            small {
-            }
-          }
-          p {
-            color: black;
-          }
+        .post {
+          flex: 0 0 30%;
+
           .read-more {
             display: inline-block;
             margin: 1rem 0;
@@ -368,7 +397,6 @@ html {
       background: white;
       padding: 5rem 0;
       .wrapper {
-
         blockquote {
           padding-bottom: 2rem;
           text-align: center;
@@ -397,7 +425,7 @@ html {
 
     .contact {
       padding: 2rem 0;
-      background: white;
+      background: #f7f7f7;
 
       .wrapper {
         display: grid;
@@ -459,12 +487,12 @@ html {
     }
 
     .reference {
-      background:white;
-      border-top:1px solid #f7f7f7;
-      padding:0.5rem;
+      background: white;
+      border-top: 1px solid #f7f7f7;
+      padding: 0.5rem;
       p {
-        text-align:center;
-        margin:0;
+        text-align: center;
+        margin: 0;
       }
     }
 

@@ -22,7 +22,7 @@
                 (a (@ (href "/research")) "Research"))))
 
         (main
-          (div (@ (class "hero"))
+          (div (@ (class "hero3"))
             (div (@ (class "overlay")) "")
             (div (@ (class "wrapper"))
               (h1 "Welcome")
@@ -60,6 +60,9 @@
             (div (@ (class "item"))
               (img (@ (src "/static/evilution.jpg"))))
           "" )
+
+
+          
 
           ; (div (@ (class ""))
           ;   (div (@ (class "wrapper"))
