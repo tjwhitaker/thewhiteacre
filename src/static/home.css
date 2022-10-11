@@ -199,14 +199,14 @@ html body .hero2 .wrapper h1 {
   letter-spacing: -0.1rem;
   margin-bottom: 1rem;
   color: white;
-  max-width: 38rem;
+  max-width: 50rem;
 }
 html body .hero2 .wrapper p {
   color: white;
   font-size: 1.1rem;
   font-style: italic;
   margin-bottom: 2rem;
-  max-width: 38rem;
+  max-width: 50rem;
 }
 html body .bar {
   background: white;
@@ -231,15 +231,6 @@ html body .bar .wrapper .brands img {
   max-height: 2rem;
   filter: opacity(0.25);
 }
-html body .quote {
-  background: white;
-}
-html body .quote .wrapper blockquote {
-  padding: 1rem;
-  text-align: center;
-  font-size: 3rem;
-  font-style: italic;
-}
 html body .personal {
   display: flex;
   align-items: center;
@@ -252,26 +243,24 @@ html body .personal .content {
   flex: 0 0 50%;
   position: relative;
 }
-html body .personal .content .wrapper {
-  max-width: 100%;
-}
 html body .personal .content .wrapper blockquote {
   padding: 1rem;
   text-align: center;
   font-size: 3rem;
   font-style: italic;
+  margin-bottom: 1rem;
 }
-html body .personal .content .wrapper blockquote small {
-  text-align: right;
-  font-size: 1rem;
-  color: #999;
-  display: block;
+html body .personal .content .wrapper p {
+  text-align: center;
 }
 html body .personal .image {
   flex: 0 0 50%;
 }
 html body .personal .image img {
   display: block;
+}
+html body .featured {
+  background: white;
 }
 html body .featured h1 {
   font-family: Helvetica;
@@ -283,7 +272,6 @@ html body .featured h1 {
   color: black;
 }
 html body .featured .post {
-  background: #f7f7f7;
   padding: 5rem 0;
 }
 html body .featured .post .wrapper .header {
@@ -316,10 +304,17 @@ html body .featured .post .wrapper .read-more {
 }
 html body .intro {
   background: white;
+  padding: 5rem 0;
+}
+html body .intro .wrapper blockquote {
+  padding-bottom: 2rem;
+  text-align: center;
+  font-size: 3rem;
+  font-style: italic;
 }
 html body .intro .wrapper .column-wrapper {
   display: flex;
-  align-items: center;
+  align-items: top;
   justify-content: space-between;
   padding: 1rem;
 }
@@ -330,271 +325,6 @@ html body .intro .wrapper .column-wrapper .column {
 html body .intro .wrapper .column-wrapper .column img {
   width: 35%;
   padding-bottom: 1rem;
-}
-html body .quantum-neuron-selection {
-  background: white;
-  padding: 10rem 0;
-  background-image: url(/static/brain.svg);
-  background-size: 45vw;
-  background-repeat: no-repeat;
-  background-position: center right;
-}
-html body .quantum-neuron-selection .wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 2rem;
-  align-items: center;
-}
-html body .quantum-neuron-selection .wrapper div {
-  grid-column: 1;
-}
-html body .quantum-neuron-selection .wrapper div h1 {
-  font-family: Helvetica;
-  font-size: 3rem;
-  text-transform: uppercase;
-  line-height: 1;
-  letter-spacing: -0.1rem;
-  margin-bottom: 1rem;
-  color: black;
-}
-html body .quantum-neuron-selection .wrapper div p {
-  color: black;
-  font-size: 1.1rem;
-}
-html body .quantum-neuron-selection .wrapper div .read-more {
-  display: inline-block;
-  margin: 1rem 0;
-  color: black;
-  font-family: Helvetica;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 0.8rem;
-}
-html body .interpretable-diversity-analysis {
-  background: #0f0f0f;
-  padding: 10rem 0;
-  background-image: url(/static/jewel-stone-diamond.svg);
-  background-size: 45vw;
-  background-repeat: no-repeat;
-  background-position: center right;
-}
-html body .interpretable-diversity-analysis .wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 2rem;
-  align-items: center;
-}
-html body .interpretable-diversity-analysis .wrapper div {
-  grid-column: 1;
-}
-html body .interpretable-diversity-analysis .wrapper div h1 {
-  font-family: Helvetica;
-  font-size: 3rem;
-  text-transform: uppercase;
-  line-height: 1;
-  letter-spacing: -0.1rem;
-  margin-bottom: 1rem;
-  color: white;
-}
-html body .interpretable-diversity-analysis .wrapper div p {
-  color: white;
-  font-size: 1.1rem;
-}
-html body .interpretable-diversity-analysis .wrapper div .read-more {
-  display: inline-block;
-  margin: 1rem 0;
-  color: white;
-  font-family: Helvetica;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 0.8rem;
-}
-html body .prune-and-tune-ensembles {
-  background: white;
-  padding: 10rem 0;
-  background-image: url(/static/cell-nucleus.svg);
-  background-size: 45vw;
-  background-repeat: no-repeat;
-  background-position: center left;
-}
-html body .prune-and-tune-ensembles .wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 2rem;
-  align-items: center;
-}
-html body .prune-and-tune-ensembles .wrapper div {
-  grid-column: 2;
-}
-html body .prune-and-tune-ensembles .wrapper div h1 {
-  font-family: Helvetica;
-  font-size: 3rem;
-  text-transform: uppercase;
-  line-height: 1;
-  letter-spacing: -0.1rem;
-  margin-bottom: 1rem;
-  color: black;
-}
-html body .prune-and-tune-ensembles .wrapper div p {
-  color: black;
-  font-size: 1.1rem;
-}
-html body .prune-and-tune-ensembles .wrapper div .read-more {
-  display: inline-block;
-  margin: 1rem 0;
-  color: black;
-  font-family: Helvetica;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 0.8rem;
-}
-html body .synaptic-stripping {
-  background: #eee;
-  padding: 10rem 0;
-  background-image: url(/static/big-data.svg);
-  background-size: 45vw;
-  background-repeat: no-repeat;
-  background-position: center left;
-}
-html body .synaptic-stripping .wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 2rem;
-  align-items: center;
-}
-html body .synaptic-stripping .wrapper div {
-  grid-column: 2;
-}
-html body .synaptic-stripping .wrapper div h1 {
-  font-family: Helvetica;
-  font-size: 3rem;
-  text-transform: uppercase;
-  line-height: 1;
-  letter-spacing: -0.1rem;
-  margin-bottom: 1rem;
-  color: black;
-}
-html body .synaptic-stripping .wrapper div p {
-  color: black;
-  font-size: 1.1rem;
-}
-html body .synaptic-stripping .wrapper div .read-more {
-  display: inline-block;
-  margin: 1rem 0;
-  color: black;
-  font-family: Helvetica;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 0.8rem;
-}
-html body .sequencer {
-  width: 100vw;
-  height: 5px;
-  position: fixed;
-  top: 0;
-}
-html body .launch-wrapper {
-  background: white;
-  padding: 2rem 0;
-}
-html body .player {
-  display: flex;
-  width: 100vw;
-}
-html body .player .launchpad {
-  flex: 0 0 50%;
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(6, 5rem);
-  grid-template-rows: repeat(6, 5rem);
-  grid-gap: 0.5rem;
-  grid-auto-flow: column;
-  padding-right: 1rem;
-}
-html body .player .launchpad .pad {
-  border-radius: 3px;
-  cursor: pointer;
-}
-html body .player .launchpad .drum {
-  background: rgba(102, 194, 165, 0.25);
-}
-html body .player .launchpad .drum.active {
-  background: rgb(102, 194, 165);
-}
-html body .player .launchpad .drum.pending {
-  animation: pulse 0.5s infinite ease-in-out;
-  background: rgba(102, 194, 165, 0.5);
-}
-html body .player .launchpad .drum.unpending {
-  animation: pulse 1s infinite ease-in-out;
-  background: rgba(102, 194, 165, 0.5);
-}
-html body .player .launchpad .bass {
-  background: rgba(252, 141, 98, 0.25);
-}
-html body .player .launchpad .bass.active {
-  background: rgb(252, 141, 98);
-}
-html body .player .launchpad .bass.pending {
-  animation: pulse 0.5s infinite ease-in-out;
-  background: rgba(252, 141, 98, 0.5);
-}
-html body .player .launchpad .bass.unpending {
-  animation: pulse 1s infinite ease-in-out;
-  background: rgba(252, 141, 98, 0.5);
-}
-html body .player .launchpad .melody {
-  background: rgba(141, 160, 203, 0.25);
-}
-html body .player .launchpad .melody.active {
-  background: rgb(141, 160, 203);
-}
-html body .player .launchpad .melody.pending {
-  animation: pulse 0.5s infinite ease-in-out;
-  background: rgba(141, 160, 203, 0.5);
-}
-html body .player .launchpad .melody.unpending {
-  animation: pulse 1s infinite ease-in-out;
-  background: rgba(141, 160, 203, 0.5);
-}
-html body .player .launchpad .fx {
-  background: rgba(231, 138, 195, 0.25);
-}
-html body .player .launchpad .fx.active {
-  background: rgb(231, 138, 195);
-}
-html body .player .launchpad .fx.pending {
-  animation: pulse 0.5s infinite ease-in-out;
-  background: rgba(231, 138, 195, 0.5);
-}
-html body .player .launchpad .fx.unpending {
-  animation: pulse 1s infinite ease-in-out;
-  background: rgba(231, 138, 195, 0.5);
-}
-html body .player .options {
-  flex: 0 0 50%;
-  padding-left: 1rem;
-}
-html body .player .options .controls {
-  display: flex;
-}
-html body .player .options .controls .play {
-  width: 5rem;
-  height: 5rem;
-  background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iNzUycHQiIGhlaWdodD0iNzUycHQiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDc1MiA3NTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiA8cGF0aCBkPSJtMzc2IDE2Mi44OWMtMTE3LjQ1IDAtMjEzLjExIDk1LjE4OC0yMTMuMTEgMjEzLjExczk1LjY2NCAyMTMuMTEgMjEzLjExIDIxMy4xMWMxMTcuNDUgMCAyMTMuMTEtOTUuMTkxIDIxMy4xMS0yMTMuMTEtMC4wMDM5MDctMTE3LjkyLTk1LjY2OC0yMTMuMTEtMjEzLjEyLTIxMy4xMXptLTU3Ljc3NyAzMjIuNTF2LTIxOC43OWwxNzMuMzMgMTA5LjM5eiIvPgo8L3N2Zz4K");
-  background-size: 100% 100%;
-  cursor: pointer;
-}
-html body .player .options .controls .stop {
-  width: 5rem;
-  height: 5rem;
-  background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iNzUycHQiIGhlaWdodD0iNzUycHQiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDc1MiA3NTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiA8cGF0aCBkPSJtMzc2IDE2Mi44OWMtMTE3LjQ1IDAtMjEzLjExIDk1LjE4OC0yMTMuMTEgMjEzLjExczk1LjY2NCAyMTMuMTEgMjEzLjExIDIxMy4xMWMxMTcuNDUgMCAyMTMuMTEtOTUuMTkxIDIxMy4xMS0yMTMuMTEtMC4wMDM5MDctMTE3LjkyLTk1LjY2OC0yMTMuMTEtMjEzLjEyLTIxMy4xMXptODAuNTEyIDI5My42MmgtMTYxLjAydi0xNjEuMDJoMTYxLjAyeiIvPgo8L3N2Zz4K");
-  background-size: 100% 100%;
-  cursor: pointer;
 }
 html body .contact {
   padding: 2rem 0;
@@ -654,6 +384,15 @@ html body .contact .wrapper .map-container #map {
 }
 html body .contact .wrapper .map-container p {
   display: block;
+}
+html body .reference {
+  background: white;
+  border-top: 1px solid #f7f7f7;
+  padding: 0.5rem;
+}
+html body .reference p {
+  text-align: center;
+  margin: 0;
 }
 html body footer {
   background: #0f0f0f;
