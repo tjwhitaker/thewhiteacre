@@ -22,7 +22,7 @@
                 (a (@ (href "/research")) "Research"))))
 
         (main
-          (div (@ (class "hero3"))
+          (div (@ (class "hero"))
             (div (@ (class "overlay")) "")
             (div (@ (class "wrapper"))
               (h1 "Welcome")
@@ -41,6 +41,14 @@
             )
             (div (@ (class "image"))
               (img (@ (src "/static/about-me-profile.jpg")))
+            )
+          )
+
+          (div (@ (class "hero3"))
+            (div (@ (class "overlay")) "")
+            (div (@ (class "wrapper"))
+              (h1 "I love to play chess")
+              (p "...")
             )
           )
 

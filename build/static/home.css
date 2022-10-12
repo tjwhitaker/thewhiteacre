@@ -167,10 +167,10 @@ html body .hero .wrapper .button-group .button:nth-child(2) {
 }
 html body .hero2 {
   width: 100%;
-  background: url(/static/blurry-small-cartoon-bw.jpg);
+  background: url(/static/test-profile.jpg);
   background-size: cover;
   background-color: white;
-  background-position: right 70%;
+  background-position: top;
   background-repeat: no-repeat;
   position: relative;
   height: 80vh;
@@ -183,7 +183,7 @@ html body .hero2 .overlay {
   bottom: 0;
   z-index: 0;
   background: black;
-  opacity: 0.3;
+  opacity: 0.5;
 }
 html body .hero2 .wrapper {
   position: relative;
@@ -199,14 +199,14 @@ html body .hero2 .wrapper h1 {
   letter-spacing: -0.1rem;
   margin-bottom: 1rem;
   color: white;
-  max-width: 50rem;
+  max-width: 42rem;
 }
 html body .hero2 .wrapper p {
   color: white;
   font-size: 1.1rem;
   font-style: italic;
   margin-bottom: 2rem;
-  max-width: 50rem;
+  max-width: 42rem;
 }
 html body .hero3 {
   width: 100%;
