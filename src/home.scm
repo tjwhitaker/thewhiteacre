@@ -56,8 +56,8 @@
             (div (@ (class "hero2"))
               (div (@ (class "overlay")) "")
               (div (@ (class "wrapper"))
-                (h1 "You mi")
-                (p "When I'm not working on my research, I'm probably rock climbing with my beautiful wife, Alyssa.")
+                (h1 "A Research Scientist Who loves to code")
+                (p "Don't ever, for any reason, do anything to anyone for any reason ever, no matter what, no matter where, or who, or who you are with, or where you are going, or where you've been... ever, for any reason whatsoever.")
               )
             )
 
