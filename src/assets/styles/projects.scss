@@ -38,6 +38,31 @@
     url("./LM-bold-italic.ttf") format("truetype");
 }
 
+@-webkit-keyframes pulse {
+  0% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.25;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.25;
+  }
+}
+
+
 *,
 *:before,
 *:after {
@@ -97,7 +122,7 @@ html {
     }
     .hero {
       width: 100%;
-      background: url(/static/cave-bg.png);
+      background: url(/static/space-bg.png);
       background-size: cover;
       background-color: white;
       background-position: center;
@@ -166,6 +191,113 @@ html {
         }
       }
     }
+
+    .sequencer {
+      width: 100vw;
+      height: 5px;
+    }
+
+    .player {
+      display: flex;
+      width: 100vw;
+      min-height: 80vh;
+
+      .launchpad {
+        flex: 0 0 50%;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(6, 5rem);
+        grid-template-rows: repeat(6, 5rem);
+        grid-gap: 0.5rem;
+        grid-auto-flow: column;
+        padding-right: 1rem;
+
+        .pad {
+          border-radius: 3px;
+          cursor: pointer;
+        }
+        .drum {
+          background: rgba(102, 194, 165, 0.25);
+
+          &.active {
+            background: rgba(102, 194, 165, 1);
+          }
+          &.pending {
+            animation: pulse 0.5s infinite ease-in-out;
+            background: rgba(102, 194, 165, 0.5);
+          }
+          &.unpending {
+            animation: pulse 1s infinite ease-in-out;
+            background: rgba(102, 194, 165, 0.5);
+          }
+        }
+        .bass {
+          background: rgba(252, 141, 98, 0.25);
+          &.active {
+            background: rgba(252, 141, 98, 1);
+          }
+          &.pending {
+            animation: pulse 0.5s infinite ease-in-out;
+            background: rgba(252, 141, 98, 0.5);
+          }
+          &.unpending {
+            animation: pulse 1s infinite ease-in-out;
+            background: rgba(252, 141, 98, 0.5);
+          }
+        }
+        .melody {
+          background: rgba(141, 160, 203, 0.25);
+          &.active {
+            background: rgba(141, 160, 203, 1);
+          }
+          &.pending {
+            animation: pulse 0.5s infinite ease-in-out;
+            background: rgba(141, 160, 203, 0.5);
+          }
+          &.unpending {
+            animation: pulse 1s infinite ease-in-out;
+            background: rgba(141, 160, 203, 0.5);
+          }
+        }
+        .fx {
+          background: rgba(231, 138, 195, 0.25);
+          &.active {
+            background: rgba(231, 138, 195, 1);
+          }
+          &.pending {
+            animation: pulse 0.5s infinite ease-in-out;
+            background: rgba(231, 138, 195, 0.5);
+          }
+          &.unpending {
+            animation: pulse 1s infinite ease-in-out;
+            background: rgba(231, 138, 195, 0.5);
+          }
+        }
+      }
+      .options {
+        flex: 0 0 50%;
+        padding-left: 1rem;
+
+        .controls {
+          display: flex;
+          .play {
+            width: 5rem;
+            height: 5rem;
+            background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iNzUycHQiIGhlaWdodD0iNzUycHQiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDc1MiA3NTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiA8cGF0aCBkPSJtMzc2IDE2Mi44OWMtMTE3LjQ1IDAtMjEzLjExIDk1LjE4OC0yMTMuMTEgMjEzLjExczk1LjY2NCAyMTMuMTEgMjEzLjExIDIxMy4xMWMxMTcuNDUgMCAyMTMuMTEtOTUuMTkxIDIxMy4xMS0yMTMuMTEtMC4wMDM5MDctMTE3LjkyLTk1LjY2OC0yMTMuMTEtMjEzLjEyLTIxMy4xMXptLTU3Ljc3NyAzMjIuNTF2LTIxOC43OWwxNzMuMzMgMTA5LjM5eiIvPgo8L3N2Zz4K");
+            background-size: 100% 100%;
+            cursor: pointer;
+          }
+          .stop {
+            width: 5rem;
+            height: 5rem;
+            background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iNzUycHQiIGhlaWdodD0iNzUycHQiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDc1MiA3NTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiA8cGF0aCBkPSJtMzc2IDE2Mi44OWMtMTE3LjQ1IDAtMjEzLjExIDk1LjE4OC0yMTMuMTEgMjEzLjExczk1LjY2NCAyMTMuMTEgMjEzLjExIDIxMy4xMWMxMTcuNDUgMCAyMTMuMTEtOTUuMTkxIDIxMy4xMS0yMTMuMTEtMC4wMDM5MDctMTE3LjkyLTk1LjY2OC0yMTMuMTEtMjEzLjEyLTIxMy4xMXptODAuNTEyIDI5My42MmgtMTYxLjAydi0xNjEuMDJoMTYxLjAyeiIvPgo8L3N2Zz4K");
+            background-size: 100% 100%;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
 
     .bar {
       background: white;
@@ -322,91 +454,7 @@ html {
         }
       }
     }
-    .low-cost-ensembles {
-      background: white;
-      padding: 10rem 0;
-      background-image: url(/static/cell-nucleus.svg);
-      background-size: 45vw;
-      background-repeat: no-repeat;
-      background-position: center left;
 
-      .wrapper {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 2rem;
-        align-items: center;
-
-        div {
-          grid-column: 2;
-          h1 {
-            font-family: Helvetica;
-            font-size: 3rem;
-            text-transform: uppercase;
-            line-height: 1;
-            letter-spacing: -0.1rem;
-            margin-bottom: 1rem;
-            color: black;
-          }
-          p {
-            color: black;
-            font-size: 1.1rem;
-          }
-          .read-more {
-            display: inline-block;
-            margin: 1rem 0;
-            color: black;
-            font-family: Helvetica;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.8rem;
-          }
-        }
-      }
-    }
-
-    .synaptic-stripping {
-      background: #0f0f0f;
-      padding: 10rem 0;
-      background-image: url(/static/jewel-stone-diamond.svg);
-      background-size: 45vw;
-      background-repeat: no-repeat;
-      background-position: center right;
-
-      .wrapper {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 2rem;
-        align-items: center;
-
-        div {
-          grid-column: 1;
-          h1 {
-            font-family: Helvetica;
-            font-size: 3rem;
-            text-transform: uppercase;
-            line-height: 1;
-            letter-spacing: -0.1rem;
-            margin-bottom: 1rem;
-            color: white;
-          }
-          p {
-            color: white;
-            font-size: 1.1rem;
-          }
-          .read-more {
-            display: inline-block;
-            margin: 1rem 0;
-            color: white;
-            font-family: Helvetica;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.8rem;
-          }
-        }
-      }
-    }
     .contact {
       padding: 2rem 0;
       background: white;

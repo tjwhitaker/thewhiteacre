@@ -282,6 +282,86 @@ html body .prune-and-tune-ensembles .wrapper div .read-more {
   letter-spacing: 1px;
   font-size: 0.8rem;
 }
+html body .low-cost-ensembles {
+  background: white;
+  padding: 10rem 0;
+  background-image: url(/static/cell-nucleus.svg);
+  background-size: 45vw;
+  background-repeat: no-repeat;
+  background-position: center left;
+}
+html body .low-cost-ensembles .wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2rem;
+  align-items: center;
+}
+html body .low-cost-ensembles .wrapper div {
+  grid-column: 2;
+}
+html body .low-cost-ensembles .wrapper div h1 {
+  font-family: Helvetica;
+  font-size: 3rem;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: -0.1rem;
+  margin-bottom: 1rem;
+  color: black;
+}
+html body .low-cost-ensembles .wrapper div p {
+  color: black;
+  font-size: 1.1rem;
+}
+html body .low-cost-ensembles .wrapper div .read-more {
+  display: inline-block;
+  margin: 1rem 0;
+  color: black;
+  font-family: Helvetica;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.8rem;
+}
+html body .synaptic-stripping {
+  background: #0f0f0f;
+  padding: 10rem 0;
+  background-image: url(/static/jewel-stone-diamond.svg);
+  background-size: 45vw;
+  background-repeat: no-repeat;
+  background-position: center right;
+}
+html body .synaptic-stripping .wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2rem;
+  align-items: center;
+}
+html body .synaptic-stripping .wrapper div {
+  grid-column: 1;
+}
+html body .synaptic-stripping .wrapper div h1 {
+  font-family: Helvetica;
+  font-size: 3rem;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: -0.1rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+html body .synaptic-stripping .wrapper div p {
+  color: white;
+  font-size: 1.1rem;
+}
+html body .synaptic-stripping .wrapper div .read-more {
+  display: inline-block;
+  margin: 1rem 0;
+  color: white;
+  font-family: Helvetica;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.8rem;
+}
 html body .contact {
   padding: 2rem 0;
   background: white;

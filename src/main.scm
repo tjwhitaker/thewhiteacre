@@ -16,6 +16,7 @@
 (include "./blog.scm")
 (include "./post.scm")
 (include "./research.scm")
+(include "./projects.scm")
 (include "./code.scm")
 
 ;; Write html to the intended build file
@@ -114,6 +115,12 @@
     (define html (serialize-sxml (research-template) indent: #f method: 'html'))
     (write-html "../build/research" html)))
 
+(define build-projects
+  (lambda ()
+    (define html (serialize-sxml (projects-template) indent: #f method: 'html'))
+    (write-html "../build/projects" html)))
+
+
 (define build-writing
   (lambda ()
     (define html (serialize-sxml (writing-template) indent: #f method: 'html'))
@@ -131,6 +138,7 @@
   (build-home)
   (build-about)
   (build-code)
+  (build-projects)
   (build-research)
   (build-blog feed)
   (build-posts feed))
