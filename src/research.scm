@@ -18,9 +18,8 @@
               (nav
                 (a (@ (href "/about")) "About")
                 (a (@ (href "/blog")) "Blog")
-                (a (@ (href "/projects")) "Projects")
+                (a (@ (href "/models")) "Models")
                 (a (@ (href "/research")) "Research"))))
-
           (main
             (div (@ (class "hero"))
               (div (@ (class "overlay")) "")
@@ -66,6 +65,23 @@
                   (p "Tim Whitaker · PhD Preliminary Exam")
                   (p "Ensemble learning has long been known to be a reliable and consistent way to improve generalization performance across a wide range of machine learning tasks. Instead of training and making predictions with a single model, ensembles use several independent models and combine their predictions together. However, training several independent models from scratch can become prohibitively expensive as deep neural networks continue to grow in both scale and complexity...")
                   (a (@ (href "/static/there-is-no-magic-subnetwork.pdf") (class "read-more")) "Read More"))))
+
+            ; (div (@ (class "prune-and-tune-ensembles"))
+            ;   (div (@ (class "wrapper"))
+            ;     (div
+            ;       (h1 "WorldGAN")
+            ;       (p "Personal Project")
+            ;       (p "Ensemble Learning is an effective method for improving generalization in machine learning. However, as state-of-the-art neural networks grow larger, the computational cost associated with training several independent networks becomes expensive. We introduce a fast, low-cost method for creating diverse ensembles of neural networks without needing to train multiple models from scratch. We do this by first training a single parent network. We then create child networks by cloning the parent and...")
+            ;       (a (@ (href "/static/prune-and-tune-ensembles.pdf") (class "read-more")) "Read More"))))
+
+            ; (div (@ (class "interpretable-diversity-analysis"))
+            ;   (div (@ (class "wrapper"))
+            ;     (div
+            ;       (h1 "Dueling Synth Pedal")
+            ;       (p "Personal Project")
+            ;       (p "Diversity is an important consideration in the construction of robust neural network ensembles. A collection of well trained models will generalize better to unseen data if they are diverse in the patterns they respond to and the predictions they make. Encouraging diversity becomes especially important for low-cost ensemble methods, as members often share network structure or training epochs in order to avoid training several independent networks from scratch...")
+            ;       (a (@ (href "/static/there-is-no-magic-subnetwork.pdf") (class "read-more")) "Read More"))))
+            
 
           (footer
             (div (@ (class "wrapper"))

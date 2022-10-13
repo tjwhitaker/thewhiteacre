@@ -18,7 +18,7 @@
               (nav
                 (a (@ (href "/about")) "About")
                 (a (@ (href "/blog")) "Blog")
-                (a (@ (href "/projects")) "Projects")
+                (a (@ (href "/models")) "Models")
                 (a (@ (href "/research")) "Research"))))
 
           (main
@@ -84,7 +84,7 @@
 
             (div (@ (class "contact"))
               (div (@ (class "wrapper"))
-                (h1 "Get in Touch")
+                (h2 "Contact")
                 (div (@ (class "form-container"))
                   (input (@ (placeholder "Name")))
                   (input (@ (placeholder "Email")))

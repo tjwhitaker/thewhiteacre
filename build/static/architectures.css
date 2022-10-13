@@ -76,12 +76,13 @@ html body .home header .wrapper nav a:hover {
 }
 html body .hero {
   width: 100%;
+  background: url(/static/space-bg.png);
   background-size: cover;
-  background-color: black;
-  background-position: right;
+  background-color: white;
+  background-position: center;
   background-repeat: no-repeat;
   position: relative;
-  height: 60vh;
+  height: 80vh;
 }
 html body .hero .overlay {
   position: absolute;
@@ -91,7 +92,7 @@ html body .hero .overlay {
   bottom: 0;
   z-index: 0;
   background: black;
-  opacity: 0;
+  opacity: 0.5;
 }
 html body .hero .wrapper {
   position: relative;
@@ -335,7 +336,7 @@ html body .contact .wrapper .map-container p {
   display: block;
 }
 html body footer {
-  background: #0f0f0f;
+  background: white;
   padding: 2rem 0;
 }
 html body footer .wrapper {
@@ -344,7 +345,7 @@ html body footer .wrapper {
   grid-column-gap: 2rem;
 }
 html body footer .wrapper .column h2 {
-  color: white;
+  color: black;
   font-family: Helvetica;
   text-transform: uppercase;
   margin-bottom: 1rem;
@@ -354,7 +355,7 @@ html body footer .wrapper .column a {
   display: block;
   width: max-content;
   margin-bottom: 1rem;
-  color: #aaa;
+  color: black;
   font-family: Helvetica;
   font-size: 0.8rem;
 }

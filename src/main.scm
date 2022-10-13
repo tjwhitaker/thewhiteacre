@@ -138,7 +138,7 @@
   (build-home)
   (build-about)
   (build-code)
-  (build-projects)
+  (build-models)
   (build-research)
   (build-blog feed)
   (build-posts feed))

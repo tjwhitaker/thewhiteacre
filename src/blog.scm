@@ -18,7 +18,7 @@
               (nav
                 (a (@ (href "/about")) "About")
                 (a (@ (href "/blog")) "Blog")
-                (a (@ (href "/projects")) "Projects")
+                (a (@ (href "/models")) "Models")
                 (a (@ (href "/research")) "Research"))))
                 
           (main

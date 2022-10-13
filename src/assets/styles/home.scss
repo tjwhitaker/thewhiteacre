@@ -380,6 +380,8 @@ html {
 
         h2 {
           grid-row: 1;
+          font-size: 3rem;
+          font-style: italic;
           margin-bottom: 1rem;
         }
         .form-container {
@@ -434,7 +436,7 @@ html {
     .reference {
       background: white;
       border-top: 1px solid #f7f7f7;
-      padding: 0.5rem;
+      padding: 1rem;
       p {
         text-align: center;
         margin: 0;
