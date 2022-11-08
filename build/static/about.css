@@ -76,7 +76,7 @@ html body .home header .wrapper nav a:hover {
 }
 html body .hero {
   width: 100%;
-  background: url(/static/blurry-small-cartoon-bw.jpg);
+  background: url(/static/mountain-bg.png);
   background-size: cover;
   background-color: white;
   background-position: right 70%;
@@ -92,7 +92,7 @@ html body .hero .overlay {
   bottom: 0;
   z-index: 0;
   background: black;
-  opacity: 0.3;
+  opacity: 0.5;
 }
 html body .hero .wrapper {
   position: relative;

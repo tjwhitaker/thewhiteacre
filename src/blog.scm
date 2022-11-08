@@ -2,7 +2,7 @@
   (lambda (feed)
     `(html
       ((head
-        (title "Blog | Wittes Ende")
+        (title "Blog | The White Acre")
         (meta (@ (charset "utf-8")))
         (meta (@ (name "viewport") (content "width=device-width, initial-scale=1")))
         (link (@ (rel "icon") (href "/static/favicon.ico")))
