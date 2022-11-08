@@ -375,7 +375,7 @@ html {
     }
 
     .my-research {
-      background: white;
+      background: #f7f7f7;
       padding: 10rem 0;
       background-image: url(/static/brain.svg);
       background-size: 45vw;
@@ -420,7 +420,7 @@ html {
 
     .contact {
       padding: 2rem 0;
-      background: #f7f7f7;
+      background: white;
 
       .wrapper {
         display: grid;
@@ -484,8 +484,7 @@ html {
     }
 
     .reference {
-      background: white;
-      border-top: 1px solid #f7f7f7;
+      background: #f7f7f7;
       padding: 1rem;
       p {
         text-align: center;

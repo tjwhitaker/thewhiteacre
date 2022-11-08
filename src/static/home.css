@@ -290,7 +290,7 @@ html body .intro .wrapper .column-wrapper .column .icon img {
   height: 100%;
 }
 html body .my-research {
-  background: white;
+  background: #f7f7f7;
   padding: 10rem 0;
   background-image: url(/static/brain.svg);
   background-size: 45vw;
@@ -331,7 +331,7 @@ html body .my-research .wrapper div .read-more {
 }
 html body .contact {
   padding: 2rem 0;
-  background: #f7f7f7;
+  background: white;
 }
 html body .contact .wrapper {
   display: grid;
@@ -391,8 +391,7 @@ html body .contact .wrapper .map-container p {
   display: block;
 }
 html body .reference {
-  background: white;
-  border-top: 1px solid #f7f7f7;
+  background: #f7f7f7;
   padding: 1rem;
 }
 html body .reference p {
