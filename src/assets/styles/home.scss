@@ -362,8 +362,8 @@ html {
             
             .icon {
               margin:0 auto;
-              height:7rem;
-              width:7rem;
+              height:10rem;
+              width:10rem;
 
               img {
                 width:100%;
@@ -382,6 +382,7 @@ html {
       background-size: 45vw;
       background-repeat: no-repeat;
       background-position: center left;
+      position:relative;
 
       .wrapper {
         display: grid;

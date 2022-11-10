@@ -283,8 +283,8 @@ html body .intro .wrapper .column-wrapper .column {
 }
 html body .intro .wrapper .column-wrapper .column .icon {
   margin: 0 auto;
-  height: 7rem;
-  width: 7rem;
+  height: 10rem;
+  width: 10rem;
 }
 html body .intro .wrapper .column-wrapper .column .icon img {
   width: 100%;
@@ -297,6 +297,7 @@ html body .my-research {
   background-size: 45vw;
   background-repeat: no-repeat;
   background-position: center left;
+  position: relative;
 }
 html body .my-research .wrapper {
   display: grid;

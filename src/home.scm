@@ -26,7 +26,7 @@
               (div (@ (class "overlay")) "")
                 (div (@ (class "wrapper"))
                   (h1 "Exploring The Art and Science of Machine Learning")
-                  (p "Welcome! My name is Tim Whitaker and I'm a researcher studying neural network optimization and analysis. The White Acre is a website I built to explore and share cool research in machine learning.")))
+                  (p "Welcome! My name is Tim Whitaker and I'm a researcher studying neural network optimization and analysis. The White Acre is a website I built to explore and share my research in machine learning.")))
 
               ; (div (@ (class "featured"))
               ;   (blockquote "Recent Stuff")
@@ -58,31 +58,31 @@
                     (div (@ (class "icon"))
                       (img (@ (src "/static/crypto-gpu.svg"))))
                     (h2 "Model Optimization")
-                    (p "Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring."))
+                    (p "I've spent a lot of time tuning and optimizing deep neural networks. I love tinkering with learning algorithms and model architectures in order to improve performance. I have experience with optimizing models for fast and efficient as well as tuning models to improve generalization performance for incredible accuracy."))
 
                   (div (@ (class "column"))
                     (div (@ (class "icon"))
                       (img (@ (src "/static/statistical-analysis.svg"))))
                     (h2 "Exploratory Data Analysis")
-                    (p "Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment."))
+                    (p "Data is often the most important piece of any machine learning project. Whether it's analyzing datasets to find new insights, writing scripts to engineer new features, or scraping the web to build larger datasets, I love the interactive nature and exploration of a new problem."))
 
                   (div (@ (class "column"))
                     (div (@ (class "icon"))
                       (img (@ (src "/static/documents-ui.svg"))))
                     (h2 "Software Engineering")
-                    (p "Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.")))))
+                    (p "Before pursuing my PhD in neural network research, I spent the better part of a decade working as a software engineer in web development. I have a passion for building clean and maintainable open source code.")))))
 
             (div (@ (class "personal"))
               (div (@ (class "overlay")) "")
               (div (@ (class "wrapper"))
                 (h1 "A Research Scientist Who Loves To Code")
-                (p "Don't ever, for any reason, do anything to anyone for any reason ever, no matter what, no matter where, or who, or who you are with, or where you are going, or where you've been... ever, for any reason whatsoever.")))
+                (p "Programming has been a hobby and a passion of mine for over 15 years and I've worked tirelessly over that time to hone my craft. I see programming as a means for artistic expression and I love exploring philosophical and neuroscientific ideas through my work.")))
             
             (div (@ (class "my-research"))
               (div (@ (class "wrapper"))
                 (div
-                  (h1 "Neural Network Research")
-                  (p "Ensemble Learning is an effective method for improving generalization in machine learning. However, as state-of-the-art neural networks grow larger, the computational cost associated with training several independent networks becomes expensive. We introduce a fast, low-cost method for creating diverse ensembles of neural networks without needing to train multiple models from scratch. We do this by first training a single parent network. We then create child networks by cloning the parent and...")
+                  (h1 "Neural Partitioning: A Framework for Analyzing and Optimizing Neural Networks by Shattering Them Into Pieces")
+                  (p "My PhD research explores the process of splitting deep neural networks into pieces. By understanding how subnetworks contribute to learning, we can improve the generalization of whole systems by optimizing these pieces independently. My work touches on several powerful topics in machine learning including: sparse network architectures, ensemble learning, modular learning, evolutionary methods and quantum computation. Check out my research papers to learn more about what I'm working on...")
                   (a (@ (href "/research") (class "read-more")) "Read More"))))
 
 
