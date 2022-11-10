@@ -73,7 +73,7 @@ html body .home header {
   width: 100%;
   background: white;
   margin: 0;
-  padding: 0.5rem;
+  padding: 0;
 }
 html body .home header .wrapper {
   display: grid;
@@ -307,11 +307,8 @@ html body .my-research .wrapper div {
   grid-column: 2;
 }
 html body .my-research .wrapper div h1 {
-  font-family: Helvetica;
-  font-size: 3rem;
-  text-transform: uppercase;
-  line-height: 1;
-  letter-spacing: -0.1rem;
+  font-size: 2rem;
+  line-height: 1.2;
   margin-bottom: 1rem;
   color: black;
 }
@@ -330,7 +327,7 @@ html body .my-research .wrapper div .read-more {
   font-size: 0.8rem;
 }
 html body .contact {
-  padding: 2rem 0;
+  padding: 5rem 0;
   background: white;
 }
 html body .contact .wrapper {
@@ -339,10 +336,10 @@ html body .contact .wrapper {
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 2rem;
 }
-html body .contact .wrapper h2 {
+html body .contact .wrapper h1 {
   grid-row: 1;
-  font-size: 3rem;
-  font-style: italic;
+  font-size: 2rem;
+  line-height: 1.2;
   margin-bottom: 1rem;
 }
 html body .contact .wrapper .form-container {
