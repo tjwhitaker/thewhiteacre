@@ -60,9 +60,10 @@ html body header .wrapper {
 html body header .wrapper .logo {
   color: black;
   font-size: 0;
+  padding: 0.5rem 0;
 }
 html body header .wrapper .logo img {
-  height: 100%;
+  height: auto;
   max-width: 160px;
 }
 html body header .wrapper nav a {

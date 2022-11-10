@@ -26,7 +26,7 @@
               (div (@ (class "overlay")) "")
                 (div (@ (class "wrapper"))
                   (h1 "Exploring The Art and Science of Machine Learning")
-                  (p "Welcome! My name is Tim Whitaker and I'm a researcher studying neural network optimization and analysis. The White Acre is my website where I explore and share cool research in machine learning.")))
+                  (p "Welcome! My name is Tim Whitaker and I'm a researcher studying neural network optimization and analysis. The White Acre is a website I built to explore and share cool research in machine learning.")))
 
               ; (div (@ (class "featured"))
               ;   (blockquote "Recent Stuff")
@@ -56,16 +56,16 @@
                 (div (@ (class "column-wrapper"))
                   (div (@ (class "column"))
                     (div (@ (class "icon"))
-                      (img (@ (src "/static/statistical-analysis.svg"))))
-                    (h2 "Data Science")
-                    (p "Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.")
-                  )
-                  (div (@ (class "column"))
-                    (div (@ (class "icon"))
                       (img (@ (src "/static/crypto-gpu.svg"))))
                     (h2 "Model Optimization")
-                    (p "Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.")
-                  )
+                    (p "Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring."))
+
+                  (div (@ (class "column"))
+                    (div (@ (class "icon"))
+                      (img (@ (src "/static/statistical-analysis.svg"))))
+                    (h2 "Exploratory Data Analysis")
+                    (p "Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment."))
+
                   (div (@ (class "column"))
                     (div (@ (class "icon"))
                       (img (@ (src "/static/documents-ui.svg"))))
@@ -75,15 +75,15 @@
             (div (@ (class "personal"))
               (div (@ (class "overlay")) "")
               (div (@ (class "wrapper"))
-                (h1 "A Research Scientist Who loves to code")
+                (h1 "A Research Scientist Who Loves To Code")
                 (p "Don't ever, for any reason, do anything to anyone for any reason ever, no matter what, no matter where, or who, or who you are with, or where you are going, or where you've been... ever, for any reason whatsoever.")))
             
             (div (@ (class "my-research"))
               (div (@ (class "wrapper"))
                 (div
-                  (h1 "Check Out My PhD Research on Neural Networks")
+                  (h1 "Neural Network Research")
                   (p "Ensemble Learning is an effective method for improving generalization in machine learning. However, as state-of-the-art neural networks grow larger, the computational cost associated with training several independent networks becomes expensive. We introduce a fast, low-cost method for creating diverse ensembles of neural networks without needing to train multiple models from scratch. We do this by first training a single parent network. We then create child networks by cloning the parent and...")
-                  (a (@ (href "/static/prune-and-tune-ensembles.pdf") (class "read-more")) "Read More"))))
+                  (a (@ (href "/research") (class "read-more")) "Read More"))))
 
 
             (div (@ (class "contact"))
@@ -103,9 +103,7 @@
             )
 
             (div (@ (class "reference"))
-              (p "P.S. I built this website using a static site generator I built in " (a (@ (href "#")) "scheme") ". All hero images are generated with neural networks via " (a (@ (href "#")) "midjourney") ".")
-            )
-          )
+              (p "P.S. I built and designed this " (a (@ (href "https://github.com/tjwhitaker/thewhiteacre")) "website") " entirely from scratch in scheme. All hero images are generated with neural networks via " (a (@ (href "https://midjourney.com")) "midjourney") ".")))
 
 
           (footer
@@ -133,6 +131,4 @@
           style: 'mapbox://styles/mapbox/light-v10', // style URL
           center: [-121.4944, 38.5816], // starting position [lng, lat]
           zoom: 10 // starting zoom
-          });"
-          )
-                ))))))
+          });")))))))

@@ -1,2 +1,3 @@
+build/* linguist-vendored
 *.css linguist-vendored
 *.scss linguist-vendored
