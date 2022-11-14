@@ -77,7 +77,7 @@ html body .home header .wrapper nav a:hover {
 }
 html body .hero {
   width: 100%;
-  background: url(/static/chess-bg.png);
+  background: url(/static/test-profile.jpg);
   background-size: cover;
   background-color: white;
   background-position: top center;

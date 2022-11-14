@@ -197,52 +197,74 @@ html {
     }
 
     .personal {
-      width: 100%;
-      background: url(/static/test-profile.jpg);
-      background-size: cover;
-      background-color: white;
-      background-position: top;
-      background-repeat: no-repeat;
-      position: relative;
-      height: 80vh;
+      display: flex;
+      align-items: center;
 
-      .overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: 0;
-        background: black;
-        opacity: 0.5;
-      }
+      .content {
+        flex: 0 0 50%;
+        .wrapper {
+          max-width: 60%;
 
-      .wrapper {
-        position: relative;
-        z-index: 1;
-        top: 50%;
-        transform: translateY(-50%);
-
-        h1 {
-          font-family: 'Open Sans';
-          font-size: 4rem;
-          text-transform: uppercase;
-          line-height: 1;
-          letter-spacing: -0.1rem;
-          margin-bottom: 1rem;
-          color: white;
-          max-width: 42rem;
+          p {
+            margin-bottom: 1rem;
+          }
         }
-
-        p {
-          color: white;
-          font-size: 1.1rem;
-          font-style: italic;
-          margin-bottom: 2rem;
-          max-width: 42rem;
+      }
+      .image {
+        flex: 0 0 50%;
+        img {
+          display: block;
         }
       }
     }
+
+    // .personal {
+    //   width: 100%;
+    //   background: url(/static/test-profile.jpg);
+    //   background-size: cover;
+    //   background-color: white;
+    //   background-position: top;
+    //   background-repeat: no-repeat;
+    //   position: relative;
+    //   height: 80vh;
+
+    //   .overlay {
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     right: 0;
+    //     bottom: 0;
+    //     z-index: 0;
+    //     background: black;
+    //     opacity: 0.5;
+    //   }
+
+    //   .wrapper {
+    //     position: relative;
+    //     z-index: 1;
+    //     top: 50%;
+    //     transform: translateY(-50%);
+
+    //     h1 {
+    //       font-family: 'Open Sans';
+    //       font-size: 4rem;
+    //       text-transform: uppercase;
+    //       line-height: 1;
+    //       letter-spacing: -0.1rem;
+    //       margin-bottom: 1rem;
+    //       color: white;
+    //       max-width: 42rem;
+    //     }
+
+    //     p {
+    //       color: white;
+    //       font-size: 1.1rem;
+    //       font-style: italic;
+    //       margin-bottom: 2rem;
+    //       max-width: 42rem;
+    //     }
+    //   }
+    // }
 
     .bar {
       background: white;
@@ -341,7 +363,7 @@ html {
 
     .intro {
       background: white;
-      padding: 5rem 0;
+      padding: 3rem 0;
       .wrapper {
         blockquote {
           padding-bottom: 2rem;
@@ -362,8 +384,8 @@ html {
             
             .icon {
               margin:0 auto;
-              height:10rem;
-              width:10rem;
+              height:8rem;
+              width:8rem;
 
               img {
                 width:100%;
