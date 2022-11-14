@@ -24,7 +24,7 @@
           (div (@ (class "hero"))
             (div (@ (class "overlay")) "")
             (div (@ (class "wrapper"))
-              (h1 "The Homepage of Tim Whitaker")
+              (h1 "About The Author")
               (p "When I am not programming or working on my research, I am probably playing chess, rock climbing, or making music.")
             )
           )
