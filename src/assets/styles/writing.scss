@@ -70,8 +70,8 @@ html {
           .logo {
             color: black;
             font-size: 0;
-            padding:0.5rem 0;
-            
+            padding: 0.5rem 0;
+
             img {
               height: auto;
               max-width: 160px;
@@ -82,8 +82,8 @@ html {
             a {
               color: black;
               text-decoration: none;
-              font-weight: bold;
-              font-family: Helvetica;
+              font-weight: 500;
+              font-family: "Open Sans";
               margin-left: 2rem;
               text-transform: uppercase;
               font-size: 0.8rem;
@@ -124,7 +124,7 @@ html {
         transform: translateY(-50%);
 
         h1 {
-          font-family: Helvetica;
+          font-family: "Open Sans";
           font-size: 4rem;
           text-transform: uppercase;
           line-height: 1;
@@ -151,7 +151,7 @@ html {
             padding: 0.5rem 1rem;
             outline: none;
             margin-right: 1rem;
-            font-family: Helvetica;
+            font-family: "Open Sans";
             font-weight: bold;
             text-transform: uppercase;
             font-size: 0.8rem;
@@ -174,7 +174,7 @@ html {
         p {
           color: #bbb;
           text-align: center;
-          font-family: Helvetica;
+          font-family: "Open Sans";
           font-weight: bold;
           text-transform: uppercase;
           letter-spacing: 1px;
@@ -213,7 +213,7 @@ html {
         div {
           grid-column: 2;
           h1 {
-            font-family: Helvetica;
+            font-family: "Open Sans";
             font-size: 3rem;
             text-transform: uppercase;
             line-height: 1;
@@ -229,7 +229,7 @@ html {
             display: inline-block;
             margin: 1rem 0;
             color: black;
-            font-family: Helvetica;
+            font-family: "Open Sans";
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -256,7 +256,7 @@ html {
         div {
           grid-column: 1;
           h1 {
-            font-family: Helvetica;
+            font-family: "Open Sans";
             font-size: 3rem;
             text-transform: uppercase;
             line-height: 1;
@@ -272,7 +272,7 @@ html {
             display: inline-block;
             margin: 1rem 0;
             color: white;
-            font-family: Helvetica;
+            font-family: "Open Sans";
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -298,7 +298,7 @@ html {
         div {
           grid-column: 2;
           h1 {
-            font-family: Helvetica;
+            font-family: "Open Sans";
             font-size: 3rem;
             text-transform: uppercase;
             line-height: 1;
@@ -314,7 +314,7 @@ html {
             display: inline-block;
             margin: 1rem 0;
             color: black;
-            font-family: Helvetica;
+            font-family: "Open Sans";
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -365,7 +365,7 @@ html {
             color: white;
             padding: 0.5rem 1rem;
             outline: none;
-            font-family: Helvetica;
+            font-family: "Open Sans";
             font-weight: bold;
             text-transform: uppercase;
             font-size: 0.8rem;
@@ -399,7 +399,7 @@ html {
         .column {
           h2 {
             color: white;
-            font-family: Helvetica;
+            font-family: "Open Sans";
             text-transform: uppercase;
             margin-bottom: 1rem;
             font-size: 0.8rem;
@@ -409,7 +409,7 @@ html {
             width: max-content;
             margin-bottom: 1rem;
             color: #aaa;
-            font-family: Helvetica;
+            font-family: "Open Sans";
             font-size: 0.8rem;
           }
         }

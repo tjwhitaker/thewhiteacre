@@ -88,8 +88,8 @@ html body .home header .wrapper .logo img {
 html body .home header .wrapper nav a {
   color: black;
   text-decoration: none;
-  font-weight: bold;
-  font-family: Helvetica;
+  font-weight: 500;
+  font-family: "Open Sans";
   margin-left: 2rem;
   text-transform: uppercase;
   font-size: 0.8rem;
@@ -124,7 +124,7 @@ html body .hero .wrapper {
   text-align: center;
 }
 html body .hero .wrapper h1 {
-  font-family: Helvetica;
+  font-family: "Open Sans";
   font-size: 4rem;
   text-transform: uppercase;
   line-height: 1;
@@ -249,7 +249,7 @@ html body footer .wrapper {
 }
 html body footer .wrapper .column h2 {
   color: white;
-  font-family: Helvetica;
+  font-family: "Open Sans";
   text-transform: uppercase;
   margin-bottom: 1rem;
   font-size: 0.8rem;
@@ -259,7 +259,7 @@ html body footer .wrapper .column a {
   width: max-content;
   margin-bottom: 1rem;
   color: #aaa;
-  font-family: Helvetica;
+  font-family: "Open Sans";
   font-size: 0.8rem;
 }
 

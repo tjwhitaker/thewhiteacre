@@ -66,8 +66,8 @@ html body .home header .wrapper .logo img {
 html body .home header .wrapper nav a {
   color: black;
   text-decoration: none;
-  font-weight: bold;
-  font-family: Helvetica;
+  font-weight: 500;
+  font-family: "Open Sans";
   margin-left: 2rem;
   text-transform: uppercase;
   font-size: 0.8rem;
@@ -102,7 +102,7 @@ html body .hero .wrapper {
   transform: translateY(-50%);
 }
 html body .hero .wrapper h1 {
-  font-family: Helvetica;
+  font-family: "Open Sans";
   font-size: 4rem;
   text-transform: uppercase;
   line-height: 1;
@@ -128,7 +128,7 @@ html body .hero .wrapper .button-group .button {
   padding: 0.5rem 1rem;
   outline: none;
   margin-right: 1rem;
-  font-family: Helvetica;
+  font-family: "Open Sans";
   font-weight: bold;
   text-transform: uppercase;
   font-size: 0.8rem;
@@ -146,7 +146,7 @@ html body .bar {
 html body .bar .wrapper p {
   color: #bbb;
   text-align: center;
-  font-family: Helvetica;
+  font-family: "Open Sans";
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -181,7 +181,7 @@ html body .quantum-neuron-selection .wrapper div {
   grid-column: 2;
 }
 html body .quantum-neuron-selection .wrapper div h1 {
-  font-family: Helvetica;
+  font-family: "Open Sans";
   font-size: 3rem;
   text-transform: uppercase;
   line-height: 1;
@@ -197,7 +197,7 @@ html body .quantum-neuron-selection .wrapper div .read-more {
   display: inline-block;
   margin: 1rem 0;
   color: black;
-  font-family: Helvetica;
+  font-family: "Open Sans";
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -221,7 +221,7 @@ html body .interpretable-diversity-analysis .wrapper div {
   grid-column: 1;
 }
 html body .interpretable-diversity-analysis .wrapper div h1 {
-  font-family: Helvetica;
+  font-family: "Open Sans";
   font-size: 3rem;
   text-transform: uppercase;
   line-height: 1;
@@ -237,7 +237,7 @@ html body .interpretable-diversity-analysis .wrapper div .read-more {
   display: inline-block;
   margin: 1rem 0;
   color: white;
-  font-family: Helvetica;
+  font-family: "Open Sans";
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -261,7 +261,7 @@ html body .prune-and-tune-ensembles .wrapper div {
   grid-column: 2;
 }
 html body .prune-and-tune-ensembles .wrapper div h1 {
-  font-family: Helvetica;
+  font-family: "Open Sans";
   font-size: 3rem;
   text-transform: uppercase;
   line-height: 1;
@@ -277,7 +277,7 @@ html body .prune-and-tune-ensembles .wrapper div .read-more {
   display: inline-block;
   margin: 1rem 0;
   color: black;
-  font-family: Helvetica;
+  font-family: "Open Sans";
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -324,7 +324,7 @@ html body .contact .wrapper .form-container .button {
   color: white;
   padding: 0.5rem 1rem;
   outline: none;
-  font-family: Helvetica;
+  font-family: "Open Sans";
   font-weight: bold;
   text-transform: uppercase;
   font-size: 0.8rem;
@@ -353,7 +353,7 @@ html body footer .wrapper {
 }
 html body footer .wrapper .column h2 {
   color: white;
-  font-family: Helvetica;
+  font-family: "Open Sans";
   text-transform: uppercase;
   margin-bottom: 1rem;
   font-size: 0.8rem;
@@ -363,7 +363,7 @@ html body footer .wrapper .column a {
   width: max-content;
   margin-bottom: 1rem;
   color: #aaa;
-  font-family: Helvetica;
+  font-family: "Open Sans";
   font-size: 0.8rem;
 }
 
