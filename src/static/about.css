@@ -2,28 +2,28 @@
   font-family: "Latin Modern";
   font-style: normal;
   font-weight: normal;
-  font-display: swap;
+  font-display: block;
   src: url("./LM-regular.woff2") format("woff2"), url("./LM-regular.woff") format("woff"), url("./LM-regular.ttf") format("truetype");
 }
 @font-face {
   font-family: "Latin Modern";
   font-style: italic;
   font-weight: normal;
-  font-display: swap;
+  font-display: block;
   src: url("./LM-italic.woff2") format("woff2"), url("./LM-italic.woff") format("woff"), url("./LM-italic.ttf") format("truetype");
 }
 @font-face {
   font-family: "Latin Modern";
   font-style: normal;
   font-weight: bold;
-  font-display: swap;
+  font-display: block;
   src: url("./LM-bold.woff2") format("woff2"), url("./LM-bold.woff") format("woff"), url("./LM-bold.ttf") format("truetype");
 }
 @font-face {
   font-family: "Latin Modern";
   font-style: italic;
   font-weight: bold;
-  font-display: swap;
+  font-display: block;
   src: url("./LM-bold-italic.woff2") format("woff2"), url("./LM-bold-italic.woff") format("woff"), url("./LM-bold-italic.ttf") format("truetype");
 }
 *,
@@ -220,27 +220,27 @@ html body .gallery .item img {
 }
 html body .gallery .item:nth-child(1) {
   grid-column-start: 1;
-  grid-column-end: 5;
+  grid-column-end: 3;
   grid-row-start: 1;
   grid-row-end: 4;
 }
 html body .gallery .item:nth-child(2) {
+  grid-column-start: 3;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 7;
+}
+html body .gallery .item:nth-child(3) {
   grid-column-start: 5;
   grid-column-end: 9;
   grid-row-start: 1;
   grid-row-end: 7;
 }
-html body .gallery .item:nth-child(3) {
+html body .gallery .item:nth-child(4) {
   grid-column-start: 1;
   grid-column-end: 3;
   grid-row-start: 4;
   grid-row-end: 10;
-}
-html body .gallery .item:nth-child(4) {
-  grid-column-start: 3;
-  grid-column-end: 5;
-  grid-row-start: 4;
-  grid-row-end: 7;
 }
 html body .gallery .item:nth-child(5) {
   grid-column-start: 3;

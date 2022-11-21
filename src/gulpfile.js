@@ -6,29 +6,31 @@ gulp.task("styles", () => {
   return gulp
     .src("assets/styles/**/*.scss")
     .pipe(sass().on("error", sass.logError))
-    .pipe(gulp.dest("./static/"))
+    .pipe(gulp.dest("../build/static/"))
 })
 
 gulp.task("images", () => {
   return gulp
     .src("assets/images/**/*.+(png|jpg|gif|ico|svg)")
-    .pipe(gulp.dest("./static"))
+    .pipe(gulp.dest("../build/static"))
 })
 
 gulp.task("scripts", () => {
-  return gulp.src("assets/scripts/**/*.+(js)").pipe(gulp.dest("./static"))
+  return gulp
+    .src("assets/scripts/**/*.+(js)")
+    .pipe(gulp.dest("../build/static"))
 })
 
 gulp.task("fonts", () => {
   return gulp
     .src("assets/fonts/**/*.+(ttf|woff|woff2)")
-    .pipe(gulp.dest("./static"))
+    .pipe(gulp.dest("../build/static"))
 })
 
 gulp.task("sounds", () => {
   return gulp
     .src("assets/sounds/**/*.+(mp3|webm|json|ogg|m4a|ac3)")
-    .pipe(gulp.dest("./static"))
+    .pipe(gulp.dest("../build/static"))
 })
 
 gulp.task("clean", () => {

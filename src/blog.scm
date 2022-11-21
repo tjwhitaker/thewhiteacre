@@ -30,18 +30,16 @@
                   (h1 "Blog")
                   (p "Busy writing papers for my PhD. Blog posts coming soon!")))
 
-            ; (div (@ (class "feed"))
-            ;   ,(map (lambda (post) 
-            ;     `(div (@ (class "post"))
-            ;       (div (@ (class "wrapper"))
-            ;         (div (@ (class "header"))
-            ;           (h1 ,(cadr (assoc 'title post)))
-            ;           (small ,(cadr (assoc 'date post))))
-            ;         (p ,(cadr (assoc 'description post)))
-            ;         (a (@ (href ,(conc "/blog/" (cadr (assoc 'slug post))))) "Read More"))))
-            ;   feed))
-              
-              )
+            (div (@ (class "feed"))
+              (div (@ (class "wrapper"))
+                ,(map (lambda (post) 
+                  `(div (@ (class "post"))
+                      (small ,(cadr (assoc 'date post)))
+                      (h1 ,(cadr (assoc 'title post)))
+                      (p ,(cadr (assoc 'description post)))
+                      (a (@ (href ,(conc "/blog/" (cadr (assoc 'slug post))))) "Read More")))
+              feed)))
+          )
 
 
           (footer

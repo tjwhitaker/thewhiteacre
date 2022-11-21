@@ -36,10 +36,12 @@
       (irregex-search
         '(: "TITLE: " (=> title (*? any)) eol (*? any)
             "DESCRIPTION: " (=> description (*? any)) eol (*? any)
-            "DATE: " (=> date (*? any)) eol) text))
+            "DATE: " (=> date (*? any)) eol (*? any)
+            "HERO: " (=> hero (*? any)) eol) text))
     `((title ,(irregex-match-substring match 'title))
       (description ,(irregex-match-substring match 'description))
       (date ,(irregex-match-substring match 'date))
+      (hero ,(irregex-match-substring match 'hero))
       (slug ,(string-chomp filename ".org"))
       (content ,(capture ,(conc "pandoc articles/" filename " --katex -f org -t html"))))))
 
@@ -66,6 +68,7 @@
       (lambda (article) 
         (define template (serialize-sxml (article-template feed) indent: #f method: 'html))
         (define temp (inject-field "<ARTICLE-TITLE />" template (cadr (assoc 'title article))))
+        (define temp (inject-field "<ARTICLE-HERO />" temp (cadr (assoc 'hero article))))
         (define html (inject-field "<ARTICLE-CONTENT />" temp (cadr (assoc 'content article))))
 
         ; (define html (irregex-replace "<CONTEXT />" template (cadr (assoc 'content article))))
@@ -97,9 +100,11 @@
   (lambda (feed)
     (map 
       (lambda (article) 
-        (define template (serialize-sxml (post-template feed) indent: #f method: 'html))
-        (define temp (inject-field "<ARTICLE-TITLE />" template (cadr (assoc 'title article))))
-        (define html (inject-field "<ARTICLE-CONTENT />" temp (cadr (assoc 'content article))))
+        (define title (cadr (assoc 'title article)))
+        (define description (cadr (assoc 'description article)))
+        (define hero (cadr (assoc 'hero article)))
+        (define template (serialize-sxml (post-template title description hero) indent: #f method: 'html))
+        (define html (inject-field "<ARTICLE-CONTENT />" template (cadr (assoc 'content article))))
 
         ; (define html (irregex-replace "<CONTEXT />" template (cadr (assoc 'content article))))
         (write-html (conc "../build/blog/" (cadr (assoc 'slug article))) html))
@@ -129,8 +134,7 @@
 ;; Run gulp and copy static files to build dir
 (define build-static
   (lambda ()
-    (run gulp)
-    (map (lambda (x) (copy-file (conc "./static/" x) (conc "../build/static/" x) #t)) (directory "./static"))))
+    (run gulp)))
 
 ;; Our main loop
 (let ((feed (build-feed)))

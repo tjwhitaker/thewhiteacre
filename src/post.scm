@@ -1,35 +1,54 @@
 (define post-template
-  (lambda (feed)
+  (lambda (title description hero)
     `(html
       ((head
-        (title "Home | Dead Neuron")
+        (title "Blog | The White Acre")
         (meta (@ (charset "utf-8")))
         (meta (@ (name "viewport") (content "width=device-width, initial-scale=1")))
         (link (@ (rel "icon") (href "/static/favicon.ico")))
-        (link (@ (rel "stylesheet") (href "/static/blog.css")))
+        (link (@ (rel "stylesheet") (href "/static/article.css")))
         (link (@ (rel "preconnect") (href "https://fonts.googleapis.com")))
         (link (@ (rel "preconnect") (href "https://fonts.gstatic.com")))
-        (link (@ (rel "stylesheet") (href "https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;700&display=block"))))
+        (link (@ (rel "stylesheet") (href "https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;700&display=block")))
+        (link (@ (rel "stylesheet") (href "https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css")))
+        (script (@ (src "https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js")) ""))
       (body
-      (div (@ (class "wrapper"))
-        (header
-          (a (@ (href "/") (class "logo")) "Dead Neuron")
-        )
-        (main
-          (h1 (@ (class "article-title")) (ARTICLE-TITLE))
-          (ARTICLE-CONTENT)
-        )
-        (aside
-          (div (@ (class "meta"))
-            (h3 (@ (class "minion")) "Meta")
-            (p "Hello and welcome! My name is Tim and I'm trying to showcase some cool and innovative applications of machine learning in art and science.")
+        (div (@ (class "home"))
+          (header
+            (div (@ (class "wrapper"))
+              (a (@ (href "/") (class "logo")) (img (@ (src "/static/logo.svg"))))
+              (nav
+                (a (@ (href "/about")) "About")
+                (a (@ (href "/blog")) "Blog")
+                (a (@ (href "/models")) "Models")
+                (a (@ (href "/research")) "Research"))))
+                
+          (main
+            (div (@ (class "hero") (style ,(conc "background-image: url(" hero ")")))
+              (div (@ (class "overlay")) "")
+                (div (@ (class "wrapper"))
+                  (h1 ,title)
+                  (p ,description)))
+
+            (div (@ (class "wrapper"))
+              (ARTICLE-CONTENT)
+            )
+
+              
           )
-          (div (@ (class "feed"))
-            (h3 (@ (class "minion")) "Feed")
-            ,(map (lambda (post) 
-              `(a (@ (class "post") (href ,(conc "/" (cadr (assoc 'slug post))))) 
-                (h3 ,(cadr (assoc 'title post)))
-                (p ,(cadr (assoc 'description post)))
-                (small ,(cadr (assoc 'date post)))))
-            feed))
-        )))))))
+
+
+          (footer
+            (div (@ (class "wrapper"))
+              (div (@ (class "column"))
+                (h2 "Site")
+                (a (@ (href "/about")) "About")
+                (a (@ (href "/art")) "Art")
+                (a (@ (href "/music")) "Music")
+                (a (@ (href "")) "Contact"))
+              (div (@ (class "column"))
+                (h2 "Links")
+                (a (@ (href "")) "Hello")
+                (a (@ (href "")) "Hello"))
+              (div (@ (class "column"))
+                (h2 "Hello World"))))))))))
