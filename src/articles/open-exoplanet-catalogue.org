@@ -1,7 +1,7 @@
 #+TITLE: Open Exoplanet Catalogue
 #+DESCRIPTION: Hello world
 #+DATE: 2021-03-01
-#+HERO: /static/trees-bg.png
+#+HERO: /static/space-bg.png
 
 The NASA open catalogue of exoplanets is a dataset of almost 4000 planets, created in 2012 and maintained as a free and decentralized database by a community of volunteers. Over the last 5 years, technological advancements and data collection efforts have spurned the discovery of more planets than in the previous 100 years combined. Sky survey projects all over the world are collecting terabytes of information every night, leaving data scientists with ample opportunity to explore the universe.[^2]
 
