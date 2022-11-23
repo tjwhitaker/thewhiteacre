@@ -1,84 +1,360 @@
-<!DOCTYPE html><html><head><title>Blog | The White Acre</title><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><link rel="icon" href="/static/favicon.ico" /><link rel="stylesheet" href="/static/article.css" /><link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" /><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;700&amp;display=block" /><link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css" /><script src="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js"></script></head><body><div class="home"><header><div class="wrapper"><a href="/" class="logo"><img src="/static/logo.svg" /></a><nav><a href="/about">About</a><a href="/blog">Blog</a><a href="/models">Models</a><a href="/research">Research</a></nav></div></header><main><div class="hero" style="background-image: url(/static/trees-bg.png)"><div class="overlay"></div><div class="wrapper"><h1>Open Exoplanet Catalogue</h1><p>Hello world</p></div></div><div class="wrapper"><p>The NASA open catalogue of exoplanets is a dataset of almost 4000 planets, created in 2012 and maintained as a free and decentralized database by a community of volunteers. Over the last 5 years, technological advancements and data collection efforts have spurned the discovery of more planets than in the previous 100 years combined. Sky survey projects all over the world are collecting terabytes of information every night, leaving data scientists with ample opportunity to explore the universe.[<sup>2</sup>]</p>
-<p>## Introduction</p>
+<!DOCTYPE html><html><head><title>Blog | The White Acre</title><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><link rel="icon" href="/static/favicon.ico" /><link rel="stylesheet" href="/static/article.css" /><link rel="stylesheet" href="/static/prism.css" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.3/dist/katex.min.css" /><link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" /><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;700&amp;display=block" /><link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css" /><script src="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js"></script></head><body><div class="home"><header><div class="wrapper"><a href="/" class="logo"><img src="/static/logo.svg" /></a><nav><a href="/about">About</a><a href="/blog">Blog</a><a href="/models">Models</a><a href="/research">Research</a></nav></div></header><main><div class="hero" style="background-image: url(/static/space-bg.png)"><div class="overlay"></div><div class="wrapper"><h1>Open Exoplanet Catalogue</h1><p>Hello world</p></div></div><div class="content"><div class="wrapper"><p>The NASA open catalogue of exoplanets is a dataset of almost 4000 planets, created in 2012 and maintained as a free and decentralized database by a community of volunteers. Over the last 5 years, technological advancements and data collection efforts have spurned the discovery of more planets than in the previous 100 years combined. Sky survey projects all over the world are collecting terabytes of information every night, leaving data scientists with ample opportunity to explore the universe.[<sup>2</sup>]</p>
+<h2 id="introduction">Introduction</h2>
 <p>I downloaded the dataset from <a href="https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&amp;config=planets" class="uri">https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&amp;config=planets</a>. At the time of this article, the dataset contains 3972 confirmed exoplanets with 144 attributes relating to each. Because of the large number of attributes, I'm going to post omitted/shortened outputs of the dataframes and descriptions. If you want to print out all the information for a particular dataframe, wrap it in the function `showall(df)` or `show(df, allcols=true, allrows=true)`.[<sup>3</sup>]</p>
 <p>Included in the downloaded dataset is a header detailing the column definitions.</p>
-<p>```julia</p>
-<p>```</p>
-<p>```julia using ColorSchemes, CSV, DataFrames, Gadfly</p>
-<p>exoplanets = CSV.read(&quot;planets<sub>2019</sub>.06.07<sub>18</sub>.33.16.csv&quot;, comment=&quot;#&quot;) ```</p>
-<p>```text 3972×144 DataFrame. Omitted printing of 134 columns │ Row │ rowid │ pl<sub>hostname</sub> │ pl<sub>letter</sub> │ pl<sub>name</sub> │ pl<sub>discmethod</sub> │ pl<sub>controvflag</sub> │ pl<sub>pnum</sub> │ pl<sub>orbper</sub> │ pl<sub>orbsmax</sub> │ pl<sub>orbeccen</sub> │ │ │ Int64 │ String │ String │ String │ String │ Int64 │ Int64 │ Float64 │ Float64 │ Float64 │ ├──────┼───────┼─────────────┼───────────┼───────────┼─────────────────┼────────────────┼─────────┼───────────┼────────────┼─────────────┤ │ 1 │ 1 │ 11 Com │ b │ 11 Com b │ Radial Velocity │ 0 │ 1 │ 326.03 │ 1.29 │ 0.231 │ │ 2 │ 2 │ 11 UMi │ b │ 11 UMi b │ Radial Velocity │ 0 │ 1 │ 516.22 │ 1.53 │ 0.08 │ ⋮ │ 3970 │ 3970 │ ups And │ c │ ups And c │ Radial Velocity │ 0 │ 3 │ 241.258 │ 0.827774 │ 0.2596 │ │ 3971 │ 3971 │ ups And │ d │ ups And d │ Radial Velocity │ 0 │ 3 │ 1276.46 │ 2.51329 │ 0.2987 │ │ 3972 │ 3972 │ xi Aql │ b │ xi Aql b │ Radial Velocity │ 0 │ 1 │ 136.75 │ 0.68 │ 0.0 │ ```</p>
-<p>## Overview</p>
+<div class="sourceCode"><pre class="sourceCode julia"><code class="sourceCode julia"><span class="co"># COLUMN pl_hostname:    Host Name</span>
+<span class="co"># COLUMN pl_letter:      Planet Letter</span>
+<span class="co"># COLUMN pl_name:        Planet Name</span>
+<span class="co"># COLUMN pl_discmethod:  Discovery Method</span>
+<span class="co"># COLUMN pl_controvflag: Controversial Flag</span>
+<span class="co"># COLUMN pl_pnum:        Number of Planets in System</span>
+<span class="co"># ⋮</span>
+<span class="co"># COLUMN pl_orbper:      Orbital Period [days]</span>
+<span class="co"># COLUMN pl_orbsmax:     Orbit Semi-Major Axis [AU])</span>
+<span class="co"># COLUMN pl_orbeccen:    Eccentricity</span>
+<span class="co"># COLUMN pl_orbincl:     Inclination [deg]</span>
+<span class="co"># COLUMN st_m1:          m1 (Stromgren) [mag]</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode julia"><code class="sourceCode julia">using ColorSchemes, CSV, DataFrames, Gadfly
+
+<span class="co"># Exoplanets downloaded from https://exoplanetarchive.ipac.caltech.edu/cgi-bin/TblView/nph-tblView?app=ExoTbls&amp;config=planets</span>
+exoplanets = CSV.read(<span class="st">&quot;planets_2019.06.07_18.33.16.csv&quot;</span>, comment=<span class="st">&quot;#&quot;</span>)</code></pre></div>
+<pre class="none"><code>3972×144 DataFrame. Omitted printing of 134 columns
+│ Row  │ rowid │ pl_hostname │ pl_letter │ pl_name   │ pl_discmethod   │ pl_controvflag │ pl_pnum │ pl_orbper │ pl_orbsmax │ pl_orbeccen │
+│      │ Int64 │ String      │ String    │ String    │ String          │ Int64          │ Int64   │ Float64   │ Float64    │ Float64     │
+├──────┼───────┼─────────────┼───────────┼───────────┼─────────────────┼────────────────┼─────────┼───────────┼────────────┼─────────────┤
+│ 1    │ 1     │ 11 Com      │ b         │ 11 Com b  │ Radial Velocity │ 0              │ 1       │ 326.03    │ 1.29       │ 0.231       │
+│ 2    │ 2     │ 11 UMi      │ b         │ 11 UMi b  │ Radial Velocity │ 0              │ 1       │ 516.22    │ 1.53       │ 0.08        │
+⋮
+│ 3970 │ 3970  │ ups And     │ c         │ ups And c │ Radial Velocity │ 0              │ 3       │ 241.258   │ 0.827774   │ 0.2596      │
+│ 3971 │ 3971  │ ups And     │ d         │ ups And d │ Radial Velocity │ 0              │ 3       │ 1276.46   │ 2.51329    │ 0.2987      │
+│ 3972 │ 3972  │ xi Aql      │ b         │ xi Aql b  │ Radial Velocity │ 0              │ 1       │ 136.75    │ 0.68       │ 0.0         │
+</code></pre>
+<h2 id="overview">Overview</h2>
 <p>Now that we've loaded the dataset into a dataframe, we can start to dig in to the exoplanets and their attributes. By calling `describe(df)` we can calculate basic statistics about every attribute for every exoplanet.</p>
-<p>```julia</p>
-<p><span class="citation">@show</span> describe(exoplanets) ```</p>
-<p>```text 144×8 DataFrame │ Row │ variable │ mean │ min │ median │ max │ nunique │ nmissing │ eltype │ │ │ Symbol │ Union… │ Any │ Union… │ Any │ Union… │ Union… │ DataType │ ├─────┼─────────────┼──────────┼────────┼────────┼────────┼─────────┼──────────┼──────────┤ │ 1 │ rowid │ 1986.5 │ 1 │ 1986.5 │ 3972 │ │ │ Int64 │ │ 2 │ pl<sub>hostname</sub> │ │ 11 Com │ │ xi Aql │ 2963 │ │ String │ ⋮ │ 142 │ st<sub>m1</sub> │ 0.285146 │ 0.129 │ 0.253 │ 0.774 │ │ 3615 │ Float64 │ │ 143 │ st<sub>c1</sub> │ 0.359557 │ -0.013 │ 0.368 │ 0.686 │ │ 3615 │ Float64 │ │ 144 │ st<sub>colorn</sub> │ 5.47432 │ 0 │ 5.0 │ 83 │ │ │ Int64 │ ```</p>
+<div class="sourceCode"><pre class="sourceCode julia"><code class="sourceCode julia"><span class="co"># Statistical details of the entire dataset</span>
+@show describe(exoplanets)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode julia"><code class="sourceCode julia"><span class="fl">144</span>×<span class="fl">8</span> DataFrame
+│ Row │ variable    │ mean     │ min    │ median │ max    │ nunique │ nmissing │ eltype   │
+│     │ <span class="dt">Symbol</span>      │ Union…   │ <span class="dt">Any</span>    │ Union… │ <span class="dt">Any</span>    │ Union…  │ Union…   │ DataType │
+├─────┼─────────────┼──────────┼────────┼────────┼────────┼─────────┼──────────┼──────────┤
+│ <span class="fl">1</span>   │ rowid       │ <span class="fl">1986.5</span>   │ <span class="fl">1</span>      │ <span class="fl">1986.5</span> │ <span class="fl">3972</span>   │         │          │ <span class="dt">Int64</span>    │
+│ <span class="fl">2</span>   │ pl_hostname │          │ <span class="fl">11</span> Com │        │ xi Aql │ <span class="fl">2963</span>    │          │ <span class="dt">String</span>   │
+⋮
+│ <span class="fl">142</span> │ st_m1       │ <span class="fl">0.285146</span> │ <span class="fl">0.129</span>  │ <span class="fl">0.253</span>  │ <span class="fl">0.774</span>  │         │ <span class="fl">3615</span>     │ <span class="dt">Float64</span>  │
+│ <span class="fl">143</span> │ st_c1       │ <span class="fl">0.359557</span> │ -<span class="fl">0.013</span> │ <span class="fl">0.368</span>  │ <span class="fl">0.686</span>  │         │ <span class="fl">3615</span>     │ <span class="dt">Float64</span>  │
+│ <span class="fl">144</span> │ st_colorn   │ <span class="fl">5.47432</span>  │ <span class="fl">0</span>      │ <span class="fl">5.0</span>    │ <span class="fl">83</span>     │         │          │ <span class="dt">Int64</span>    │</code></pre></div>
 <p>Here we can see that each of the columns belong to one of three categories, meta information about the discoveries, planet characteristics and measurements, or host star characteristics and measurements. Most of the columns show missing data, so we'll need to account for that when making comparisons between exoplanets or attributes.</p>
-<p>### How were they discovered?</p>
+<h3 id="how-were-they-discovered">How were they discovered?</h3>
 <p>Exoplanet discovery has exploded in the last 10 years thanks to powerful telescopes, sensitive photometry technology and precise data analysis. The dataset shows 10 different discovery methods used to find exoplanets. Transit and radial velocity appear to be the most popular and are both techniques that involve analyzing the photometry of the host star in a system to spot characterstics consistent with an orbiting planet.</p>
 <p>The radial velocity method relies on the fact that a star moves in a small ellipse when a planet orbits it. This gravitational pull causes a slight shift in color signature when viewed from a distance. We can measure this shift over time, and if these movements happen at a regular interval for a fixed length of time, we can assume that a planet is probably orbiting the star.[<sup>4</sup>]</p>
 <p>The transit method works by measuring the brightness of a star. When an orbiting planet pass between Earth and the star, the brightness of that star slightly dims. When this dimming happens at regular intervals, and for a fixed length of time, then it's probable that a planet is orbiting it.[<sup>5</sup>]</p>
-<p>&lt;object data=&quot;discoveries.svg&quot; type=&quot;image/svg+xml&quot;&gt; &lt;param name=&quot;url&quot; value=&quot;discoveries.svg&quot;&gt; &lt;/object&gt;</p>
-<p>```julia plot( dropmissing(exoplanets, [:pl<sub>disc</sub>, :pl<sub>discmethod</sub>]), x = :pl<sub>disc</sub>, color = :pl<sub>discmethod</sub>, Geom.line, Stat.histogram, Scale.y<sub>sqrt</sub>, Guide.xlabel(&quot;Discovery Year&quot;), Guide.colorkey(title = &quot;Discovery Method&quot;) ) ```</p>
-<p>### Where are they?</p>
+<object data="/static/open-exoplanet-catalogue/discoveries.svg" type="image/svg+xml">
+  <param name="url" value="/static/open-exoplanet-catalogue/discoveries.svg">
+</object>
+
+<div class="sourceCode"><pre class="sourceCode julia"><code class="sourceCode julia">plot(
+  dropmissing(exoplanets, [:pl_disc, :pl_discmethod]),
+  x = :pl_disc,
+  color = :pl_discmethod,
+  Geom.line,
+  Stat.histogram,
+  Scale.y_sqrt,
+  Guide.xlabel(<span class="st">&quot;Discovery Year&quot;</span>),
+  Guide.colorkey(title = <span class="st">&quot;Discovery Method&quot;</span>)
+)</code></pre></div>
+<h3 id="where-are-they">Where are they?</h3>
 <p>Most discovered exoplanets live within 500 parsecs (1630.78 light years) of Earth. This is a limitation of our current technology more than anything. As our observation and data collection capabilities improve, I expect the number of discovered exoplanets to grow exponentially.</p>
 <p>The closest and farthest planets we've found so far are Proxima Centauri b at 1.29 parsecs (4.21 light years) and SWEEPS-4 b/SWEEPS-11 b at 8500 parsecs (27,723.29 light years) respectively.</p>
 <p>We're mapping the exoplanet locations using the galactic coordinate system. This is a polar coordinate system that uses the Earth as the origin and the center of the milky way galaxy as a 0 degree bearing.[<sup>6</sup>] By converting the polar coordinates to cartesian coordinates, we can plot the relative position of the stars.</p>
-<p>&lt;object data=&quot;star-map.svg&quot; type=&quot;image/svg+xml&quot;&gt; &lt;param name=&quot;url&quot; value=&quot;star-map.svg&quot;&gt; &lt;/object&gt;</p>
-<p>```julia</p>
-<p>coordinates = unique(dropmissing(exoplanets, [:st<sub>glon</sub>, :st<sub>dist</sub>]), [:st<sub>glon</sub>, :st<sub>dist</sub>])</p>
-<p>sorted<sub>distance</sub> = sort(dropmissing(exoplanets, [:st<sub>dist</sub>]), :st<sub>dist</sub>) describe(sorted<sub>distance</sub>[:st<sub>dist</sub>]) closest = first(sorted<sub>distance</sub>) farthest = last(sorted<sub>distance</sub>)</p>
-<p>x<sub>pos</sub> = coordinates[:st<sub>dist</sub>] .* cos.(coordinates[:st<sub>glon</sub>]) y<sub>pos</sub> = coordinates[:st<sub>dist</sub>] .* sin.(coordinates[:st<sub>glon</sub>])</p>
-<p>plot( layer( x = [0, 8121.9961554], y = [0, -7.90263480146], label = [&quot;Earth&quot;, &quot;Galactic Center&quot;], Geom.point, Geom.label, style(default<sub>color</sub>=colorant&quot;white&quot;, point<sub>labelcolor</sub>=colorant&quot;white&quot;) ), layer( x = x<sub>pos</sub>, y = y<sub>pos</sub> ), Guide.xlabel(&quot;Distance (Parsecs)&quot;), Guide.ylabel(&quot;Distance (Parsecs)&quot;) ) ```</p>
-<p>## Planet Characterstics</p>
+<object data="/static/open-exoplanet-catalogue/star-map.svg" type="image/svg+xml">
+  <param name="url" value="/static/open-exoplanet-catalogue/star-map.svg">
+</object>
+
+<div class="sourceCode"><pre class="sourceCode julia"><code class="sourceCode julia"><span class="co"># Exoplanet locations</span>
+coordinates = unique(dropmissing(exoplanets, [:st_glon, :st_dist]), [:st_glon, :st_dist])
+
+<span class="co"># Distance stats</span>
+sorted_distance = sort(dropmissing(exoplanets, [:st_dist]), :st_dist)
+describe(sorted_distance[:st_dist])
+closest = first(sorted_distance)
+farthest = last(sorted_distance)
+
+<span class="co"># Convert polar galactic coordinates to cartesian</span>
+x_pos = coordinates[:st_dist] .* cos.(coordinates[:st_glon])
+y_pos = coordinates[:st_dist] .* sin.(coordinates[:st_glon])
+
+plot(
+  layer(
+    x = [<span class="fl">0</span>, <span class="fl">8121.9961554</span>],
+    y = [<span class="fl">0</span>, -<span class="fl">7.90263480146</span>],
+    label = [<span class="st">&quot;Earth&quot;</span>, <span class="st">&quot;Galactic Center&quot;</span>],
+    Geom.point,
+    Geom.label,
+    style(default_color=colorant<span class="st">&quot;white&quot;</span>, point_label_color=colorant<span class="st">&quot;white&quot;</span>)
+  ),
+  layer(
+    x = x_pos,
+    y = y_pos
+  ),
+  Guide.xlabel(<span class="st">&quot;Distance (Parsecs)&quot;</span>),
+  Guide.ylabel(<span class="st">&quot;Distance (Parsecs)&quot;</span>)
+)</code></pre></div>
+<h2 id="planet-characterstics">Planet Characterstics</h2>
 <p>Our solar system has 8 planets, each with varying characteristics. We have small terrestial planets, large gas giants, and cold ice giants. Do the exoplanets show as much variety? Do our discovery methods predispose us to finding certain types of planets?</p>
-<p>### How big are the planets?</p>
+<h3 id="how-big-are-the-planets">How big are the planets?</h3>
 <p>When plotting the exoplanets by their mass and radius, we see a host of different sizes. The majority appear to be terrestrial around Earth's size, but we also have a smattering of gas giants bigger than Jupiter, the largest planet in our solar system.</p>
-<p>&lt;object data=&quot;mass-radius-scatter.svg&quot; type=&quot;image/svg+xml&quot;&gt; &lt;param name=&quot;url&quot; value=&quot;mass-radius-scatter.svg&quot;&gt; &lt;/object&gt;</p>
-<p>```julia planet<sub>sizes</sub> = DataFrame( name = [&quot;Mercury&quot;, &quot;Venus&quot;, &quot;Earth&quot;, &quot;Mars&quot;, &quot;Jupiter&quot;, &quot;Saturn&quot;, &quot;Uranus&quot;, &quot;Neptune&quot;], mass = [0.0553, 0.815, 1, 0.107, 317.8, 95.2, 14.5, 17.1], radius = [0.383, 0.949, 1, 0.532, 11.21, 9.45, 4.01, 3.88] )</p>
-<p>plot( layer( planet<sub>sizes</sub>, x = :radius, y = :mass, label = :name, Geom.point, Geom.label, style(default<sub>color</sub>=colorant&quot;white&quot;, point<sub>labelcolor</sub>=colorant&quot;white&quot;) ), layer( dropmissing(exoplanets, [:pl<sub>rade</sub>, :pl<sub>bmasse</sub>]), x = :pl<sub>rade</sub>, y = :pl<sub>bmasse</sub> ), Scale.y<sub>sqrt</sub>, Guide.xlabel(&quot;Radius (Earth Radii)&quot;), Guide.ylabel(&quot;Mass (Earth Mass)&quot;) ) ```</p>
+<object data="/static/open-exoplanet-catalogue/mass-radius-scatter.svg" type="image/svg+xml">
+  <param name="url" value="/static/open-exoplanet-catalogue/mass-radius-scatter.svg">
+</object>
+
+<div class="sourceCode"><pre class="sourceCode julia"><code class="sourceCode julia">planet_sizes = DataFrame(
+  name = [<span class="st">&quot;Mercury&quot;</span>, <span class="st">&quot;Venus&quot;</span>, <span class="st">&quot;Earth&quot;</span>, <span class="st">&quot;Mars&quot;</span>, <span class="st">&quot;Jupiter&quot;</span>, <span class="st">&quot;Saturn&quot;</span>, <span class="st">&quot;Uranus&quot;</span>, <span class="st">&quot;Neptune&quot;</span>],
+  mass = [<span class="fl">0.0553</span>, <span class="fl">0.815</span>, <span class="fl">1</span>, <span class="fl">0.107</span>, <span class="fl">317.8</span>, <span class="fl">95.2</span>, <span class="fl">14.5</span>, <span class="fl">17.1</span>],
+  radius = [<span class="fl">0.383</span>, <span class="fl">0.949</span>, <span class="fl">1</span>, <span class="fl">0.532</span>, <span class="fl">11.21</span>, <span class="fl">9.45</span>, <span class="fl">4.01</span>, <span class="fl">3.88</span>]
+)
+
+plot(
+  layer(
+    planet_sizes,
+    x = :radius,
+    y = :mass,
+    label = :name,
+    Geom.point,
+    Geom.label,
+    style(default_color=colorant<span class="st">&quot;white&quot;</span>, point_label_color=colorant<span class="st">&quot;white&quot;</span>)
+  ),
+  layer(
+    dropmissing(exoplanets, [:pl_rade, :pl_bmasse]),
+    x = :pl_rade,
+    y = :pl_bmasse
+  ),
+  Scale.y_sqrt,
+  Guide.xlabel(<span class="st">&quot;Radius (Earth Radii)&quot;</span>),
+  Guide.ylabel(<span class="st">&quot;Mass (Earth Mass)&quot;</span>)
+)</code></pre></div>
 <p>By plotting the size as a 2d density contour, we can see the patterns shown in the scatter plot above. It's clear in this plot, that most exoplanets cluster around sizes between Mercury/Earth/Mars and Uranus/Neptune.</p>
-<p>&lt;object data=&quot;mass-radius-density.svg&quot; type=&quot;image/svg+xml&quot;&gt; &lt;param name=&quot;url&quot; value=&quot;mass-radius-density.svg&quot;&gt; &lt;/object&gt;</p>
-<p>```julia plot( layer( planet<sub>sizes</sub>, x = :radius, y = :mass, label = :name, Geom.point, Geom.label, style(default<sub>color</sub>=colorant&quot;white&quot;, point<sub>labelcolor</sub>=colorant&quot;white&quot;) ), layer( dropmissing(exoplanets, [:pl<sub>rade</sub>, :pl<sub>bmasse</sub>]), x = :pl<sub>rade</sub>, y = :pl<sub>bmasse</sub>, Geom.density2d ), style(key<sub>position</sub> = :none), Scale.color<sub>continuous</sub>(colormap=(x-&gt;colorant&quot;#fe4365&quot;)), Guide.xlabel(&quot;Radius (Earth Radii)&quot;), Guide.ylabel(&quot;Mass (Earth Mass)&quot;) ) ```</p>
+<object data="/static/open-exoplanet-catalogue/mass-radius-density.svg" type="image/svg+xml">
+  <param name="url" value="/static/open-exoplanet-catalogue/mass-radius-density.svg">
+</object>
+
+<div class="sourceCode"><pre class="sourceCode julia"><code class="sourceCode julia">plot(
+  layer(
+    planet_sizes,
+    x = :radius,
+    y = :mass,
+    label = :name,
+    Geom.point,
+    Geom.label,
+    style(default_color=colorant<span class="st">&quot;white&quot;</span>, point_label_color=colorant<span class="st">&quot;white&quot;</span>)
+  ),
+  layer(
+    dropmissing(exoplanets, [:pl_rade, :pl_bmasse]),
+    x = :pl_rade,
+    y = :pl_bmasse,
+    Geom.density<span class="fl">2</span>d
+  ),
+  style(key_position = :none),
+  Scale.color_continuous(colormap=(x-&gt;colorant<span class="st">&quot;#fe4365&quot;</span>)),
+  Guide.xlabel(<span class="st">&quot;Radius (Earth Radii)&quot;</span>),
+  Guide.ylabel(<span class="st">&quot;Mass (Earth Mass)&quot;</span>)
+)</code></pre></div>
 <p>The giants in our solar system (Jupiter/Saturn/Uranus/Neptune) pale in comparison to the larger exoplanets. The plot below shows the relative size of the largest and smallest exoplanets discovered along with Jupiter and Earth as references.</p>
-<p>&lt;object data=&quot;relative-size.svg&quot; type=&quot;image/svg+xml&quot;&gt; &lt;param name=&quot;url&quot; value=&quot;relative-size.svg&quot;&gt; &lt;/object&gt;</p>
-<p>```julia sorted<sub>size</sub> = sort(dropmissing(exoplanets, :pl<sub>rade</sub>), :pl<sub>rade</sub>) smallest = first(sorted<sub>size</sub>) largest = last(sorted<sub>size</sub>)</p>
-<p>plot( layer( x = [3.5], y = [0], label = [&quot;Kepler-37 b&quot;], Geom.point, Geom.label, style(point<sub>size</sub> = 0.336pt, point<sub>labelcolor</sub>=colorant&quot;white&quot;) ), layer( x = [3], y = [0], label = [&quot;Earth&quot;], Geom.point, Geom.label, style(point<sub>size</sub> = 1pt, point<sub>labelcolor</sub>=colorant&quot;white&quot;) ), layer( x = [2.5], y = [0], label = [&quot;Jupiter&quot;], Geom.point, Geom.label, style(point<sub>size</sub> = 11.21pt, point<sub>labelcolor</sub>=colorant&quot;white&quot;) ), layer( x = [1], y = [0], label = [&quot;HD 100546 b&quot;], Geom.point, Geom.label, style(point<sub>size</sub>=77.342pt, point<sub>labelcolor</sub>=colorant&quot;white&quot;) ), Scale.y<sub>continuous</sub>(minvalue=-200, maxvalue=200) ) ```</p>
-<p>### How hot are they?</p>
+<object data="/static/open-exoplanet-catalogue/relative-size.svg" type="image/svg+xml">
+  <param name="url" value="/static/open-exoplanet-catalogue/relative-size.svg">
+</object>
+
+<div class="sourceCode"><pre class="sourceCode julia"><code class="sourceCode julia">sorted_size = sort(dropmissing(exoplanets, :pl_rade), :pl_rade)
+smallest = first(sorted_size)
+largest = last(sorted_size)
+
+plot(
+  layer(
+    x = [<span class="fl">3.5</span>],
+    y = [<span class="fl">0</span>],
+    label = [<span class="st">&quot;Kepler-37 b&quot;</span>],
+    Geom.point,
+    Geom.label,
+    style(point_size = <span class="fl">0.336</span>pt, point_label_color=colorant<span class="st">&quot;white&quot;</span>)
+  ),
+  layer(
+    x = [<span class="fl">3</span>],
+    y = [<span class="fl">0</span>],
+    label = [<span class="st">&quot;Earth&quot;</span>],
+    Geom.point,
+    Geom.label,
+    style(point_size = <span class="fl">1</span>pt, point_label_color=colorant<span class="st">&quot;white&quot;</span>)
+  ),
+  layer(
+    x = [<span class="fl">2.5</span>],
+    y = [<span class="fl">0</span>],
+    label = [<span class="st">&quot;Jupiter&quot;</span>],
+    Geom.point,
+    Geom.label,
+    style(point_size = <span class="fl">11.21</span>pt, point_label_color=colorant<span class="st">&quot;white&quot;</span>)
+  ),
+  layer(
+    x = [<span class="fl">1</span>],
+    y = [<span class="fl">0</span>],
+    label = [<span class="st">&quot;HD 100546 b&quot;</span>],
+    Geom.point,
+    Geom.label,
+    style(point_size=<span class="fl">77.342</span>pt, point_label_color=colorant<span class="st">&quot;white&quot;</span>)
+  ),
+  Scale.y_continuous(minvalue=-<span class="fl">200</span>, maxvalue=<span class="fl">200</span>)
+)</code></pre></div>
+<h3 id="how-hot-are-they">How hot are they?</h3>
 <p>A key characteristic for planet habitability is the surface temperature. We don't have a way to measure this on planets so far away, as atmospheric properties can raise or lower temperatures at the surface. Equilibrium temperature is a measurement we use to estimate their theoretical temperature by considering the planet as if it were a black body.[<sup>7</sup>]</p>
-<p>&lt;object data=&quot;equilibrium-temperature.svg&quot; type=&quot;image/svg+xml&quot;&gt; &lt;param name=&quot;url&quot; value=&quot;equilibrium-temperature.svg&quot;&gt; &lt;/object&gt;</p>
-<p>```julia plot( layer( x = [1], y = [5778], color = [255], shape = [Shape.xcross], size = [3pt], label = [&quot;Earth&quot;], Geom.point, Geom.label, style(point<sub>labelcolor</sub>=colorant&quot;white&quot;) ), layer( dropmissing(exoplanets, [:pl<sub>eqt</sub>, :st<sub>teff</sub>, :pl<sub>orbsmax</sub>]), x = :pl<sub>orbsmax</sub>, y = :st<sub>teff</sub>, color = :pl<sub>eqt</sub> ), Scale.x<sub>log10</sub>, Scale.color<sub>continuous</sub>(colormap=(x-&gt;get(ColorSchemes.blackbody, x))), Guide.xlabel(&quot;Orbital Semi Major Axis (AU)&quot;), Guide.ylabel(&quot;Star Effective Temperature (K)&quot;), Guide.colorkey(title=&quot;Planet Equilibrium  (K) &quot;), Guide.shapekey(pos=[10000,10000]) ) ```</p>
-<p>### What do their orbits look like?</p>
+<object data="/static/open-exoplanet-catalogue/equilibrium-temperature.svg" type="image/svg+xml">
+  <param name="url" value="/static/open-exoplanet-catalogue/equilibrium-temperature.svg">
+</object>
+
+<div class="sourceCode"><pre class="sourceCode julia"><code class="sourceCode julia">plot(
+  layer(
+    x = [<span class="fl">1</span>],
+    y = [<span class="fl">5778</span>],
+    color = [<span class="fl">255</span>],
+    shape = [Shape.xcross],
+    size = [<span class="fl">3</span>pt],
+    label = [<span class="st">&quot;Earth&quot;</span>],
+    Geom.point,
+    Geom.label,
+    style(point_label_color=colorant<span class="st">&quot;white&quot;</span>)
+  ),
+  layer(
+    dropmissing(exoplanets, [:pl_eqt, :st_teff, :pl_orbsmax]),
+    x = :pl_orbsmax,
+    y = :st_teff,
+    color = :pl_eqt
+  ),
+  Scale.x_log10,
+  Scale.color_continuous(colormap=(x-&gt;get(ColorSchemes.blackbody, x))),
+  Guide.xlabel(<span class="st">&quot;Orbital Semi Major Axis (AU)&quot;</span>),
+  Guide.ylabel(<span class="st">&quot;Star Effective Temperature (K)&quot;</span>),
+  Guide.colorkey(title=<span class="st">&quot;Planet Equilibrium   </span>\n<span class="st">Temperature (K)  &quot;</span>),
+  Guide.shapekey(pos=[<span class="fl">10000</span>,<span class="fl">10000</span>])
+)</code></pre></div>
+<h3 id="what-do-their-orbits-look-like">What do their orbits look like?</h3>
 <p>The orbits of the discovered exoplanets dpm't actually vary that much. Most orbits are small, circular and close to their host star.</p>
 <p>I think the reason for these small, regular orbits has to do with our discovery methods. Since planets don't emit light, we can't measure them directly. We find them by measuring perturbations in movement or luminosity of their host star. Since a planets effect on a star (both occlusion and gravity) grows weaker with distance, it's natural that we find exoplanets that are close to their star.</p>
-<p>&lt;object data=&quot;orbit-grid.svg&quot; type=&quot;image/svg+xml&quot;&gt; &lt;param name=&quot;url&quot; value=&quot;orbit-grid.svg&quot;&gt; &lt;/object&gt;</p>
-<p>```julia</p>
-<p>semi<sub>majoraxis</sub> = plot( dropmissing(exoplanets, [:pl<sub>orbsmax</sub>]), x = :pl<sub>orbsmax</sub>, Geom.histogram(bincount=50), Scale.x<sub>log10</sub>, Guide.xlabel(&quot;Orbital Semi Major Axis (AU)&quot;) )</p>
-<p>period = plot( dropmissing(exoplanets, [:pl<sub>orbper</sub>]), x = :pl<sub>orbper</sub>, Geom.histogram(bincount=50), Scale.x<sub>log10</sub>, Guide.xlabel(&quot;Orbital Period (Days)&quot;) )</p>
-<p>eccentricity = plot( dropmissing(exoplanets, [:pl<sub>orbeccen</sub>]), x = :pl<sub>orbeccen</sub>, Geom.histogram(bincount=50), Guide.xlabel(&quot;Eccentricity&quot;) )</p>
-<p>inclination = plot( dropmissing(exoplanets, [:pl<sub>orbincl</sub>]), x = :pl<sub>orbincl</sub>, Geom.histogram(bincount=50), Guide.xlabel(&quot;Inclination (Deg)&quot;) )</p>
-<p>orbits = gridstack([semi<sub>majoraxis</sub> period; eccentricity inclination]) ```</p>
-<p>### Do they have moons?</p>
+<object data="/static/open-exoplanet-catalogue/orbit-grid.svg" type="image/svg+xml">
+  <param name="url" value="/static/open-exoplanet-catalogue/orbit-grid.svg">
+</object>
+
+<div class="sourceCode"><pre class="sourceCode julia"><code class="sourceCode julia"><span class="co"># Orbit characteristics</span>
+semi_major_axis = plot(
+  dropmissing(exoplanets, [:pl_orbsmax]),
+  x = :pl_orbsmax,
+  Geom.histogram(bincount=<span class="fl">50</span>),
+  Scale.x_log10,
+  Guide.xlabel(<span class="st">&quot;Orbital Semi Major Axis (AU)&quot;</span>)
+)
+
+period = plot(
+  dropmissing(exoplanets, [:pl_orbper]),
+  x = :pl_orbper,
+  Geom.histogram(bincount=<span class="fl">50</span>),
+  Scale.x_log10,
+  Guide.xlabel(<span class="st">&quot;Orbital Period (Days)&quot;</span>)
+)
+
+eccentricity = plot(
+  dropmissing(exoplanets, [:pl_orbeccen]),
+  x = :pl_orbeccen,
+  Geom.histogram(bincount=<span class="fl">50</span>),
+  Guide.xlabel(<span class="st">&quot;Eccentricity&quot;</span>)
+)
+
+inclination = plot(
+  dropmissing(exoplanets, [:pl_orbincl]),
+  x = :pl_orbincl,
+  Geom.histogram(bincount=<span class="fl">50</span>),
+  Guide.xlabel(<span class="st">&quot;Inclination (Deg)&quot;</span>)
+)
+
+orbits = gridstack([semi_major_axis period; eccentricity inclination])</code></pre></div>
+<h3 id="do-they-have-moons">Do they have moons?</h3>
 <p>Not a single exoplanet in this dataset has a moon! This goes hand in hand with the discovery method problems I mentioned in the orbits section. Current techniques can't pick up objects so small, dark, and far away. The exoplanets we find are close to their host star where it's unlikely for a moon to develop a stable orbit. It's probable that we'll find a lot of exomoons in the future. Our solar system suggests that they are common around larger planets, with Jupiter and Saturn hosting 67 and 62 moons respectively.</p>
-<p>```julia julia&gt; exoplanets[exoplanets[:pl<sub>mnum</sub>] .&gt; 0, :pl<sub>mnum</sub>] |&gt; length julia&gt; 0 ```</p>
-<p>## Stellar Characteristics</p>
+<div class="sourceCode"><pre class="sourceCode julia"><code class="sourceCode julia">julia&gt; exoplanets[exoplanets[:pl_mnum] .&gt; <span class="fl">0</span>, :pl_mnum] |&gt; length
+julia&gt; <span class="fl">0</span></code></pre></div>
+<h2 id="stellar-characteristics">Stellar Characteristics</h2>
 <p>Stars are a key factor in the life and discovery of exoplanets. Below we'll go through some of the characteristics of the stars that are hosting exoplanets and we'll see how they compare to our star, the sun.</p>
-<p>### How big are the stars?</p>
+<h3 id="how-big-are-the-stars">How big are the stars?</h3>
 <p>Our sun is pretty close to the perfect average of star sizes. Of the discovered stars with exoplanets, the median mass and radius are 0.975 and 0.970 times the mass and radius of our sun. The mean mass and radius are 1.551 and 1.009 times the values of our sun.</p>
-<p>&lt;object data=&quot;star-mass-radius-scatter.svg&quot; type=&quot;image/svg+xml&quot;&gt; &lt;param name=&quot;url&quot; value=&quot;star-mass-radius-scatter.svg&quot;&gt; &lt;/object&gt;</p>
-<p>```julia plot( layer( x = [1], y = [1], label = [&quot;Sun&quot;], Geom.point, Geom.label, style(default<sub>color</sub>=colorant&quot;white&quot;, point<sub>labelcolor</sub>=colorant&quot;white&quot;) ), layer( dropmissing(exoplanets, [:st<sub>rad</sub>, :st<sub>mass</sub>]), x = :st<sub>rad</sub>, y = :st<sub>mass</sub> ), Guide.xlabel(&quot;Radius (Solar Radii)&quot;), Guide.ylabel(&quot;Mass (Solar Radii)&quot;), Scale.y<sub>log10</sub>, Scale.x<sub>log10</sub> ) ```</p>
-<p>### How hot and bright are they?</p>
+<object data="/static/open-exoplanet-catalogue/star-mass-radius-scatter.svg" type="image/svg+xml">
+  <param name="url" value="/static/open-exoplanet-catalogue/star-mass-radius-scatter.svg">
+</object>
+
+<div class="sourceCode"><pre class="sourceCode julia"><code class="sourceCode julia">plot(
+  layer(
+    x = [<span class="fl">1</span>],
+    y = [<span class="fl">1</span>],
+    label = [<span class="st">&quot;Sun&quot;</span>],
+    Geom.point,
+    Geom.label,
+    style(default_color=colorant<span class="st">&quot;white&quot;</span>, point_label_color=colorant<span class="st">&quot;white&quot;</span>)
+  ),
+  layer(
+    dropmissing(exoplanets, [:st_rad, :st_mass]),
+    x = :st_rad,
+    y = :st_mass
+  ),
+  Guide.xlabel(<span class="st">&quot;Radius (Solar Radii)&quot;</span>),
+  Guide.ylabel(<span class="st">&quot;Mass (Solar Radii)&quot;</span>),
+  Scale.y_log10,
+  Scale.x_log<span class="fl">10</span>
+)</code></pre></div>
+<h3 id="how-hot-and-bright-are-they">How hot and bright are they?</h3>
 <p>Most stars are actually less bright and hot than our own sun. The majority we've found are within the main sequence star classification.[<sup>7</sup>]</p>
-<p>&lt;object data=&quot;star-temperature-brightness.svg&quot; type=&quot;image/svg+xml&quot;&gt; &lt;param name=&quot;url&quot; value=&quot;star-temperature-brightness.svg&quot;&gt; &lt;/object&gt;</p>
-<p>```julia plot( layer( x = [5777], y = [1], label = [&quot;Sun&quot;], color = [5777], size = [3pt], shape = [Shape.xcross], Geom.point, Geom.label(position=:above), style(point<sub>labelcolor</sub>=colorant&quot;white&quot;) ), layer( dropmissing(exoplanets, [:st<sub>lum</sub>, :st<sub>teff</sub>]), y = :st<sub>lum</sub>, x = :st<sub>teff</sub>, color = :st<sub>teff</sub> ), Scale.x<sub>log10</sub>, Scale.color<sub>continuous</sub>(colormap=(x-&gt;get(ColorSchemes.blackbody, x))), Guide.xlabel(&quot;Effective Temperature (K)&quot;), Guide.ylabel(&quot;Luminosity (log(Solar))&quot;), style(key<sub>position</sub>=:none), Coord.cartesian(xflip=true) ) ```</p>
+<object data="/static/open-exoplanet-catalogue/star-temperature-brightness.svg" type="image/svg+xml">
+  <param name="url" value="/static/open-exoplanet-catalogue/star-temperature-brightness.svg">
+</object>
+
+<div class="sourceCode"><pre class="sourceCode julia"><code class="sourceCode julia">plot(
+  layer(
+    x = [<span class="fl">5777</span>],
+    y = [<span class="fl">1</span>],
+    label = [<span class="st">&quot;Sun&quot;</span>],
+    color = [<span class="fl">5777</span>],
+    size = [<span class="fl">3</span>pt],
+    shape = [Shape.xcross],
+    Geom.point,
+    Geom.label(position=:above),
+    style(point_label_color=colorant<span class="st">&quot;white&quot;</span>)
+  ),
+  layer(
+    dropmissing(exoplanets, [:st_lum, :st_teff]),
+    y = :st_lum,
+    x = :st_teff,
+    color = :st_teff
+  ),
+  Scale.x_log10,
+  Scale.color_continuous(colormap=(x-&gt;get(ColorSchemes.blackbody, x))),
+  Guide.xlabel(<span class="st">&quot;Effective Temperature (K)&quot;</span>),
+  Guide.ylabel(<span class="st">&quot;Luminosity (log(Solar))&quot;</span>),
+  style(key_position=:none),
+  Coord.cartesian(xflip=true)
+)</code></pre></div>
 <p>### What are they composed of?</p>
 <p>All active stars give off energy through nuclear fusion reactions in their cores. Extreme pressure and temperature convert hydrogen into helium and sometimes heavier elements called metals.[<sup>8</sup>] This composition is a measurement called metallicity and is a ratio of elements in comparison to the ratio of our sun. Metal rich stars tend to be older and have a higher chance of hosting terrestrial planets in its orbits.</p>
 <p>The plot below shows the composition ratios of exoplanets we've measured. Iron is the most dominant by far, and we can see that the ratio around 0 (or our suns composition) is the most common.</p>
-<p>&lt;object data=&quot;star-metallicity.svg&quot; type=&quot;image/svg+xml&quot;&gt; &lt;param name=&quot;url&quot; value=&quot;star-metallicity.svg&quot;&gt; &lt;/object&gt;</p>
-<p>```julia met<sub>fe</sub> = plot( dropmissing(exoplanets, [:st<sub>metfe</sub>]), x = :st<sub>metfe</sub>, Geom.histogram(bincount=50), Guide.xlabel(&quot;Metallicity (Dex)&quot;) )</p>
-<p>met<sub>ratio</sub> = plot( dropmissing(exoplanets, [:st<sub>metratio</sub>], x = :st<sub>metratio</sub>, Geom.histogram, Guide.xlabel(&quot;Metallicity Ratio&quot;) )</p>
-<p>metallicity = hstack([met<sub>fe</sub>, met<sub>ratio</sub>]) ```</p>
-<p>## Conclusion</p>
-<p>Thanks for reading and exploring the exoplanets with me! We looked at how we discover exoplanets, what the exoplanets are like, and how their host stars compare to our own. I hope this inspires someone to dig into this dataset a bit more and hopefully find some cool insights. In the future it could be fun to build a model to process spectral data to search for exoplanet candidates of our own.</p>
-<p>I think the future of astronomy is so exciting! It seems like every year NASA releases a cool breakthrough. Astronomy is so open and friendly and I can't wait to dig in to more universal datasets going forward.</p>
+<object data="/static/open-exoplanet-catalogue/star-metallicity.svg" type="image/svg+xml">
+  <param name="url" value="/static/open-exoplanet-catalogue/star-metallicity.svg">
+</object>
+
+<div class="sourceCode"><pre class="sourceCode julia"><code class="sourceCode julia">met_fe = plot(
+  dropmissing(exoplanets, [:st_metfe]),
+  x = :st_metfe,
+  Geom.histogram(bincount=<span class="fl">50</span>),
+  Guide.xlabel(<span class="st">&quot;Metallicity (Dex)&quot;</span>)
+)
+
+met_ratio = plot(
+  dropmissing(exoplanets, [:st_metratio],
+  x = :st_metratio,
+  Geom.histogram,
+  Guide.xlabel(<span class="st">&quot;Metallicity Ratio&quot;</span>)
+)
+
+metallicity = hstack([met_fe, met_ratio])</code></pre></div>
 <p>[<sup>1</sup>]: <a href="https://www.jpl.nasa.gov/news/news.php?feature=6991" class="uri">https://www.jpl.nasa.gov/news/news.php?feature=6991</a> [<sup>2</sup>]: <a href="https://www.lsst.org/" class="uri">https://www.lsst.org/</a> [<sup>3</sup>]: <a href="https://juliadata.github.io/DataFrames.jl/stable/man/getting_started.html#Examining-the-Data-1" class="uri">https://juliadata.github.io/DataFrames.jl/stable/man/getting_started.html#Examining-the-Data-1</a> [<sup>4</sup>]: <a href="http://www.planetary.org/explore/space-topics/exoplanets/radial-velocity.html" class="uri">http://www.planetary.org/explore/space-topics/exoplanets/radial-velocity.html</a> [<sup>5</sup>]: <a href="http://www.planetary.org/explore/space-topics/exoplanets/transit-photometry.html" class="uri">http://www.planetary.org/explore/space-topics/exoplanets/transit-photometry.html</a> [<sup>6</sup>]: <a href="https://en.wikipedia.org/wiki/Galactic_coordinate_system" class="uri">https://en.wikipedia.org/wiki/Galactic_coordinate_system</a> [<sup>7</sup>]: <a href="https://en.wikipedia.org/wiki/Planetary_equilibrium_temperature" class="uri">https://en.wikipedia.org/wiki/Planetary_equilibrium_temperature</a> [<sup>7</sup>]: <a href="https://en.wikipedia.org/wiki/Main_sequence" class="uri">https://en.wikipedia.org/wiki/Main_sequence</a> [<sup>8</sup>]: <a href="https://en.wikipedia.org/wiki/Nuclear_fusion#Nuclear_fusion_in_stars" class="uri">https://en.wikipedia.org/wiki/Nuclear_fusion#Nuclear_fusion_in_stars</a></p>
-</div></main><footer><div class="wrapper"><div class="column"><h2>Site</h2><a href="/about">About</a><a href="/art">Art</a><a href="/music">Music</a><a href="">Contact</a></div><div class="column"><h2>Links</h2><a href="">Hello</a><a href="">Hello</a></div><div class="column"><h2>Hello World</h2></div></div></footer></div></body></html>
+</div></div></main><script src="/static/prism.js"></script><script src="/static/prism-python.min.js"></script><script src="/static/prism-julia.min.js"></script><script src="/static/katex.js"></script><script src="/static/katex-auto-render.js" onload="renderMathInElement(document.body);"></script><footer><div class="wrapper"><div class="column"><h2>Site</h2><a href="/about">About</a><a href="/art">Art</a><a href="/music">Music</a><a href="">Contact</a></div><div class="column"><h2>Links</h2><a href="">Hello</a><a href="">Hello</a></div><div class="column"><h2>Hello World</h2></div></div></footer></div></body></html>

@@ -143,60 +143,8 @@ html body .hero .wrapper .button-group .button:nth-child(2) {
   background: white;
   color: black;
 }
-html body .bar {
-  background: white;
-}
-html body .bar .wrapper p {
-  color: #bbb;
-  text-align: center;
-  font-family: "Open Sans";
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 0.8rem;
-}
-html body .bar .wrapper .brands {
-  padding: 1rem 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-html body .bar .wrapper .brands img {
-  max-width: 7rem;
-  max-height: 2rem;
-  filter: opacity(0.25);
-}
-html body .feed .post {
-  background: white;
-  padding: 5rem 0;
-}
-html body .feed .post .wrapper .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: top;
-}
-html body .feed .post .wrapper .header h1 {
-  flex: 0 0 70%;
-  font-family: "Open Sans";
-  font-size: 2rem;
-  text-transform: uppercase;
-  line-height: 1;
-  letter-spacing: -0.1rem;
+html body .content .wrapper p, html body .content .wrapper h1, html body .content .wrapper h2, html body .content .wrapper h3, html body .content .wrapper h4, html body .content .wrapper h5, html body .content .wrapper h6 {
   margin-bottom: 1rem;
-  color: black;
-}
-html body .feed .post .wrapper p {
-  color: black;
-}
-html body .feed .post .wrapper .read-more {
-  display: inline-block;
-  margin: 1rem 0;
-  color: black;
-  font-family: "Open Sans";
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 0.8rem;
 }
 html body footer {
   background: #0f0f0f;
