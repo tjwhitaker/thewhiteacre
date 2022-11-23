@@ -3,9 +3,9 @@
 #+DATE: 2021-03-01
 #+HERO: /static/higgs-bg.png
 
-In 2012, the ATLAS experiment at the Large Hadron Collider in Switzerland, discovered a new particle called the Higgs Boson. This discovery was a breakthrough in particle physics, as the Higgs Boson was long theorized to exist, but almost impossible to detect. It's small, has no spin or electrical charge, and is so unstable that it decays into other particles almost instantly.[^1] After the discovery, the media dubbed the Higgs Boson "the god particle" due to its role in generating mass as other particles interact with the Higgs field.
+In 2012, the ATLAS experiment at the Large Hadron Collider in Switzerland, discovered a new particle called the Higgs Boson. This discovery was a breakthrough in particle physics, as the Higgs Boson was long theorized to exist, but almost impossible to detect. It's small, has no spin or electrical charge, and is so unstable that it decays into other particles almost instantly.[1] After the discovery, the media dubbed the Higgs Boson "the god particle" due to its role in generating mass as other particles interact with the Higgs field.
 
-## Introduction
+** Introduction
 
 The Large Hadron Collider is a machine that collides protons together at high speed. When they collide, they produce a small explosion and the LHC measures and tracks the resulting particles.
 
@@ -13,24 +13,24 @@ Through this process, the higgs boson may or may not appear. It decays so fast t
 
 In this dataset, every row corresponds to a collision event. Every event contains one lepton, one hadronic tau, and a variable number of jets. We're given the measured momenta of these particles and using these values and some special features derived by the physicists at the LHC, we are going to try to detect whether an event contained a higgs boson or not.
 
-## Overview
+** Overview
 
 The training and testing datasets come from <https://www.kaggle.com/c/higgs-boson/data>. They contain 250,000 and 550,000 instances respectively. Each feature of each event starts with either PRI or DER, standing for primitive or derived. The primitive features are raw measurements obtained directly from the collision and derived features are attributes computed from that primitive data.
 
 The folks at ATLAS have provided a great rundown of particle physics for non physicists here <http://opendata.cern.ch/record/329>.
 
-```julia
+#+BEGIN_SRC julia
 using CSV, DataFrames, Gadfly
 
 # Dataset downloaded from https://www.kaggle.com/c/higgs-boson/data
 train = CSV.read("train.csv")
-```
+#+END_SRC
 
-```julia
+#+BEGIN_SRC julia
 @show describe(train)
-```
+#+END_SRC
 
-```text
+#+BEGIN_SRC none
 │ Row │ variable                    │ mean        │ min        │ median  │ max     │ nunique │ nmissing │ eltype   │
 │     │ Symbol                      │ Union…      │ Any        │ Union…  │ Any     │ Union…  │ Nothing  │ DataType │
 ├─────┼─────────────────────────────┼─────────────┼────────────┼─────────┼─────────┼─────────┼──────────┼──────────┤
@@ -67,11 +67,11 @@ train = CSV.read("train.csv")
 │ 31  │ PRI_jet_all_pt              │ 73.0646     │ -0.0       │ 40.5125 │ 1633.43 │         │          │ Float64  │
 │ 32  │ Weight                      │ 1.64677     │ 0.00150187 │ 1.15619 │ 7.82254 │         │          │ Float64  │
 │ 33  │ Label                       │             │ b          │         │ s       │ 2       │          │ String   │
-```
+#+END_SRC
 
 The "-999.0" values scattered throughout the dataset represent missing or meaningless fields. To ease data exploration, we're creating a working dataframe with the columns containing missing data removed.
 
-```julia
+#+BEGIN_SRC julia
 # Working dataframe with extraneous columns removed
 missingcols = [
   :EventId,
@@ -89,17 +89,17 @@ missingcols = [
 ]
 
 working = deletecols(train, missingcols)
-```
+#+END_SRC
 
-### Event Distribution
+*** Event Distribution
 
 Each event in the training set contains a label that tells us whether the event contained a higgs boson or not. By splitting up our working set into groups based on the label, we can look at the distributions and patterns of the features in those groups.
 
-```julia
+#+BEGIN_SRC julia
 signal, background = groupby(working, :Label)
-```
+#+END_SRC
 
-```text
+#+BEGIN_SRC none
 First Group (85667 rows): Label = "s". Omitted printing of 27 columns
 │ Row   │ EventId │ DER_mass_MMC │ DER_mass_transverse_met_lep │ DER_mass_vis │ DER_pt_h │ DER_deltaeta_jet_jet │
 │       │ Int64   │ Float64⍰     │ Float64                     │ Float64      │ Float64  │ Float64⍰             │
@@ -121,15 +121,17 @@ Last Group (164333 rows): Label = "b". Omitted printing of 27 columns
 │ 164331 │ 349996  │ missing      │ 58.179                      │ 68.083       │ 22.439   │ missing              │
 │ 164332 │ 349998  │ 94.951       │ 19.362                      │ 68.812       │ 13.504   │ missing              │
 │ 164333 │ 349999  │ missing      │ 72.756                      │ 70.831       │ 7.479    │ missing              │
-```
+#+END_SRC
 
 The ratio of signal to background events in the training set is about 1:2. The distributions of the features are pretty much the same except for the transverse momentum features. My hunch is that these fields will end up being important in a machine learning model.
 
-<object data="sb-stats.svg" type="image/svg+xml">
-  <param name="url" value="sb-stats.svg">
+#+BEGIN_HTML
+<object data="/static/the-higgs-boson-challenge/sb-stats.svg" type="image/svg+xml">
+  <param name="url" value="/static/the-higgs-boson-challenge/sb-stats.svg">
 </object>
+#+END_HTML
 
-```julia
+#+BEGIN_SRC julia
 # Signal and Background boxplot stats
 function boxplot_stats(a)
   q1 = quantile(a, 0.25)
@@ -152,18 +154,20 @@ for i in 1:20
   stats = boxplot_stats(background[:, i])
   push!(sb_stats, [names(background)[i], "b", stats...])
 end
-```
+#+END_SRC
 
-### Particle Distribution
+*** Particle Distribution
 
-The ATLAS detector at the LHC is the largest particle detector in the world. It measures the 3 dimensional final state properties of the collision through a series of concentric cylinders around the collision point.[^6] Here's a plot of each hadronic tau and lepton for every event in the training set.
+The ATLAS detector at the LHC is the largest particle detector in the world. It measures the 3 dimensional final state properties of the collision through a series of concentric cylinders around the collision point.[6] Here's a plot of each hadronic tau and lepton for every event in the training set.
 
+#+BEGIN_HTML
 <video controls>
-  <source src="particles-3d.mp4" type="video/mp4">
+  <source src="/static/the-higgs-boson-challenge/particles-3d.mp4" type="video/mp4">
   Video not supported.
 </video>
+#+END_HTML
 
-```julia
+#+BEGIN_SRC julia
 using Makie
 
 tau_coordinates = Point3f0[]
@@ -192,16 +196,17 @@ scene.center = false
 record(scene, "particles-3d.mp4", 1:200) do i
   rotate_cam!(scene, 0.01, 0.0, 0.0)
 end
-
-```
+#+END_SRC
 
 This density plot shows the distribution of those particles in the transverse plane. Anything that escapes down the longitudinal axis is not detectable, and thus we see most particles end up in a small ring around the z-axis.
 
-<object data="coordinate-density.svg" type="image/svg+xml">
-  <param name="url" value="coordinate-density.svg">
+#+BEGIN_HTML
+<object data="/static/the-higgs-boson-challenge/coordinate-density.svg" type="image/svg+xml">
+  <param name="url" value="/static/the-higgs-boson-challenge/coordinate-density.svg">
 </object>
+#+END_HTML
 
-```julia
+#+BEGIN_SRC julia
 coordinates = DataFrame(x=[], y=[], z=[])
 
 for row in eachrow(working)
@@ -216,17 +221,19 @@ plot(
   Geom.density2d,
   Scale.color_continuous(colormap=x->get(ColorSchemes.blackbody, x))
 )
-```
+#+END_SRC
 
-### What role do jets play?
+*** What role do jets play?
 
-A jet is a narrow stream of particles that occur as the result of the hadronization of a quark or gluon.[^7] Every event in our dataset has either 0, 1, 2, or 3+ jets. These jets are important as they give us crucial insight into the energy of the system. In our training set, events with two jets show the highest probability to contain a higgs boson.
+A jet is a narrow stream of particles that occur as the result of the hadronization of a quark or gluon.[7] Every event in our dataset has either 0, 1, 2, or 3+ jets. These jets are important as they give us crucial insight into the energy of the system. In our training set, events with two jets show the highest probability to contain a higgs boson.
 
-<object data="num-jets.svg" type="image/svg+xml">
-  <param name="url" value="num-jets.svg">
+#+BEGIN_HTML
+<object data="/static/the-higgs-boson-challenge/num-jets.svg" type="image/svg+xml">
+  <param name="url" value="/static/the-higgs-boson-challenge/num-jets.svg">
 </object>
+#+END_HTML
 
-```julia
+#+BEGIN_SRC julia
 jet_groups = groupby(working, :PRI_jet_num, sort=true)
 jet_df = DataFrame(num_jets=[], num_s=[], num_b=[])
 
@@ -253,30 +260,35 @@ plot(
   color = :variable,
   Geom.bar(position = :dodge)
 )
-```
+#+END_SRC
 
-### Missing Mass and Energy
+*** Missing Mass and Energy
 
 Energy in the ATLAS detector can escape detection. The two primary ways this happens is through the neutrino, a small fundamental particle that doesn't strongly interact with matter, and through the longitudinal axis, where the machine doesn't have detection capabilities. Using the law of the conservation of momentum, physicists can infer properties of the missing energy and use that to estimate the candidate mass of a Higgs Boson in any given event.
 
-<object data="transverse-energy.svg" type="image/svg+xml">
-  <param name="url" value="transverse-energy.svg">
+#+BEGIN_HTML
+<object data="/static/the-higgs-boson-challenge/transverse-energy.svg" type="image/svg+xml">
+  <param name="url" value="/static/the-higgs-boson-challenge/transverse-energy.svg">
 </object>
+#+END_HTML
 
-<object data="higgs-invariant-mass.svg" type="image/svg+xml">
-  <param name="url" value="higgs-invariant-mass.svg">
+#+BEGIN_HTML
+<object data="/static/the-higgs-boson-challenge/higgs-invariant-mass.svg" type="image/svg+xml">
+  <param name="url" value="/static/the-higgs-boson-challenge/higgs-invariant-mass.svg">
 </object>
+#+END_HTML
 
-
-### Correlations
+*** Correlations
 
 The features that are most correlated to each other are the tau phi, tau eta, lepton phi and lepton eta angles, as well as a couple of derived features that depend on those. Due to the missing values, we removed most of the jet features, which are probably strongly correlated with the related jet derived features.
 
-<object data="correlations.svg" type="image/svg+xml">
-  <param name="url" value="correlations.svg">
+#+BEGIN_HTML
+<object data="/static/the-higgs-boson-challenge/correlations.svg" type="image/svg+xml">
+  <param name="url" value="/static/the-higgs-boson-challenge/correlations.svg">
 </object>
+#+END_HTML
 
-```julia
+#+BEGIN_SRC julia
 correlations = cor(Matrix(working[:, 1:20]))
 
 spy(
@@ -287,138 +299,14 @@ spy(
   Guide.xticks(label=false),
   Guide.xlabel(nothing)
 )
-```
+#+END_SRC
 
-## Building The Model
-
-The goal of this project is to classify events into signal or background. Using our exploration as a guide, we're going to build a model that will give us the probability that a given event produced a Higgs Boson.
-
-### Evaluation Metric
-
-The evaluation metric given to us by ATLAS is the approximate median significance. The AMS is a loss function that looks to reduce our false discovery rate. The goal for our model is to estimate with a high confidence that any predicted signal event is in fact a signal.
-
-$$
-AMS = \sqrt{2\left((s+b+b_r) \log \left(1 + \frac{s}{b + b_r}\right)-s\right)}
-$$
-
-$$
-s = true\ positive\ rate\\
-b = false\ positive\ rate\\
-b_r = 10
-$$
-
-
-### Preparing the Data
-
-We're loading our data here and splitting it into subsets of features, labels, and weights.
-
-```julia
-using CSV, DataFrames, Statistics, XGBoost
-
-train = CSV.read("higgs-boson/train.csv")
-test = CSV.read("higgs-boson/test.csv")
-```
-
-### Feature Selection and Engineering
-
-I came across a bunch of ideas for feature engineering after reading some post competition blog posts. Some people used transformations and combinations to get models trained on upwards of 700 features. Some people got great results on models trained without any extra features at all.
-
-The first place finisher, Gabor Melis used 10 extra features. 5 based on the open angles between particles and 5 based around mass.[^8] For our model, I'm going to keep it simple and add the open angle features. Due to the rotational symmetry around the z-axis, we can drop the raw phi features after adding our open angle features.
-
-```julia
-# Absolute differences of phi
-delta_phi(ϕ1, ϕ2) = (ϕ1 == -999 || ϕ2 == -999) ? -999.0 : abs(ϕ1 - ϕ2)
-
-train[:ALGO_delta_phi_tau_lep] = delta_phi.(train[:PRI_tau_phi], train[:PRI_lep_phi])
-train[:ALGO_delta_phi_tau_jet1] = delta_phi.(train[:PRI_tau_phi], train[:PRI_jet_leading_phi])
-train[:ALGO_delta_phi_tau_jet2] = delta_phi.(train[:PRI_tau_phi], train[:PRI_jet_subleading_phi])
-train[:ALGO_delta_phi_lep_jet1] = delta_phi.(train[:PRI_lep_phi], train[:PRI_jet_leading_phi])
-train[:ALGO_delta_phi_lep_jet2] = delta_phi.(train[:PRI_lep_phi], train[:PRI_jet_subleading_phi])
-train[:ALGO_delta_phi_jet1_jet2] = delta_phi.(train[:PRI_jet_leading_phi], train[:PRI_jet_subleading_phi])
-
-test[:ALGO_delta_phi_tau_lep] = delta_phi.(test[:PRI_tau_phi], test[:PRI_lep_phi])
-test[:ALGO_delta_phi_tau_jet1] = delta_phi.(test[:PRI_tau_phi], test[:PRI_jet_leading_phi])
-test[:ALGO_delta_phi_tau_jet2] = delta_phi.(test[:PRI_tau_phi], test[:PRI_jet_subleading_phi])
-test[:ALGO_delta_phi_lep_jet1] = delta_phi.(test[:PRI_lep_phi], test[:PRI_jet_leading_phi])
-test[:ALGO_delta_phi_lep_jet2] = delta_phi.(test[:PRI_lep_phi], test[:PRI_jet_subleading_phi])
-test[:ALGO_delta_phi_jet1_jet2] = delta_phi.(test[:PRI_jet_leading_phi], test[:PRI_jet_subleading_phi])
- 
-# Drop phi due to invariant rotational symmetry
-train = deletecols(train, [:PRI_tau_phi, :PRI_lep_phi, :PRI_met_phi, :PRI_jet_leading_phi, :PRI_jet_subleading_phi])
-test = deletecols(test, [:PRI_tau_phi, :PRI_lep_phi, :PRI_met_phi, :PRI_jet_leading_phi, :PRI_jet_subleading_phi])
-```
-
-### Training
-
-The most popular and powerful models in machine learning competitions are ensembles of neural networks or gradient boosting trees. Neural networks tend to do great when the input data is complex or irregular, like images or language, and gradient boosting trees work well with organized and tabular data.
-
-XGBoost is a popular implementation of gradient boosting trees which I found to be fast, easy to use and memory efficient. We'll use XGBoost for this article, and in less than 20 lines of code, we can train a model that is capable of being compeitive on the leaderboard. The documetation, https://xgboost.readthedocs.io/en/latest/, is helpful if you want to learn more about gradient boosting and what goes in to tuning the model.
-
-```julia
-train_w = convert(Vector, train[:Weight])
-train_x = convert(Matrix, deletecols(train, [:EventId, :Weight, :Label]))
-train_y = convert(Vector, map(i -> i == "s" ? 1 : 0, train[:Label]))
-
-dtrain = DMatrix(train_x, false, -999.0, weight=train_w, label=train_y)
-dtest = DMatrix(convert(Matrix, deletecols(test, [:EventId])), false, -999.0)
-
-rounds = 3000
-
-param = Dict(
-  "max_depth" => 9,
-  "eta" => 0.01,
-  "sub_sample" => 0.9,
-  "objective" => "binary:logitraw"
-)
-
-model = xgboost(
-  dtrain,
-  rounds,
-  param=param,
-  metrics=["ams@0.15", "auc"]
-)
-```
-
-### Testing
-
-The kaggle competition expects our submission to be a csv file with the columns EventId, RankOrder, and Class. After calling predict() on the test matrix we created earlier, it will return a vector of logits, or log odds that the item belongs to the signal class.[^9] By calculating the rank of the logits, we'll take that ordering and map the top 15% to the class 's' and the rest to 'b'.
-
-```julia
-function rank(xs)
-  ranks = Array{Int64}(undef, length(xs))
-  order = sortperm(xs)
-
-  for i = 1:length(xs)
-    ranks[order[i]] = i
-  end
-
-  return ranks
-end
-
-predictions = predict(model, dtest)
-rank_order = rank(predictions)
-labels = map(x -> x > .85 * size(test, 1) ? 's' : 'b', rank_order)
-
-submission = DataFrame(EventId=test[:EventId], RankOrder=rank_order, Class=labels)
-CSV.write("submission.csv", submission)
-```
-
-```text
-Final Score: 3.61149
-```
-
-## Conclusion
-
-I had a lot of fun working on The Higgs Boson Challenge! Particle physics is so overwhelming at first but rewarding when the pieces start to come together. It's so cool to be able to work on and play with the data from one of the greatest achievements in physics in the last century.
-
-Hope you all enjoyed this article! Looking forward to the next one!
-
-[^1]: https://en.wikipedia.org/wiki/Higgs_boson
-[^2]: http://opendata.cern.ch/record/329
-[^3]: http://opendata.cern.ch/record/328
-[^4]: https://github.com/dmlc/xgboost/blob/master/demo/kaggle-higgs/higgs-cv.py
-[^5]: https://www.kaggle.com/c/higgs-boson/overview/evaluation
-[^6]: https://en.wikipedia.org/wiki/ATLAS_experiment
-[^7]: https://en.wikipedia.org/wiki/Jet_(particle_physics)
-[^8]: http://proceedings.mlr.press/v42/meli14.pdf
-[^9]: https://en.wikipedia.org/wiki/Logit
+[1]: https://en.wikipedia.org/wiki/Higgs_boson
+[2]: http://opendata.cern.ch/record/329
+[3]: http://opendata.cern.ch/record/328
+[4]: https://github.com/dmlc/xgboost/blob/master/demo/kaggle-higgs/higgs-cv.py
+[5]: https://www.kaggle.com/c/higgs-boson/overview/evaluation
+[6]: https://en.wikipedia.org/wiki/ATLAS_experiment
+[7]: https://en.wikipedia.org/wiki/Jet_(particle_physics)
+[8]: http://proceedings.mlr.press/v42/meli14.pdf
+[9]: https://en.wikipedia.org/wiki/Logit

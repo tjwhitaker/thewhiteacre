@@ -43,7 +43,7 @@
       (date ,(irregex-match-substring match 'date))
       (hero ,(irregex-match-substring match 'hero))
       (slug ,(string-chomp filename ".org"))
-      (content ,(capture ,(conc "pandoc articles/" filename " --katex -f org -t html"))))))
+      (content ,(capture ,(conc "pandoc articles/" filename " -f org -t html"))))))
 
 (define inject-field
   (lambda (placeholder template value)

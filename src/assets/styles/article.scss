@@ -169,70 +169,10 @@ html {
       }
     }
 
-    .bar {
-      background: white;
+    .content {
       .wrapper {
-        p {
-          color: #bbb;
-          text-align: center;
-          font-family: "Open Sans";
-          font-weight: bold;
-          text-transform: uppercase;
-          letter-spacing: 1px;
-          font-size: 0.8rem;
-        }
-
-        .brands {
-          padding: 1rem 0;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-
-          img {
-            max-width: 7rem;
-            max-height: 2rem;
-            filter: opacity(0.25);
-          }
-        }
-      }
-    }
-
-    .feed {
-      .post {
-        background: white;
-        padding: 5rem 0;
-
-        .wrapper {
-          .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: top;
-            h1 {
-              flex: 0 0 70%;
-              font-family: "Open Sans";
-              font-size: 2rem;
-              text-transform: uppercase;
-              line-height: 1;
-              letter-spacing: -0.1rem;
-              margin-bottom: 1rem;
-              color: black;
-            }
-            small {
-            }
-          }
-          p {
-            color: black;
-          }
-          .read-more {
-            display: inline-block;
-            margin: 1rem 0;
-            color: black;
-            font-family: "Open Sans";
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.8rem;
-          }
+        p,h1,h2,h3,h4,h5,h6 {
+          margin-bottom:1rem;
         }
       }
     }

@@ -11,7 +11,7 @@ gulp.task("styles", () => {
 
 gulp.task("images", () => {
   return gulp
-    .src("assets/images/**/*.+(png|jpg|gif|ico|svg)")
+    .src("assets/images/**/*.+(png|jpg|gif|ico|svg|mp4)")
     .pipe(gulp.dest("../build/static"))
 })
 

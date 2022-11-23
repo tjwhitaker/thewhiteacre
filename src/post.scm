@@ -7,6 +7,8 @@
         (meta (@ (name "viewport") (content "width=device-width, initial-scale=1")))
         (link (@ (rel "icon") (href "/static/favicon.ico")))
         (link (@ (rel "stylesheet") (href "/static/article.css")))
+        (link (@ (rel "stylesheet") (href "/static/prism.css")))
+        (link (@ (rel "stylesheet") (href "https://cdn.jsdelivr.net/npm/katex@0.16.3/dist/katex.min.css")))
         (link (@ (rel "preconnect") (href "https://fonts.googleapis.com")))
         (link (@ (rel "preconnect") (href "https://fonts.gstatic.com")))
         (link (@ (rel "stylesheet") (href "https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;700&display=block")))
@@ -30,13 +32,18 @@
                   (h1 ,title)
                   (p ,description)))
 
-            (div (@ (class "wrapper"))
-              (ARTICLE-CONTENT)
+            (div (@ (class "content"))
+              (div (@ (class "wrapper"))
+                (ARTICLE-CONTENT)
+              )
             )
-
-              
           )
 
+          (script (@ (src "/static/prism.js")) "")
+          (script (@ (src "/static/prism-python.min.js")) "")
+          (script (@ (src "/static/prism-julia.min.js")) "")
+          (script (@ (src "/static/katex.js")) "")
+          (script (@ (src "/static/katex-auto-render.js") (onload "renderMathInElement(document.body);")) "")
 
           (footer
             (div (@ (class "wrapper"))
