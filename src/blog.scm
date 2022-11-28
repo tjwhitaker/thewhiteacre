@@ -2,7 +2,7 @@
   (lambda (feed)
     `(html
       ((head
-        (title "Blog | The White Acre")
+        (title "Articles | The White Acre")
         (meta (@ (charset "utf-8")))
         (meta (@ (name "viewport") (content "width=device-width, initial-scale=1")))
         (link (@ (rel "icon") (href "/static/favicon.ico")))
@@ -19,16 +19,16 @@
               (a (@ (href "/") (class "logo")) (img (@ (src "/static/logo.svg"))))
               (nav
                 (a (@ (href "/about")) "About")
-                (a (@ (href "/blog")) "Blog")
                 (a (@ (href "/models")) "Models")
-                (a (@ (href "/research")) "Research"))))
+                (a (@ (href "/blog")) "Notebooks")
+                (a (@ (href "/research")) "Papers"))))
                 
           (main
             (div (@ (class "hero"))
               (div (@ (class "overlay")) "")
                 (div (@ (class "wrapper"))
-                  (h1 "Blog")
-                  (p "Busy writing papers for my PhD. Blog posts coming soon!")))
+                  (h1 "Writing About Interesting Datasets ")
+                  (p "Welcome to my blog! I'm mostly working on my research for my PhD, but sometimes I like to dig into interesting datasets for fun.")))
 
             (div (@ (class "feed"))
               (div (@ (class "wrapper"))

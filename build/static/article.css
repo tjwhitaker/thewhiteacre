@@ -143,8 +143,25 @@ html body .hero .wrapper .button-group .button:nth-child(2) {
   background: white;
   color: black;
 }
-html body .content .wrapper p, html body .content .wrapper h1, html body .content .wrapper h2, html body .content .wrapper h3, html body .content .wrapper h4, html body .content .wrapper h5, html body .content .wrapper h6 {
+html body .article .wrapper {
+  display: grid;
+  grid-template-columns: 61.8% 38.2%;
+}
+html body .article .wrapper .content {
+  padding-right: 1rem;
+}
+html body .article .wrapper .content p,
+html body .article .wrapper .content h1,
+html body .article .wrapper .content h2,
+html body .article .wrapper .content h3,
+html body .article .wrapper .content h4,
+html body .article .wrapper .content h5,
+html body .article .wrapper .content h6 {
   margin-bottom: 1rem;
+}
+html body .article .wrapper .sidebar {
+  padding-left: 1rem;
+  border-left: 1px solid #ccc;
 }
 html body footer {
   background: #0f0f0f;
@@ -175,6 +192,11 @@ html body footer .wrapper .column a {
   padding: 1rem;
   max-width: 80rem;
   margin: 0 auto;
+}
+
+object {
+  display: block;
+  width: 100%;
 }
 
 @keyframes slide {

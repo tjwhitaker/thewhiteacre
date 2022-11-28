@@ -29,16 +29,16 @@
               (a (@ (href "/") (class "logo")) (img (@ (src "/static/logo.svg"))))
               (nav
                 (a (@ (href "/about")) "About")
-                (a (@ (href "/blog")) "Blog")
                 (a (@ (href "/models")) "Models")
-                (a (@ (href "/research")) "Research"))))
+                (a (@ (href "/blog")) "Notebooks")
+                (a (@ (href "/research")) "Papers"))))
 
           (main
             (div (@ (class "hero"))
               (div (@ (class "overlay")) "")
               (div (@ (class "wrapper"))
-                (h1 "Model Zoo")
-                (p "Coming soon. A catalog of  model architectures throughout history.")
+                (h1 "Cataloging Model Architectures")
+                (p "A lot of interesting neural networks have been introduced over the years, but there is no place that organizes and discusses some of these fascinating models. This is a new take on the model zoo.")
               )
             )
             (div (@ (class "catalog"))

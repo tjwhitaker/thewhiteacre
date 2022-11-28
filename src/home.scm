@@ -19,9 +19,9 @@
               (a (@ (href "/") (class "logo")) (img (@ (src "/static/logo.svg"))))
               (nav
                 (a (@ (href "/about")) "About")
-                (a (@ (href "/blog")) "Blog")
                 (a (@ (href "/models")) "Models")
-                (a (@ (href "/research")) "Research"))))
+                (a (@ (href "/blog")) "Notebooks")
+                (a (@ (href "/research")) "Papers"))))
 
           (main
             (div (@ (class "hero"))

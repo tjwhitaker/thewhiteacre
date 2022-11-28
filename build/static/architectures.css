@@ -337,7 +337,7 @@ html body .contact .wrapper .map-container p {
   display: block;
 }
 html body footer {
-  background: white;
+  background: #0f0f0f;
   padding: 2rem 0;
 }
 html body footer .wrapper {
@@ -346,7 +346,7 @@ html body footer .wrapper {
   grid-column-gap: 2rem;
 }
 html body footer .wrapper .column h2 {
-  color: black;
+  color: white;
   font-family: "Open Sans";
   text-transform: uppercase;
   margin-bottom: 1rem;
@@ -356,7 +356,7 @@ html body footer .wrapper .column a {
   display: block;
   width: max-content;
   margin-bottom: 1rem;
-  color: black;
+  color: #aaa;
   font-family: "Open Sans";
   font-size: 0.8rem;
 }

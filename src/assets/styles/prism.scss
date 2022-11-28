@@ -14,6 +14,7 @@ code[class*="none"],
 pre[class*="none"] {
   color: #ebdbb2; /* fg1 / fg */
   font-family: Consolas, Monaco, "Andale Mono", monospace;
+  font-size: 0.8rem;
   direction: ltr;
   text-align: left;
   white-space: pre;
@@ -58,8 +59,8 @@ pre[class*="none"] {
 :not(pre) > code[class*="sourceCode"],
 pre[class*="sourceCode"],
 :not(pre) > code[class*="none"],
-pre[class*="none"]  {
-  background: #1d2021; /* bg0_h */
+pre[class*="none"] {
+  background: #232731; /* bg0_h */
 }
 
 /* Inline code */

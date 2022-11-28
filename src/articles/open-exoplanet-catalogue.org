@@ -1,5 +1,5 @@
 #+TITLE: Open Exoplanet Catalogue
-#+DESCRIPTION: Hello world
+#+DESCRIPTION: A collection from NASA containing data about all the planets we've found outside of our solar system.
 #+DATE: 2021-03-01
 #+HERO: /static/space-bg.png
 

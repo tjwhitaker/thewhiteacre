@@ -21,9 +21,9 @@
               (a (@ (href "/") (class "logo")) (img (@ (src "/static/logo.svg"))))
               (nav
                 (a (@ (href "/about")) "About")
-                (a (@ (href "/blog")) "Blog")
                 (a (@ (href "/models")) "Models")
-                (a (@ (href "/research")) "Research"))))
+                (a (@ (href "/blog")) "Notebooks")
+                (a (@ (href "/research")) "Papers"))))
                 
           (main
             (div (@ (class "hero") (style ,(conc "background-image: url(" hero ")")))
@@ -32,9 +32,14 @@
                   (h1 ,title)
                   (p ,description)))
 
-            (div (@ (class "content"))
+            (div (@ (class "article"))
               (div (@ (class "wrapper"))
-                (ARTICLE-CONTENT)
+                (div (@ (class "content"))
+                  (ARTICLE-CONTENT)
+                )
+                (div (@ (class "sidebar"))
+                  (p "Placeholder")
+                )
               )
             )
           )

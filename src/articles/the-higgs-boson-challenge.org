@@ -1,5 +1,5 @@
 #+TITLE: The Higgs Boson Challenge
-#+DESCRIPTION: Hello world
+#+DESCRIPTION: An exciting dataset released by a team at CERN. This dataset contains 250,000 particle collision events in the large hadron collider.
 #+DATE: 2021-03-01
 #+HERO: /static/higgs-bg.png
 
