@@ -171,50 +171,43 @@ html {
       }
     }
 
-    .hero3 {
-      width: 100%;
-      background: url(/static/chess-bg.png);
-      background-size: cover;
-      background-color: white;
-      background-position: top;
+    .why {
+      background: white;
+      padding: 10rem 0;
+      background-image: url(/static/brain.svg);
+      background-size: 45vw;
       background-repeat: no-repeat;
+      background-position: center left;
       position: relative;
-      height: 80vh;
-
-      .overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: 0;
-        background: black;
-        opacity: 0.5;
-      }
 
       .wrapper {
-        position: relative;
-        z-index: 1;
-        top: 50%;
-        transform: translateY(-50%);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 2rem;
+        align-items: center;
 
-        h1 {
-          font-family: "Open Sans";
-          font-size: 4rem;
-          text-transform: uppercase;
-          line-height: 1;
-          letter-spacing: -0.1rem;
-          margin-bottom: 1rem;
-          color: white;
-          max-width: 50rem;
-        }
-
-        p {
-          color: white;
-          font-size: 1.1rem;
-          font-style: italic;
-          margin-bottom: 2rem;
-          max-width: 50rem;
+        div {
+          grid-column: 2;
+          h1 {
+            font-size: 2rem;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: black;
+          }
+          p {
+            color: black;
+            font-size: 1.1rem;
+          }
+          .read-more {
+            display: inline-block;
+            margin: 1rem 0;
+            color: black;
+            font-family: "Open Sans";
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.8rem;
+          }
         }
       }
     }

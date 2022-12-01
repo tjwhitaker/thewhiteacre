@@ -31,10 +31,12 @@
               (p "Artificial intelligence could be one of the most important technologies to grace the modern world. It's up to us to be a force for good with it.")
             )
           )
-          (div (@ (class "story"))
+          (div (@ (class "why"))
             (div (@ (class "wrapper"))
-              (h1 "A Passion for Knowledge")
-              (p "Artificial Intelligence research is giving me a platform to explore myself. I've been deeply interested in philosophy, meditation, and spirituality.")
+              (div
+                (h1 "A Passion for Knowledge")
+                (p "My PhD research explores the process of splitting deep neural networks into pieces. By understanding how subnetworks contribute to learning, we can improve the generalization of whole systems by optimizing these pieces independently. My work touches on several powerful topics in machine learning including: sparse network architectures, ensemble learning, modular learning, evolutionary methods and quantum computation. Check out my research papers to learn more about what I'm working on.")
+              )
             )
           )
 
