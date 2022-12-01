@@ -74,6 +74,9 @@ html body header .wrapper nav a {
   text-transform: uppercase;
   font-size: 0.8rem;
 }
+html body header .wrapper nav a.active {
+  color: #1976d2;
+}
 html body header .wrapper nav a:hover {
   color: #1976d2;
 }

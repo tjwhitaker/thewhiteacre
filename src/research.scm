@@ -21,7 +21,7 @@
                 (a (@ (href "/about")) "About")
                 (a (@ (href "/models")) "Models")
                 (a (@ (href "/blog")) "Notebooks")
-                (a (@ (href "/research")) "Papers"))))
+                (a (@ (href "/research") (class "active")) "Papers"))))
 
           (main
             (div (@ (class "hero"))

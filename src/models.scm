@@ -29,7 +29,7 @@
               (a (@ (href "/") (class "logo")) (img (@ (src "/static/logo.svg"))))
               (nav
                 (a (@ (href "/about")) "About")
-                (a (@ (href "/models")) "Models")
+                (a (@ (href "/models") (class "active")) "Models")
                 (a (@ (href "/blog")) "Notebooks")
                 (a (@ (href "/research")) "Papers"))))
 

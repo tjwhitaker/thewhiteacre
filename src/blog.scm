@@ -20,7 +20,7 @@
               (nav
                 (a (@ (href "/about")) "About")
                 (a (@ (href "/models")) "Models")
-                (a (@ (href "/blog")) "Notebooks")
+                (a (@ (href "/blog") (class "active")) "Notebooks")
                 (a (@ (href "/research")) "Papers"))))
                 
           (main

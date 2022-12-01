@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>Blog | The White Acre</title><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><link rel="icon" href="/static/favicon.ico" /><link rel="stylesheet" href="/static/article.css" /><link rel="stylesheet" href="/static/prism.css" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.3/dist/katex.min.css" /><link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" /><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;700&amp;display=block" /><link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css" /><script src="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js"></script></head><body><div class="home"><header><div class="wrapper"><a href="/" class="logo"><img src="/static/logo.svg" /></a><nav><a href="/about">About</a><a href="/models">Models</a><a href="/blog">Notebooks</a><a href="/research">Papers</a></nav></div></header><main><div class="hero" style="background-image: url(/static/higgs-bg.png)"><div class="overlay"></div><div class="wrapper"><h1>The Higgs Boson Challenge</h1><p>An exciting dataset released by a team at CERN. This dataset contains 250,000 particle collision events in the large hadron collider.</p></div></div><div class="article"><div class="wrapper"><div class="content"><p>In 2012, the ATLAS experiment at the Large Hadron Collider in Switzerland, discovered a new particle called the Higgs Boson. This discovery was a breakthrough in particle physics, as the Higgs Boson was long theorized to exist, but almost impossible to detect. It's small, has no spin or electrical charge, and is so unstable that it decays into other particles almost instantly.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> After the discovery, the media dubbed the Higgs Boson &quot;the god particle&quot; due to its role in generating mass as other particles interact with the Higgs field.</p>
+<!DOCTYPE html><html><head><title>Blog | The White Acre</title><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><link rel="icon" href="/static/favicon.ico" /><link rel="stylesheet" href="/static/article.css" /><link rel="stylesheet" href="/static/prism.css" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.3/dist/katex.min.css" /><link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" /><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;700&amp;display=block" /><link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css" /><script src="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js"></script></head><body><div class="home"><header><div class="wrapper"><a href="/" class="logo"><img src="/static/logo.svg" /></a><nav><a href="/about">About</a><a href="/models">Models</a><a href="/blog" class="active">Notebooks</a><a href="/research">Papers</a></nav></div></header><main><div class="hero" style="background-image: url(/static/higgs-bg.png)"><div class="overlay"></div><div class="wrapper"><h1>The Higgs Boson Challenge</h1><p>An exciting dataset released by a team at CERN. This dataset contains 250,000 particle collision events in the large hadron collider.</p></div></div><div class="article"><div class="wrapper"><div class="content"><p>In 2012, the ATLAS experiment at the Large Hadron Collider in Switzerland, discovered a new particle called the Higgs Boson. This discovery was a breakthrough in particle physics, as the Higgs Boson was long theorized to exist, but almost impossible to detect. It's small, has no spin or electrical charge, and is so unstable that it decays into other particles almost instantly.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> After the discovery, the media dubbed the Higgs Boson &quot;the god particle&quot; due to its role in generating mass as other particles interact with the Higgs field.</p>
 <h2 id="introduction">Introduction</h2>
 <p>The Large Hadron Collider is a machine that collides protons together at high speed. When they collide, they produce a small explosion and the LHC measures and tracks the resulting particles.</p>
 <p>Through this process, the higgs boson may or may not appear. It decays so fast that the LHC can not observe it directly. By looking at the final state of the particles, we can perform a kind of backtracking and deduce if the particles were the result of a higgs boson decay.</p>
@@ -6,11 +6,11 @@
 <h2 id="overview">Overview</h2>
 <p>The training and testing datasets come from <a href="https://www.kaggle.com/c/higgs-boson/data" class="uri">https://www.kaggle.com/c/higgs-boson/data</a>. They contain 250,000 and 550,000 instances respectively. Each feature of each event starts with either PRI or DER, standing for primitive or derived. The primitive features are raw measurements obtained directly from the collision and derived features are attributes computed from that primitive data.</p>
 <p>The folks at ATLAS have provided a great rundown of particle physics for non physicists here <a href="http://opendata.cern.ch/record/329" class="uri">http://opendata.cern.ch/record/329</a>.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode julia"><code class="sourceCode julia"><a class="sourceLine" id="cb2-1" data-line-number="1">using CSV, DataFrames, Gadfly</a>
-<a class="sourceLine" id="cb2-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb2-3" data-line-number="3"><span class="co"># Dataset downloaded from https://www.kaggle.com/c/higgs-boson/data</span></a>
-<a class="sourceLine" id="cb2-4" data-line-number="4">train = CSV.read(<span class="st">&quot;train.csv&quot;</span>)</a></code></pre></div>
-<div class="sourceCode" id="cb3"><pre class="sourceCode julia"><code class="sourceCode julia"><a class="sourceLine" id="cb3-1" data-line-number="1">@show describe(train)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode julia"><code class="sourceCode julia">using CSV, DataFrames, Gadfly
+
+<span class="co"># Dataset downloaded from https://www.kaggle.com/c/higgs-boson/data</span>
+train = CSV.read(<span class="st">&quot;train.csv&quot;</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode julia"><code class="sourceCode julia">@show describe(train)</code></pre></div>
 <pre class="none"><code>│ Row │ variable                    │ mean        │ min        │ median  │ max     │ nunique │ nmissing │ eltype   │
 │     │ Symbol                      │ Union…      │ Any        │ Union…  │ Any     │ Union…  │ Nothing  │ DataType │
 ├─────┼─────────────────────────────┼─────────────┼────────────┼─────────┼─────────┼─────────┼──────────┼──────────┤
@@ -49,26 +49,26 @@
 │ 33  │ Label                       │             │ b          │         │ s       │ 2       │          │ String   │
 </code></pre>
 <p>The &quot;-999.0&quot; values scattered throughout the dataset represent missing or meaningless fields. To ease data exploration, we're creating a working dataframe with the columns containing missing data removed.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode julia"><code class="sourceCode julia"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="co"># Working dataframe with extraneous columns removed</span></a>
-<a class="sourceLine" id="cb5-2" data-line-number="2">missingcols = [</a>
-<a class="sourceLine" id="cb5-3" data-line-number="3">  :EventId,</a>
-<a class="sourceLine" id="cb5-4" data-line-number="4">  :DER_mass_MMC,</a>
-<a class="sourceLine" id="cb5-5" data-line-number="5">  :DER_deltaeta_jet_jet,</a>
-<a class="sourceLine" id="cb5-6" data-line-number="6">  :DER_mass_jet_jet,</a>
-<a class="sourceLine" id="cb5-7" data-line-number="7">  :DER_prodeta_jet_jet,</a>
-<a class="sourceLine" id="cb5-8" data-line-number="8">  :DER_lep_eta_centrality,</a>
-<a class="sourceLine" id="cb5-9" data-line-number="9">  :PRI_jet_leading_pt,</a>
-<a class="sourceLine" id="cb5-10" data-line-number="10">  :PRI_jet_leading_eta,</a>
-<a class="sourceLine" id="cb5-11" data-line-number="11">  :PRI_jet_leading_phi,</a>
-<a class="sourceLine" id="cb5-12" data-line-number="12">  :PRI_jet_subleading_pt,</a>
-<a class="sourceLine" id="cb5-13" data-line-number="13">  :PRI_jet_subleading_eta,</a>
-<a class="sourceLine" id="cb5-14" data-line-number="14">  :PRI_jet_subleading_phi</a>
-<a class="sourceLine" id="cb5-15" data-line-number="15">]</a>
-<a class="sourceLine" id="cb5-16" data-line-number="16"></a>
-<a class="sourceLine" id="cb5-17" data-line-number="17">working = deletecols(train, missingcols)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode julia"><code class="sourceCode julia"><span class="co"># Working dataframe with extraneous columns removed</span>
+missingcols = [
+  :EventId,
+  :DER_mass_MMC,
+  :DER_deltaeta_jet_jet,
+  :DER_mass_jet_jet,
+  :DER_prodeta_jet_jet,
+  :DER_lep_eta_centrality,
+  :PRI_jet_leading_pt,
+  :PRI_jet_leading_eta,
+  :PRI_jet_leading_phi,
+  :PRI_jet_subleading_pt,
+  :PRI_jet_subleading_eta,
+  :PRI_jet_subleading_phi
+]
+
+working = deletecols(train, missingcols)</code></pre></div>
 <h3 id="event-distribution">Event Distribution</h3>
 <p>Each event in the training set contains a label that tells us whether the event contained a higgs boson or not. By splitting up our working set into groups based on the label, we can look at the distributions and patterns of the features in those groups.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode julia"><code class="sourceCode julia"><a class="sourceLine" id="cb6-1" data-line-number="1">signal, background = groupby(working, :Label)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode julia"><code class="sourceCode julia">signal, background = groupby(working, :Label)</code></pre></div>
 <pre class="none"><code>First Group (85667 rows): Label = &quot;s&quot;. Omitted printing of 27 columns
 │ Row   │ EventId │ DER_mass_MMC │ DER_mass_transverse_met_lep │ DER_mass_vis │ DER_pt_h │ DER_deltaeta_jet_jet │
 │       │ Int64   │ Float64⍰     │ Float64                     │ Float64      │ Float64  │ Float64⍰             │
@@ -96,114 +96,114 @@ Last Group (164333 rows): Label = &quot;b&quot;. Omitted printing of 27 columns
   <param name="url" value="/static/the-higgs-boson-challenge/sb-stats.svg">
 </object>
 
-<div class="sourceCode" id="cb8"><pre class="sourceCode julia"><code class="sourceCode julia"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="co"># Signal and Background boxplot stats</span></a>
-<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="kw">function</span> boxplot_stats(a)</a>
-<a class="sourceLine" id="cb8-3" data-line-number="3">  q1 = quantile(a, <span class="fl">0.25</span>)</a>
-<a class="sourceLine" id="cb8-4" data-line-number="4">  q2 = quantile(a, <span class="fl">0.5</span>)</a>
-<a class="sourceLine" id="cb8-5" data-line-number="5">  q3 = quantile(a, <span class="fl">0.75</span>)</a>
-<a class="sourceLine" id="cb8-6" data-line-number="6"></a>
-<a class="sourceLine" id="cb8-7" data-line-number="7">  lf = q1 - (<span class="fl">1.5</span> * (q3 - q1))</a>
-<a class="sourceLine" id="cb8-8" data-line-number="8">  uf = q3 + (<span class="fl">1.5</span> * (q3 - q1))</a>
-<a class="sourceLine" id="cb8-9" data-line-number="9"></a>
-<a class="sourceLine" id="cb8-10" data-line-number="10">  <span class="kw">return</span> (lf, q1, q2, q3, uf)</a>
-<a class="sourceLine" id="cb8-11" data-line-number="11"><span class="kw">end</span></a>
-<a class="sourceLine" id="cb8-12" data-line-number="12"></a>
-<a class="sourceLine" id="cb8-13" data-line-number="13"><span class="co"># Construct combined dataframe by looping over columns</span></a>
-<a class="sourceLine" id="cb8-14" data-line-number="14">sb_stats = DataFrame(name=[], label=[], lf=[], lh=[], m=[], uh=[], uf=[])</a>
-<a class="sourceLine" id="cb8-15" data-line-number="15"></a>
-<a class="sourceLine" id="cb8-16" data-line-number="16"><span class="kw">for</span> i <span class="kw">in</span> <span class="fl">1</span>:<span class="fl">20</span></a>
-<a class="sourceLine" id="cb8-17" data-line-number="17">  stats = boxplot_stats(signal[:, i])</a>
-<a class="sourceLine" id="cb8-18" data-line-number="18">  push!(sb_stats, [names(signal)[i], <span class="st">&quot;s&quot;</span>, stats...])</a>
-<a class="sourceLine" id="cb8-19" data-line-number="19"></a>
-<a class="sourceLine" id="cb8-20" data-line-number="20">  stats = boxplot_stats(background[:, i])</a>
-<a class="sourceLine" id="cb8-21" data-line-number="21">  push!(sb_stats, [names(background)[i], <span class="st">&quot;b&quot;</span>, stats...])</a>
-<a class="sourceLine" id="cb8-22" data-line-number="22"><span class="kw">end</span></a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode julia"><code class="sourceCode julia"><span class="co"># Signal and Background boxplot stats</span>
+<span class="kw">function</span> boxplot_stats(a)
+  q1 = quantile(a, <span class="fl">0.25</span>)
+  q2 = quantile(a, <span class="fl">0.5</span>)
+  q3 = quantile(a, <span class="fl">0.75</span>)
+
+  lf = q1 - (<span class="fl">1.5</span> * (q3 - q1))
+  uf = q3 + (<span class="fl">1.5</span> * (q3 - q1))
+
+  <span class="kw">return</span> (lf, q1, q2, q3, uf)
+<span class="kw">end</span>
+
+<span class="co"># Construct combined dataframe by looping over columns</span>
+sb_stats = DataFrame(name=[], label=[], lf=[], lh=[], m=[], uh=[], uf=[])
+
+<span class="kw">for</span> i <span class="kw">in</span> <span class="fl">1</span>:<span class="fl">20</span>
+  stats = boxplot_stats(signal[:, i])
+  push!(sb_stats, [names(signal)[i], <span class="st">&quot;s&quot;</span>, stats...])
+
+  stats = boxplot_stats(background[:, i])
+  push!(sb_stats, [names(background)[i], <span class="st">&quot;b&quot;</span>, stats...])
+<span class="kw">end</span></code></pre></div>
 <h3 id="particle-distribution">Particle Distribution</h3>
-<p>The ATLAS detector at the LHC is the largest particle detector in the world. It measures the 3 dimensional final state properties of the collision through a series of concentric cylinders around the collision point.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> Here's a plot of each hadronic tau and lepton for every event in the training set.</p>
+<p>The ATLAS detector at the LHC is the largest particle detector in the world. It measures the 3 dimensional final state properties of the collision through a series of concentric cylinders around the collision point.<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> Here's a plot of each hadronic tau and lepton for every event in the training set.</p>
 <video controls>
   <source src="/static/the-higgs-boson-challenge/particles-3d.mp4" type="video/mp4">
   Video not supported.
 </video>
 
-<div class="sourceCode" id="cb10"><pre class="sourceCode julia"><code class="sourceCode julia"><a class="sourceLine" id="cb10-1" data-line-number="1">using Makie</a>
-<a class="sourceLine" id="cb10-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb10-3" data-line-number="3">tau_coordinates = Point3f0[]</a>
-<a class="sourceLine" id="cb10-4" data-line-number="4">lep_coordinates = Point3f0[]</a>
-<a class="sourceLine" id="cb10-5" data-line-number="5"></a>
-<a class="sourceLine" id="cb10-6" data-line-number="6"><span class="kw">function</span> cartesian(pt, ϕ, η)</a>
-<a class="sourceLine" id="cb10-7" data-line-number="7">  x = pt * cos(ϕ)</a>
-<a class="sourceLine" id="cb10-8" data-line-number="8">  y = pt * sin(ϕ)</a>
-<a class="sourceLine" id="cb10-9" data-line-number="9">  z = pt * sinh(η)</a>
-<a class="sourceLine" id="cb10-10" data-line-number="10"></a>
-<a class="sourceLine" id="cb10-11" data-line-number="11">  <span class="kw">return</span> (x, y, z)</a>
-<a class="sourceLine" id="cb10-12" data-line-number="12"><span class="kw">end</span></a>
-<a class="sourceLine" id="cb10-13" data-line-number="13"></a>
-<a class="sourceLine" id="cb10-14" data-line-number="14"><span class="kw">for</span> row <span class="kw">in</span> eachrow(train)</a>
-<a class="sourceLine" id="cb10-15" data-line-number="15">  push!(tau_coordinates, cartesian(row[:PRI_tau_pt], row[:PRI_tau_phi], row[:PRI_tau_eta]))</a>
-<a class="sourceLine" id="cb10-16" data-line-number="16">  push!(lep_coordinates, cartesian(row[:PRI_lep_pt], row[:PRI_lep_phi], row[:PRI_lep_eta]))</a>
-<a class="sourceLine" id="cb10-17" data-line-number="17"><span class="kw">end</span></a>
-<a class="sourceLine" id="cb10-18" data-line-number="18"></a>
-<a class="sourceLine" id="cb10-19" data-line-number="19">scene = Scene(resolution=(<span class="fl">1200</span>, <span class="fl">800</span>), backgroundcolor=<span class="st">&quot;#222831&quot;</span>)</a>
-<a class="sourceLine" id="cb10-20" data-line-number="20">scatter!(scene, tau_coordinates, markersize=<span class="fl">5</span>, color=<span class="st">&quot;#fe4365&quot;</span>)</a>
-<a class="sourceLine" id="cb10-21" data-line-number="21">scatter!(scene, lep_coordinates, markersize=<span class="fl">5</span>, color=<span class="st">&quot;#eca25c&quot;</span>)</a>
-<a class="sourceLine" id="cb10-22" data-line-number="22"></a>
-<a class="sourceLine" id="cb10-23" data-line-number="23">scale!(scene, <span class="fl">2</span>, <span class="fl">2</span>, <span class="fl">2</span>)</a>
-<a class="sourceLine" id="cb10-24" data-line-number="24">scene.center = false</a>
-<a class="sourceLine" id="cb10-25" data-line-number="25"></a>
-<a class="sourceLine" id="cb10-26" data-line-number="26">record(scene, <span class="st">&quot;particles-3d.mp4&quot;</span>, <span class="fl">1</span>:<span class="fl">200</span>) <span class="kw">do</span> i</a>
-<a class="sourceLine" id="cb10-27" data-line-number="27">  rotate_cam!(scene, <span class="fl">0.01</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>)</a>
-<a class="sourceLine" id="cb10-28" data-line-number="28"><span class="kw">end</span></a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode julia"><code class="sourceCode julia">using Makie
+
+tau_coordinates = Point3f0[]
+lep_coordinates = Point3f0[]
+
+<span class="kw">function</span> cartesian(pt, ϕ, η)
+  x = pt * cos(ϕ)
+  y = pt * sin(ϕ)
+  z = pt * sinh(η)
+
+  <span class="kw">return</span> (x, y, z)
+<span class="kw">end</span>
+
+<span class="kw">for</span> row <span class="kw">in</span> eachrow(train)
+  push!(tau_coordinates, cartesian(row[:PRI_tau_pt], row[:PRI_tau_phi], row[:PRI_tau_eta]))
+  push!(lep_coordinates, cartesian(row[:PRI_lep_pt], row[:PRI_lep_phi], row[:PRI_lep_eta]))
+<span class="kw">end</span>
+
+scene = Scene(resolution=(<span class="fl">1200</span>, <span class="fl">800</span>), backgroundcolor=<span class="st">&quot;#222831&quot;</span>)
+scatter!(scene, tau_coordinates, markersize=<span class="fl">5</span>, color=<span class="st">&quot;#fe4365&quot;</span>)
+scatter!(scene, lep_coordinates, markersize=<span class="fl">5</span>, color=<span class="st">&quot;#eca25c&quot;</span>)
+
+scale!(scene, <span class="fl">2</span>, <span class="fl">2</span>, <span class="fl">2</span>)
+scene.center = false
+
+record(scene, <span class="st">&quot;particles-3d.mp4&quot;</span>, <span class="fl">1</span>:<span class="fl">200</span>) <span class="kw">do</span> i
+  rotate_cam!(scene, <span class="fl">0.01</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>)
+<span class="kw">end</span></code></pre></div>
 <p>This density plot shows the distribution of those particles in the transverse plane. Anything that escapes down the longitudinal axis is not detectable, and thus we see most particles end up in a small ring around the z-axis.</p>
 <object data="/static/the-higgs-boson-challenge/coordinate-density.svg" type="image/svg+xml">
   <param name="url" value="/static/the-higgs-boson-challenge/coordinate-density.svg">
 </object>
 
-<div class="sourceCode" id="cb11"><pre class="sourceCode julia"><code class="sourceCode julia"><a class="sourceLine" id="cb11-1" data-line-number="1">coordinates = DataFrame(x=[], y=[], z=[])</a>
-<a class="sourceLine" id="cb11-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb11-3" data-line-number="3"><span class="kw">for</span> row <span class="kw">in</span> eachrow(working)</a>
-<a class="sourceLine" id="cb11-4" data-line-number="4">  push!(coordinates, cartesian(row[:PRI_tau_pt], row[:PRI_tau_phi], row[:PRI_tau_eta]))</a>
-<a class="sourceLine" id="cb11-5" data-line-number="5">  push!(coordinates, cartesian(row[:PRI_lep_pt], row[:PRI_lep_phi], row[:PRI_lep_eta]))</a>
-<a class="sourceLine" id="cb11-6" data-line-number="6"><span class="kw">end</span></a>
-<a class="sourceLine" id="cb11-7" data-line-number="7"></a>
-<a class="sourceLine" id="cb11-8" data-line-number="8">plot(</a>
-<a class="sourceLine" id="cb11-9" data-line-number="9">  coordinates,</a>
-<a class="sourceLine" id="cb11-10" data-line-number="10">  x = :x,</a>
-<a class="sourceLine" id="cb11-11" data-line-number="11">  y = :y,</a>
-<a class="sourceLine" id="cb11-12" data-line-number="12">  Geom.density2d,</a>
-<a class="sourceLine" id="cb11-13" data-line-number="13">  Scale.color_continuous(colormap=x-&gt;get(ColorSchemes.blackbody, x))</a>
-<a class="sourceLine" id="cb11-14" data-line-number="14">)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode julia"><code class="sourceCode julia">coordinates = DataFrame(x=[], y=[], z=[])
+
+<span class="kw">for</span> row <span class="kw">in</span> eachrow(working)
+  push!(coordinates, cartesian(row[:PRI_tau_pt], row[:PRI_tau_phi], row[:PRI_tau_eta]))
+  push!(coordinates, cartesian(row[:PRI_lep_pt], row[:PRI_lep_phi], row[:PRI_lep_eta]))
+<span class="kw">end</span>
+
+plot(
+  coordinates,
+  x = :x,
+  y = :y,
+  Geom.density2d,
+  Scale.color_continuous(colormap=x-&gt;get(ColorSchemes.blackbody, x))
+)</code></pre></div>
 <h3 id="what-role-do-jets-play">What role do jets play?</h3>
-<p>A jet is a narrow stream of particles that occur as the result of the hadronization of a quark or gluon.<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> Every event in our dataset has either 0, 1, 2, or 3+ jets. These jets are important as they give us crucial insight into the energy of the system. In our training set, events with two jets show the highest probability to contain a higgs boson.</p>
+<p>A jet is a narrow stream of particles that occur as the result of the hadronization of a quark or gluon.<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a> Every event in our dataset has either 0, 1, 2, or 3+ jets. These jets are important as they give us crucial insight into the energy of the system. In our training set, events with two jets show the highest probability to contain a higgs boson.</p>
 <object data="/static/the-higgs-boson-challenge/num-jets.svg" type="image/svg+xml">
   <param name="url" value="/static/the-higgs-boson-challenge/num-jets.svg">
 </object>
 
-<div class="sourceCode" id="cb13"><pre class="sourceCode julia"><code class="sourceCode julia"><a class="sourceLine" id="cb13-1" data-line-number="1">jet_groups = groupby(working, :PRI_jet_num, sort=true)</a>
-<a class="sourceLine" id="cb13-2" data-line-number="2">jet_df = DataFrame(num_jets=[], num_s=[], num_b=[])</a>
-<a class="sourceLine" id="cb13-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb13-4" data-line-number="4"><span class="kw">for</span> group <span class="kw">in</span> jet_groups</a>
-<a class="sourceLine" id="cb13-5" data-line-number="5">  num_jets = first(group[:PRI_jet_num])</a>
-<a class="sourceLine" id="cb13-6" data-line-number="6">  num_s = count(group[:Label] .== <span class="st">&quot;s&quot;</span>)</a>
-<a class="sourceLine" id="cb13-7" data-line-number="7">  num_b = count(group[:Label] .== <span class="st">&quot;b&quot;</span>)</a>
-<a class="sourceLine" id="cb13-8" data-line-number="8"></a>
-<a class="sourceLine" id="cb13-9" data-line-number="9">  push!(jet_df, (num_jets, num_s, num_b))</a>
-<a class="sourceLine" id="cb13-10" data-line-number="10"></a>
-<a class="sourceLine" id="cb13-11" data-line-number="11">  println(<span class="st">&quot;$num_jets: $(num_s / num_b)&quot;</span>)</a>
-<a class="sourceLine" id="cb13-12" data-line-number="12"></a>
-<a class="sourceLine" id="cb13-13" data-line-number="13">  <span class="co"># Ratio of signal to background ^</span></a>
-<a class="sourceLine" id="cb13-14" data-line-number="14">  <span class="co"># 0: 0.3425377245669905</span></a>
-<a class="sourceLine" id="cb13-15" data-line-number="15">  <span class="co"># 1: 0.5560460729622346</span></a>
-<a class="sourceLine" id="cb13-16" data-line-number="16">  <span class="co"># 2: 1.0441874619598295</span></a>
-<a class="sourceLine" id="cb13-17" data-line-number="17">  <span class="co"># 3: 0.4361433292295730</span></a>
-<a class="sourceLine" id="cb13-18" data-line-number="18"><span class="kw">end</span></a>
-<a class="sourceLine" id="cb13-19" data-line-number="19"></a>
-<a class="sourceLine" id="cb13-20" data-line-number="20">plot(</a>
-<a class="sourceLine" id="cb13-21" data-line-number="21">  stack(jet_df, [:num_s, :num_b]),</a>
-<a class="sourceLine" id="cb13-22" data-line-number="22">  x = :num_jets,</a>
-<a class="sourceLine" id="cb13-23" data-line-number="23">  y = :value,</a>
-<a class="sourceLine" id="cb13-24" data-line-number="24">  color = :variable,</a>
-<a class="sourceLine" id="cb13-25" data-line-number="25">  Geom.bar(position = :dodge)</a>
-<a class="sourceLine" id="cb13-26" data-line-number="26">)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode julia"><code class="sourceCode julia">jet_groups = groupby(working, :PRI_jet_num, sort=true)
+jet_df = DataFrame(num_jets=[], num_s=[], num_b=[])
+
+<span class="kw">for</span> group <span class="kw">in</span> jet_groups
+  num_jets = first(group[:PRI_jet_num])
+  num_s = count(group[:Label] .== <span class="st">&quot;s&quot;</span>)
+  num_b = count(group[:Label] .== <span class="st">&quot;b&quot;</span>)
+
+  push!(jet_df, (num_jets, num_s, num_b))
+
+  println(<span class="st">&quot;$num_jets: $(num_s / num_b)&quot;</span>)
+
+  <span class="co"># Ratio of signal to background ^</span>
+  <span class="co"># 0: 0.3425377245669905</span>
+  <span class="co"># 1: 0.5560460729622346</span>
+  <span class="co"># 2: 1.0441874619598295</span>
+  <span class="co"># 3: 0.4361433292295730</span>
+<span class="kw">end</span>
+
+plot(
+  stack(jet_df, [:num_s, :num_b]),
+  x = :num_jets,
+  y = :value,
+  color = :variable,
+  Geom.bar(position = :dodge)
+)</code></pre></div>
 <h3 id="missing-mass-and-energy">Missing Mass and Energy</h3>
 <p>Energy in the ATLAS detector can escape detection. The two primary ways this happens is through the neutrino, a small fundamental particle that doesn't strongly interact with matter, and through the longitudinal axis, where the machine doesn't have detection capabilities. Using the law of the conservation of momentum, physicists can infer properties of the missing energy and use that to estimate the candidate mass of a Higgs Boson in any given event.</p>
 <object data="/static/the-higgs-boson-challenge/transverse-energy.svg" type="image/svg+xml">
@@ -220,28 +220,28 @@ Last Group (164333 rows): Label = &quot;b&quot;. Omitted printing of 27 columns
   <param name="url" value="/static/the-higgs-boson-challenge/correlations.svg">
 </object>
 
-<div class="sourceCode" id="cb14"><pre class="sourceCode julia"><code class="sourceCode julia"><a class="sourceLine" id="cb14-1" data-line-number="1">correlations = cor(<span class="dt">Matrix</span>(working[:, <span class="fl">1</span>:<span class="fl">20</span>]))</a>
-<a class="sourceLine" id="cb14-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb14-3" data-line-number="3">spy(</a>
-<a class="sourceLine" id="cb14-4" data-line-number="4">  correlations,</a>
-<a class="sourceLine" id="cb14-5" data-line-number="5">  Scale.y_discrete(labels=i-&gt;names(working[:, <span class="fl">1</span>:<span class="fl">20</span>])[i]),</a>
-<a class="sourceLine" id="cb14-6" data-line-number="6">  Guide.ylabel(nothing),</a>
-<a class="sourceLine" id="cb14-7" data-line-number="7">  Guide.colorkey(title=<span class="st">&quot;Correlation</span><span class="sc">\n</span><span class="st">Coefficient  &quot;</span>),</a>
-<a class="sourceLine" id="cb14-8" data-line-number="8">  Guide.xticks(label=false),</a>
-<a class="sourceLine" id="cb14-9" data-line-number="9">  Guide.xlabel(nothing)</a>
-<a class="sourceLine" id="cb14-10" data-line-number="10">)</a></code></pre></div>
-<section class="footnotes">
+<div class="sourceCode"><pre class="sourceCode julia"><code class="sourceCode julia">correlations = cor(<span class="dt">Matrix</span>(working[:, <span class="fl">1</span>:<span class="fl">20</span>]))
+
+spy(
+  correlations,
+  Scale.y_discrete(labels=i-&gt;names(working[:, <span class="fl">1</span>:<span class="fl">20</span>])[i]),
+  Guide.ylabel(nothing),
+  Guide.colorkey(title=<span class="st">&quot;Correlation</span>\n<span class="st">Coefficient  &quot;</span>),
+  Guide.xticks(label=false),
+  Guide.xlabel(nothing)
+)</code></pre></div>
+<div class="footnotes">
 <hr />
 <ol>
 <li id="fn1"><pre class="example"><code>https://en.wikipedia.org/wiki/Higgs_boson
 </code></pre>
-<a href="#fnref1" class="footnote-back">↩</a></li>
+<a href="#fnref1">↩</a></li>
 <li id="fn2"><pre class="example"><code>https://en.wikipedia.org/wiki/ATLAS_experiment
 </code></pre>
-<a href="#fnref2" class="footnote-back">↩</a></li>
+<a href="#fnref2">↩</a></li>
 <li id="fn3"><pre class="example"><code>https://en.wikipedia.org/wiki/Jet_(particle_physics)
 </code></pre>
-<a href="#fnref3" class="footnote-back">↩</a></li>
+<a href="#fnref3">↩</a></li>
 </ol>
-</section>
+</div>
 </div><div class="sidebar"><p>Placeholder</p></div></div></div></main><script src="/static/prism.js"></script><script src="/static/prism-python.min.js"></script><script src="/static/prism-julia.min.js"></script><script src="/static/katex.js"></script><script src="/static/katex-auto-render.js" onload="renderMathInElement(document.body);"></script><footer><div class="wrapper"><div class="column"><h2>Site</h2><a href="/about">About</a><a href="/art">Art</a><a href="/music">Music</a><a href="">Contact</a></div><div class="column"><h2>Links</h2><a href="">Hello</a><a href="">Hello</a></div><div class="column"><h2>Hello World</h2></div></div></footer></div></body></html>
