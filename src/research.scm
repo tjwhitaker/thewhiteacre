@@ -21,13 +21,13 @@
                 (a (@ (href "/about")) "About")
                 (a (@ (href "/models")) "Models")
                 (a (@ (href "/blog")) "Notebooks")
-                (a (@ (href "/research") (class "active")) "Papers"))))
+                (a (@ (href "/research")) "Papers"))))
 
           (main
             (div (@ (class "hero"))
               (div (@ (class "overlay")) "")
                 (div (@ (class "wrapper"))
-                  (h1 "Research")
+                  (h1 "Papers")
                   (p "Just a collection of some cool stuff I've worked on.")))
 
             (div (@ (class "prune-and-tune-ensembles"))

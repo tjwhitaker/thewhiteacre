@@ -171,32 +171,18 @@ html {
     }
 
     .catalog {
-      .model {
-        padding: 0 10rem;
-
+      background:white;
         .wrapper {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          grid-gap: 2rem;
-          align-items: center;
-
-          .content {
-          }
-          .code {
-            font-size: 0.7rem;
-            max-height: 20rem;
-            overflow: auto;
-
-            pre {
-              code {
-              }
+          .item {
+            background: white;
+            padding: 5rem 0;
+    
+            &:not(:first-child) {
+              border-top: 1px solid #f7f7f7;
             }
           }
+    
         }
-        &:nth-child(even) {
-          background: white;
-        }
-      }
     }
 
     .quantum-neuron-selection {

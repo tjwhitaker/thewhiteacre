@@ -145,29 +145,6 @@ html body .hero .wrapper .button-group .button:nth-child(2) {
   background: white;
   color: black;
 }
-html body .bar {
-  background: white;
-}
-html body .bar .wrapper p {
-  color: #bbb;
-  text-align: center;
-  font-family: "Open Sans";
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 0.8rem;
-}
-html body .bar .wrapper .brands {
-  padding: 1rem 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-html body .bar .wrapper .brands img {
-  max-width: 7rem;
-  max-height: 2rem;
-  filter: opacity(0.25);
-}
 html body .feed .post {
   background: white;
   padding: 5rem 0;

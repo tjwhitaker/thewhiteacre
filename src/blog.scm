@@ -20,14 +20,14 @@
               (nav
                 (a (@ (href "/about")) "About")
                 (a (@ (href "/models")) "Models")
-                (a (@ (href "/blog") (class "active")) "Notebooks")
+                (a (@ (href "/blog")) "Notebooks")
                 (a (@ (href "/research")) "Papers"))))
                 
           (main
             (div (@ (class "hero"))
               (div (@ (class "overlay")) "")
                 (div (@ (class "wrapper"))
-                  (h1 "Writing About Interesting Datasets ")
+                  (h1 "Notebooks ")
                   (p "Welcome to my blog! I'm mostly working on my research for my PhD, but sometimes I like to dig into interesting datasets for fun.")))
 
             (div (@ (class "feed"))

@@ -18,7 +18,7 @@
           (div (@ (class "wrapper"))
             (a (@ (href "/") (class "logo")) (img (@ (src "/static/logo.svg"))))
               (nav
-                (a (@ (href "/about") (class "active")) "About")
+                (a (@ (href "/about")) "About")
                 (a (@ (href "/models")) "Models")
                 (a (@ (href "/blog")) "Notebooks")
                 (a (@ (href "/research")) "Papers"))))
@@ -27,7 +27,7 @@
           (div (@ (class "hero"))
             (div (@ (class "overlay")) "")
             (div (@ (class "wrapper"))
-              (h1 "Machine Learning For Science")
+              (h1 "About")
               (p "Artificial intelligence could be one of the most important technologies to grace the modern world. It's up to us to be a force for good with it.")
             )
           )
