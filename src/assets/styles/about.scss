@@ -125,10 +125,10 @@ html {
     }
     .hero {
       width: 100%;
-      background: url(/static/chess-bg.png);
+      background: url(/static/trees-bg.png);
       background-size: cover;
       background-color: white;
-      background-position: top center;
+      background-position: center;
       background-repeat: no-repeat;
       position: relative;
       height: 80vh;
@@ -434,7 +434,7 @@ html {
     }
 
     footer {
-      background: white;
+      background: #0f0f0f;
       padding: 2rem 0;
 
       .wrapper {
@@ -444,7 +444,7 @@ html {
 
         .column {
           h2 {
-            color: black;
+            color: white;
             font-family: "Open Sans";
             text-transform: uppercase;
             margin-bottom: 1rem;
@@ -454,7 +454,7 @@ html {
             display: block;
             width: max-content;
             margin-bottom: 1rem;
-            color: black;
+            color: #aaa;
             font-family: "Open Sans";
             font-size: 0.8rem;
           }
