@@ -33,6 +33,10 @@ gulp.task("sounds", () => {
     .pipe(gulp.dest("../build/static"))
 })
 
+gulp.task("pdfs", () => {
+  return gulp.src("assets/pdfs/**/*.+(pdf)").pipe(gulp.dest("../build/static"))
+})
+
 gulp.task("clean", () => {
   return del(["static/main.css"])
 })

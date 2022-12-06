@@ -1,0 +1,176 @@
+@font-face {
+  font-family: "Latin Modern";
+  font-style: normal;
+  font-weight: normal;
+  font-display: block;
+  src: url("./LM-regular.woff2") format("woff2"), url("./LM-regular.woff") format("woff"), url("./LM-regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Latin Modern";
+  font-style: italic;
+  font-weight: normal;
+  font-display: block;
+  src: url("./LM-italic.woff2") format("woff2"), url("./LM-italic.woff") format("woff"), url("./LM-italic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Latin Modern";
+  font-style: normal;
+  font-weight: bold;
+  font-display: block;
+  src: url("./LM-bold.woff2") format("woff2"), url("./LM-bold.woff") format("woff"), url("./LM-bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Latin Modern";
+  font-style: italic;
+  font-weight: bold;
+  font-display: block;
+  src: url("./LM-bold-italic.woff2") format("woff2"), url("./LM-bold-italic.woff") format("woff"), url("./LM-bold-italic.ttf") format("truetype");
+}
+@-webkit-keyframes pulse {
+  0% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.25;
+  }
+}
+@keyframes pulse {
+  0% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.25;
+  }
+}
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  max-width: 100%;
+  transition: color 0.2s ease;
+}
+
+p {
+  font-family: "Latin Modern", Garamond;
+  margin-bottom: 1.6rem;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Latin Modern", Garamond;
+}
+html body {
+  font-size: 1.6rem;
+}
+html body header {
+  width: 100%;
+  background: white;
+  margin: 0;
+  padding: 0;
+}
+html body header .wrapper {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+}
+html body header .wrapper .logo {
+  color: black;
+  font-size: 0;
+  padding: 1rem 0;
+}
+html body header .wrapper .logo img {
+  height: auto;
+  max-width: 16rem;
+}
+html body header .wrapper nav a {
+  color: black;
+  text-decoration: none;
+  font-weight: 500;
+  font-family: "Open Sans";
+  margin-left: 3.2rem;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+html body header .wrapper nav a:hover {
+  color: #1976d2;
+}
+html body .hero {
+  width: 100%;
+  background-size: cover;
+  background-color: white;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  height: 80vh;
+}
+html body .hero .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  background: black;
+  opacity: 0.5;
+}
+html body .hero .wrapper {
+  position: relative;
+  z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
+}
+html body .hero .wrapper h1 {
+  font-family: "Open Sans";
+  font-size: 6.4rem;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: -0.1rem;
+  margin-bottom: 1rem;
+  max-width: 50%;
+  color: white;
+}
+html body .hero .wrapper p {
+  color: white;
+  font-size: 1.7rem;
+  font-style: italic;
+  max-width: 50%;
+  margin-bottom: 2rem;
+}
+html body footer {
+  background: #0f0f0f;
+  padding: 3.2rem 0;
+}
+html body footer .wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 3.2rem;
+}
+html body footer .wrapper .column h2 {
+  color: white;
+  font-family: "Open Sans";
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+html body footer .wrapper .column a {
+  display: block;
+  width: max-content;
+  margin-bottom: 1rem;
+  color: #aaa;
+  font-family: "Open Sans";
+  font-size: 1.2rem;
+}
+
+.wrapper {
+  padding: 1rem;
+  max-width: 120rem;
+  margin: 0 auto;
+}
