@@ -21,9 +21,8 @@
               (nav
                 (a (@ (href "/about")) "About")
                 (a (@ (href "/models")) "Models")
-                (a (@ (href "/blog")) "Notebooks")
+                (a (@ (href "/notebooks")) "Notebooks")
                 (a (@ (href "/research")) "Papers"))))
-
           (main
             (div (@ (class "hero"))
               (div (@ (class "overlay")) "")

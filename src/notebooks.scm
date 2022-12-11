@@ -1,8 +1,8 @@
-(define blog-template
+(define notebooks-template
   (lambda (feed)
     `(html
       ((head
-        (title "Articles | The White Acre")
+        (title "Notebooks | The White Acre")
         (meta (@ (charset "utf-8")))
         (meta (@ (name "viewport") (content "width=device-width, initial-scale=1")))
         (link (@ (rel "icon") (href "/static/favicon.ico")))
@@ -21,9 +21,8 @@
               (nav
                 (a (@ (href "/about")) "About")
                 (a (@ (href "/models")) "Models")
-                (a (@ (href "/blog")) "Notebooks")
-                (a (@ (href "/research")) "Papers"))))
-                
+                (a (@ (href "/notebooks")) "Notebooks")
+                (a (@ (href "/research")) "Papers"))))                
           (main
             (div (@ (class "hero"))
               (div (@ (class "overlay")) "")

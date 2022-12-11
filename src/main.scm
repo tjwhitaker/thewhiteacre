@@ -13,11 +13,12 @@
 (include "./home.scm")
 (include "./about.scm")
 (include "./models.scm")
-(include "./blog.scm")
+(include "./notebooks.scm")
 (include "./post.scm")
 (include "./research.scm")
 (include "./projects.scm")
 (include "./code.scm")
+(include "./thoughts.scm")
 
 ;; Write html to the intended build file
 (define write-html
@@ -43,7 +44,7 @@
       (date ,(irregex-match-substring match 'date))
       (hero ,(irregex-match-substring match 'hero))
       (slug ,(string-chomp filename ".org"))
-      (content ,(capture ,(conc "pandoc articles/" filename " -f org -t html"))))))
+      (content ,(capture ,(conc "pandoc " directory filename " -f org -t html"))))))
 
 (define inject-field
   (lambda (placeholder template value)
@@ -51,29 +52,15 @@
 
 ;; Build a feed of all articles
 (define build-feed
-  (lambda ()
+  (lambda (dir)
     (define posts 
       (map 
-        (lambda (x) (parse-org-file "articles/" x)) 
-        (directory "articles")))
+        (lambda (x) (parse-org-file dir x)) 
+        (directory dir)))
     (sort! posts (lambda (a b)
       (date<?
         (string->date (cadr (assoc 'date a)) "~Y-~m-~d")
         (string->date (cadr (assoc 'date b)) "~Y-~m-~d"))))))
-
-;; Build blog pages
-(define build-articles
-  (lambda (feed)
-    (map 
-      (lambda (article) 
-        (define template (serialize-sxml (article-template feed) indent: #f method: 'html))
-        (define temp (inject-field "<ARTICLE-TITLE />" template (cadr (assoc 'title article))))
-        (define temp (inject-field "<ARTICLE-HERO />" temp (cadr (assoc 'hero article))))
-        (define html (inject-field "<ARTICLE-CONTENT />" temp (cadr (assoc 'content article))))
-
-        ; (define html (irregex-replace "<CONTEXT />" template (cadr (assoc 'content article))))
-        (write-html (conc "../build/" (cadr (assoc 'slug article))) html))
-      feed)))
 
 (define build-home
   (lambda ()
@@ -90,14 +77,14 @@
     (define html (serialize-sxml (models-template) indent: #f method: 'html'))
     (write-html "../build/models" html)))
 
-(define build-blog
+(define build-notebooks
   (lambda (feed)
-    (define html (serialize-sxml (blog-template feed) indent: #f method: 'html'))
-    (write-html "../build/blog" html)))
+    (define html (serialize-sxml (notebooks-template feed) indent: #f method: 'html'))
+    (write-html "../build/notebooks" html)))
 
 ;; Build article pages
 (define build-posts
-  (lambda (feed)
+  (lambda (feed dir)
     (map 
       (lambda (article) 
         (define title (cadr (assoc 'title article)))
@@ -107,7 +94,7 @@
         (define html (inject-field "<ARTICLE-CONTENT />" template (cadr (assoc 'content article))))
 
         ; (define html (irregex-replace "<CONTEXT />" template (cadr (assoc 'content article))))
-        (write-html (conc "../build/blog/" (cadr (assoc 'slug article))) html))
+        (write-html (conc dir (cadr (assoc 'slug article))) html))
       feed)))
 
 (define build-code
@@ -131,18 +118,27 @@
     (define html (serialize-sxml (writing-template) indent: #f method: 'html'))
     (write-html "../build/writing" html)))
 
+(define build-thoughts
+  (lambda (feed)
+    (define html (serialize-sxml (thoughts-template feed) indent: #f method: 'html'))
+    (write-html "../build/thoughts" html)))
+
 ;; Run gulp and copy static files to build dir
 (define build-static
   (lambda ()
     (run gulp)))
 
 ;; Our main loop
-(let ((feed (build-feed)))
+(let 
+  ((notebooks (build-feed "articles/"))
+   (thoughts (build-feed "thoughts/")))
   (build-static)
   (build-home)
   (build-about)
   (build-code)
   (build-models)
   (build-research)
-  (build-blog feed)
-  (build-posts feed))
+  (build-thoughts thoughts)
+  (build-posts thoughts "../build/thoughts/")
+  (build-notebooks notebooks)
+  (build-posts notebooks "../build/notebooks/"))

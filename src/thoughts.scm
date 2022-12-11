@@ -1,14 +1,13 @@
-(define post-template
-  (lambda (title description hero)
+(define thoughts-template
+  (lambda (feed)
     `(html
       ((head
-        (title "Blog | The White Acre")
+        (title "Thoughts | The White Acre")
         (meta (@ (charset "utf-8")))
         (meta (@ (name "viewport") (content "width=device-width, initial-scale=1")))
         (link (@ (rel "icon") (href "/static/favicon.ico")))
-        (link (@ (rel "stylesheet") (href "/static/article.css")))
-        (link (@ (rel "stylesheet") (href "/static/prism.css")))
-        (link (@ (rel "stylesheet") (href "https://cdn.jsdelivr.net/npm/katex@0.16.3/dist/katex.min.css")))
+        (link (@ (rel "stylesheet") (href "/static/style.css")))
+        (link (@ (rel "stylesheet") (href "/static/thoughts.css")))
         (link (@ (rel "preconnect") (href "https://fonts.googleapis.com")))
         (link (@ (rel "preconnect") (href "https://fonts.gstatic.com")))
         (link (@ (rel "stylesheet") (href "https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;700&display=block")))
@@ -24,31 +23,23 @@
                 (a (@ (href "/models")) "Models")
                 (a (@ (href "/notebooks")) "Notebooks")
                 (a (@ (href "/research")) "Papers"))))
-
+                
           (main
-            (div (@ (class "hero") (style ,(conc "background-image: url(" hero ")")))
+            (div (@ (class "hero"))
               (div (@ (class "overlay")) "")
                 (div (@ (class "wrapper"))
-                  (h1 ,title)
-                  (p ,description)))
+                  (h1 "Thoughts")
+                  (p "Welcome to my blog! I'm mostly working on my research for my PhD, but sometimes I like to dig into philosophy for fun.")))
 
-            (div (@ (class "article"))
+            (div (@ (class "feed"))
               (div (@ (class "wrapper"))
-                (div (@ (class "content"))
-                  (ARTICLE-CONTENT)
-                )
-                (div (@ (class "sidebar"))
-                  (p "Placeholder")
-                )
-              )
-            )
-          )
-
-          (script (@ (src "/static/prism.js")) "")
-          (script (@ (src "/static/prism-python.min.js")) "")
-          (script (@ (src "/static/prism-julia.min.js")) "")
-          (script (@ (src "/static/katex.js")) "")
-          (script (@ (src "/static/katex-auto-render.js") (onload "renderMathInElement(document.body);")) "")
+                ,(map (lambda (post) 
+                  `(div (@ (class "post"))
+                      (small ,(cadr (assoc 'date post)))
+                      (h1 ,(cadr (assoc 'title post)))
+                      (p ,(cadr (assoc 'description post)))
+                      (a (@ (href ,(conc "/thoughts/" (cadr (assoc 'slug post))))) "Read More")))
+              feed)))
 
           (footer
             (div (@ (class "wrapper"))
@@ -63,4 +54,4 @@
                 (a (@ (href "")) "Hello")
                 (a (@ (href "")) "Hello"))
               (div (@ (class "column"))
-                (h2 "Hello World"))))))))))
+                (h2 "Hello World")))))))))))
