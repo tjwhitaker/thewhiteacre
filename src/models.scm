@@ -4,7 +4,6 @@
 (include "./models/boltzmann.scm")
 (include "./models/echo-state.scm")
 (include "./models/alexnet.scm")
-
 (include "./models/placeholder.scm")
 
 (define models-template
