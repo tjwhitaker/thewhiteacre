@@ -19,15 +19,15 @@ html {
         align-items: center;
 
         h1 {
-          font-family: "Open Sans";
-          font-size: 4.8rem;
-          text-transform: uppercase;
-          line-height: 1;
-          letter-spacing: -0.1rem;
+          // font-family: "Open Sans";
+          // font-size: 4.8rem;
+          // text-transform: uppercase;
+          line-height: 1.2;
+          // letter-spacing: -0.1rem;
           margin-bottom: 1.6rem;
           color: black;
         }
-        p {
+        p, small {
           color: black;
         }
         .read-more {
@@ -59,28 +59,46 @@ html {
         .wrapper div {
           grid-column:1;
 
-          h1, p, a {
+          h1, p, a, small {
             color:white;
           }
         }
       }
     }
-    .quantum-neuron-selection {
-      background-image: url(/static/brain.svg);
-    }
 
-    .interpretable-diversity-analysis {
-      background-image: url(/static/jewel-stone-diamond.svg);
+    .low-cost-ensembles {
+      background-image: url(/static/cell-nucleus.svg);
     }
     .prune-and-tune-ensembles {
       background-image: url(/static/cell-nucleus.svg);
     }
-    .low-cost-ensembles {
-      background-image: url(/static/cell-nucleus.svg);
+    .interpretable-diversity-analysis {
+      background-image: url(/static/dna-helix-3.svg);
     }
-
+    .sparse-mutation-decomposition {
+      background-image: url(/static/brain.svg);
+    }
     .synaptic-stripping {
       background-image: url(/static/jewel-stone-diamond.svg);
     }
+    .stochastic-masking {
+      background-image: url(/static/h2o-water-molecule.svg);
+    }
+    .quantum-neuron-selection {
+      background-image: url(/static/freezer-ice.svg);
+    }
+
+    footer {
+      background: white;
+  
+      .wrapper {
+        .column {
+          h2, a {
+            color: black;
+          }
+        }
+      }
+    }
+  
   }
 }
