@@ -74,8 +74,8 @@
             (div (@ (class "paper stochastic-masking"))
               (div (@ (class "wrapper"))
                 (div
-                  (h1 "Stochastic Masking: ...")
-                  (p "...")
+                  (h1 "Stochastic Partitioning: ...")
+                  (p "A Modular Network Architecture for Multi-Task Learning")
                   (p "Coming soon...")
                   (a (@ (href "#") (class "read-more")) "Read More"))))
 
