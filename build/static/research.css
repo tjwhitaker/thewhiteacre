@@ -6,11 +6,22 @@ html body .paper {
   background-size: 45vw;
   background-repeat: no-repeat;
 }
+@media screen and (max-width: 600px) {
+  html body .paper {
+    padding: 8rem 0;
+    background-size: 250vw;
+  }
+}
 html body .paper .wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 3.2rem;
   align-items: center;
+}
+@media screen and (max-width: 600px) {
+  html body .paper .wrapper {
+    grid-template-columns: 1fr;
+  }
 }
 html body .paper .wrapper h1 {
   line-height: 1.2;

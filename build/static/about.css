@@ -11,11 +11,22 @@ html body .why {
   background-position: center left;
   position: relative;
 }
+@media screen and (max-width: 600px) {
+  html body .why {
+    background-size: 250vw;
+    padding: 8rem 0;
+  }
+}
 html body .why .wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 3.2rem;
   align-items: center;
+}
+@media screen and (max-width: 600px) {
+  html body .why .wrapper {
+    grid-template-columns: 1fr;
+  }
 }
 html body .why .wrapper div {
   grid-column: 2;

@@ -14,11 +14,20 @@ html {
       background-position: center left;
       position: relative;
 
+      @media screen and (max-width:600px) {
+        background-size:250vw;
+        padding:8rem 0;
+      }
+
       .wrapper {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-gap: 3.2rem;
         align-items: center;
+
+        @media screen and (max-width:600px){
+          grid-template-columns: 1fr;
+        }
 
         div {
           grid-column: 2;

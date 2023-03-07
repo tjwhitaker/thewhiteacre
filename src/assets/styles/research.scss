@@ -11,12 +11,21 @@ html {
       padding:16rem 0;
       background-size: 45vw;
       background-repeat: no-repeat;
+
+      @media screen and (max-width:600px) {
+        padding:8rem 0;
+        background-size:250vw;
+      }
       
       .wrapper {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-gap: 3.2rem;
         align-items: center;
+
+        @media screen and (max-width:600px) {
+          grid-template-columns: 1fr;
+        }
 
         h1 {
           // font-family: "Open Sans";

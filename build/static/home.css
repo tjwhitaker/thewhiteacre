@@ -1,9 +1,6 @@
 html body .hero {
   background-image: url(/static/mountain-bg.png);
 }
-html body .hero .wrapper h1 {
-  max-width: 55%;
-}
 html body .intro {
   background: white;
   padding: 4.8rem 0;
@@ -13,6 +10,12 @@ html body .intro .wrapper .column-wrapper {
   align-items: baseline;
   justify-content: space-between;
   padding: 1.6rem;
+  flex-wrap: wrap;
+}
+@media screen and (max-width: 600px) {
+  html body .intro .wrapper .column-wrapper {
+    padding: 1.6rem 0;
+  }
 }
 html body .intro .wrapper .column-wrapper .column {
   flex: 0 0 30%;
@@ -27,8 +30,14 @@ html body .intro .wrapper .column-wrapper .column .icon img {
   width: 100%;
   height: 100%;
 }
+@media screen and (max-width: 600px) {
+  html body .intro .wrapper .column-wrapper .column {
+    flex: 0 0 100%;
+  }
+}
 html body .personal {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   background: #f7f7f7;
 }
@@ -36,35 +45,75 @@ html body .personal .content {
   flex: 0 0 50%;
 }
 html body .personal .content .wrapper {
-  max-width: 60%;
+  padding: 5rem;
+}
+@media screen and (max-width: 600px) {
+  html body .personal .content .wrapper {
+    padding: 2rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  html body .personal .content {
+    flex: 0 0 100%;
+  }
 }
 html body .personal .image {
   flex: 0 0 50%;
+  align-self: stretch;
 }
 html body .personal .image img {
   display: block;
+  height: 100%;
+  object-fit: cover;
+}
+@media screen and (max-width: 600px) {
+  html body .personal .image {
+    flex: 0 0 100%;
+  }
 }
 html body .contact {
   padding: 8rem 0;
   background: white;
 }
+@media screen and (max-width: 600px) {
+  html body .contact {
+    padding: 0rem;
+  }
+}
 html body .contact .wrapper {
   display: grid;
-  grid-template-rows: auto auto auto;
+  grid-template-rows: auto auto;
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 3.2rem;
+}
+@media screen and (max-width: 600px) {
+  html body .contact .wrapper {
+    grid-template-rows: auto auto auto;
+    grid-template-columns: 1fr;
+    grid-column-gap: 0rem;
+    grid-row-gap: 3.2rem;
+  }
 }
 html body .contact .wrapper h1 {
   grid-row: 1;
   font-size: 3.2rem;
   margin-bottom: 1.6rem;
 }
+@media screen and (max-width: 600px) {
+  html body .contact .wrapper h1 {
+    margin-bottom: -1.6rem;
+  }
+}
 html body .contact .wrapper .form-container {
+  grid-row: 2;
+  display: flex;
+}
+html body .contact .wrapper .form-container form {
   display: flex;
   flex-direction: column;
-  grid-row: 2;
+  flex: 1;
 }
-html body .contact .wrapper .form-container input {
+html body .contact .wrapper .form-container form input {
   display: block;
   margin-bottom: 1.6rem;
   padding: 0.8rem;
@@ -72,7 +121,7 @@ html body .contact .wrapper .form-container input {
   border: 1px solid #ccc;
   background: white;
 }
-html body .contact .wrapper .form-container textarea {
+html body .contact .wrapper .form-container form textarea {
   flex: 1;
   display: block;
   padding: 0.8rem;
@@ -80,18 +129,13 @@ html body .contact .wrapper .form-container textarea {
   border: 1px solid #ccc;
   background: white;
 }
-html body .contact .wrapper .map-container {
-  grid-row: 2;
-}
-html body .contact .wrapper .map-container #map {
-  height: 32rem;
-}
-html body .contact .wrapper .button {
-  grid-row: 3;
+html body .contact .wrapper .form-container form button {
   background: #1976d2;
   color: white;
   padding: 0.8rem 1.6rem;
   outline: none;
+  border: none;
+  cursor: pointer;
   font-family: "Open Sans";
   font-weight: bold;
   text-transform: uppercase;
@@ -101,6 +145,17 @@ html body .contact .wrapper .button {
   max-width: max-content;
   display: block;
   margin-top: 1.6rem;
+}
+html body .contact .wrapper .map-container {
+  grid-row: 2;
+}
+html body .contact .wrapper .map-container #map {
+  height: 32rem;
+}
+@media screen and (max-width: 600px) {
+  html body .contact .wrapper .map-container {
+    grid-row: 3;
+  }
 }
 html body .reference {
   background: #f7f7f7;

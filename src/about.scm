@@ -19,7 +19,7 @@
           (div (@ (class "wrapper"))
             (a (@ (href "/") (class "logo")) (img (@ (src "/static/logo.svg"))))
               (nav
-                (a (@ (href "/about")) "About")
+                (a (@ (href "/about") (class "active")) "About")
                 (a (@ (href "/models")) "Models")
                 (a (@ (href "/notebooks")) "Notebooks")
                 (a (@ (href "/research")) "Papers"))))
@@ -29,14 +29,14 @@
             (div (@ (class "overlay")) "")
             (div (@ (class "wrapper"))
               (h1 "About")
-              (p "Artificial intelligence could be one of the most important technologies to grace the modern world. It's up to us to be a force for good with it.")
+              (p "I also love to rock climb, play chess, and make music.")
             )
           )
           (div (@ (class "why"))
             (div (@ (class "wrapper"))
               (div
                 (h1 "My Research")
-                (p "I'm really interested in exploring the inner workings of deep neural networks. I've titled my dissertation Neural Partitioning, which is the process of splitting deep neural networks into sparse subnetworks that can be trained, executed, or analyzed independently. My work touches on several powerful topics in machine learning including: low-cost ensemble learning, interpretability methods, network pruning, continual learning, neuroregeneration, evolutionary methods and quantum computation. Check out my research papers to learn more about what I'm working on.")
+                (p "I'm really interested in exploring the inner workings of deep neural networks. My PhD research is about neural partitioning, which is the process of splitting deep neural networks into sparse subnetworks that can be trained, executed, or analyzed independently. My work touches on several powerful topics in machine learning including: low-cost ensemble learning, interpretability methods, network pruning, continual learning, neuroregeneration, evolutionary methods and quantum computation. Check out my research papers to learn more about what I'm working on.")
               )
             )
           )
@@ -120,32 +120,24 @@
           ;   )
           ; )
           
-          (footer 
+          (footer
             (div (@ (class "wrapper"))
               (div (@ (class "column"))
                 (h2 "Site")
-                (a (@ (href "")) "Hello")
-                (a (@ (href "")) "Hello")
-                (a (@ (href "")) "Hello")
-
-              )
+                (a (@ (href "/about")) "About")
+                (a (@ (href "/models")) "Models")
+                (a (@ (href "/notebooks")) "Notebooks")
+                (a (@ (href "/research")) "Research"))
               (div (@ (class "column"))
                 (h2 "Links")
-                (a (@ (href "")) "Hello")
-                (a (@ (href "")) "Hello")
-
-              )
+                (a (@ (href "https://arxiv-sanity-lite.com")) "Arxiv Sanity")
+                (a (@ (href "https://paperswithcode.com")) "Papers With Code")
+                (a (@ (href "https://news.ycombinator.com")) "Hacker News")
+                (a (@ (href "https://www.youtube.com/c/pbsspacetime")) "Space Time"))
               (div (@ (class "column"))
-                (h2 "Hello World")
-              )
-            )
-          )
-
-          (script "	mapboxgl.accessToken = 'pk.eyJ1IjoidG13aHRrciIsImEiOiJja2x2NzdpaW0wNXRnMndwOGszNTc3aWd5In0.LvJ2znCQ_1v9a86fxUhQ2A';
-          var map = new mapboxgl.Map({
-          container: 'map', // container id
-          style: 'mapbox://styles/mapbox/streets-v11', // style URL
-          center: [-121.4944, 38.5816], // starting position [lng, lat]
-          zoom: 10 // starting zoom
-          });"
-          ))))))))
+                (h2 "Self")
+                (a (@ (href "#")) "CV")
+                (a (@ (href "https://github.com/tjwhitaker")) "Github")
+                (a (@ (href "https://lichess.org/@/tjwhitaker")) "Lichess")
+                (a (@ (href "https://orcid.org/0000-0003-3792-3901")) "Orcid")
+                ))))))))))
