@@ -1,5 +1,6 @@
 html body .hero {
-  background-image: url(/static/mountain-bg.png);
+  background-image: url(/static/brain-bg.png);
+  background-position: top center;
 }
 html body .intro {
   background: white;
@@ -23,8 +24,8 @@ html body .intro .wrapper .column-wrapper .column {
 }
 html body .intro .wrapper .column-wrapper .column .icon {
   margin: 0 auto;
-  height: 12rem;
-  width: 12rem;
+  height: 15rem;
+  width: 15rem;
 }
 html body .intro .wrapper .column-wrapper .column .icon img {
   width: 100%;
@@ -39,7 +40,7 @@ html body .personal {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  background: #f7f7f7;
+  background: #eeeeee;
 }
 html body .personal .content {
   flex: 0 0 50%;
@@ -158,7 +159,7 @@ html body .contact .wrapper .map-container #map {
   }
 }
 html body .reference {
-  background: #f7f7f7;
+  background: #eeeeee;
   padding: 1rem;
 }
 html body .reference p {

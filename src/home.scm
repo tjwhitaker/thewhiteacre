@@ -112,7 +112,7 @@
           (script "	mapboxgl.accessToken = 'pk.eyJ1IjoidG13aHRrciIsImEiOiJja2x2NzdpaW0wNXRnMndwOGszNTc3aWd5In0.LvJ2znCQ_1v9a86fxUhQ2A';
           var map = new mapboxgl.Map({
           container: 'map', // container id
-          style: 'mapbox://styles/mapbox/light-v10', // style URL
+          style: 'mapbox://styles/mapbox/streets-v12', // style URL
           center: [-121.4944, 38.5816], // starting position [lng, lat]
           zoom: 10 // starting zoom
           });")))))))

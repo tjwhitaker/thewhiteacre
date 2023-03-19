@@ -182,6 +182,10 @@ html {
           max-width: 600px;
           margin-bottom: 2rem;
         }
+
+        @media screen and (max-width: 600px) {
+          text-align:center;
+        }
       }
     }
     footer {

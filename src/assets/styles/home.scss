@@ -2,7 +2,8 @@ html {
 
   body {
     .hero {
-      background-image: url(/static/mountain-bg.png);
+      background-image: url(/static/brain-bg.png);
+      background-position: top center;
     }
 
     .intro {
@@ -26,8 +27,8 @@ html {
 
             .icon {
               margin: 0 auto;
-              height: 12rem;
-              width: 12rem;
+              height: 15rem;
+              width: 15rem;
 
               img {
                 width: 100%;
@@ -46,7 +47,7 @@ html {
       display: flex;
       flex-wrap:wrap;
       align-items: center;
-      background:#f7f7f7;
+      background:#eeeeee;
 
       .content {
         flex: 0 0 50%;
@@ -162,7 +163,7 @@ html {
     }
 
     .reference {
-      background: #f7f7f7;
+      background: #eeeeee;
       padding: 1rem;
       p {
         text-align: center;
