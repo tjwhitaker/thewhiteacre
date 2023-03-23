@@ -1,4 +1,4 @@
-(define post-template
+(define notebook-template
   (lambda (title description hero)
     `(html
       ((head
@@ -13,8 +13,7 @@
         (link (@ (rel "preconnect") (href "https://fonts.gstatic.com")))
         (link (@ (rel "stylesheet") (href "https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;700&display=block")))
         (link (@ (rel "stylesheet") (href "https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css")))
-        (script (@ (src "https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js")) "")
-        (script (@ (src "/static/iframeresizer.min.js")) ""))
+        (script (@ (src "https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js")) ""))
       (body
         (div (@ (class "home"))
           (header
@@ -36,36 +35,23 @@
             (div (@ (class "article"))
               (div (@ (class "wrapper"))
                 (div (@ (class "content"))
-                  (ARTICLE-CONTENT)
+                  (iframe (ARTICLE-CONTENT))
                 )
               )
             )
           )
-
-          ; (script (@ (src "/static/prism.js")) "")
-          ; (script (@ (src "/static/prism-python.min.js")) "")
-          ; (script (@ (src "/static/prism-julia.min.js")) "")
-          ; (script (@ (src "/static/katex.js")) "")
-          ; (script (@ (src "/static/katex-auto-render.js") (onload "renderMathInElement(document.body);")) "")
-
+          
           (footer
             (div (@ (class "wrapper"))
               (div (@ (class "column"))
                 (h2 "Site")
                 (a (@ (href "/about")) "About")
-                (a (@ (href "/models")) "Models")
-                (a (@ (href "/notebooks")) "Notebooks")
-                (a (@ (href "/research")) "Research"))
+                (a (@ (href "/art")) "Art")
+                (a (@ (href "/music")) "Music")
+                (a (@ (href "")) "Contact"))
               (div (@ (class "column"))
                 (h2 "Links")
-                (a (@ (href "https://arxiv-sanity-lite.com")) "Arxiv Sanity")
-                (a (@ (href "https://paperswithcode.com")) "Papers With Code")
-                (a (@ (href "https://news.ycombinator.com")) "Hacker News")
-                (a (@ (href "https://www.youtube.com/c/pbsspacetime")) "Space Time"))
+                (a (@ (href "")) "Hello")
+                (a (@ (href "")) "Hello"))
               (div (@ (class "column"))
-                (h2 "Self")
-                (a (@ (href "#")) "CV")
-                (a (@ (href "https://github.com/tjwhitaker")) "Github")
-                (a (@ (href "https://lichess.org/@/tjwhitaker")) "Lichess")
-                (a (@ (href "https://orcid.org/0000-0003-3792-3901")) "Orcid")
-                )))))))))
+                (h2 "Hello World"))))))))))

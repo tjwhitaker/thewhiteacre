@@ -37,7 +37,7 @@
                       (small ,(cadr (assoc 'date post)))
                       (h1 ,(cadr (assoc 'title post)))
                       (p ,(cadr (assoc 'description post)))
-                      (a (@ (href ,(conc "/blog/" (cadr (assoc 'slug post))))) "Read More")))
+                      (a (@ (href ,(conc "/notebooks/" (cadr (assoc 'slug post))))) "Read More")))
               feed)))
           )
 

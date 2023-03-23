@@ -1,0 +1,11 @@
+#+TITLE: Gradient Descent with a Neural Network
+#+DESCRIPTION: Derivations of gradient descent with a simple two layer neural network.
+#+DATE: 2020-01-03
+#+HERO: /static/space-bg.png
+
+#+BEGIN_EXPORT html
+<iframe id="myIframe" src="/static/notebooks/gradient-descent-neural-network.html"></iframe>
+<script>
+  iFrameResize({ log: true }, '#myIframe')
+</script>
+#+END_EXPORT

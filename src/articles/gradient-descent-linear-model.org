@@ -1,0 +1,11 @@
+#+TITLE: Gradient Descent with Linear Model
+#+DESCRIPTION: An introduction to finding good parameters for simple linear models.
+#+DATE: 2020-01-02
+#+HERO: /static/space-bg.png
+
+#+BEGIN_EXPORT html
+<iframe id="myIframe" src="/static/notebooks/gradient-descent-linear-model.html"></iframe>
+<script>
+  iFrameResize({ log: true }, '#myIframe')
+</script>
+#+END_EXPORT

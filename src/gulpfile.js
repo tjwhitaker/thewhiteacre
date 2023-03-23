@@ -37,6 +37,12 @@ gulp.task("pdfs", () => {
   return gulp.src("assets/pdfs/**/*.+(pdf)").pipe(gulp.dest("../build/static"))
 })
 
+gulp.task("notebooks", () => {
+  return gulp
+    .src("notebooks/**/*.+(html)")
+    .pipe(gulp.dest("../build/static/notebooks"))
+})
+
 gulp.task("clean", () => {
   return del(["static/main.css"])
 })
@@ -49,5 +55,14 @@ gulp.task("watch", () => {
 
 gulp.task(
   "default",
-  gulp.series(["clean", "styles", "images", "scripts", "fonts", "sounds"])
+  gulp.series([
+    "clean",
+    "styles",
+    "images",
+    "scripts",
+    "notebooks",
+    "pdfs",
+    "fonts",
+    "sounds",
+  ])
 )
