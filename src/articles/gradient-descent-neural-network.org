@@ -1,4 +1,4 @@
-#+TITLE: Gradient Descent with a Neural Network
+#+TITLE: Gradient Descent with Neural Networks
 #+DESCRIPTION: Derivations of gradient descent with a simple two layer neural network.
 #+DATE: 2020-01-03
 #+HERO: /static/space-bg.png
