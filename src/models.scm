@@ -25,11 +25,10 @@
             (div (@ (class "wrapper"))
               (a (@ (href "/") (class "logo")) (img (@ (src "/static/logo.svg"))))
               (nav
-                (a (@ (href "/about")) "About")
-                (a (@ (href "/models")(class "active")) "Models")
+                (a (@ (href "/research")) "Publications")
+                (a (@ (href "/models") (class "active")) "Models")
                 (a (@ (href "/notebooks")) "Notebooks")
-                (a (@ (href "/research")) "Papers"))))
-
+                (a (@ (href "/contact")) "Contact"))))
           (main
             (div (@ (class "hero"))
               (div (@ (class "overlay")) "")
@@ -240,6 +239,8 @@
             ;         (pre (code (@ (class "language-python")) (unquote placeholder)))))))
                     
                     )
+          (div (@ (class "reference"))
+            (p "I built and designed this " (a (@ (href "https://github.com/tjwhitaker/thewhiteacre")) "website") " entirely from scratch in scheme. All hero images are generated with neural networks via " (a (@ (href "https://midjourney.com")) "midjourney") "."))
 
           (script (@ (src "/static/prism.js")) "")
           (script (@ (src "/static/prism-python.min.js")) "")

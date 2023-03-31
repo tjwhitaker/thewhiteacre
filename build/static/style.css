@@ -170,6 +170,14 @@ html body .hero .wrapper p {
     text-align: center;
   }
 }
+html body .reference {
+  background: #eeeeee;
+  padding: 1rem;
+}
+html body .reference p {
+  text-align: center;
+  margin: 0;
+}
 html body footer {
   background: #0f0f0f;
   padding: 3.2rem 0;

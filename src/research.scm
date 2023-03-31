@@ -19,15 +19,16 @@
             (div (@ (class "wrapper"))
               (a (@ (href "/") (class "logo")) (img (@ (src "/static/logo.svg"))))
               (nav
-                (a (@ (href "/about")) "About")
+                (a (@ (href "/research") (class "active")) "Publications")
                 (a (@ (href "/models")) "Models")
                 (a (@ (href "/notebooks")) "Notebooks")
-                (a (@ (href "/research") (class "active")) "Papers"))))
+                (a (@ (href "/contact")) "Contact"))))
+
           (main
             (div (@ (class "hero"))
               (div (@ (class "overlay")) "")
                 (div (@ (class "wrapper"))
-                  (h1 "Papers")
+                  (h1 "Publications")
                   (p "A collection of research papers I've written and/or contributed to. Most of my work here centers on neural selection, sparse networks, and ensemble learning.")))
 
             ; (div (@ (class "paper low-cost-ensembles"))
@@ -86,6 +87,9 @@
                   (p "GECCO 2022")
                   (p "Gradient descent methods have long been the de facto standard for training deep neural networks. Millions of training samples are fed into models with billions of parameters, which are slowly updated over hundreds of epochs. Recently, it's been shown that large, randomly initialized, neural networks contain subnetworks that perform as well as fully trained models. This insight offers a promising avenue for...")
                   (a (@ (href "https://arxiv.org/pdf/2302.05984.pdf") (class "read-more")) "Read More")))))
+          
+          (div (@ (class "reference"))
+            (p "I built and designed this " (a (@ (href "https://github.com/tjwhitaker/thewhiteacre")) "website") " entirely from scratch in scheme. All hero images are generated with neural networks via " (a (@ (href "https://midjourney.com")) "midjourney") "."))
 
           (footer
             (div (@ (class "wrapper"))

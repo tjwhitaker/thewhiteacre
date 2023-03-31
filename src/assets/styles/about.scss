@@ -3,7 +3,10 @@ html {
   body {
     .hero {
       width: 100%;
-      background-image: url(/static/mountain-bg.png);
+      background-image: url(/static/blurry-small-cartoon-bw.jpg);
+      .overlay {
+        opacity:0.3;
+      }
     }
     .why {
       background: white;
@@ -34,6 +37,110 @@ html {
         }
       }
     }
+
+    .professional {
+      padding:5rem 0;
+      background:#eee;
+
+      .wrapper {
+        .main-header {
+          display:flex;
+          justify-content: space-between;
+          align-items:end;
+          border-bottom:1px solid #666;
+          margin-bottom:1rem;
+          padding-bottom:1rem;
+
+          h1 {
+            flex: 0;
+            font-size:5rem;
+            font-family: "Open Sans";
+            text-transform:uppercase;
+          }
+          div {
+            flex:0 auto;
+            img {
+              width:100px;
+              margin-left: 1rem;
+            }
+          }
+        }
+          
+
+        .education {          
+          .item {
+            margin-bottom:2rem;
+
+            .header {
+              display:flex;
+              justify-content:space-between;
+            }
+
+            p {
+              margin-bottom:0;
+            }
+          }
+        }
+      }
+    }
+
+    .profile {
+      width: 100%;
+      background-image: url(/static/blurry-small-cartoon-bw.jpg);
+      width: 100%;
+      background-size: cover;
+      background-color: white;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
+      height: 80vh;
+  
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 0;
+        background: black;
+        opacity: 0.3;
+      }
+
+        .wrapper {
+          position: relative;
+          z-index: 1;
+          top: 50%;
+          transform: translateY(-50%);
+  
+          h1 {
+            font-family: "Open Sans";
+            font-size: 6.4rem;
+            text-transform: uppercase;
+            line-height: 1;
+            letter-spacing: -0.1rem;
+            margin-bottom: 1rem;
+            color: white;
+            max-width:700px;
+
+            @media screen and (max-width: 600px) {
+              font-size: 5rem;
+            }
+          }
+  
+          p {
+            color: white;
+            font-size:1.7rem;
+            font-style: italic;
+            max-width: 600px;
+            margin-bottom: 2rem;
+          }
+  
+          @media screen and (max-width: 600px) {
+            text-align:center;
+          }
+        }
+    }
+
 
     .gallery {
       background: black;

@@ -12,6 +12,7 @@
 ;; Import home-template, about-template
 (include "./home.scm")
 (include "./about.scm")
+(include "./contact.scm")
 (include "./models.scm")
 (include "./notebooks.scm")
 (include "./post.scm")
@@ -71,6 +72,11 @@
   (lambda ()
     (define html (serialize-sxml (about-template) indent: #f method: 'html'))
     (write-html "../build/about" html)))
+
+(define build-contact
+  (lambda ()
+    (define html (serialize-sxml (contact-template) indent: #f method: 'html'))
+    (write-html "../build/contact" html)))
 
 (define build-models
   (lambda ()
@@ -135,6 +141,7 @@
   (build-static)
   (build-home)
   (build-about)
+  (build-contact)
   (build-code)
   (build-models)
   (build-research)
