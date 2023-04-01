@@ -30,7 +30,7 @@
               (div (@ (class "overlay")) "")
                 (div (@ (class "wrapper"))
                   (h1 "Building Better" (br) "Neural Networks")
-                  (p "One neuron at a time.")))
+                  (p "Welcome! My name is Tim Whitaker and I'm a computer scientist, researcher, and software engineer who is studying neural network architecture and optimization. I built this website to share my knowledge, experience, and inspiration for the next generation of machine learning researchers.")))
 
             (div (@ (class "intro"))
               (div (@ (class "wrapper"))
@@ -57,7 +57,7 @@
           ;   (div (@ (class "content"))
           ;     (div (@ (class "wrapper"))
           ;       (h1 "About")
-          ;       (p "Welcome! My name is Tim Whitaker and I'm a computer scientist, researcher, and software engineer who is trying to build better neural networks. This is my personal website for sharing my research and experience across a wide variety of machine learning topics.")
+          ;       (p "Welcome! My name is Tim Whitaker and I'm a computer scientist, researcher, and software engineer who is trying to build better neural networks. This is my website for sharing my research and experience across a wide variety of machine learning topics.")
           ;       (p "")
           ;       (p "I'm excited to share my knowledge and experience with others through this website, and I hope to inspire the next generation of machine learning researchers to join me in this fascinating field.")
           ;     )
@@ -71,7 +71,7 @@
             (div (@ (class "overlay")) "")
               (div (@ (class "wrapper"))
                 (h1 "A Research Scientist" (br) "Who Loves To Code")
-                (p "Welcome! My name is Tim Whitaker and I'm a computer scientist, researcher, and software engineer who is trying to build better neural networks. This is my personal website for sharing my research and experience across a wide variety of machine learning topics.")))
+                (p "I do a bit of modeling myself....")))
 
           
           (div (@ (class "professional"))
