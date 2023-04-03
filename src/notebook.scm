@@ -20,10 +20,9 @@
             (div (@ (class "wrapper"))
               (a (@ (href "/") (class "logo")) (img (@ (src "/static/logo.svg"))))
               (nav
-                (a (@ (href "/about")) "About")
+                (a (@ (href "/research")) "Publications")
                 (a (@ (href "/models")) "Models")
-                (a (@ (href "/notebooks")) "Notebooks")
-                (a (@ (href "/research")) "Papers"))))
+                (a (@ (href "/notebooks")) "Notebooks"))))
 
           (main
             (div (@ (class "hero") (style ,(conc "background-image: url(" hero ")")))

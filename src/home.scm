@@ -22,15 +22,14 @@
               (nav
                 (a (@ (href "/research")) "Publications")
                 (a (@ (href "/models")) "Models")
-                (a (@ (href "/notebooks")) "Notebooks")
-                (a (@ (href "/contact")) "Contact"))))
+                (a (@ (href "/notebooks")) "Notebooks"))))
 
           (main
             (div (@ (class "hero"))
               (div (@ (class "overlay")) "")
                 (div (@ (class "wrapper"))
-                  (h1 "Building Better" (br) "Neural Networks")
-                  (p "Welcome! My name is Tim Whitaker and I'm a computer scientist, researcher, and software engineer who is studying neural network architecture and optimization. I built this website to share my knowledge, experience, and inspiration for the next generation of machine learning researchers.")))
+                  (h1 "Machine Learning" (br) "Research For Science")
+                  (p "Welcome! Wits End is my personal website, a repository for my research, and an outlet for digging deeper into artificial neural networks.")))
 
             (div (@ (class "intro"))
               (div (@ (class "wrapper"))
@@ -70,9 +69,8 @@
           (div (@ (class "personal"))
             (div (@ (class "overlay")) "")
               (div (@ (class "wrapper"))
-                (h1 "A Research Scientist" (br) "Who Loves To Code")
-                (p "I do a bit of modeling myself....")))
-
+                (h1 "Tim Whitaker")
+                (p "PhD candidate working on neural network optimization. Over a decade of experience in software engineering and academic research. Skilled problem solver with a strong background in mathematics and computer science. Reliable and driven with a proven track record of success.")))
           
           (div (@ (class "professional"))
             (div (@ (class "wrapper"))
@@ -105,7 +103,7 @@
 
                 (div (@ (class "item"))
                   (h3 "Relevant Coursework")
-                  (p "Artificial Intelligence, Machine Learning, Embedded Machine Learning, Image Computation, Natural Language Processing, Quantum Computing, High Performance Computing, Software Engineering, System Architecture, Algorithmic Language Compilers, Computational Theory, Stochastic Processes, Linear Algebra, Calculus, Probability and Statistics"))
+                  (p "Artificial Intelligence, Machine Learning, Embedded Machine Learning, Image Computation, Natural Language Processing, Quantum Computing, High Performance Computing, Software Engineering, System Architecture, Algorithmic Language Compilers, Computational Theory, Stochastic Processes"))
                 (div (@ (class "item"))
                   (h3 "Associations and Honors")
                   (ul

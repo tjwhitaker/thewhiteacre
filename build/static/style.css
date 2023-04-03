@@ -89,11 +89,11 @@ html body header .wrapper .logo {
 }
 html body header .wrapper .logo img {
   height: auto;
-  max-width: 16rem;
+  max-width: 11rem;
 }
 @media screen and (max-width: 600px) {
   html body header .wrapper .logo img {
-    max-width: 12rem;
+    max-width: 10rem;
   }
 }
 @media screen and (max-width: 600px) {
@@ -152,6 +152,7 @@ html body .hero .wrapper h1 {
   letter-spacing: -0.1rem;
   margin-bottom: 1rem;
   color: white;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
 }
 @media screen and (max-width: 600px) {
   html body .hero .wrapper h1 {
@@ -164,6 +165,7 @@ html body .hero .wrapper p {
   font-style: italic;
   max-width: 600px;
   margin-bottom: 2rem;
+  text-shadow: 2px 2px 3px black;
 }
 @media screen and (max-width: 600px) {
   html body .hero .wrapper {

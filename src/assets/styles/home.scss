@@ -78,6 +78,7 @@ html {
           letter-spacing: -0.1rem;
           margin-bottom: 1rem;
           color: white;
+          text-shadow:3px 3px 5px rgba(0,0,0,0.5);
           @media screen and (max-width: 600px) {
             font-size: 5rem;
           }
@@ -89,6 +90,7 @@ html {
           font-style: italic;
           max-width: 600px;
           margin-bottom: 2rem;
+          text-shadow:2px 2px 3px black;
         }
 
         @media screen and (max-width: 600px) {
