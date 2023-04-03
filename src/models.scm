@@ -33,7 +33,7 @@
               (div (@ (class "overlay")) "")
               (div (@ (class "wrapper"))
                 (h1 "Models")
-                (p "A lot of interesting neural networks have been introduced over the years, but there is no place that organizes and discusses some of these fascinating models. This is a new take on the model zoo.")
+                (p "A catalog of historical and important neural network architectures throughout history.")
               )
             )
             (div (@ (class "catalog"))
@@ -239,7 +239,7 @@
                     
                     )
           (div (@ (class "reference"))
-            (p "I built and designed this " (a (@ (href "https://github.com/tjwhitaker/thewhiteacre")) "website") " entirely from scratch in scheme. All hero images are generated with neural networks via " (a (@ (href "https://midjourney.com")) "midjourney") "."))
+            (p "Hero images generated with neural networks via " (a (@ (href "https://midjourney.com")) "midjourney") "."))
 
           (script (@ (src "/static/prism.js")) "")
           (script (@ (src "/static/prism-python.min.js")) "")

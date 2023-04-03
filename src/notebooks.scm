@@ -26,8 +26,8 @@
             (div (@ (class "hero"))
               (div (@ (class "overlay")) "")
                 (div (@ (class "wrapper"))
-                  (h1 "Notebooks ")
-                  (p "Welcome to my blog! I'm mostly working on my research for my PhD, but sometimes I like to dig into interesting datasets for fun.")))
+                  (h1 "Notebooks")
+                  (p "Code, math, and machine learning articles and tutorials.")))
 
             (div (@ (class "feed"))
               (div (@ (class "wrapper"))
@@ -41,7 +41,7 @@
           )
 
           (div (@ (class "reference"))
-            (p "I built and designed this " (a (@ (href "https://github.com/tjwhitaker/thewhiteacre")) "website") " entirely from scratch in scheme. All hero images are generated with neural networks via " (a (@ (href "https://midjourney.com")) "midjourney") "."))
+            (p "Hero images generated with neural networks via " (a (@ (href "https://midjourney.com")) "midjourney") "."))
 
           (footer
             (div (@ (class "wrapper"))

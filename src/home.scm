@@ -165,7 +165,7 @@
           )
 
           (div (@ (class "reference"))
-            (p "I built and designed this " (a (@ (href "https://github.com/tjwhitaker/thewhiteacre")) "website") " entirely from scratch in scheme. All hero images are generated with neural networks via " (a (@ (href "https://midjourney.com")) "midjourney") ".")))
+            (p "Hero images generated with neural networks via " (a (@ (href "https://midjourney.com")) "midjourney") ".")))
 
 
           (footer

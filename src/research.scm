@@ -28,7 +28,7 @@
               (div (@ (class "overlay")) "")
                 (div (@ (class "wrapper"))
                   (h1 "Publications")
-                  (p "A collection of research papers I've written and/or contributed to. Most of my work here centers on neural selection, sparse networks, and ensemble learning.")))
+                  (p "A collection of research papers, projects, and codebases I've written and published.")))
 
             ; (div (@ (class "paper low-cost-ensembles"))
             ;   (div (@ (class "wrapper"))
@@ -88,7 +88,7 @@
                   (a (@ (href "https://arxiv.org/pdf/2302.05984.pdf") (class "read-more")) "Read More")))))
           
           (div (@ (class "reference"))
-            (p "I built and designed this " (a (@ (href "https://github.com/tjwhitaker/thewhiteacre")) "website") " entirely from scratch in scheme. All hero images are generated with neural networks via " (a (@ (href "https://midjourney.com")) "midjourney") "."))
+            (p "Hero images generated with neural networks via " (a (@ (href "https://midjourney.com")) "midjourney") "."))
 
           (footer
             (div (@ (class "wrapper"))
