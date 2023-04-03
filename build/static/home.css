@@ -93,7 +93,7 @@ html body .personal .wrapper p {
 }
 html body .professional {
   padding: 5rem 0;
-  background: white;
+  background: #eee;
 }
 html body .professional .wrapper .education .main-header, html body .professional .wrapper .experience .main-header {
   display: flex;
