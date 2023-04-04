@@ -10,7 +10,7 @@
   (lambda ()
     `(html
       ((head
-        (title "Models | The White Acre")
+        (title "Models | Wits End")
         (meta (@ (charset "utf-8")))
         (meta (@ (name "viewport") (content "width=device-width, initial-scale=1")))
         (link (@ (rel "icon") (href "/static/favicon.ico")))
@@ -33,7 +33,7 @@
               (div (@ (class "overlay")) "")
               (div (@ (class "wrapper"))
                 (h1 "Models")
-                (p "A catalog of historical and important neural network architectures throughout history.")
+                (p "A catalog of important neural network architectures through history.")
               )
             )
             (div (@ (class "catalog"))

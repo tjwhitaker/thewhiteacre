@@ -98,52 +98,12 @@ html {
       }
     }
 
-    // .personal {
-    //   display: flex;
-    //   flex-wrap:wrap;
-    //   align-items: center;
-    //   background:#eeeeee;
-
-    //   .content {
-    //     flex: 0 0 50%;
-    //     .wrapper {
-    //       padding:5rem;
-
-    //       h1 {
-    //         flex: 0;
-    //         font-size:5rem;
-    //         font-family: "Open Sans";
-    //         text-transform:uppercase;
-    //       }
-
-    //       @media screen and (max-width:600px) {
-    //         padding:2rem;
-    //       }
-    //     }
-    //     @media screen and (max-width:600px) {
-    //       flex:0 0 100%;
-    //     }
-    //   }
-    //   .image {
-    //     flex: 0 0 50%;
-    //     align-self: stretch;
-    //     img {
-    //       display: block;
-    //       height:100%;
-    //       object-fit:cover;
-    //     }
-    //     @media screen and (max-width:600px) {
-    //       flex:0 0 100%;
-    //     }
-    //   }
-    // }
-
     .professional {
       padding:5rem 0;
       background:#eee;
 
-      .wrapper {          
-        .education, .experience {    
+      .wrapper {
+        .education, .experience {
           .main-header {
             display:flex;
             justify-content: space-between;
@@ -184,6 +144,7 @@ html {
             }
           }
         }
+        .education {margin-bottom:5rem;}
       }
     }
 

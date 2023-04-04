@@ -2,7 +2,7 @@
   (lambda (feed)
     `(html
       ((head
-        (title "Notebooks | The White Acre")
+        (title "Notebooks | Wits End")
         (meta (@ (charset "utf-8")))
         (meta (@ (name "viewport") (content "width=device-width, initial-scale=1")))
         (link (@ (rel "icon") (href "/static/favicon.ico")))

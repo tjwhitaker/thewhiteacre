@@ -128,6 +128,9 @@ html body .professional .wrapper .education .item p, html body .professional .wr
 html body .professional .wrapper .education .item ul, html body .professional .wrapper .experience .item ul {
   padding-left: 5rem;
 }
+html body .professional .wrapper .education {
+  margin-bottom: 5rem;
+}
 html body .gallery {
   background: black;
   padding: 1rem;
