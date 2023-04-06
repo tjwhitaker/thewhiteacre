@@ -6,6 +6,7 @@
         (meta (@ (charset "utf-8")))
         (meta (@ (name "viewport") (content "width=device-width, initial-scale=1")))
         (link (@ (rel "icon") (href "/static/favicon.ico")))
+        (link (@ (rel "stylesheet") (href "/static/style.css")))
         (link (@ (rel "stylesheet") (href "/static/article.css")))
         (link (@ (rel "stylesheet") (href "/static/prism.css")))
         (link (@ (rel "stylesheet") (href "https://cdn.jsdelivr.net/npm/katex@0.16.3/dist/katex.min.css")))
@@ -21,10 +22,9 @@
             (div (@ (class "wrapper"))
               (a (@ (href "/") (class "logo")) (img (@ (src "/static/logo.svg"))))
               (nav
-                (a (@ (href "/about")) "About")
+                (a (@ (href "/research")) "Publications")
                 (a (@ (href "/models")) "Models")
-                (a (@ (href "/notebooks")) "Notebooks")
-                (a (@ (href "/research")) "Papers"))))
+                (a (@ (href "/notebooks")) "Notebooks"))))
 
           (main
             (div (@ (class "hero") (style ,(conc "background-image: url(" hero ")")))

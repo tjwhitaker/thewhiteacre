@@ -146,7 +146,7 @@
                 (div (@ (class "overlay")) "")
                 (div (@ (class "wrapper"))
                     (h1 "Tim Whitaker")
-                    (p "PhD candidate working on neural network optimization. Over a decade of experience in software engineering and academic research. Skilled problem solver with a strong background in mathematics and computer science. Reliable and driven with a proven track record of success.")))
+                    (p "PhD candidate working on neural network optimization. Over a decade of experience in software engineering and academic research. Skilled problem solver with a strong background in computer science.")))
 
 
           (div (@ (class "contact") (id "contact"))

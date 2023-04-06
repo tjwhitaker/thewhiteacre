@@ -203,8 +203,9 @@ html {
 
       .wrapper {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-column-gap: 3.2rem;
+        grid-template-columns: auto auto auto;
+        grid-column-gap: 5rem;
+        justify-content: space-around;
 
         .column {
           h2 {

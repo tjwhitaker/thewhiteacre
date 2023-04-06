@@ -1,5 +1,5 @@
-#+TITLE: Gradient Descent with Linear Model
-#+DESCRIPTION: An introduction to finding good parameters for simple linear models.
+#+TITLE: Finding Good Parameters for a Linear Model
+#+DESCRIPTION: An introduction to gradient descent with simple linear models.
 #+DATE: 2020-01-02
 #+HERO: /static/space-bg.png
 

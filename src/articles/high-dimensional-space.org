@@ -1,4 +1,4 @@
-#+TITLE: High Dimensional Space
+#+TITLE: Geometry of High Dimensional Space
 #+DESCRIPTION: Exploring a curious property about the volume of very large dimensional spaces.
 #+DATE: 2020-01-01
 #+HERO: /static/space-bg.png
