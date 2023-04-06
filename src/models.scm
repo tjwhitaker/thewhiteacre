@@ -1,11 +1,3 @@
-(include "./models/perceptron.scm")
-(include "./models/lenet.scm")
-(include "./models/lstm.scm")
-(include "./models/boltzmann.scm")
-(include "./models/echo-state.scm")
-(include "./models/alexnet.scm")
-(include "./models/placeholder.scm")
-
 (define models-template
   (lambda ()
     `(html
@@ -33,9 +25,7 @@
               (div (@ (class "overlay")) "")
               (div (@ (class "wrapper"))
                 (h1 "Models")
-                (p "A catalog of important neural network architectures through history.")
-              )
-            )
+                (p "A catalog of important neural network architectures through history.")))
             (div (@ (class "catalog"))
               (div (@ (class "wrapper"))
                 (div (@ (class "item"))
@@ -172,5 +162,4 @@
                 (a (@ (href "#")) "CV")
                 (a (@ (href "https://github.com/tjwhitaker")) "Github")
                 (a (@ (href "https://lichess.org/@/tjwhitaker")) "Lichess")
-                (a (@ (href "https://orcid.org/0000-0003-3792-3901")) "Orcid")
-                )))))))))
+                (a (@ (href "https://orcid.org/0000-0003-3792-3901")) "Orcid"))))))))))

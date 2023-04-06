@@ -11,15 +11,10 @@
 
 ;; Import home-template, about-template
 (include "./home.scm")
-(include "./about.scm")
-(include "./contact.scm")
 (include "./models.scm")
 (include "./notebooks.scm")
 (include "./post.scm")
 (include "./research.scm")
-(include "./projects.scm")
-(include "./code.scm")
-(include "./thoughts.scm")
 
 ;; Write html to the intended build file
 (define write-html
@@ -68,15 +63,6 @@
     (define html (serialize-sxml (home-template) indent: #f method: 'html'))
     (write-html "../build/" html)))
 
-(define build-about
-  (lambda ()
-    (define html (serialize-sxml (about-template) indent: #f method: 'html'))
-    (write-html "../build/about" html)))
-
-(define build-contact
-  (lambda ()
-    (define html (serialize-sxml (contact-template) indent: #f method: 'html'))
-    (write-html "../build/contact" html)))
 
 (define build-models
   (lambda ()
@@ -103,31 +89,10 @@
         (write-html (conc dir (cadr (assoc 'slug article))) html))
       feed)))
 
-(define build-code
-  (lambda ()
-    (define html (serialize-sxml (code-template) indent: #f method: 'html'))
-    (write-html "../build/code" html)))
-
 (define build-research
   (lambda ()
     (define html (serialize-sxml (research-template) indent: #f method: 'html'))
     (write-html "../build/research" html)))
-
-(define build-projects
-  (lambda ()
-    (define html (serialize-sxml (projects-template) indent: #f method: 'html'))
-    (write-html "../build/projects" html)))
-
-
-(define build-writing
-  (lambda ()
-    (define html (serialize-sxml (writing-template) indent: #f method: 'html'))
-    (write-html "../build/writing" html)))
-
-(define build-thoughts
-  (lambda (feed)
-    (define html (serialize-sxml (thoughts-template feed) indent: #f method: 'html'))
-    (write-html "../build/thoughts" html)))
 
 ;; Run gulp and copy static files to build dir
 (define build-static
@@ -136,16 +101,10 @@
 
 ;; Our main loop
 (let 
-  ((notebooks (build-feed "articles/"))
-   (thoughts (build-feed "thoughts/")))
+  ((notebooks (build-feed "articles/")))
   (build-static)
   (build-home)
-  (build-about)
-  (build-contact)
-  (build-code)
   (build-models)
   (build-research)
-  (build-thoughts thoughts)
-  (build-posts thoughts "../build/thoughts/")
   (build-notebooks notebooks)
   (build-posts notebooks "../build/notebooks/"))

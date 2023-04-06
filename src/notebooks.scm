@@ -7,7 +7,7 @@
         (meta (@ (name "viewport") (content "width=device-width, initial-scale=1")))
         (link (@ (rel "icon") (href "/static/favicon.ico")))
         (link (@ (rel "stylesheet") (href "/static/style.css")))
-        (link (@ (rel "stylesheet") (href "/static/blog.css")))
+        (link (@ (rel "stylesheet") (href "/static/notebooks.css")))
         (link (@ (rel "preconnect") (href "https://fonts.googleapis.com")))
         (link (@ (rel "preconnect") (href "https://fonts.gstatic.com")))
         (link (@ (rel "stylesheet") (href "https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;700&display=block")))
@@ -37,8 +37,7 @@
                       (h1 ,(cadr (assoc 'title post)))
                       (p ,(cadr (assoc 'description post)))
                       (a (@ (href ,(conc "/notebooks/" (cadr (assoc 'slug post))))) "Read More")))
-              feed)))
-          )
+              feed))))
 
           (div (@ (class "reference"))
             (p "Hero images generated with neural networks via " (a (@ (href "https://midjourney.com")) "midjourney") ". This website's " (a (@ (href "https://github.com/tjwhitaker/thewhiteacre")) "source code") " was written entirely in scheme!"))

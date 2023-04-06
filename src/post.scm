@@ -7,14 +7,12 @@
         (meta (@ (name "viewport") (content "width=device-width, initial-scale=1")))
         (link (@ (rel "icon") (href "/static/favicon.ico")))
         (link (@ (rel "stylesheet") (href "/static/style.css")))
-        (link (@ (rel "stylesheet") (href "/static/article.css")))
+        (link (@ (rel "stylesheet") (href "/static/post.css")))
         (link (@ (rel "stylesheet") (href "/static/prism.css")))
         (link (@ (rel "stylesheet") (href "https://cdn.jsdelivr.net/npm/katex@0.16.3/dist/katex.min.css")))
         (link (@ (rel "preconnect") (href "https://fonts.googleapis.com")))
         (link (@ (rel "preconnect") (href "https://fonts.gstatic.com")))
-        (link (@ (rel "stylesheet") (href "https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;700&display=block")))
-        (link (@ (rel "stylesheet") (href "https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css")))
-        (script (@ (src "https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js")) "")
+        (link (@ (rel "stylesheet") (href "https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;700&display=block")))        
         (script (@ (src "/static/iframeresizer.min.js")) ""))
       (body
         (div (@ (class "home"))
@@ -42,13 +40,7 @@
             )
           )
 
-          ; (script (@ (src "/static/prism.js")) "")
-          ; (script (@ (src "/static/prism-python.min.js")) "")
-          ; (script (@ (src "/static/prism-julia.min.js")) "")
-          ; (script (@ (src "/static/katex.js")) "")
-          ; (script (@ (src "/static/katex-auto-render.js") (onload "renderMathInElement(document.body);")) "")
-
- (div (@ (class "reference"))
+          (div (@ (class "reference"))
             (p "Hero images generated with neural networks via " (a (@ (href "https://midjourney.com")) "midjourney") ". This website's " (a (@ (href "https://github.com/tjwhitaker/thewhiteacre")) "source code") " was written entirely in scheme!"))
             
           (footer

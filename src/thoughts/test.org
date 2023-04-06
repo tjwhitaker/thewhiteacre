@@ -1,6 +1,0 @@
-#+TITLE: Test
-#+DESCRIPTION: Hello world.
-#+DATE: 2021-03-01
-#+HERO: /static/space-bg.png
-
-Hello

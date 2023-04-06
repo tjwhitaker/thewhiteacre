@@ -12,8 +12,7 @@
         (link (@ (rel "preconnect") (href "https://fonts.gstatic.com")))
         (link (@ (rel "stylesheet") (href "https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;700&display=block")))
         (link (@ (rel "stylesheet") (href "https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css")))
-        (script (@ (src "https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js")) "")
-      )
+        (script (@ (src "https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js")) ""))
       (body
         (div (@ (class "home"))
           (header
@@ -54,14 +53,12 @@
           
           (div (@ (class "professional"))
             (div (@ (class "wrapper"))
-
               (div (@ (class "education"))
                 (div (@ (class "main-header"))
                   (h1 "Education")
                   (div
                     (img (@ (src "/static/chico-seal.png")))
-                    (img (@ (src "https://upload.wikimedia.org/wikipedia/en/thumb/3/33/Colorado_State_University_seal.svg/1200px-Colorado_State_University_seal.svg.png"))))
-                )
+                    (img (@ (src "/static/colo-seal.png")))))
                 (div (@ (class "item"))
                   (div (@ (class "header"))
                     (p "Doctor of Philosophy in Computer Science")
@@ -74,6 +71,7 @@
                     (p "Master of Science in Computer Science")
                     (span "May 2021"))
                   (p "Colorado State University")
+                  (p "Thesis: Reinforcement Learning with Sparse Reconfigurable Networks")
                   (p "Committee: " (a (@ (href "https://www.cs.colostate.edu/~whitley/")) "Darrell Whitley") ", " (a (@ (href "https://www.cs.colostate.edu/~anderson/wp/")) "Charles Anderson") ", " (a (@ (href "https://www.math.colostate.edu/~kirby/")) "Michael Kirby")))                
                 (div (@ (class "item"))
                   (div (@ (class "header"))
@@ -89,21 +87,14 @@
                 (div (@ (class "item"))
                   (h3 "Associations and Honors")
                   (ul
-                  (li "Recipient of The Artificial Intelligence and Evolutionary Computation Fellowship")
-                  (li "Presenter and Technical Committee Member at international conferences including: AAAI, IJCNN, and GECCO")
-                  (li "Member of IEEE")
-                  (li "Member of ACM")
-                  )
-                )
-              )
+                    (li "Recipient of The Artificial Intelligence and Evolutionary Computation Fellowship")
+                    (li "Presenter and Technical Committee Member at international conferences including: AAAI, IJCNN, and GECCO")
+                    (li "Member of IEEE")
+                    (li "Member of ACM"))))
 
               (div (@ (class "experience"))
                 (div (@ (class "main-header"))
-                  (h1 "Experience")
-                  ; (div
-                  ;   (img (@ (src "/static/chico-seal.png")))
-                  ;   (img (@ (src "https://upload.wikimedia.org/wikipedia/en/thumb/3/33/Colorado_State_University_seal.svg/1200px-Colorado_State_University_seal.svg.png"))))
-                )
+                  (h1 "Experience"))
                 (div (@ (class "item"))
                   (div (@ (class "header"))
                     (p "Graduate Researcher")
@@ -111,42 +102,34 @@
                   (p "Colorado State University")
                   (ul
                     (li "Performed a wide variety of deep learning experiments with sparse reconfigurable artificial neural networks.")
-                    (li "Research funded by NSF Grant 1908866.")
-                  )
-                )
+                    (li "Research funded by NSF Grant 1908866.")))
                 (div (@ (class "item"))
                   (div (@ (class "header"))
                     (p "Software Engineer")
                     (span "2015-2019"))
                   (p "Kettle LLC. Design and Development Firm")
                   (ul
-                    (li "Designed, developed, and maintained web applications and ecommerce sites for Google, Disney, Namecheap, Boosted Boards, LifeBeam, Peleton, MyxFitness, and Show Imaging."))
-                )
+                    (li "Designed, developed, and maintained web applications and ecommerce sites for Google, Disney, Namecheap, Boosted Boards, LifeBeam, Peleton, MyxFitness, and Show Imaging.")))
                 (div (@ (class "item"))
                   (div (@ (class "header"))
                     (p "Web Developer")
                     (span "2012-2013"))
                   (p "Navigation North Learning Solutions")
                   (ul
-                    (li "Contributed features and fixed bugs for web applications at The United States Department of Educational Technology, The California Department of Education, and The Smithsonian Center of Learning and Digital Access."))
-                )
+                    (li "Contributed features and fixed bugs for web applications at The United States Department of Educational Technology, The California Department of Education, and The Smithsonian Center of Learning and Digital Access.")))
                 (div (@ (class "item"))
                   (div (@ (class "header"))
                     (p "Web Developer")
                     (span "2011-2012"))
                   (p "Market Fleet")
                   (ul
-                    (li "Managed the design and development of a Magento ecommerce store and the integration of a custom marketplace widget/plugin."))
-                )
-              )
-            )
-          )
+                    (li "Managed the design and development of a Magento ecommerce store and the integration of a custom marketplace widget/plugin."))))))
               
-              (div (@ (class "personal"))
-                (div (@ (class "overlay")) "")
-                (div (@ (class "wrapper"))
-                    (h1 "Tim Whitaker")
-                    (p "PhD candidate working on neural network optimization. Over a decade of experience in software engineering and academic research. Skilled problem solver with a strong background in computer science.")))
+          (div (@ (class "personal"))
+            (div (@ (class "overlay")) "")
+            (div (@ (class "wrapper"))
+                (h1 "Tim Whitaker")
+                (p "PhD candidate studying neural network optimization. Over a decade of experience in software engineering and academic research. Skilled problem solver with a strong background in computer science.")))
 
 
           (div (@ (class "contact") (id "contact"))
@@ -157,18 +140,12 @@
                   (input (@ (placeholder "Name") (name "name") (type "text")))
                   (input (@ (placeholder "Email" (name "email") (type "email"))))
                   (textarea (@ (placeholder "Message") (name "message")) "")
-                  (button (@ (type "submit")) "Send Message")
-                )
-              )
+                  (button (@ (type "submit")) "Send Message")))
               (div (@ (class "map-container"))
-                (div (@ (id "map")) "")
-              )
-            )
-          )
+                (div (@ (id "map")) ""))))
 
           (div (@ (class "reference"))
             (p "Hero images generated with neural networks via " (a (@ (href "https://midjourney.com")) "midjourney") ". This website's " (a (@ (href "https://github.com/tjwhitaker/thewhiteacre")) "source code") " was written entirely in scheme!")))
-
 
           (footer
             (div (@ (class "wrapper"))
@@ -189,8 +166,7 @@
                 (a (@ (href "#")) "CV")
                 (a (@ (href "https://github.com/tjwhitaker")) "Github")
                 (a (@ (href "https://lichess.org/@/tjwhitaker")) "Lichess")
-                (a (@ (href "https://orcid.org/0000-0003-3792-3901")) "Orcid")
-                )))
+                (a (@ (href "https://orcid.org/0000-0003-3792-3901")) "Orcid"))))
 
             (script "	mapboxgl.accessToken = 'pk.eyJ1IjoidG13aHRrciIsImEiOiJja2x2NzdpaW0wNXRnMndwOGszNTc3aWd5In0.LvJ2znCQ_1v9a86fxUhQ2A';
             var map = new mapboxgl.Map({
@@ -198,6 +174,4 @@
             style: 'mapbox://styles/mapbox/streets-v12', // style URL
             center: [-121.4944, 38.5816], // starting position [lng, lat]
             zoom: 10 // starting zoom
-            });")
-
-          ))))))
+            });")))))))
