@@ -30,15 +30,6 @@
                   (h1 "Publications")
                   (p "A collection of research papers, projects, and codebases I've written and published.")))
 
-            ; (div (@ (class "paper low-cost-ensembles"))
-            ;   (div (@ (class "wrapper"))
-            ;     (div
-            ;       (h1 "Low-Cost Ensemble Learning")
-            ;       (small "Surveying Efficient Methods For Training Multiple Deep Neural Networks")
-            ;       (p "PhD Preliminary Exam")
-            ;       (p "Ensemble learning has long been known to be a reliable and consistent way to improve generalization performance across a wide range of machine learning tasks. Instead of training and making predictions with a single model, ensembles use several independent models and combine their predictions together. However, training several independent models from scratch can become prohibitively expensive as deep neural networks continue to grow in both scale and complexity...")
-            ;       (a (@ (href "/static/there-is-no-magic-subnetwork.pdf") (class "read-more")) "Read More"))))
-
             (div (@ (class "paper prune-and-tune-ensembles"))
               (div (@ (class "wrapper"))
                 (div
@@ -71,13 +62,14 @@
                   (p "Rectified Linear Units (ReLU) are the default choice for activation functions in deep neural networks. While they demonstrate excellent empirical performance, ReLU activations can fall victim to the dead neuron problem. In these cases, the weights feeding into a neuron end up being pushed into a state where the neuron outputs zero for all inputs. Consequently, the gradient is also zero for all inputs, which means that the weights which feed into the neuron cannot update. The neuron is not able to recover from direct back propagation and model capacity is reduced as those parameters can no longer be further optimized. Inspired by a neurological process of the same name, we introduce Synaptic Stripping as a means to combat this dead neuron problem...")
                   (a (@ (href "https://arxiv.org/pdf/2302.05818.pdf") (class "read-more")) "Read More"))))
             
-            (div (@ (class "paper stochastic-masking"))
+            (div (@ (class "paper low-cost-ensembles"))
               (div (@ (class "wrapper"))
                 (div
-                  (h1 "Stochastic Partitioning: ...")
-                  (p "A Modular Network Architecture for Multi-Task Learning")
-                  (p "Coming soon...")
-                  (a (@ (href "#") (class "read-more")) "Read More"))))
+                  (h1 "Low-Cost Ensemble Learning: Surveying Efficient Methods For Training Multiple Deep Neural Networks")
+                  (p "PhD Preliminary Exam")
+                  (p "Ensemble learning has long been known to be a reliable and consistent way to improve generalization performance across a wide range of machine learning tasks. Instead of training and making predictions with a single model, ensembles use several independent models and combine their predictions together. However, training several independent models from scratch can become prohibitively expensive as deep neural networks continue to grow in both scale and complexity...")
+                  (a (@ (href "/static/low-cost-ensemble-learning.pdf") (class "read-more")) "Read More"))))
+
 
             (div (@ (class "paper quantum-neuron-selection"))
               (div (@ (class "wrapper"))
@@ -87,8 +79,8 @@
                   (p "Gradient descent methods have long been the de facto standard for training deep neural networks. Millions of training samples are fed into models with billions of parameters, which are slowly updated over hundreds of epochs. Recently, it's been shown that large, randomly initialized, neural networks contain subnetworks that perform as well as fully trained models. This insight offers a promising avenue for...")
                   (a (@ (href "https://arxiv.org/pdf/2302.05984.pdf") (class "read-more")) "Read More")))))
           
-          (div (@ (class "reference"))
-            (p "Hero images generated with neural networks via " (a (@ (href "https://midjourney.com")) "midjourney") "."))
+           (div (@ (class "reference"))
+            (p "Hero images generated with neural networks via " (a (@ (href "https://midjourney.com")) "midjourney") ". This website's " (a (@ (href "https://github.com/tjwhitaker/thewhiteacre")) "source code") " was written entirely in scheme!"))
 
           (footer
             (div (@ (class "wrapper"))

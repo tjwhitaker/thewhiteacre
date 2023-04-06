@@ -61,9 +61,6 @@ html body .paper:nth-child(odd) .wrapper div {
 html body .paper:nth-child(odd) .wrapper div h1, html body .paper:nth-child(odd) .wrapper div p, html body .paper:nth-child(odd) .wrapper div a, html body .paper:nth-child(odd) .wrapper div small {
   color: white;
 }
-html body .low-cost-ensembles {
-  background-image: url(/static/cell-nucleus.svg);
-}
 html body .prune-and-tune-ensembles {
   background-image: url(/static/cell-nucleus.svg);
 }
@@ -77,6 +74,9 @@ html body .synaptic-stripping {
   background-image: url(/static/jewel-stone-diamond.svg);
 }
 html body .stochastic-masking {
+  background-image: url(/static/h2o-water-molecule.svg);
+}
+html body .low-cost-ensembles {
   background-image: url(/static/h2o-water-molecule.svg);
 }
 html body .quantum-neuron-selection {

@@ -66,6 +66,13 @@
                   (div (@ (class "links"))
                     (a (@ (href "/static/lenet.pdf")) "Paper")))
 
+                (div (@ (class "item"))
+                  (h1 "AlexNet (2012)")
+                  (p (small "Alex Krishevsky"))
+                  (p "The model that kickstarted the deep learning revolution. Consisting of eight layers, including five convolutional layers and three fully connected layers. AlexNet was one of the first deep convolutional neural networks to achieve state-of-the-art results on ImageNet. The original implementation split the network over two independent gpus to alleviate challenges with memory at the time.")
+                  (div (@ (class "links"))
+                    (a (@ (href "/static/alexnet.pdf")) "Paper")))
+                    
                 ; (ul
                 ;   (li "Perceptron (1958)")
                 ;   (li "LeNet (1989)")
@@ -239,7 +246,7 @@
                     
                     )
           (div (@ (class "reference"))
-            (p "Hero images generated with neural networks via " (a (@ (href "https://midjourney.com")) "midjourney") "."))
+            (p "Hero images generated with neural networks via " (a (@ (href "https://midjourney.com")) "midjourney") ". This website's " (a (@ (href "https://github.com/tjwhitaker/thewhiteacre")) "source code") " was written entirely in scheme!"))
 
           (script (@ (src "/static/prism.js")) "")
           (script (@ (src "/static/prism-python.min.js")) "")
