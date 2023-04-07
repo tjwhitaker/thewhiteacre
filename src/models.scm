@@ -63,6 +63,14 @@
                   (div (@ (class "links"))
                     (a (@ (href "/static/lenet.pdf")) "Paper")))
 
+
+                (div (@ (class "item"))
+                  (h1 "Long Short-Term Memory (1991)")
+                  (p (small "Sepp Hochreiter, Jürgen Schmidhuber"))
+                  (p "The LSTM is a recurrent network that contains a memory cell and three gating units (input, output, and forget) that regulate the flow of information into and out of the cell. The memory cell can selectively remember or forget information over long periods of time.")
+                  (div (@ (class "links"))
+                    (a (@ (href "/static/lstm.pdf")) "Paper")))
+
                 (div (@ (class "item"))
                   (h1 "Echo State Network (2002)")
                   (p (small "Herbert Jaeger"))
@@ -83,6 +91,13 @@
                   (p "The model that kickstarted the deep learning revolution. Consisting of eight layers, including five convolutional layers and three fully connected layers. AlexNet was one of the first deep convolutional neural networks to achieve state-of-the-art results on ImageNet. The original implementation split the network over two independent gpus to alleviate challenges with memory at the time.")
                   (div (@ (class "links"))
                     (a (@ (href "/static/alexnet.pdf")) "Paper")))
+                
+                (div (@ (class "item"))
+                  (h1 "VGG (2014)")
+                  (p (small "Karen Simonyan, Andrew Zisserman"))
+                  (p "The Visual Geometry Group developed this network architecture that is characterized by its simplicity and uniformity. This model popularized the 3x3 convolutional filter size and its design has influenced the development of modern convolutional architectures.")
+                  (div (@ (class "links"))
+                    (a (@ (href "/static/vgg.pdf")) "Paper")))
 
                 (div (@ (class "item"))
                   (h1 "Inception (2014)")
@@ -112,6 +127,12 @@
                   (div (@ (class "links"))
                     (a (@ (href "/static/transformer.pdf")) "Paper")))
 
+                (div (@ (class "item"))
+                  (h1 "MLP Mixer (2021)")
+                  (p (small "Ilya Tolstikhin, Neil Houlsby, Alexander Kolesnikov, Lucas Beyer, Xiaohua Zhai, Thomas Unterthiner, Jessica Yung, Andreas Steiner, Daniel Keysers, Jakob Uszkoreit, Mario Lucic, Alexey Dosovitskiy"))
+                  (p "A new take on vision architectures that eschew convolution and attention for only fully connected layers. MLP mixer applies spatial embeddings to the input image and then applies permutation-invariant operations through channel and token mixing layers.")
+                  (div (@ (class "links"))
+                    (a (@ (href "/static/mlp-mixer.pdf")) "Paper")))
                   
                 ; (ul
                 ;   (li "Perceptron (1958)")
@@ -134,7 +155,7 @@
                 ;   (li "ConvNext (2022)")
                 ; )
               )
-            )          
+            )
           )
           
           (div (@ (class "reference"))
