@@ -121,11 +121,34 @@
                     (a (@ (href "/static/densenet.pdf")) "Paper")))
 
                 (div (@ (class "item"))
+                  (h1 "SqueezeNet (2016)")
+                  (p (small "Forrest Iandola, Song Han, Matthew Moskewicz, Khalid Ashraf, William Dally, Kurt Keutzer"))
+                  (p "SqueezeNet is notable for achieving comparable accuracy to larger neural network architectures while using significantly fewer parameters. SqueezeNet utilizes fire modules that consist of a 1x1 convolutional squeeze layer followed by a 3x3 convolutional expand layer.")
+                  (div (@ (class "links"))
+                    (a (@ (href "/static/squeezenet.pdf")) "Paper")))
+
+
+                (div (@ (class "item"))
+                  (h1 "ShuffleNet (2017)")
+                  (p (small "Xiangyu Zhang, Xinyu Zhou, Mengxiao Lin, Jian Sun"))
+                  (p "ShuffleNet is a mobile optimized network that uses a combination of depthwise separable convolutions, channel shuffle operations, and pointwise convolutions to greatly reduce computational cost while maintaining accuracy.")
+                  (div (@ (class "links"))
+                    (a (@ (href "/static/shufflenet.pdf")) "Paper")))
+
+
+                (div (@ (class "item"))
                   (h1 "Transformer (2017)")
                   (p (small "Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan Gomez, Lukasz Kaiser, Illia Polosukhin"))
                   (p "These models replace the traditional recurrent and convolutional networks with a self attention mechanism that allows the model to attend to different parts of the input sequence to generate contextual representations. The transformer consists of an encoder and decoder architecture that perform input/output mapping.")
                   (div (@ (class "links"))
                     (a (@ (href "/static/transformer.pdf")) "Paper")))
+
+                (div (@ (class "item"))
+                  (h1 "EfficientNet (2019)")
+                  (p (small "Mingxing Tan, Quoc Le"))
+                  (p "EfficientNet uses a compound scaling method that optimizes the depth, width, and resolution of the network for a given amount of computational resources. EfficienNet utilizes a combination of residual inverted bottlenecks and squeeze-and-excitation blocks.")
+                  (div (@ (class "links"))
+                    (a (@ (href "/static/efficientnet.pdf")) "Paper")))
 
                 (div (@ (class "item"))
                   (h1 "MLP Mixer (2021)")
