@@ -138,7 +138,7 @@
 
                 (div (@ (class "item"))
                   (h1 "Transformer (2017)")
-                  (p (small "Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan Gomez, Lukasz Kaiser, Illia Polosukhin"))
+                  (p (small "Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Lion Jones, Aidan Gomez, Lukasz Kaiser, Illia Polosukhin"))
                   (p "These models replace the traditional recurrent and convolutional networks with a self attention mechanism that allows the model to attend to different parts of the input sequence to generate contextual representations. The transformer consists of an encoder and decoder architecture that perform input/output mapping.")
                   (div (@ (class "links"))
                     (a (@ (href "/static/transformer.pdf")) "Paper")))

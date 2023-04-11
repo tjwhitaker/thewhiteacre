@@ -27,7 +27,8 @@
               (div (@ (class "overlay")) "")
                 (div (@ (class "wrapper"))
                   (h1 "Notebooks")
-                  (p "Code, math, and machine learning articles and tutorials.")))
+                  (p "Code, math, and machine learning articles and tutorials.")
+                  (p "NOTE: These are still in progress. I'm transcribing some old notes.")))
 
             (div (@ (class "feed"))
               (div (@ (class "wrapper"))

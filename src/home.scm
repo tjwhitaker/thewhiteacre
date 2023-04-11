@@ -28,7 +28,7 @@
               (div (@ (class "overlay")) "")
                 (div (@ (class "wrapper"))
                   (h1 "Machine Learning" (br) "Research For Science")
-                  (p "Welcome! Wits End is my personal website, a repository for my research, and an outlet for digging deeper into artificial neural networks.")))
+                  (p "Welcome! My name is Tim and Wits End is my personal website, a repository for my research, and an outlet for digging deeper into artificial neural networks.")))
 
             (div (@ (class "intro"))
               (div (@ (class "wrapper"))
@@ -129,7 +129,7 @@
             (div (@ (class "overlay")) "")
             (div (@ (class "wrapper"))
                 (h1 "Tim Whitaker")
-                (p "PhD candidate studying neural network optimization. Over a decade of experience in software engineering and academic research. Skilled problem solver with a strong background in computer science.")))
+                (p "PhD candidate working with deep neural networks. Over a decade of experience in software engineering and academic research. Skilled problem solver with a strong background in computer science.")))
 
 
           (div (@ (class "contact") (id "contact"))
