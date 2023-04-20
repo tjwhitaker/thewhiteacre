@@ -27,7 +27,7 @@
             (div (@ (class "hero"))
               (div (@ (class "overlay")) "")
                 (div (@ (class "wrapper"))
-                  (h1 "Machine Learning" (br) "Research For Science")
+                  (h1 "Neural Network" (br) "Research Science")
                   (p "Welcome! My name is Tim and Wits End is my personal website, a repository for my research, and an outlet for digging deeper into artificial neural networks.")))
 
             (div (@ (class "intro"))
