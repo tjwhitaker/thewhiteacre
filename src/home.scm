@@ -31,6 +31,58 @@
                   (h1 "Building Better" (br) "Neural Networks")
                   (p "Welcome! My name is Tim and Wits End is my personal website, a repository for my research, and an outlet for digging deeper into artificial intelligence.")))
 
+            (div (@ (class "content wrapper"))
+              (div (@ (class "header"))
+                (h1 "Articles"))
+              (div (@ (class "primary-col"))
+                (div (@ (class "paper interpretable-diversity-analysis"))
+                    (div
+                      (h1 "Knowledge Distillation: Teaching Small Models to Perform Like Large Ones")
+                      (p "IJCNN 2022")
+                      (p "Knowledge Distillation is a model compression technique in machine learning where a smaller, simpler student model is trained to replicate the behavior of a larger, more complex teacher model. The fundamental principle underlying this technique is the transference of 'knowledge' from the teacher model to the student model...")
+                      (a (@ (href "#") (class "read-more")) "Read More")))
+                (div (@ (class "paper synaptic-stripping"))
+                    (div
+                      (h1 "Sparsity in Practice: Leveraging Sparse Representations for Efficient Neural Networks")
+                      (p "IJCNN 2023")
+                      (p "A deep dive into the concept of sparsity in neural networks, providing practical advice on designing and training sparse models for improved efficiency. The resultant networks not only reduce the memory footprint and computational requirements but often also improve generalization by reducing overfitting...")
+                      (a (@ (href "#") (class "read-more")) "Read More")))
+              )
+              
+              (div (@ (class "secondary-col"))
+                (div (@ (class "paper sparse-mutation-decomposition"))
+                    (div
+                      (h1 "A Deep Dive into Activation Functions")
+                      (a (@ (href "#") (class "read-more")) "Read More")))
+                
+                (div (@ (class "paper synaptic-stripping"))
+                    (div
+                      (h1 "Binary and Ternary Networks: The Future of Ultra-Efficient Machine Learning")
+                      (a (@ (href "#") (class "read-more")) "Read More")))
+                
+                (div (@ (class "paper low-cost-ensembles"))
+                    (div
+                      (h1 "Batch Normalization: A Key to Faster and More Stable Training")
+                      (a (@ (href "#") (class "read-more")) "Read More")))
+
+                (div (@ (class "paper stochastic-masking"))
+                    (div
+                      (h1 "Adaptive Learning Rates: The Power of Optimizers in Neural Networks")
+                      (a (@ (href "#") (class "read-more")) "Read More")))
+
+                (div (@ (class "paper quantum-neuron-selection"))
+                    (div
+                      (h1 "Exploring the Benefits of Quantization in Neural Networks")
+                      (a (@ (href "#") (class "read-more")) "Read More")))))
+
+            (div (@ (class "featured-paper prune-and-tune-ensembles"))
+              (div (@ (class "wrapper"))
+                (div
+                  (h1 "Subnetwork Ensembles")
+                  (p "Ensemble Learning is an effective method for improving generalization in machine learning. However, as state-of-the-art neural networks grow larger, the computational cost associated with training several independent networks becomes expensive. We introduce and formalize a fast, low-cost method for creating diverse ensembles of neural networks without needing to train multiple models from scratch...")
+                  (a (@ (href "#") (class "read-more")) "Read More"))))
+
+
             (div (@ (class "intro"))
               (div (@ (class "wrapper"))
                 (div (@ (class "column-wrapper"))
@@ -144,61 +196,7 @@
           ;         (button (@ (type "submit")) "Send Message")))
           ;     (div (@ (class "map-container"))
           ;       (div (@ (id "map")) ""))))
-
-            (div (@ (class "featured-paper prune-and-tune-ensembles"))
-              (div (@ (class "wrapper"))
-                (div
-                  (h1 "Subnetwork Ensembles")
-                  (p "Ensemble Learning is an effective method for improving generalization in machine learning. However, as state-of-the-art neural networks grow larger, the computational cost associated with training several independent networks becomes expensive. We introduce and formalize a fast, low-cost method for creating diverse ensembles of neural networks without needing to train multiple models from scratch...")
-                  (a (@ (href "#") (class "read-more")) "Read More"))))
             
-            (div (@ (class "content wrapper"))
-              (div (@ (class "primary-col"))
-                (div (@ (class "paper interpretable-diversity-analysis"))
-                    (div
-                      (h1 "Knowledge Distillation: Teaching Small Models to Perform Like Large Ones")
-                      (p "IJCNN 2022")
-                      (p "Knowledge Distillation is a model compression technique in machine learning where a smaller, simpler student model is trained to replicate the behavior of a larger, more complex teacher model. The fundamental principle underlying this technique is the transference of 'knowledge' from the teacher model to the student model...")
-                      (a (@ (href "#") (class "read-more")) "Read More")))
-                (div (@ (class "paper synaptic-stripping"))
-                    (div
-                      (h1 "Sparsity in Practice: Leveraging Sparse Representations for Efficient Neural Networks")
-                      (p "IJCNN 2023")
-                      (p "A deep dive into the concept of sparsity in neural networks, providing practical advice on designing and training sparse models for improved efficiency. The resultant networks not only reduce the memory footprint and computational requirements but often also improve generalization by reducing overfitting...")
-                      (a (@ (href "#") (class "read-more")) "Read More")))
-              )
-              
-              (div (@ (class "secondary-col"))
-                (div (@ (class "paper sparse-mutation-decomposition"))
-                    (div
-                      (h1 "A Deep Dive into Activation Functions")
-                      (a (@ (href "#") (class "read-more")) "Read More")))
-                
-
-              (div (@ (class "paper synaptic-stripping"))
-                  (div
-                    (h1 "Binary and Ternary Networks: The Future of Ultra-Efficient Machine Learning")
-                    (a (@ (href "#") (class "read-more")) "Read More")))
-              
-              (div (@ (class "paper low-cost-ensembles"))
-                  (div
-                    (h1 "Batch Normalization: A Key to Faster and More Stable Training")
-                    (a (@ (href "#") (class "read-more")) "Read More")))
-
-              (div (@ (class "paper stochastic-masking"))
-                  (div
-                    (h1 "Adaptive Learning Rates: The Power of Optimizers in Neural Networks")
-                    (a (@ (href "#") (class "read-more")) "Read More")))
-
-
-
-              (div (@ (class "paper quantum-neuron-selection"))
-                  (div
-                    (h1 "Exploring the Benefits of Quantization in Neural Networks")
-                    (a (@ (href "#") (class "read-more")) "Read More")))
-                    )
-            )
-
 
           (div (@ (class "reference"))
             (p "Hero images generated with neural networks via " (a (@ (href "https://midjourney.com")) "midjourney") ". This website's " (a (@ (href "https://github.com/tjwhitaker/thewhiteacre")) "source code") " was written entirely in scheme!")))

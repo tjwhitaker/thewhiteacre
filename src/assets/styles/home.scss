@@ -64,11 +64,10 @@ html {
         }
 
         h1 {
-          // font-family: "Open Sans";
+          font-family: "Open Sans";
           font-size: 4.8rem;
-          // text-transform: uppercase;
+          text-transform: uppercase;
           line-height: 1.2;
-          // letter-spacing: -0.1rem;
           margin-bottom: 1.6rem;
           color: black;
         }
@@ -114,11 +113,22 @@ html {
 
     .content {
       display:grid;
+      grid-template-rows: auto auto;
       grid-template-columns: 2fr 1fr;
       grid-gap:2rem;
+      padding: 5rem 0;
       
+      .header {
+        grid-row:1;
+        grid-column:1 / span 2;
+        border-bottom: 1px solid #ddd;
+        h1 {
+          padding:1rem 0;
+        }
+      }
       .primary-col {
-        border-right:1px solid #f7f7f7;
+        grid-row:2;
+        border-right:1px solid #ddd;
 
         .paper {
           background: white;
@@ -132,12 +142,12 @@ html {
             font-size:1.6rem;
           }
           &:not(:first-child) {
-            border-top: 1px solid #f7f7f7;
+            border-top: 1px solid #ddd;
           }
         }
       }
       .secondary-col {
-
+        grid-row:2;
         .paper {
           background: white;
           padding: 2rem;
@@ -149,7 +159,7 @@ html {
             font-size:1.2rem;
           }
           &:not(:first-child) {
-            border-top: 1px solid #f7f7f7;
+            border-top: 1px solid #ddd;
           }
         }
       }

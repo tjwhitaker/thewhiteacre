@@ -59,7 +59,9 @@ html body .featured-paper .wrapper {
   }
 }
 html body .featured-paper .wrapper h1 {
+  font-family: "Open Sans";
   font-size: 4.8rem;
+  text-transform: uppercase;
   line-height: 1.2;
   margin-bottom: 1.6rem;
   color: black;
@@ -100,11 +102,22 @@ html body .featured-paper:nth-child(odd) .wrapper div h1, html body .featured-pa
 }
 html body .content {
   display: grid;
+  grid-template-rows: auto auto;
   grid-template-columns: 2fr 1fr;
   grid-gap: 2rem;
+  padding: 5rem 0;
+}
+html body .content .header {
+  grid-row: 1;
+  grid-column: 1/span 2;
+  border-bottom: 1px solid #ddd;
+}
+html body .content .header h1 {
+  padding: 1rem 0;
 }
 html body .content .primary-col {
-  border-right: 1px solid #f7f7f7;
+  grid-row: 2;
+  border-right: 1px solid #ddd;
 }
 html body .content .primary-col .paper {
   background: white;
@@ -119,7 +132,10 @@ html body .content .primary-col .paper p {
   font-size: 1.6rem;
 }
 html body .content .primary-col .paper:not(:first-child) {
-  border-top: 1px solid #f7f7f7;
+  border-top: 1px solid #ddd;
+}
+html body .content .secondary-col {
+  grid-row: 2;
 }
 html body .content .secondary-col .paper {
   background: white;
@@ -133,7 +149,7 @@ html body .content .secondary-col .paper p {
   font-size: 1.2rem;
 }
 html body .content .secondary-col .paper:not(:first-child) {
-  border-top: 1px solid #f7f7f7;
+  border-top: 1px solid #ddd;
 }
 html body .prune-and-tune-ensembles {
   background-image: url(/static/dna-helix-3.svg);
