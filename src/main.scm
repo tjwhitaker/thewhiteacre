@@ -11,6 +11,7 @@
 
 ;; Import home-template, about-template
 (include "./home.scm")
+(include "./cv.scm")
 (include "./models.scm")
 (include "./notebooks.scm")
 (include "./post.scm")
@@ -63,6 +64,11 @@
     (define html (serialize-sxml (home-template) indent: #f method: 'html'))
     (write-html "../build/" html)))
 
+(define build-cv
+  (lambda ()
+    (define html (serialize-sxml (cv-template) indent: #f method: 'html'))
+    (write-html "../build/cv" html)))
+
 
 (define build-models
   (lambda ()
@@ -104,6 +110,7 @@
   ((notebooks (build-feed "articles/")))
   (build-static)
   (build-home)
+  (build-cv)
   (build-models)
   (build-research)
   (build-notebooks notebooks)

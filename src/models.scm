@@ -17,6 +17,7 @@
             (div (@ (class "wrapper"))
               (a (@ (href "/") (class "logo")) (img (@ (src "/static/logo.svg"))))
               (nav
+                (a (@ (href "/cv")) "CV")
                 (a (@ (href "/research")) "Publications")
                 (a (@ (href "/models")) "Models")
                 (a (@ (href "/notebooks")) "Notebooks"))))

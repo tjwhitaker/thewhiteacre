@@ -2,7 +2,7 @@
   (lambda ()
     `(html
       ((head
-        (title "Research | The White Acre")
+        (title "Research | Wits End")
         (meta (@ (charset "utf-8")))
         (meta (@ (name "viewport") (content "width=device-width, initial-scale=1")))
         (link (@ (rel "icon") (href "/static/favicon.ico")))
@@ -19,6 +19,7 @@
             (div (@ (class "wrapper"))
               (a (@ (href "/") (class "logo")) (img (@ (src "/static/logo.svg"))))
               (nav
+                (a (@ (href "/cv")) "CV")
                 (a (@ (href "/research")) "Publications")
                 (a (@ (href "/models")) "Models")
                 (a (@ (href "/notebooks")) "Notebooks"))))

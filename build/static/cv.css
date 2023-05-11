@@ -1,6 +1,12 @@
 html body .hero {
-  background-image: url(/static/brain-bg.png);
+  background-image: url(/static/personal-hero.png);
   background-position: top center;
+  filter: grayscale(1);
+}
+@media screen and (max-width: 600px) {
+  html body .hero {
+    text-align: center;
+  }
 }
 html body .intro {
   background: white;
@@ -34,162 +40,6 @@ html body .intro .wrapper .column-wrapper .column .icon img {
 @media screen and (max-width: 600px) {
   html body .intro .wrapper .column-wrapper .column {
     flex: 0 0 100%;
-  }
-}
-html body .featured-paper {
-  padding: 16rem 0;
-  background-size: 45vw;
-  background-repeat: no-repeat;
-}
-@media screen and (max-width: 600px) {
-  html body .featured-paper {
-    padding: 8rem 0;
-    background-size: 250vw;
-  }
-}
-html body .featured-paper .wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 3.2rem;
-  align-items: center;
-}
-@media screen and (max-width: 600px) {
-  html body .featured-paper .wrapper {
-    grid-template-columns: 1fr;
-  }
-}
-html body .featured-paper .wrapper h1 {
-  font-size: 4.8rem;
-  line-height: 1.2;
-  margin-bottom: 1.6rem;
-  color: black;
-}
-html body .featured-paper .wrapper p {
-  color: black;
-  font-size: 1.8rem;
-}
-html body .featured-paper .wrapper .read-more {
-  display: inline-block;
-  margin: 1rem 0;
-  color: black;
-  font-family: "Open Sans";
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 1.2rem;
-}
-html body .featured-paper:nth-child(even) {
-  background-color: white;
-  background-position: center left;
-}
-html body .featured-paper:nth-child(even) .wrapper div {
-  grid-column: 2;
-}
-html body .featured-paper:nth-child(even) .wrapper div h1, html body .featured-paper:nth-child(even) .wrapper div p, html body .featured-paper:nth-child(even) .wrapper div a {
-  color: black;
-}
-html body .featured-paper:nth-child(odd) {
-  background-color: #0f0f0f;
-  background-position: center right;
-}
-html body .featured-paper:nth-child(odd) .wrapper div {
-  grid-column: 1;
-}
-html body .featured-paper:nth-child(odd) .wrapper div h1, html body .featured-paper:nth-child(odd) .wrapper div p, html body .featured-paper:nth-child(odd) .wrapper div a, html body .featured-paper:nth-child(odd) .wrapper div small {
-  color: white;
-}
-html body .content {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-gap: 2rem;
-}
-html body .content .primary-col {
-  border-right: 1px solid #f7f7f7;
-}
-html body .content .primary-col .paper {
-  background: white;
-  padding: 2rem 0;
-  margin-right: 2rem;
-}
-html body .content .primary-col .paper h1 {
-  font-family: "Open Sans";
-  font-size: 2.4rem;
-}
-html body .content .primary-col .paper p {
-  font-size: 1.6rem;
-}
-html body .content .primary-col .paper:not(:first-child) {
-  border-top: 1px solid #f7f7f7;
-}
-html body .content .secondary-col .paper {
-  background: white;
-  padding: 2rem;
-}
-html body .content .secondary-col .paper h1 {
-  font-family: "Open Sans";
-  font-size: 1.6rem;
-}
-html body .content .secondary-col .paper p {
-  font-size: 1.2rem;
-}
-html body .content .secondary-col .paper:not(:first-child) {
-  border-top: 1px solid #f7f7f7;
-}
-html body .prune-and-tune-ensembles {
-  background-image: url(/static/dna-helix-3.svg);
-}
-html body .personal {
-  width: 100%;
-  background-image: url(/static/personal-hero.png);
-  background-size: cover;
-  background-color: white;
-  background-position: top center;
-  background-repeat: no-repeat;
-  position: relative;
-  height: 70vh;
-  filter: grayscale(1);
-}
-html body .personal .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 0;
-  background: black;
-  opacity: 0.5;
-}
-html body .personal .wrapper {
-  position: relative;
-  z-index: 1;
-  top: 50%;
-  transform: translateY(-50%);
-}
-html body .personal .wrapper h1 {
-  font-family: "Open Sans";
-  font-size: 6.4rem;
-  text-transform: uppercase;
-  line-height: 1;
-  letter-spacing: -0.1rem;
-  margin-bottom: 1rem;
-  color: white;
-  text-shadow: 5px 5px 0px rgb(0, 0, 0);
-}
-@media screen and (max-width: 600px) {
-  html body .personal .wrapper h1 {
-    font-size: 5rem;
-  }
-}
-html body .personal .wrapper p {
-  color: white;
-  font-size: 1.7rem;
-  font-style: italic;
-  max-width: 600px;
-  margin-bottom: 2rem;
-}
-@media screen and (max-width: 600px) {
-  html body .personal .wrapper {
-    text-align: center;
   }
 }
 html body .professional {
