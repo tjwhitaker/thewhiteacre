@@ -28,8 +28,8 @@
             (div (@ (class "hero"))
               (div (@ (class "overlay")) "")
               (div (@ (class "wrapper"))
-                  (h1 "Tim Whitaker")
-                  (p "Hi. I'm a PhD candidate working with deep neural networks. I have over a decade of experience in software engineering and academic research. I'm a skilled problem solver with a strong background in computer science.")))
+                  (h1 "Hello," (br) "I'm Tim Whitaker")
+                  (p "I'm a PhD candidate working with deep neural networks at Colorado State University. I have over a decade of experience in software engineering and academic research. I'm a skilled problem solver with a strong background in computer science.")))
 
             (div (@ (class "intro"))
               (div (@ (class "wrapper"))

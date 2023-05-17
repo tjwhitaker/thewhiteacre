@@ -78,8 +78,9 @@ html body header {
 }
 html body header .wrapper {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: auto auto;
   align-items: center;
+  justify-content: space-between;
   padding: 1rem;
 }
 html body header .wrapper .logo {

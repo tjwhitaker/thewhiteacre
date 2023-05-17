@@ -6,10 +6,19 @@ html {
       background-position: top center;
     }
 
-    .intro {
+    .merch {
       background: white;
       padding: 4.8rem 0;
       .wrapper {
+        h1 {
+          font-family: "Open Sans";
+          font-size:5rem;
+          text-transform:uppercase;
+          text-align:center;
+          padding-bottom:5rem;
+          color:black;
+          text-shadow:5px 5px 0px #ddd;
+        }
         .column-wrapper {
           display: flex;
           align-items: baseline;
@@ -116,7 +125,7 @@ html {
       grid-template-rows: auto auto;
       grid-template-columns: 2fr 1fr;
       grid-gap:2rem;
-      padding: 5rem 0;
+      padding:2rem 0 5rem 0;
       
       .header {
         grid-row:1;
@@ -124,6 +133,21 @@ html {
         border-bottom: 1px solid #ddd;
         h1 {
           padding:1rem 0;
+        }
+        .categories {
+          padding-bottom:2rem;
+          a {
+            font-family:"Open Sans";
+            font-size:1.3rem;
+            text-transform:uppercase;
+            text-decoration: none;
+            margin-right:2rem;
+            color:#aaa;
+
+            &.active, &:hover {
+              color: #1976d2;
+            }
+          }
         }
       }
       .primary-col {
@@ -489,6 +513,14 @@ html {
           }
         }
 
+      }
+    }
+    footer {
+      background:white;
+      
+      .wrapper .column {
+        color:black;
+        h2, p, a {color:black}
       }
     }
   }

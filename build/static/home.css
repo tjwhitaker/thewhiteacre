@@ -2,11 +2,20 @@ html body .hero {
   background-image: url(/static/brain-bg.png);
   background-position: top center;
 }
-html body .intro {
+html body .merch {
   background: white;
   padding: 4.8rem 0;
 }
-html body .intro .wrapper .column-wrapper {
+html body .merch .wrapper h1 {
+  font-family: "Open Sans";
+  font-size: 5rem;
+  text-transform: uppercase;
+  text-align: center;
+  padding-bottom: 5rem;
+  color: black;
+  text-shadow: 5px 5px 0px #ddd;
+}
+html body .merch .wrapper .column-wrapper {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
@@ -14,25 +23,25 @@ html body .intro .wrapper .column-wrapper {
   flex-wrap: wrap;
 }
 @media screen and (max-width: 600px) {
-  html body .intro .wrapper .column-wrapper {
+  html body .merch .wrapper .column-wrapper {
     padding: 1.6rem 0;
   }
 }
-html body .intro .wrapper .column-wrapper .column {
+html body .merch .wrapper .column-wrapper .column {
   flex: 0 0 30%;
   text-align: center;
 }
-html body .intro .wrapper .column-wrapper .column .icon {
+html body .merch .wrapper .column-wrapper .column .icon {
   margin: 0 auto;
   height: 15rem;
   width: 15rem;
 }
-html body .intro .wrapper .column-wrapper .column .icon img {
+html body .merch .wrapper .column-wrapper .column .icon img {
   width: 100%;
   height: 100%;
 }
 @media screen and (max-width: 600px) {
-  html body .intro .wrapper .column-wrapper .column {
+  html body .merch .wrapper .column-wrapper .column {
     flex: 0 0 100%;
   }
 }
@@ -105,7 +114,7 @@ html body .content {
   grid-template-rows: auto auto;
   grid-template-columns: 2fr 1fr;
   grid-gap: 2rem;
-  padding: 5rem 0;
+  padding: 2rem 0 5rem 0;
 }
 html body .content .header {
   grid-row: 1;
@@ -114,6 +123,20 @@ html body .content .header {
 }
 html body .content .header h1 {
   padding: 1rem 0;
+}
+html body .content .header .categories {
+  padding-bottom: 2rem;
+}
+html body .content .header .categories a {
+  font-family: "Open Sans";
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin-right: 2rem;
+  color: #aaa;
+}
+html body .content .header .categories a.active, html body .content .header .categories a:hover {
+  color: #1976d2;
 }
 html body .content .primary-col {
   grid-row: 2;
@@ -394,4 +417,13 @@ html body .contact .wrapper .map-container #map {
   html body .contact .wrapper .map-container {
     grid-row: 3;
   }
+}
+html body footer {
+  background: white;
+}
+html body footer .wrapper .column {
+  color: black;
+}
+html body footer .wrapper .column h2, html body footer .wrapper .column p, html body footer .wrapper .column a {
+  color: black;
 }
