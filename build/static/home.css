@@ -2,6 +2,40 @@ html body .hero {
   background-image: url(/static/brain-bg.png);
   background-position: top center;
 }
+html body .intro {
+  background: white;
+  padding: 4.8rem 0;
+}
+html body .intro .wrapper .column-wrapper {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 1.6rem;
+  flex-wrap: wrap;
+}
+@media screen and (max-width: 600px) {
+  html body .intro .wrapper .column-wrapper {
+    padding: 1.6rem 0;
+  }
+}
+html body .intro .wrapper .column-wrapper .column {
+  flex: 0 0 30%;
+  text-align: center;
+}
+html body .intro .wrapper .column-wrapper .column .icon {
+  margin: 0 auto;
+  height: 15rem;
+  width: 15rem;
+}
+html body .intro .wrapper .column-wrapper .column .icon img {
+  width: 100%;
+  height: 100%;
+}
+@media screen and (max-width: 600px) {
+  html body .intro .wrapper .column-wrapper .column {
+    flex: 0 0 100%;
+  }
+}
 html body .merch {
   background: white;
   padding: 4.8rem 0;
@@ -109,25 +143,25 @@ html body .featured-paper:nth-child(odd) .wrapper div {
 html body .featured-paper:nth-child(odd) .wrapper div h1, html body .featured-paper:nth-child(odd) .wrapper div p, html body .featured-paper:nth-child(odd) .wrapper div a, html body .featured-paper:nth-child(odd) .wrapper div small {
   color: white;
 }
-html body .content {
+html body .notebooks {
   display: grid;
   grid-template-rows: auto auto;
   grid-template-columns: 2fr 1fr;
   grid-gap: 2rem;
   padding: 2rem 0 5rem 0;
 }
-html body .content .header {
+html body .notebooks .header {
   grid-row: 1;
   grid-column: 1/span 2;
   border-bottom: 1px solid #ddd;
 }
-html body .content .header h1 {
+html body .notebooks .header h1 {
   padding: 1rem 0;
 }
-html body .content .header .categories {
+html body .notebooks .header .categories {
   padding-bottom: 2rem;
 }
-html body .content .header .categories a {
+html body .notebooks .header .categories a {
   font-family: "Open Sans";
   font-size: 1.3rem;
   text-transform: uppercase;
@@ -135,295 +169,51 @@ html body .content .header .categories a {
   margin-right: 2rem;
   color: #aaa;
 }
-html body .content .header .categories a.active, html body .content .header .categories a:hover {
+html body .notebooks .header .categories a.active, html body .notebooks .header .categories a:hover {
   color: #1976d2;
 }
-html body .content .primary-col {
+html body .notebooks .primary-col {
   grid-row: 2;
   border-right: 1px solid #ddd;
 }
-html body .content .primary-col .paper {
+html body .notebooks .primary-col .post {
   background: white;
   padding: 2rem 0;
   margin-right: 2rem;
 }
-html body .content .primary-col .paper h1 {
+html body .notebooks .primary-col .post h1 {
   font-family: "Open Sans";
   font-size: 2.4rem;
 }
-html body .content .primary-col .paper p {
+html body .notebooks .primary-col .post p {
   font-size: 1.6rem;
 }
-html body .content .primary-col .paper:not(:first-child) {
+html body .notebooks .primary-col .post:not(:first-child) {
   border-top: 1px solid #ddd;
 }
-html body .content .secondary-col {
+html body .notebooks .secondary-col {
   grid-row: 2;
 }
-html body .content .secondary-col .paper {
+html body .notebooks .secondary-col .post {
   background: white;
   padding: 2rem;
 }
-html body .content .secondary-col .paper h1 {
+html body .notebooks .secondary-col .post h1 {
   font-family: "Open Sans";
   font-size: 1.6rem;
 }
-html body .content .secondary-col .paper p {
+html body .notebooks .secondary-col .post p {
   font-size: 1.2rem;
 }
-html body .content .secondary-col .paper:not(:first-child) {
+html body .notebooks .secondary-col .post:not(:first-child) {
   border-top: 1px solid #ddd;
 }
+@media screen and (max-width: 600px) {
+  html body .notebooks {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
 html body .prune-and-tune-ensembles {
-  background-image: url(/static/dna-helix-3.svg);
-}
-html body .personal {
-  width: 100%;
-  background-image: url(/static/personal-hero.png);
-  background-size: cover;
-  background-color: white;
-  background-position: top center;
-  background-repeat: no-repeat;
-  position: relative;
-  height: 70vh;
-  filter: grayscale(1);
-}
-html body .personal .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 0;
-  background: black;
-  opacity: 0.5;
-}
-html body .personal .wrapper {
-  position: relative;
-  z-index: 1;
-  top: 50%;
-  transform: translateY(-50%);
-}
-html body .personal .wrapper h1 {
-  font-family: "Open Sans";
-  font-size: 6.4rem;
-  text-transform: uppercase;
-  line-height: 1;
-  letter-spacing: -0.1rem;
-  margin-bottom: 1rem;
-  color: white;
-  text-shadow: 5px 5px 0px rgb(0, 0, 0);
-}
-@media screen and (max-width: 600px) {
-  html body .personal .wrapper h1 {
-    font-size: 5rem;
-  }
-}
-html body .personal .wrapper p {
-  color: white;
-  font-size: 1.7rem;
-  font-style: italic;
-  max-width: 600px;
-  margin-bottom: 2rem;
-}
-@media screen and (max-width: 600px) {
-  html body .personal .wrapper {
-    text-align: center;
-  }
-}
-html body .professional {
-  padding: 5rem 0;
-  background: #eee;
-}
-html body .professional .wrapper .education .main-header, html body .professional .wrapper .experience .main-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-  border-bottom: 1px solid #666;
-  margin: 1rem 0;
-  padding-bottom: 1rem;
-}
-html body .professional .wrapper .education .main-header h1, html body .professional .wrapper .experience .main-header h1 {
-  flex: 0;
-  font-size: 5rem;
-  font-family: "Open Sans";
-  text-transform: uppercase;
-}
-html body .professional .wrapper .education .main-header div, html body .professional .wrapper .experience .main-header div {
-  flex: 0 auto;
-}
-html body .professional .wrapper .education .main-header div img, html body .professional .wrapper .experience .main-header div img {
-  width: 100px;
-  margin-left: 1rem;
-}
-html body .professional .wrapper .education .item, html body .professional .wrapper .experience .item {
-  margin-bottom: 2rem;
-}
-html body .professional .wrapper .education .item .header, html body .professional .wrapper .experience .item .header {
-  display: flex;
-  justify-content: space-between;
-}
-html body .professional .wrapper .education .item p, html body .professional .wrapper .experience .item p {
-  margin-bottom: 0;
-}
-html body .professional .wrapper .education .item ul, html body .professional .wrapper .experience .item ul {
-  padding-left: 5rem;
-}
-html body .professional .wrapper .education {
-  margin-bottom: 5rem;
-}
-html body .gallery {
-  background: black;
-  padding: 1rem;
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(6, 5vw);
-  grid-gap: 1rem;
-}
-html body .gallery .item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: grayscale(1);
-  -webkit-transition: 0.5s -webkit-filter ease;
-  -moz-transition: 0.5s -moz-filter ease;
-  -moz-transition: 0.5s filter ease;
-  -ms-transition: 0.5s -ms-filter ease;
-  -o-transition: 0.5s -o-filter ease;
-  transition: 0.5s filter ease, 0.5s -webkit-filter ease;
-}
-html body .gallery .item img:hover {
-  filter: grayscale(0);
-}
-html body .gallery .item:nth-child(1) {
-  grid-column-start: 1;
-  grid-column-end: 3;
-  grid-row-start: 1;
-  grid-row-end: 4;
-}
-html body .gallery .item:nth-child(2) {
-  grid-column-start: 1;
-  grid-column-end: 3;
-  grid-row-start: 4;
-  grid-row-end: 7;
-}
-html body .gallery .item:nth-child(3) {
-  grid-column-start: 3;
-  grid-column-end: 5;
-  grid-row-start: 1;
-  grid-row-end: 7;
-}
-html body .gallery .item:nth-child(4) {
-  grid-column-start: 5;
-  grid-column-end: 7;
-  grid-row-start: 1;
-  grid-row-end: 4;
-}
-html body .gallery .item:nth-child(5) {
-  grid-column-start: 5;
-  grid-column-end: 7;
-  grid-row-start: 4;
-  grid-row-end: 7;
-}
-html body .gallery .item:nth-child(6) {
-  grid-column-start: 7;
-  grid-column-end: 9;
-  grid-row-start: 1;
-  grid-row-end: 7;
-}
-html body .contact {
-  padding: 8rem 0;
-  background: white;
-}
-@media screen and (max-width: 600px) {
-  html body .contact {
-    padding: 0rem;
-  }
-}
-html body .contact .wrapper {
-  display: grid;
-  grid-template-rows: auto auto;
-  grid-template-columns: 1fr 1fr;
-  grid-column-gap: 3.2rem;
-}
-@media screen and (max-width: 600px) {
-  html body .contact .wrapper {
-    grid-template-rows: auto auto auto;
-    grid-template-columns: 1fr;
-    grid-column-gap: 0rem;
-    grid-row-gap: 3.2rem;
-  }
-}
-html body .contact .wrapper h1 {
-  grid-row: 1;
-  font-size: 3.2rem;
-  margin-bottom: 1.6rem;
-}
-@media screen and (max-width: 600px) {
-  html body .contact .wrapper h1 {
-    margin-bottom: -1.6rem;
-  }
-}
-html body .contact .wrapper .form-container {
-  grid-row: 2;
-  display: flex;
-}
-html body .contact .wrapper .form-container form {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-html body .contact .wrapper .form-container form input {
-  display: block;
-  margin-bottom: 1.6rem;
-  padding: 0.8rem;
-  outline: none;
-  border: 1px solid #ccc;
-  background: white;
-}
-html body .contact .wrapper .form-container form textarea {
-  flex: 1;
-  display: block;
-  padding: 0.8rem;
-  outline: none;
-  border: 1px solid #ccc;
-  background: white;
-}
-html body .contact .wrapper .form-container form button {
-  background: #1976d2;
-  color: white;
-  padding: 0.8rem 1.6rem;
-  outline: none;
-  border: none;
-  cursor: pointer;
-  font-family: "Open Sans";
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 1.2rem;
-  text-decoration: none;
-  border-radius: 3px;
-  max-width: max-content;
-  display: block;
-  margin-top: 1.6rem;
-}
-html body .contact .wrapper .map-container {
-  grid-row: 2;
-}
-html body .contact .wrapper .map-container #map {
-  height: 32rem;
-}
-@media screen and (max-width: 600px) {
-  html body .contact .wrapper .map-container {
-    grid-row: 3;
-  }
-}
-html body footer {
-  background: white;
-}
-html body footer .wrapper .column {
-  color: black;
-}
-html body footer .wrapper .column h2, html body footer .wrapper .column p, html body footer .wrapper .column a {
-  color: black;
+  background-image: url(/static/tree.svg);
 }

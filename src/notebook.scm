@@ -1,13 +1,13 @@
-(define post-template
-  (lambda (title description hero)
+(define notebook-template
+  (lambda (title description hero html-src)
     `(html
       ((head
-        (title "Blog | Wits End")
+        (title ,(conc title " | Wits End"))
         (meta (@ (charset "utf-8")))
         (meta (@ (name "viewport") (content "width=device-width, initial-scale=1")))
         (link (@ (rel "icon") (href "/static/favicon.ico")))
         (link (@ (rel "stylesheet") (href "/static/style.css")))
-        (link (@ (rel "stylesheet") (href "/static/post.css")))
+        (link (@ (rel "stylesheet") (href "/static/notebook.css")))
         (link (@ (rel "stylesheet") (href "/static/prism.css")))
         (link (@ (rel "stylesheet") (href "https://cdn.jsdelivr.net/npm/katex@0.16.3/dist/katex.min.css")))
         (link (@ (rel "preconnect") (href "https://fonts.googleapis.com")))
@@ -20,12 +20,13 @@
             (div (@ (class "wrapper"))
               (a (@ (href "/") (class "logo")) (img (@ (src "/static/logo.svg"))))
               (nav
+                (a (@ (href "/cv")) "CV")
                 (a (@ (href "/research")) "Publications")
                 (a (@ (href "/models")) "Models")
                 (a (@ (href "/notebooks")) "Notebooks"))))
 
           (main
-            (div (@ (class "hero") (style ,(conc "background-image: url('" hero "')")))
+            (div (@ (class "hero") (style ,(conc "background-image: url(" hero ")")))
               (div (@ (class "overlay")) "")
                 (div (@ (class "wrapper"))
                   (h1 ,title)
@@ -34,7 +35,8 @@
             (div (@ (class "article"))
               (div (@ (class "wrapper"))
                 (div (@ (class "content"))
-                  (ARTICLE-CONTENT)
+                  (iframe (@ (id "myIframe") (src ,html-src)) "")
+                  (script "iFrameResize({log: true}, '#myIframe')")
                 )
               )
             )

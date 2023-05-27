@@ -1,5 +1,5 @@
 (define home-template
-  (lambda ()
+  (lambda (feed)
     `(html
       ((head
         (title "Wits End")
@@ -31,57 +31,28 @@
                   (h1 "Building Better" (br) "Neural Networks")
                   (p "Welcome! My name is Tim and Wits End is my personal website, a repository for my research, and an outlet for digging deeper into artificial intelligence.")))
 
-            (div (@ (class "content wrapper"))
-              (div (@ (class "header"))
-                (nav (@ (class "categories"))
-                  (a (@ (href "#") (class "active")) "All")
-                  (a (@ (href "#")) "Architecture")
-                  (a (@ (href "#")) "Compression")
-                  (a (@ (href "#")) "Evolution")
-                  (a (@ (href "#")) "Optimization")
-                  (a (@ (href "#")) "Regularization")
-                )
-              )
-              (div (@ (class "primary-col"))
-                (div (@ (class "paper interpretable-diversity-analysis"))
-                    (div
-                      (h1 "Knowledge Distillation: Teaching Small Models to Perform Like Large Ones")
-                      (p "IJCNN 2022")
-                      (p "Knowledge Distillation is a model compression technique in machine learning where a smaller, simpler student model is trained to replicate the behavior of a larger, more complex teacher model. The fundamental principle underlying this technique is the transference of 'knowledge' from the teacher model to the student model...")
-                      (a (@ (href "#") (class "read-more")) "Read More")))
-                (div (@ (class "paper synaptic-stripping"))
-                    (div
-                      (h1 "Sparsity in Practice: Leveraging Sparse Representations for Efficient Neural Networks")
-                      (p "IJCNN 2023")
-                      (p "A deep dive into the concept of sparsity in neural networks, providing practical advice on designing and training sparse models for improved efficiency. The resultant networks not only reduce the memory footprint and computational requirements but often also improve generalization by reducing overfitting...")
-                      (a (@ (href "#") (class "read-more")) "Read More")))
-              )
-              
-              (div (@ (class "secondary-col"))
-                (div (@ (class "paper sparse-mutation-decomposition"))
-                    (div
-                      (h1 "A Deep Dive into Activation Functions")
-                      (a (@ (href "#") (class "read-more")) "Read More")))
-                
-                (div (@ (class "paper synaptic-stripping"))
-                    (div
-                      (h1 "Binary and Ternary Networks: The Future of Ultra-Efficient Machine Learning")
-                      (a (@ (href "#") (class "read-more")) "Read More")))
-                
-                (div (@ (class "paper low-cost-ensembles"))
-                    (div
-                      (h1 "Batch Normalization: A Key to Faster and More Stable Training")
-                      (a (@ (href "#") (class "read-more")) "Read More")))
 
-                (div (@ (class "paper stochastic-masking"))
-                    (div
-                      (h1 "Adaptive Learning Rates: The Power of Optimizers in Neural Networks")
-                      (a (@ (href "#") (class "read-more")) "Read More")))
+            (div (@ (class "intro"))
+              (div (@ (class "wrapper"))
+                (div (@ (class "column-wrapper"))
+                  (div (@ (class "column"))
+                    (div (@ (class "icon"))
+                      (img (@ (src "/static/crypto-gpu.svg"))))
+                    (h2 "Model Optimization")
+                    (p "I'm passionate about optimizing learning algorithms and model architectures for superior performance."))
 
-                (div (@ (class "paper quantum-neuron-selection"))
-                    (div
-                      (h1 "Exploring the Benefits of Quantization in Neural Networks")
-                      (a (@ (href "#") (class "read-more")) "Read More")))))
+                  (div (@ (class "column"))
+                    (div (@ (class "icon"))
+                      (img (@ (src "/static/statistical-analysis.svg"))))
+                    (h2 "Data Analysis")
+                    (p "I love diving into complex datasets and uncovering meaningful insights that drive successful machine learning projects."))
+
+                  (div (@ (class "column"))
+                    (div (@ (class "icon"))
+                    (img (@ (src "/static/documents-ui.svg"))))
+                    (h2 "Software Engineering")
+                    (p "I have over a decade of experience in designing, developing, and deploying robust and maintainable software.")))))
+
 
             (div (@ (class "featured-paper prune-and-tune-ensembles"))
               (div (@ (class "wrapper"))
@@ -113,6 +84,73 @@
             ;         (h2 "Software Engineering")
             ;         (p "$25.00")))))
                                 
+            (div (@ (class "notebooks wrapper"))
+              (div (@ (class "header"))
+                (nav (@ (class "categories"))
+                  (a (@ (href "#") (class "active")) "All")
+                  (a (@ (href "#")) "Architecture")
+                  (a (@ (href "#")) "Compression")
+                  (a (@ (href "#")) "Evolution")
+                  (a (@ (href "#")) "Optimization")
+                  (a (@ (href "#")) "Regularization")
+                )
+              )
+
+              (div (@ (class "primary-col"))
+                ,(map (lambda (post) 
+                  `(div (@ (class "post"))
+                      (small ,(cadr (assoc 'date post)))
+                      (h1 ,(cadr (assoc 'title post)))
+                      (p ,(cadr (assoc 'description post)))
+                      (a (@ (href ,(conc "/notebooks/" (cadr (assoc 'slug post))))) "Read More")))
+                (take feed 2)))
+
+              (div (@ (class "secondary-col"))
+                ,(map (lambda (post) 
+                  `(div (@ (class "post"))
+                      (small ,(cadr (assoc 'date post)))
+                      (h1 ,(cadr (assoc 'title post)))
+                      (a (@ (href ,(conc "/notebooks/" (cadr (assoc 'slug post))))) "Read More")))
+                (drop feed 2))))
+
+              ; (div (@ (class "primary-col"))
+              ;   (div (@ (class "paper interpretable-diversity-analysis"))
+              ;       (div
+              ;         (h1 "Knowledge Distillation: Teaching Small Models to Perform Like Large Ones")
+              ;         (p "Knowledge Distillation is a model compression technique in machine learning where a smaller, simpler student model is trained to replicate the behavior of a larger, more complex teacher model. The fundamental principle underlying this technique is the transference of 'knowledge' from the teacher model to the student model...")
+              ;         (a (@ (href "#") (class "read-more")) "Read More")))
+              ;   (div (@ (class "paper synaptic-stripping"))
+              ;       (div
+              ;         (h1 "Sparsity in Practice: Leveraging Sparse Representations for Efficient Neural Networks")
+              ;         (p "A deep dive into the concept of sparsity in neural networks, providing practical advice on designing and training sparse models for improved efficiency. The resultant networks not only reduce the memory footprint and computational requirements but often also improve generalization by reducing overfitting...")
+              ;         (a (@ (href "#") (class "read-more")) "Read More")))
+              ; )
+              
+              ; (div (@ (class "secondary-col"))
+              ;   (div (@ (class "paper sparse-mutation-decomposition"))
+              ;       (div
+              ;         (h1 "A Deep Dive into Activation Functions")
+              ;         (a (@ (href "#") (class "read-more")) "Read More")))
+                
+              ;   (div (@ (class "paper synaptic-stripping"))
+              ;       (div
+              ;         (h1 "Binary and Ternary Networks: The Future of Ultra-Efficient Machine Learning")
+              ;         (a (@ (href "#") (class "read-more")) "Read More")))
+                
+              ;   (div (@ (class "paper low-cost-ensembles"))
+              ;       (div
+              ;         (h1 "Batch Normalization: A Key to Faster and More Stable Training")
+              ;         (a (@ (href "#") (class "read-more")) "Read More")))
+
+              ;   (div (@ (class "paper stochastic-masking"))
+              ;       (div
+              ;         (h1 "Adaptive Learning Rates: The Power of Optimizers in Neural Networks")
+              ;         (a (@ (href "#") (class "read-more")) "Read More")))
+
+              ;   (div (@ (class "paper quantum-neuron-selection"))
+              ;       (div
+              ;         (h1 "Exploring the Benefits of Quantization in Neural Networks")
+              ;         (a (@ (href "#") (class "read-more")) "Read More")))))
 
           (div (@ (class "reference"))
             (p "Hero images generated with neural networks via " (a (@ (href "https://midjourney.com")) "midjourney") ".")))
@@ -138,10 +176,12 @@
                 (a (@ (href "https://lichess.org/@/tjwhitaker")) "Lichess")
                 (a (@ (href "https://orcid.org/0000-0003-3792-3901")) "Orcid"))))
 
-            (script "	mapboxgl.accessToken = 'pk.eyJ1IjoidG13aHRrciIsImEiOiJja2x2NzdpaW0wNXRnMndwOGszNTc3aWd5In0.LvJ2znCQ_1v9a86fxUhQ2A';
-            var map = new mapboxgl.Map({
-            container: 'map', // container id
-            style: 'mapbox://styles/mapbox/streets-v12', // style URL
-            center: [-121.4944, 38.5816], // starting position [lng, lat]
-            zoom: 10 // starting zoom
-            });")))))))
+            ; (script "	mapboxgl.accessToken = 'pk.eyJ1IjoidG13aHRrciIsImEiOiJja2x2NzdpaW0wNXRnMndwOGszNTc3aWd5In0.LvJ2znCQ_1v9a86fxUhQ2A';
+            ; var map = new mapboxgl.Map({
+            ; container: 'map', // container id
+            ; style: 'mapbox://styles/mapbox/streets-v12', // style URL
+            ; center: [-121.4944, 38.5816], // starting position [lng, lat]
+            ; zoom: 10 // starting zoom
+            ; });")
+            
+            ))))))

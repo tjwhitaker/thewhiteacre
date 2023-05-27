@@ -28,8 +28,8 @@
             (div (@ (class "hero"))
               (div (@ (class "overlay")) "")
               (div (@ (class "wrapper"))
-                  (h1 "Hello," (br) "I'm Tim Whitaker")
-                  (p "I'm a PhD candidate working with deep neural networks at Colorado State University. I have over a decade of experience in software engineering and academic research. I'm a skilled problem solver with a strong background in computer science.")))
+                  (h1 "A Research Scientist" (br) "Who Loves to Code")
+                  (p "Hi. My name is Tim Whitaker and I'm a PhD candidate working with deep neural networks at Colorado State University. I have over a decade of experience in software engineering and academic research. I'm a skilled problem solver with a strong background in computer science.")))
 
             (div (@ (class "intro"))
               (div (@ (class "wrapper"))
@@ -91,7 +91,8 @@
                     (li "Recipient of The Artificial Intelligence and Evolutionary Computation Fellowship")
                     (li "Presenter and Technical Committee Member at international conferences including: AAAI, IJCNN, and GECCO")
                     (li "Member of IEEE")
-                    (li "Member of ACM"))))
+                    (li "Member of ACM")
+                    (li "Member of INNS"))))
 
               (div (@ (class "experience"))
                 (div (@ (class "main-header"))
