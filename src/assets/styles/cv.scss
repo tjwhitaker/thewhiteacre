@@ -5,10 +5,6 @@ html {
       background-image: url(/static/personal-hero.png);
       background-position: top center;
       filter:grayscale(1);
-
-      @media screen and (max-width: 600px) {
-        text-align:center;
-      }
     }
 
     .intro {
@@ -50,7 +46,7 @@ html {
 
     .professional {
       padding:5rem 0;
-      background:#eee;
+      background:white;
 
       .wrapper {
         .education, .experience {
@@ -67,12 +63,19 @@ html {
               font-size:5rem;
               font-family: "Open Sans";
               text-transform:uppercase;
+              @media screen and (max-width:600px) {
+                font-size:2.4rem;
+              }
             }
             div {
               flex:0 auto;
               img {
                 width:100px;
                 margin-left: 1rem;
+
+                @media screen and (max-width:600px) {
+                  display:none;
+                }
               }
             }
           }
@@ -95,6 +98,9 @@ html {
           }
         }
         .education {margin-bottom:5rem;}
+      }
+      @media screen and (max-width:600px) {
+        padding:2rem 0;
       }
     }
 
@@ -209,7 +215,7 @@ html {
 
     .contact {
       padding: 8rem 0;
-      background: white;
+      background: #eee;
       
       @media screen and (max-width:600px) {
         padding:0rem;

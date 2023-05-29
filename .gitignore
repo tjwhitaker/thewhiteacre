@@ -117,5 +117,5 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-src/notebooks/data/
+src/data/
 .ipynb_checkpoints

@@ -32,8 +32,15 @@ html body .intro .wrapper .column-wrapper .column .icon img {
   height: 100%;
 }
 @media screen and (max-width: 600px) {
+  html body .intro .wrapper .column-wrapper .column .icon {
+    height: 12rem;
+    width: 12rem;
+  }
+}
+@media screen and (max-width: 600px) {
   html body .intro .wrapper .column-wrapper .column {
     flex: 0 0 100%;
+    padding: 2rem 0;
   }
 }
 html body .merch {
@@ -86,7 +93,7 @@ html body .featured-paper {
 }
 @media screen and (max-width: 600px) {
   html body .featured-paper {
-    padding: 8rem 0;
+    padding: 2rem 0;
     background-size: 250vw;
   }
 }
@@ -109,9 +116,19 @@ html body .featured-paper .wrapper h1 {
   margin-bottom: 1.6rem;
   color: black;
 }
+@media screen and (max-width: 600px) {
+  html body .featured-paper .wrapper h1 {
+    font-size: 3.8rem;
+  }
+}
 html body .featured-paper .wrapper p {
   color: black;
   font-size: 1.8rem;
+}
+@media screen and (max-width: 600px) {
+  html body .featured-paper .wrapper p {
+    font-size: 1.6rem;
+  }
 }
 html body .featured-paper .wrapper .read-more {
   display: inline-block;
@@ -143,6 +160,11 @@ html body .featured-paper:nth-child(odd) .wrapper div {
 html body .featured-paper:nth-child(odd) .wrapper div h1, html body .featured-paper:nth-child(odd) .wrapper div p, html body .featured-paper:nth-child(odd) .wrapper div a, html body .featured-paper:nth-child(odd) .wrapper div small {
   color: white;
 }
+@media screen and (max-width: 600px) {
+  html body .featured-paper {
+    background-size: 0;
+  }
+}
 html body .notebooks {
   display: grid;
   grid-template-rows: auto auto;
@@ -172,6 +194,25 @@ html body .notebooks .header .categories a {
 html body .notebooks .header .categories a.active, html body .notebooks .header .categories a:hover {
   color: #1976d2;
 }
+@media screen and (max-width: 600px) {
+  html body .notebooks .header .categories {
+    display: none;
+  }
+}
+html body .notebooks .header .mobile-categories {
+  display: none;
+  padding-bottom: 2rem;
+}
+@media screen and (max-width: 600px) {
+  html body .notebooks .header .mobile-categories {
+    display: block;
+  }
+}
+@media screen and (max-width: 600px) {
+  html body .notebooks .header {
+    grid-column: auto;
+  }
+}
 html body .notebooks .primary-col {
   grid-row: 2;
   border-right: 1px solid #ddd;
@@ -191,6 +232,12 @@ html body .notebooks .primary-col .post p {
 html body .notebooks .primary-col .post:not(:first-child) {
   border-top: 1px solid #ddd;
 }
+@media screen and (max-width: 600px) {
+  html body .notebooks .primary-col {
+    grid-row: auto;
+    border-right: none;
+  }
+}
 html body .notebooks .secondary-col {
   grid-row: 2;
 }
@@ -209,9 +256,15 @@ html body .notebooks .secondary-col .post:not(:first-child) {
   border-top: 1px solid #ddd;
 }
 @media screen and (max-width: 600px) {
+  html body .notebooks .secondary-col {
+    display: none;
+  }
+}
+@media screen and (max-width: 600px) {
   html body .notebooks {
     padding-left: 1rem;
     padding-right: 1rem;
+    grid-template-columns: 1fr;
   }
 }
 html body .prune-and-tune-ensembles {

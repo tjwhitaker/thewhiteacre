@@ -5,6 +5,11 @@ html body .feed .post {
   background: white;
   padding: 5rem 0;
 }
+@media screen and (max-width: 600px) {
+  html body .feed .post h1 {
+    font-size: 2.4rem;
+  }
+}
 html body .feed .post .read-more {
   display: inline-block;
   margin: 1rem 0;

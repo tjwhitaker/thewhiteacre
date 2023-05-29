@@ -3,11 +3,6 @@ html body .hero {
   background-position: top center;
   filter: grayscale(1);
 }
-@media screen and (max-width: 600px) {
-  html body .hero {
-    text-align: center;
-  }
-}
 html body .intro {
   background: white;
   padding: 4.8rem 0;
@@ -44,7 +39,7 @@ html body .intro .wrapper .column-wrapper .column .icon img {
 }
 html body .professional {
   padding: 5rem 0;
-  background: #eee;
+  background: white;
 }
 html body .professional .wrapper .education .main-header, html body .professional .wrapper .experience .main-header {
   display: flex;
@@ -60,12 +55,22 @@ html body .professional .wrapper .education .main-header h1, html body .professi
   font-family: "Open Sans";
   text-transform: uppercase;
 }
+@media screen and (max-width: 600px) {
+  html body .professional .wrapper .education .main-header h1, html body .professional .wrapper .experience .main-header h1 {
+    font-size: 2.4rem;
+  }
+}
 html body .professional .wrapper .education .main-header div, html body .professional .wrapper .experience .main-header div {
   flex: 0 auto;
 }
 html body .professional .wrapper .education .main-header div img, html body .professional .wrapper .experience .main-header div img {
   width: 100px;
   margin-left: 1rem;
+}
+@media screen and (max-width: 600px) {
+  html body .professional .wrapper .education .main-header div img, html body .professional .wrapper .experience .main-header div img {
+    display: none;
+  }
 }
 html body .professional .wrapper .education .item, html body .professional .wrapper .experience .item {
   margin-bottom: 2rem;
@@ -82,6 +87,11 @@ html body .professional .wrapper .education .item ul, html body .professional .w
 }
 html body .professional .wrapper .education {
   margin-bottom: 5rem;
+}
+@media screen and (max-width: 600px) {
+  html body .professional {
+    padding: 2rem 0;
+  }
 }
 html body .gallery {
   background: black;
@@ -145,7 +155,7 @@ html body .gallery .item:nth-child(6) {
 }
 html body .contact {
   padding: 8rem 0;
-  background: white;
+  background: #eee;
 }
 @media screen and (max-width: 600px) {
   html body .contact {

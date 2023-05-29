@@ -15,6 +15,12 @@ html {
           &:not(:first-child) {
             border-top: 1px solid #f7f7f7;
           }
+
+          h1 {
+            @media screen and (max-width:600px) {
+              font-size:2.4rem;
+            }
+          }
         }
       }
     }

@@ -8,6 +8,12 @@ html {
         background: white;
         padding: 5rem 0;
 
+        h1 {
+          @media screen and (max-width:600px) {
+            font-size:2.4rem;
+          }
+        }
+
         .read-more {
           display: inline-block;
           margin: 1rem 0;

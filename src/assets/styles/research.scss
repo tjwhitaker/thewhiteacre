@@ -13,8 +13,8 @@ html {
       background-repeat: no-repeat;
 
       @media screen and (max-width:600px) {
-        padding:8rem 0;
-        background-size:250vw;
+        padding:2rem 0;
+        padding-top:20rem;
       }
       
       .wrapper {
@@ -35,6 +35,10 @@ html {
           // letter-spacing: -0.1rem;
           margin-bottom: 1.6rem;
           color: black;
+
+          @media screen and (max-width:600px) {
+            font-size:2.4rem;
+          }
         }
         p, small {
           color: black;
@@ -60,7 +64,13 @@ html {
           h1, p, a {
             color:black;
           }
+          @media screen and (max-width:600px) {
+            grid-column:auto;
+          }
         }
+        @media screen and (max-width:600px) {
+          background-position: 1.5rem 1.5rem;
+        }  
       }
       &:nth-child(odd) {
         background-color:#0f0f0f;
@@ -71,7 +81,13 @@ html {
           h1, p, a, small {
             color:white;
           }
+          @media screen and (max-width:600px) {
+            grid-column:auto;
+          }
         }
+        @media screen and (max-width:600px) {
+          background-position: 1.5rem 1.5rem;
+        }  
       }
     }
 
@@ -81,6 +97,11 @@ html {
     }
     .interpretable-diversity-analysis {
       background-image: url(/static/dna-helix-3.svg);
+
+      @media screen and (max-width:600px) {
+        padding-top:22rem;
+      }  
+
     }
     .sparse-mutation-decomposition {
       background-image: url(/static/brain.svg);
@@ -93,9 +114,15 @@ html {
     }
     .low-cost-ensembles {
       background-image: url(/static/h2o-water-molecule.svg);
+      @media screen and (max-width:600px) {
+        padding-top:18rem;
+      }  
     }
     .quantum-neuron-selection {
       background-image: url(/static/freezer-ice.svg);
+      @media screen and (max-width:600px) {
+        padding-top:18rem;
+      }  
     }
 
     footer {

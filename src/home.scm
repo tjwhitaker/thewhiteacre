@@ -94,6 +94,9 @@
                   (a (@ (href "#")) "Optimization")
                   (a (@ (href "#")) "Regularization")
                 )
+                (nav (@ (class "mobile-categories"))
+                  (h1 "Recent Posts")
+                )
               )
 
               (div (@ (class "primary-col"))
