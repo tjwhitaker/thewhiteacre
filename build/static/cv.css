@@ -60,6 +60,11 @@ html body .professional .wrapper .education .main-header h1, html body .professi
     font-size: 2.4rem;
   }
 }
+@media screen and (max-width: 600px) {
+  html body .professional .wrapper .education .main-header h1, html body .professional .wrapper .experience .main-header h1 {
+    display: block;
+  }
+}
 html body .professional .wrapper .education .main-header div, html body .professional .wrapper .experience .main-header div {
   flex: 0 auto;
 }

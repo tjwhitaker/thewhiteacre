@@ -17,10 +17,6 @@ html {
           padding: 1.6rem;
           flex-wrap:wrap;
 
-          @media screen and (max-width:600px) {
-            padding:1.6rem 0;
-          }
-
           .column {
             flex: 0 0 30%;
             text-align: center;
@@ -45,7 +41,14 @@ html {
               padding:2rem 0;
             }
           }
+
+          @media screen and (max-width:600px) {
+            padding:0rem;
+          }
         }
+      }
+      @media screen and (max-width:600px) {
+        padding:0rem;
       }
     }
 
