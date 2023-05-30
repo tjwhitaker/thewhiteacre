@@ -177,18 +177,18 @@ html body .notebooks {
   grid-gap: 2rem;
   padding: 2rem 0 5rem 0;
 }
-html body .notebooks .header {
+html body .notebooks .filters {
   grid-row: 1;
   grid-column: 1/span 2;
   border-bottom: 1px solid #ddd;
 }
-html body .notebooks .header h1 {
+html body .notebooks .filters h1 {
   padding: 1rem 0;
 }
-html body .notebooks .header .categories {
+html body .notebooks .filters .categories {
   padding-bottom: 2rem;
 }
-html body .notebooks .header .categories a {
+html body .notebooks .filters .categories a {
   font-family: "Open Sans";
   font-size: 1.3rem;
   text-transform: uppercase;
@@ -196,25 +196,25 @@ html body .notebooks .header .categories a {
   margin-right: 2rem;
   color: #aaa;
 }
-html body .notebooks .header .categories a.active, html body .notebooks .header .categories a:hover {
-  color: #1976d2;
+html body .notebooks .filters .categories a.active, html body .notebooks .filters .categories a:hover {
+  color: red;
 }
 @media screen and (max-width: 600px) {
-  html body .notebooks .header .categories {
+  html body .notebooks .filters .categories {
     display: none;
   }
 }
-html body .notebooks .header .mobile-categories {
+html body .notebooks .filters .mobile-categories {
   display: none;
   padding-bottom: 2rem;
 }
 @media screen and (max-width: 600px) {
-  html body .notebooks .header .mobile-categories {
+  html body .notebooks .filters .mobile-categories {
     display: block;
   }
 }
 @media screen and (max-width: 600px) {
-  html body .notebooks .header {
+  html body .notebooks .filters {
     grid-column: auto;
   }
 }

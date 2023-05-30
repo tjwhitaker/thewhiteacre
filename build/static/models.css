@@ -5,6 +5,28 @@ html body .hero {
 html body .catalog {
   background: white;
 }
+html body .catalog .wrapper .filters {
+  border-bottom: 1px solid #ddd;
+}
+html body .catalog .wrapper .filters .categories {
+  padding: 1rem 0 2rem 0;
+}
+html body .catalog .wrapper .filters .categories a {
+  font-family: "Open Sans";
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin-right: 2rem;
+  color: #aaa;
+}
+html body .catalog .wrapper .filters .categories a.active, html body .catalog .wrapper .filters .categories a:hover {
+  color: red;
+}
+@media screen and (max-width: 600px) {
+  html body .catalog .wrapper .filters .categories {
+    display: none;
+  }
+}
 html body .catalog .wrapper .item {
   background: white;
   padding: 5rem 0;

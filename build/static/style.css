@@ -58,6 +58,10 @@
   transition: color 0.2s ease;
 }
 
+a {
+  color: red;
+}
+
 p {
   font-family: "Latin Modern", Garamond;
   margin-bottom: 1.6rem;
@@ -113,7 +117,7 @@ html body header .wrapper nav a {
   }
 }
 html body header .wrapper nav a.active, html body header .wrapper nav a:hover {
-  color: #1976d2;
+  color: red;
 }
 html body .hero {
   width: 100%;

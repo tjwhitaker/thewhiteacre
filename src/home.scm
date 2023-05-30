@@ -85,7 +85,7 @@
             ;         (p "$25.00")))))
                                 
             (div (@ (class "notebooks wrapper"))
-              (div (@ (class "header"))
+              (div (@ (class "filters"))
                 (nav (@ (class "categories"))
                   (a (@ (href "#") (class "active")) "All")
                   (a (@ (href "#")) "Architecture")

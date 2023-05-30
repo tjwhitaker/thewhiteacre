@@ -8,6 +8,27 @@ html {
     .catalog {
       background:white;
       .wrapper {
+        .filters {
+          border-bottom: 1px solid #ddd;
+          .categories {
+            padding:1rem 0 2rem 0;
+            a {
+              font-family:"Open Sans";
+              font-size:1.3rem;
+              text-transform:uppercase;
+              text-decoration: none;
+              margin-right:2rem;
+              color:#aaa;
+  
+              &.active, &:hover {
+                color: red;
+              }
+            }
+            @media screen and (max-width:600px) {
+              display:none;
+            }
+          }
+        }
         .item {
           background: white;
           padding: 5rem 0;

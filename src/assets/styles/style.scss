@@ -72,6 +72,10 @@
   transition: color 0.2s ease;
 }
 
+a {
+  color:red;
+}
+
 p {
   font-family: "Latin Modern", Garamond;
   margin-bottom:1.6rem;
@@ -128,7 +132,7 @@ html {
             }
 
             &.active, &:hover {
-              color: #1976d2;
+              color: red;
             }
           }
         }

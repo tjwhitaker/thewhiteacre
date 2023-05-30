@@ -184,7 +184,7 @@ html {
       grid-gap:2rem;
       padding:2rem 0 5rem 0;
       
-      .header {
+      .filters {
         grid-row:1;
         grid-column:1 / span 2;
         border-bottom: 1px solid #ddd;
@@ -202,7 +202,7 @@ html {
             color:#aaa;
 
             &.active, &:hover {
-              color: #1976d2;
+              color: red;
             }
           }
           @media screen and (max-width:600px) {

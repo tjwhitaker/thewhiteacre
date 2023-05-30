@@ -1,6 +1,28 @@
 html body .hero {
   background-image: url(/static/cave-bg.png);
 }
+html body .feed .filters {
+  border-bottom: 1px solid #ddd;
+}
+html body .feed .filters .categories {
+  padding: 1rem 0 2rem 0;
+}
+html body .feed .filters .categories a {
+  font-family: "Open Sans";
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin-right: 2rem;
+  color: #aaa;
+}
+html body .feed .filters .categories a.active, html body .feed .filters .categories a:hover {
+  color: red;
+}
+@media screen and (max-width: 600px) {
+  html body .feed .filters .categories {
+    display: none;
+  }
+}
 html body .feed .post {
   background: white;
   padding: 5rem 0;
