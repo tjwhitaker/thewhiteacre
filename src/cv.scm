@@ -31,26 +31,11 @@
                   (h1 "A Research Scientist" (br) "Who Loves to Code")
                   (p "Hi. My name is Tim Whitaker and I'm a PhD candidate working with deep neural networks at Colorado State University. I have over a decade of experience in software engineering and academic research. I'm a skilled problem solver with a strong background in computer science.")))
 
-            ; (div (@ (class "intro"))
-            ;   (div (@ (class "wrapper"))
-            ;     (div (@ (class "column-wrapper"))
-            ;       (div (@ (class "column"))
-            ;         (div (@ (class "icon"))
-            ;           (img (@ (src "/static/crypto-gpu.svg"))))
-            ;         (h2 "Model Optimization")
-            ;         (p "I'm passionate about optimizing learning algorithms and model architectures for superior performance."))
-
-            ;       (div (@ (class "column"))
-            ;         (div (@ (class "icon"))
-            ;           (img (@ (src "/static/statistical-analysis.svg"))))
-            ;         (h2 "Data Analysis")
-            ;         (p "I love diving into complex datasets and uncovering meaningful insights that drive successful machine learning projects."))
-
-            ;       (div (@ (class "column"))
-            ;         (div (@ (class "icon"))
-            ;         (img (@ (src "/static/documents-ui.svg"))))
-            ;         (h2 "Software Engineering")
-            ;         (p "I have over a decade of experience in designing, developing, and deploying robust and maintainable software.")))))
+            (div (@ (class "intro"))
+              (div (@ (class "wrapper"))
+                (h1 "Introduction")
+                (p "I’m a computer scientist, researcher, and engineer who is deeply engaged in exploring the evolving paradigms of artificial intelligence and machine learning.  I have over a decade of experience building maintainable software and conducting original academic research. I thrive on the pursuit of knowledge and challenging problems. I am particularly drawn to neural network optimization, subnetwork analysis, ensemble learning, evolutionary algorithms, and quantum computing. When I am not working on my research, I am probably rock climbing, producing music, or playing chess.")
+              ))
           
           (div (@ (class "professional"))
             (div (@ (class "wrapper"))
@@ -90,6 +75,7 @@
                   (ul
                     (li "Recipient of The Artificial Intelligence and Evolutionary Computation Fellowship")
                     (li "Presenter and Technical Committee Member at international conferences including: AAAI, IJCNN, and GECCO")
+                    (li "Session Chair for Neural Network Models at IJCNN 2023")
                     (li "Member of IEEE")
                     (li "Member of ACM")
                     (li "Member of INNS"))))
@@ -141,7 +127,7 @@
                 (div (@ (id "map")) ""))))
 
           (div (@ (class "reference"))
-            (p "Hero images generated with neural networks via " (a (@ (href "https://midjourney.com")) "midjourney") ". This website's " (a (@ (href "https://github.com/tjwhitaker/thewhiteacre")) "source code") " was written entirely in scheme!")))
+            (p "Hero images generated with neural networks via " (a (@ (href "https://midjourney.com")) "midjourney") ".")))
 
           (footer
             (div (@ (class "wrapper"))

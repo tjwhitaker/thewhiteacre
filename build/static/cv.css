@@ -5,41 +5,20 @@ html body .hero {
 }
 html body .intro {
   background: white;
-  padding: 4.8rem 0;
+  padding: 5rem 0;
 }
-html body .intro .wrapper .column-wrapper {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  padding: 1.6rem;
-  flex-wrap: wrap;
+html body .intro .wrapper h1 {
+  font-family: "Open Sans";
+  text-transform: uppercase;
 }
 @media screen and (max-width: 600px) {
-  html body .intro .wrapper .column-wrapper {
-    padding: 1.6rem 0;
-  }
-}
-html body .intro .wrapper .column-wrapper .column {
-  flex: 0 0 30%;
-  text-align: center;
-}
-html body .intro .wrapper .column-wrapper .column .icon {
-  margin: 0 auto;
-  height: 15rem;
-  width: 15rem;
-}
-html body .intro .wrapper .column-wrapper .column .icon img {
-  width: 100%;
-  height: 100%;
-}
-@media screen and (max-width: 600px) {
-  html body .intro .wrapper .column-wrapper .column {
-    flex: 0 0 100%;
+  html body .intro .wrapper h1 {
+    font-size: 2.4rem;
   }
 }
 html body .professional {
-  padding: 5rem 0;
-  background: white;
+  padding: 2rem 0 5rem 0;
+  background: #eee;
 }
 html body .professional .wrapper .education .main-header, html body .professional .wrapper .experience .main-header {
   display: flex;
@@ -51,18 +30,12 @@ html body .professional .wrapper .education .main-header, html body .professiona
 }
 html body .professional .wrapper .education .main-header h1, html body .professional .wrapper .experience .main-header h1 {
   flex: 0;
-  font-size: 5rem;
   font-family: "Open Sans";
   text-transform: uppercase;
 }
 @media screen and (max-width: 600px) {
   html body .professional .wrapper .education .main-header h1, html body .professional .wrapper .experience .main-header h1 {
     font-size: 2.4rem;
-  }
-}
-@media screen and (max-width: 600px) {
-  html body .professional .wrapper .education .main-header h1, html body .professional .wrapper .experience .main-header h1 {
-    display: block;
   }
 }
 html body .professional .wrapper .education .main-header div, html body .professional .wrapper .experience .main-header div {
@@ -160,7 +133,7 @@ html body .gallery .item:nth-child(6) {
 }
 html body .contact {
   padding: 8rem 0;
-  background: #eee;
+  background: white;
 }
 @media screen and (max-width: 600px) {
   html body .contact {

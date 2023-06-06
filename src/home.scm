@@ -28,7 +28,7 @@
             (div (@ (class "hero"))
               (div (@ (class "overlay")) "")
                 (div (@ (class "wrapper"))
-                  (h1 "Building Better" (br) "Neural Networks")
+                  (h1 "Learn How To Build Better Neural Networks")
                   (p "Welcome! My name is Tim and Wits End is my personal website, a repository for my research, and an outlet for digging deeper into artificial intelligence.")))
 
 
@@ -58,7 +58,7 @@
               (div (@ (class "wrapper"))
                 (div
                   (h1 "Machine Learning Research For Good")
-                  (p "Ensemble Learning is an effective method for improving generalization in machine learning. However, as state-of-the-art neural networks grow larger, the computational cost associated with training several independent networks becomes expensive. We introduce and formalize a fast, low-cost method for creating diverse ensembles of neural networks without needing to train multiple models from scratch...")
+                  (p "We are deeply engaged in the exploration of new machine learning applications. Artificial Intelligence could be the most important technological development for humanity over the next decade. It is our duty to explore how we can best use it to make the world a better place.")
                   (a (@ (href "#") (class "read-more")) "Read More"))))
 
 

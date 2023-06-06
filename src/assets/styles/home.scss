@@ -4,6 +4,10 @@ html {
     .hero {
       background-image: url(/static/brain-bg.png);
       background-position: top center;
+
+      h1 {
+        max-width:65rem;
+      }
     }
 
     .intro {
