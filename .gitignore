@@ -118,4 +118,5 @@ dist
 .pnp.*
 
 src/data/
+src/notebooks/data/
 .ipynb_checkpoints
