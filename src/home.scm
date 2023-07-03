@@ -31,59 +31,6 @@
                   (h1 "Learn How To Build Better Neural Networks")
                   (p "Welcome! My name is Tim and Wits End is my personal website, a repository for my research, and an outlet for digging deeper into artificial intelligence.")))
 
-
-            (div (@ (class "intro"))
-              (div (@ (class "wrapper"))
-                (div (@ (class "column-wrapper"))
-                  (div (@ (class "column"))
-                    (div (@ (class "icon"))
-                      (img (@ (src "/static/crypto-gpu.svg"))))
-                    (h2 "Model Optimization")
-                    (p "I'm passionate about optimizing learning algorithms and model architectures for superior performance."))
-
-                  (div (@ (class "column"))
-                    (div (@ (class "icon"))
-                      (img (@ (src "/static/statistical-analysis.svg"))))
-                    (h2 "Data Analysis")
-                    (p "I love diving into complex datasets and uncovering meaningful insights that drive successful machine learning projects."))
-
-                  (div (@ (class "column"))
-                    (div (@ (class "icon"))
-                    (img (@ (src "/static/documents-ui.svg"))))
-                    (h2 "Software Engineering")
-                    (p "I have over a decade of experience in designing, developing, and deploying robust and maintainable software.")))))
-
-
-            (div (@ (class "featured-paper prune-and-tune-ensembles"))
-              (div (@ (class "wrapper"))
-                (div
-                  (h1 "Machine Learning Research For Good")
-                  (p "We are deeply engaged in the exploration of new machine learning applications. Artificial Intelligence could be the most important technological development for humanity over the next decade. It is our duty to explore how we can best use it to make the world a better place.")
-                  (a (@ (href "#") (class "read-more")) "Read More"))))
-
-
-            ; (div (@ (class "merch"))
-            ;   (div (@ (class "wrapper"))
-            ;     (h1 "Merch")
-            ;     (div (@ (class "column-wrapper"))
-            ;       (div (@ (class "column"))
-            ;         (div (@ (class "icon"))
-            ;           (img (@ (src "https://cdn.midjourney.com/0813bef9-9b47-4758-861c-dc2f81542d52/0_0.png"))))
-            ;         (h2 "Model Optimization")
-            ;         (p "$25.00"))
-
-            ;       (div (@ (class "column"))
-            ;         (div (@ (class "icon"))
-            ;           (img (@ (src "https://cdn.midjourney.com/7ba0cef6-1eef-460b-9399-238fa948ba9a/0_0.png"))))
-            ;         (h2 "Data Analysis")
-            ;         (p "$25.00"))
-
-            ;       (div (@ (class "column"))
-            ;         (div (@ (class "icon"))
-            ;         (img (@ (src "https://cdn.midjourney.com/d37e6729-7896-492f-b49b-6805f9847748/0_2.png"))))
-            ;         (h2 "Software Engineering")
-            ;         (p "$25.00")))))
-                                
             (div (@ (class "notebooks wrapper"))
               (div (@ (class "filters"))
                 (nav (@ (class "categories"))
@@ -116,6 +63,38 @@
                       (a (@ (href ,(conc "/notebooks/" (cadr (assoc 'slug post))))) "Read More")))
                 (drop feed 2))))
 
+
+            (div (@ (class "featured-paper prune-and-tune-ensembles"))
+              (div (@ (class "wrapper"))
+                (div
+                  (h1 "Subnetwork Ensembles")
+                  ; (p "We are deeply engaged in the exploration of new machine learning applications. Artificial Intelligence could be the most important technological development for humanity over the next decade. It is our duty to explore how we can best use it to make the world a better place.")
+                  (p "My PhD research explores this idea of breaking up trained deep neural networks into multiple sparse subnetworks that can be trained, modified, and evaluated independently. Generating ensembles in this manner is an incredibly efficient way to improve the generalization performance and parametric utilization of large networks while minimizing computational cost. This work has a natural connection to the topological structures we find in biological brains and it's a beautiful framework for exploring network optimization. I'm currently working on my dissertation, but I'm very excited to share what I have so far...")
+                  (a (@ (href "#") (class "read-more")) "Read More"))))
+
+
+            ; (div (@ (class "merch"))
+            ;   (div (@ (class "wrapper"))
+            ;     (h1 "Merch")
+            ;     (div (@ (class "column-wrapper"))
+            ;       (div (@ (class "column"))
+            ;         (div (@ (class "icon"))
+            ;           (img (@ (src "https://cdn.midjourney.com/0813bef9-9b47-4758-861c-dc2f81542d52/0_0.png"))))
+            ;         (h2 "Model Optimization")
+            ;         (p "$25.00"))
+
+            ;       (div (@ (class "column"))
+            ;         (div (@ (class "icon"))
+            ;           (img (@ (src "https://cdn.midjourney.com/7ba0cef6-1eef-460b-9399-238fa948ba9a/0_0.png"))))
+            ;         (h2 "Data Analysis")
+            ;         (p "$25.00"))
+
+            ;       (div (@ (class "column"))
+            ;         (div (@ (class "icon"))
+            ;         (img (@ (src "https://cdn.midjourney.com/d37e6729-7896-492f-b49b-6805f9847748/0_2.png"))))
+            ;         (h2 "Software Engineering")
+            ;         (p "$25.00")))))
+                                
               ; (div (@ (class "primary-col"))
               ;   (div (@ (class "paper interpretable-diversity-analysis"))
               ;       (div
@@ -155,6 +134,19 @@
               ;         (h1 "Exploring the Benefits of Quantization in Neural Networks")
               ;         (a (@ (href "#") (class "read-more")) "Read More")))))
 
+          (div (@ (class "contact") (id "contact"))
+            (div (@ (class "wrapper"))
+              (h1 "Get In Touch")
+              (div (@ (class "form-container"))
+                (form (@ (netlify "1"))
+                  (input (@ (placeholder "Name") (name "name") (type "text")))
+                  (input (@ (placeholder "Email" (name "email") (type "email"))))
+                  (textarea (@ (placeholder "Message") (name "message")) "")
+                  (button (@ (type "submit")) "Send Message")))
+              (div (@ (class "map-container"))
+                (div (@ (id "map")) ""))))
+
+
           (div (@ (class "reference"))
             (p "Hero images generated with neural networks via " (a (@ (href "https://midjourney.com")) "midjourney") ".")))
 
@@ -179,12 +171,12 @@
                 (a (@ (href "https://lichess.org/@/tjwhitaker")) "Lichess")
                 (a (@ (href "https://orcid.org/0000-0003-3792-3901")) "Orcid"))))
 
-            ; (script "	mapboxgl.accessToken = 'pk.eyJ1IjoidG13aHRrciIsImEiOiJja2x2NzdpaW0wNXRnMndwOGszNTc3aWd5In0.LvJ2znCQ_1v9a86fxUhQ2A';
-            ; var map = new mapboxgl.Map({
-            ; container: 'map', // container id
-            ; style: 'mapbox://styles/mapbox/streets-v12', // style URL
-            ; center: [-121.4944, 38.5816], // starting position [lng, lat]
-            ; zoom: 10 // starting zoom
-            ; });")
+            (script "	mapboxgl.accessToken = 'pk.eyJ1IjoidG13aHRrciIsImEiOiJja2x2NzdpaW0wNXRnMndwOGszNTc3aWd5In0.LvJ2znCQ_1v9a86fxUhQ2A';
+            var map = new mapboxgl.Map({
+            container: 'map', // container id
+            style: 'mapbox://styles/mapbox/streets-v12', // style URL
+            center: [-121.4944, 38.5816], // starting position [lng, lat]
+            zoom: 10 // starting zoom
+            });")
             
             ))))))

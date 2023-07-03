@@ -28,15 +28,36 @@
             (div (@ (class "hero"))
               (div (@ (class "overlay")) "")
               (div (@ (class "wrapper"))
-                  (h1 "A Research Scientist" (br) "Who Loves to Code")
-                  (p "Hi. My name is Tim Whitaker and I'm a PhD candidate working with deep neural networks at Colorado State University. I have over a decade of experience in software engineering and academic research. I'm a skilled problem solver with a strong background in computer science.")))
+                  (h1 "Deep Learning" (br) "Research Science")
+                  (p "Hi. My name is Tim Whitaker and I'm a PhD candidate at Colorado State University. I'm an adventurer at heart who is deeply driven by the pursuit of knowledge and understanding.")))
 
+            ; (div (@ (class "intro"))
+            ;   (div (@ (class "wrapper"))
+            ;     (h1 "Introduction")
+            ;     (p "I’m a computer scientist, researcher, and engineer who is deeply engaged in exploring the evolving paradigms of artificial intelligence and machine learning. I have over a decade of experience building maintainable software and conducting original academic research. I thrive on the pursuit of knowledge and challenging problems. I am particularly drawn to neural network optimization, subnetwork analysis, ensemble learning, evolutionary algorithms, and quantum computing. When I am not working on my research, I am probably rock climbing, producing music, or playing chess.")
+            ;   ))
             (div (@ (class "intro"))
               (div (@ (class "wrapper"))
-                (h1 "Introduction")
-                (p "I’m a computer scientist, researcher, and engineer who is deeply engaged in exploring the evolving paradigms of artificial intelligence and machine learning.  I have over a decade of experience building maintainable software and conducting original academic research. I thrive on the pursuit of knowledge and challenging problems. I am particularly drawn to neural network optimization, subnetwork analysis, ensemble learning, evolutionary algorithms, and quantum computing. When I am not working on my research, I am probably rock climbing, producing music, or playing chess.")
-              ))
-          
+                (div (@ (class "column-wrapper"))
+                  (div (@ (class "column"))
+                    (div (@ (class "icon"))
+                      (img (@ (src "/static/crypto-gpu.svg"))))
+                    (h2 "Model Optimization")
+                    (p "I'm passionate about optimizing learning algorithms and model architectures for superior performance."))
+
+                  (div (@ (class "column"))
+                    (div (@ (class "icon"))
+                      (img (@ (src "/static/statistical-analysis.svg"))))
+                    (h2 "Data Analysis")
+                    (p "I love diving into complex datasets and uncovering meaningful insights that drive successful machine learning projects."))
+
+                  (div (@ (class "column"))
+                    (div (@ (class "icon"))
+                    (img (@ (src "/static/documents-ui.svg"))))
+                    (h2 "Software Engineering")
+                    (p "I have over a decade of experience in designing, developing, and deploying robust and maintainable software.")))))
+
+
           (div (@ (class "professional"))
             (div (@ (class "wrapper"))
               (div (@ (class "education"))
@@ -50,7 +71,7 @@
                     (p "Doctor of Philosophy in Computer Science")
                     (span "Expected May 2023"))
                   (p "Colorado State University")
-                  (p "Dissertation: Neural Partitioning and Subnetwork Ensembles")
+                  (p "Dissertation: Subnetwork Ensembles")
                   (p "Committee: " (a (@ (href "https://www.cs.colostate.edu/~whitley/")) "Darrell Whitley") ", " (a (@ (href "https://www.cs.colostate.edu/~anderson/wp/")) "Charles Anderson") ", " (a (@ (href "https://www.math.colostate.edu/~kirby/")) "Michael Kirby") ", " (a (@ (href "https://www.nikhilkrishnaswamy.com/")) "Nikhil Krishnaswamy")))
                 (div (@ (class "item"))
                   (div (@ (class "header"))
@@ -73,7 +94,7 @@
                 (div (@ (class "item"))
                   (h3 "Associations and Honors")
                   (ul
-                    (li "Recipient of The Artificial Intelligence and Evolutionary Computation Fellowship")
+                    (li "Recipient of The Artificial Intelligence and Evolutionary Computation Fellowship at Colorado State University")
                     (li "Presenter and Technical Committee Member at international conferences including: AAAI, IJCNN, and GECCO")
                     (li "Session Chair for Neural Network Models at IJCNN 2023")
                     (li "Member of IEEE")
@@ -114,20 +135,22 @@
                     (li "Managed the design and development of a Magento ecommerce store and the integration of a custom marketplace widget/plugin."))))))
             
 
-          (div (@ (class "contact") (id "contact"))
-            (div (@ (class "wrapper"))
-              (h1 "Get In Touch")
-              (div (@ (class "form-container"))
-                (form (@ (netlify "1"))
-                  (input (@ (placeholder "Name") (name "name") (type "text")))
-                  (input (@ (placeholder "Email" (name "email") (type "email"))))
-                  (textarea (@ (placeholder "Message") (name "message")) "")
-                  (button (@ (type "submit")) "Send Message")))
-              (div (@ (class "map-container"))
-                (div (@ (id "map")) ""))))
+          ; (div (@ (class "contact") (id "contact"))
+          ;   (div (@ (class "wrapper"))
+          ;     (h1 "Get In Touch")
+          ;     (div (@ (class "form-container"))
+          ;       (form (@ (netlify "1"))
+          ;         (input (@ (placeholder "Name") (name "name") (type "text")))
+          ;         (input (@ (placeholder "Email" (name "email") (type "email"))))
+          ;         (textarea (@ (placeholder "Message") (name "message")) "")
+          ;         (button (@ (type "submit")) "Send Message")))
+          ;     (div (@ (class "map-container"))
+          ;       (div (@ (id "map")) ""))))
 
-          (div (@ (class "reference"))
-            (p "Hero images generated with neural networks via " (a (@ (href "https://midjourney.com")) "midjourney") ".")))
+          ; (div (@ (class "reference"))
+          ;   (p "Hero images generated with neural networks via " (a (@ (href "https://midjourney.com")) "midjourney") "."))
+          
+          )
 
           (footer
             (div (@ (class "wrapper"))
@@ -150,10 +173,12 @@
                 (a (@ (href "https://lichess.org/@/tjwhitaker")) "Lichess")
                 (a (@ (href "https://orcid.org/0000-0003-3792-3901")) "Orcid"))))
 
-            (script "	mapboxgl.accessToken = 'pk.eyJ1IjoidG13aHRrciIsImEiOiJja2x2NzdpaW0wNXRnMndwOGszNTc3aWd5In0.LvJ2znCQ_1v9a86fxUhQ2A';
-            var map = new mapboxgl.Map({
-            container: 'map', // container id
-            style: 'mapbox://styles/mapbox/streets-v12', // style URL
-            center: [-121.4944, 38.5816], // starting position [lng, lat]
-            zoom: 10 // starting zoom
-            });")))))))
+            ; (script "	mapboxgl.accessToken = 'pk.eyJ1IjoidG13aHRrciIsImEiOiJja2x2NzdpaW0wNXRnMndwOGszNTc3aWd5In0.LvJ2znCQ_1v9a86fxUhQ2A';
+            ; var map = new mapboxgl.Map({
+            ; container: 'map', // container id
+            ; style: 'mapbox://styles/mapbox/streets-v12', // style URL
+            ; center: [-121.4944, 38.5816], // starting position [lng, lat]
+            ; zoom: 10 // starting zoom
+            ; });")
+            
+            ))))))
