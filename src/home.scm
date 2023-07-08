@@ -64,7 +64,7 @@
                 (drop feed 2))))
 
 
-            (div (@ (class "featured-paper prune-and-tune-ensembles"))
+            (div (@ (class "featured-paper subnetwork-ensembles"))
               (div (@ (class "wrapper"))
                 (div
                   (h1 "Subnetwork Ensembles")

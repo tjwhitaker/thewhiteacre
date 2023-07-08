@@ -229,8 +229,8 @@ html body .notebooks .secondary-col .post:not(:first-child) {
     grid-template-columns: 1fr;
   }
 }
-html body .prune-and-tune-ensembles {
-  background-image: url(/static/tree.svg);
+html body .subnetwork-ensembles {
+  background-image: url(/static/tree2.svg);
 }
 html body .contact {
   padding: 8rem 0;

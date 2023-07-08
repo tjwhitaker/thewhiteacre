@@ -146,6 +146,7 @@
         (write-html (conc dir (cadr (assoc 'slug article))) html))
       feed)))
 
+
 (define build-notebook-templates
   (lambda (feed dir)
     (map 
@@ -159,6 +160,19 @@
         (write-html (conc dir (cadr (assoc 'slug article))) html))
       feed)))
 
+; (define build-notebook-categories
+;   (lambda (feed)
+;     (define categories (list "Architecture" 
+;                              "Compression"
+;                              "Evolution" 
+;                              "Optimization" 
+;                              "Regularization"))
+;     (map 
+;       (lambda ()
+;         ()
+;       )
+;     categories)
+;   ))
 
 (define build-research
   (lambda ()
