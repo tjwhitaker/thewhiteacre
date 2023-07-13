@@ -42,6 +42,6 @@ html body .feed .post .read-more {
   letter-spacing: 1px;
   font-size: 0.8rem;
 }
-html body .feed .post:not(:first-child) {
-  border-top: 1px solid #f7f7f7;
+html body .feed .post:not(:last-child) {
+  border-bottom: 1px solid #f7f7f7;
 }

@@ -23,7 +23,7 @@ html body .catalog .wrapper .filters .categories a.active, html body .catalog .w
   color: red;
 }
 @media screen and (max-width: 600px) {
-  html body .catalog .wrapper .filters .categories {
+  html body .catalog .wrapper .filters {
     display: none;
   }
 }
@@ -31,11 +31,29 @@ html body .catalog .wrapper .item {
   background: white;
   padding: 5rem 0;
 }
-html body .catalog .wrapper .item:not(:first-child) {
-  border-top: 1px solid #f7f7f7;
+html body .catalog .wrapper .item:not(:last-child) {
+  border-bottom: 1px solid #f7f7f7;
 }
 @media screen and (max-width: 600px) {
   html body .catalog .wrapper .item h1 {
     font-size: 2.4rem;
+  }
+}
+html body .catalog .wrapper .item.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+html body .catalog .wrapper .item.flex .content, html body .catalog .wrapper .item.flex .image {
+  flex: 0 0 50%;
+}
+html body .catalog .wrapper .item.flex .content img, html body .catalog .wrapper .item.flex .image img {
+  width: 100%;
+}
+@media screen and (max-width: 600px) {
+  html body .catalog .wrapper .item.flex .content, html body .catalog .wrapper .item.flex .image {
+    flex: 0 0 100%;
+  }
+  html body .catalog .wrapper .item.flex .content img, html body .catalog .wrapper .item.flex .image img {
+    margin-top: 3rem;
   }
 }
