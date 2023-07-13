@@ -11,13 +11,13 @@
         (srfi-19))
 
 ;; Import home-template, about-template
-(include "./home.scm")
-(include "./cv.scm")
-(include "./models.scm")
-(include "./notebooks.scm")
-(include "./post.scm")
-(include "./notebook.scm")
-(include "./research.scm")
+(include "./templates/home.scm")
+(include "./templates/cv.scm")
+(include "./templates/models.scm")
+(include "./templates/notebooks.scm")
+(include "./templates/post.scm")
+(include "./templates/notebook.scm")
+(include "./templates/research.scm")
 
 ;; Write html to the intended build file
 (define write-html
@@ -55,10 +55,12 @@
     (define match
       (irregex-search
         '(: "TITLE: " (=> title (*? any)) "\\n\"," (*? any)
+            "CATEGORIES: " (=> categories (*? any)) "\\n\"," (*? any)
             "DESCRIPTION: " (=> description (*? any)) "\\n\"," (*? any)
             "DATE: " (=> date (*? any)) "\\n\"," (*? any)
             "HERO: " (=> hero (*? any)) "\"" eol) text))
     `((title ,(irregex-match-substring match 'title))
+      (categories ,(irregex-match-substring match 'categories))
       (description ,(irregex-match-substring match 'description))
       (date ,(irregex-match-substring match 'date))
       (hero ,(irregex-match-substring match 'hero))
@@ -159,20 +161,6 @@
         (define html (serialize-sxml (notebook-template title description hero content-html) indent: #f method: 'html))
         (write-html (conc dir (cadr (assoc 'slug article))) html))
       feed)))
-
-; (define build-notebook-categories
-;   (lambda (feed)
-;     (define categories (list "Architecture" 
-;                              "Compression"
-;                              "Evolution" 
-;                              "Optimization" 
-;                              "Regularization"))
-;     (map 
-;       (lambda ()
-;         ()
-;       )
-;     categories)
-;   ))
 
 (define build-research
   (lambda ()

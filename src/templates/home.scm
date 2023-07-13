@@ -34,12 +34,12 @@
             (div (@ (class "notebooks wrapper"))
               (div (@ (class "filters"))
                 (nav (@ (class "categories"))
-                  (a (@ (href "#") (class "active")) "All")
-                  (a (@ (href "#")) "Architecture")
-                  (a (@ (href "#")) "Compression")
-                  (a (@ (href "#")) "Evolution")
-                  (a (@ (href "#")) "Optimization")
-                  (a (@ (href "#")) "Regularization")
+                  (a (@ (href "#.") (class "active")) "All")
+                  (a (@ (href "#architecture")) "Architecture")
+                  (a (@ (href "#compression")) "Compression")
+                  (a (@ (href "#evolution")) "Evolution")
+                  (a (@ (href "#optimization")) "Optimization")
+                  (a (@ (href "#regularization")) "Regularization")
                 )
                 (nav (@ (class "mobile-categories"))
                   (h1 "Recent Posts")
@@ -48,7 +48,7 @@
 
               (div (@ (class "primary-col"))
                 ,(map (lambda (post) 
-                  `(div (@ (class "post"))
+                  `(div (@ (class ,(conc "post " (cadr (assoc 'categories post)))))
                       (small ,(cadr (assoc 'date post)))
                       (h1 ,(cadr (assoc 'title post)))
                       (p ,(cadr (assoc 'description post)))
@@ -56,12 +56,13 @@
                 (take feed 2)))
 
               (div (@ (class "secondary-col"))
-                ,(map (lambda (post) 
-                  `(div (@ (class "post"))
+                ,(map (lambda (post)
+                  `(div (@ (class ,(conc "post " (cadr (assoc 'categories post)))))
                       (small ,(cadr (assoc 'date post)))
                       (h1 ,(cadr (assoc 'title post)))
                       (a (@ (href ,(conc "/notebooks/" (cadr (assoc 'slug post))))) "Read More")))
-                (drop feed 2))))
+                (drop feed 2)))
+                )
 
 
             (div (@ (class "featured-paper subnetwork-ensembles"))
@@ -175,8 +176,27 @@
             var map = new mapboxgl.Map({
             container: 'map', // container id
             style: 'mapbox://styles/mapbox/streets-v12', // style URL
-            center: [-121.4944, 38.5816], // starting position [lng, lat]
-            zoom: 10 // starting zoom
+            center: [ -105.08338969999998, 40.57471313740658],
+            zoom: 11 // starting zoom
             });")
             
+            (script "
+                var category = location.hash.substr(1);
+                var notebooks = document.getElementsByClassName(category);
+
+                for (var post in notebooks) {
+                  post.backgroundColor = 'red';
+                }
+
+                function filterCategory(category) {
+                  var category = location.hash.substr(1);
+                  var notebooks = document.getElementsByClass(category);
+
+                  for (var post in notebooks) {
+                    post.backgroundColor = 'red';
+                  }
+                }
+              "
+            )
+
             ))))))
