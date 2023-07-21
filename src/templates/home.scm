@@ -28,7 +28,7 @@
             (div (@ (class "hero"))
               (div (@ (class "overlay")) "")
                 (div (@ (class "wrapper"))
-                  (h1 "Learn How To Build Better Neural Networks")
+                  (h1 "Build Better Neural Networks")
                   (p "Welcome! My name is Tim and Wits End is my personal website, a repository for my research, and an outlet for digging deeper into artificial intelligence.")))
 
             (div (@ (class "notebooks wrapper"))
