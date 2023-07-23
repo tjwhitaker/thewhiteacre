@@ -59,8 +59,8 @@
                     (p "The Hopfield network is a type of recurrent network based on bidirectional connections between neurons. Hopfield networks are a type of Ising model (also known as spin glass) that use Hebbian learning to train associative memory systems.")
                     (div (@ (class "links"))
                       (a (@ (href "/static/hopfield.pdf")) "Paper")))
-                  (div (@ (class "image))
-                    (img (@ (src "/static/hopfield.png")) ""))
+                  (div (@ (class "image"))
+                    (img (@ (src "/static/hopfield.png")) "")))
                 
                 (div (@ (class "item"))
                   (h1 "Boltzmann Machine (1985)")
@@ -130,6 +130,16 @@
                       (a (@ (href "/static/inception.pdf")) "Paper")))
                   (div (@ (class "image"))
                     (img (@ (src "/static/inception.png")) "")))
+
+                (div (@ (class "item flex"))
+                  (div (@ (class "content"))
+                    (h1 "U-Net (2015)")
+                    (p (small "Olaf Ronneberger, Philipp Fischer, Thomas Brox"))
+                    (p "U-Net is widely used in various segmentation and image-to-image translation tasks. The architecture consists of a contracting path that uses convolutional and pooling layers to capture context and a symmetric expanding path that uses deconvolutional and upsampling layers to achieve localization. The architecture's unique U-shape allows it to preserve fine-grained details during upsampling and is particularly well-suited for segmenting structures with varying shapes and sizes.")
+                    (div (@ (class "links"))
+                      (a (@ (href "/static/unet.pdf")) "Paper")))
+                  (div (@ (class "image"))
+                    (img (@ (src "/static/unet.png")) "")))
 
                 (div (@ (class "item flex"))
                   (div (@ (class "content"))

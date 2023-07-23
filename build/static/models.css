@@ -42,6 +42,7 @@ html body .catalog .wrapper .item:not(:last-child) {
 html body .catalog .wrapper .item.flex {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
 }
 html body .catalog .wrapper .item.flex .content, html body .catalog .wrapper .item.flex .image {
   flex: 0 0 50%;
