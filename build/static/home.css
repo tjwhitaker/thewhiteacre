@@ -2,9 +2,6 @@ html body .hero {
   background-image: url(/static/brain-bg.png);
   background-position: top center;
 }
-html body .hero h1 {
-  max-width: 65rem;
-}
 html body .merch {
   background: white;
   padding: 4.8rem 0;

@@ -26,7 +26,7 @@
               (div (@ (class "overlay")) "")
               (div (@ (class "wrapper"))
                 (h1 "Models")
-                (p "A catalog of important neural network architectures through history.")))
+                (p "There have been a lot of fascinating neural network architectures introduced throughout the last several decades. It can be hard to get a sense of when, why, and how these models differ. This is an attempt to build a historical model catalog of some of these interesting advancements.")))
             (div (@ (class "catalog"))
               (div (@ (class "wrapper"))
                 (div (@ (class "filters"))

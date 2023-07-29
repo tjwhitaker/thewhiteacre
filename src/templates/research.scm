@@ -29,7 +29,7 @@
               (div (@ (class "overlay")) "")
                 (div (@ (class "wrapper"))
                   (h1 "Publications")
-                  (p "A collection of research papers I've written and published.")))
+                  (p "Here's a collection of research papers I've written and published in various conferences. We're passionate about exploring new methods for improving neural systems.")))
 
             (div (@ (class "paper prune-and-tune-ensembles"))
               (div (@ (class "wrapper"))

@@ -28,7 +28,7 @@
               (div (@ (class "overlay")) "")
                 (div (@ (class "wrapper"))
                   (h1 "Notebooks")
-                  (p "Code, math, and machine learning tutorials.")))
+                  (p "There have been many algorithmic and mathematical techniques introduced in order to better optimize neural networks. This is a compliation of articles and tutorials designed to dig into some of these finer details.")))
 
             (div (@ (class "feed"))
               (div (@ (class "wrapper"))
