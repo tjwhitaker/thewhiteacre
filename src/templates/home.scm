@@ -40,13 +40,12 @@
                   (a (@ (href "#compression")) "Compression")
                   (a (@ (href "#evolution")) "Evolution")
                   (a (@ (href "#optimization")) "Optimization")
-                  (a (@ (href "#regularization")) "Regularization")
-                )
+                  (a (@ (href "#regularization")) "Regularization"))
+
                 (nav (@ (class "mobile-categories"))
                   (h1 "Recent Posts")
                 )
               )
-
               (div (@ (class "primary-col"))
                 ,(map (lambda (post) 
                   `(div (@ (class ,(conc "post " (cadr (assoc 'categories post)))))

@@ -36,6 +36,7 @@
             ;     (h1 "Introduction")
             ;     (p "I’m a computer scientist, researcher, and engineer who is deeply engaged in exploring the evolving paradigms of artificial intelligence and machine learning. I have over a decade of experience building maintainable software and conducting original academic research. I thrive on the pursuit of knowledge and challenging problems. I am particularly drawn to neural network optimization, subnetwork analysis, ensemble learning, evolutionary algorithms, and quantum computing. When I am not working on my research, I am probably rock climbing, producing music, or playing chess.")
             ;   ))
+
             (div (@ (class "intro"))
               (div (@ (class "wrapper"))
                 (div (@ (class "column-wrapper"))
@@ -69,7 +70,7 @@
                 (div (@ (class "item"))
                   (div (@ (class "header"))
                     (p "Doctor of Philosophy in Computer Science")
-                    (span "Expected May 2023"))
+                    (span "December 2023"))
                   (p "Colorado State University")
                   (p "Dissertation: Subnetwork Ensembles")
                   (p "Committee: " (a (@ (href "https://www.cs.colostate.edu/~whitley/")) "Darrell Whitley") ", " (a (@ (href "https://www.cs.colostate.edu/~anderson/wp/")) "Charles Anderson") ", " (a (@ (href "https://www.math.colostate.edu/~kirby/")) "Michael Kirby") ", " (a (@ (href "https://www.nikhilkrishnaswamy.com/")) "Nikhil Krishnaswamy")))
