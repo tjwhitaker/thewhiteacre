@@ -31,6 +31,22 @@
                   (h1 "Publications")
                   (p "Here's a collection of research papers I've written and published in various conferences. We're passionate about exploring new methods for improving neural systems.")))
 
+            (div (@ (class "paper subnetwork-ensembles"))
+              (div (@ (class "wrapper"))
+                (div
+                  (h1 "Subnetwork Ensembles: Theoretical Insights and Empirical Investigations")
+                  (p "PhD Dissertation")
+                  (p "Neural network ensembles have been effectively used to improve generalization by combining the predictions of multiple independently trained models. However, the growing scale and complexity of deep neural networks have led to these methods becoming prohibitively expensive and time consuming to implement. Low-cost ensemble methods have become increasingly important as they can alleviate the need to train multiple models from scratch while retaining the generalization benefits that...")
+                  (a (@ (href "#") (class "read-more")) "Read More"))))
+
+            (div (@ (class "paper stochastic-subnetwork-annealing"))
+              (div (@ (class "wrapper"))
+                (div
+                  (h1 "Stochastic Subnetwork Annealing: A Regularization Technique for Fine Tuning Pruned Subnetworks")
+                  (p "ICLR 2024 (In Review)")
+                  (p "Pruning methods have recently grown in popularity as an effective way to reduce the size and computational complexity of deep neural networks. Large numbers of parameters can be removed from trained models with little discernible loss in accuracy after a small number of continued training epochs. However, pruning too many parameters at once often causes an initial steep drop in accuracy which can undermine convergence quality. Iterative pruning approaches mitigate this by gradually removing...")
+                  (a (@ (href "#") (class "read-more")) "Read More"))))
+
             (div (@ (class "paper prune-and-tune-ensembles"))
               (div (@ (class "wrapper"))
                 (div
