@@ -92,9 +92,16 @@ html {
     }
 
 
+    .subnetwork-ensembles {
+      background-image: url(/static/big-data.svg);
+    }
+    .stochastic-subnetwork-annealing {
+      background-image: url(/static/tree.svg);
+    }
     .prune-and-tune-ensembles {
       background-image: url(/static/cell-nucleus.svg);
     }
+
     .interpretable-diversity-analysis {
       background-image: url(/static/dna-helix-3.svg);
 
@@ -108,9 +115,6 @@ html {
     }
     .synaptic-stripping {
       background-image: url(/static/jewel-stone-diamond.svg);
-    }
-    .stochastic-masking {
-      background-image: url(/static/h2o-water-molecule.svg);
     }
     .low-cost-ensembles {
       background-image: url(/static/h2o-water-molecule.svg);

@@ -29,7 +29,7 @@
               (div (@ (class "overlay")) "")
                 (div (@ (class "wrapper"))
                 ; Ideas: Open Minded Research Science, Grey Matter Colorful Thoughts, Mind Sculptor, Brainstorming the ..., Mad Science
-                  (h1 "Electric Mind Craft")
+                  (h1 "Machine Learning" (br) "Research For Science")
                   (p "Welcome! My name is Tim Whitaker and Wits End is my personal website, a repository for my neural network research, and an outlet for digging deeper into artificial intelligence.")))
 
             (div (@ (class "notebooks wrapper"))
@@ -40,13 +40,12 @@
                   (a (@ (href "#compression")) "Compression")
                   (a (@ (href "#evolution")) "Evolution")
                   (a (@ (href "#optimization")) "Optimization")
-                  (a (@ (href "#regularization")) "Regularization")
-                )
+                  (a (@ (href "#regularization")) "Regularization"))
+
                 (nav (@ (class "mobile-categories"))
                   (h1 "Recent Posts")
                 )
               )
-
               (div (@ (class "primary-col"))
                 ,(map (lambda (post) 
                   `(div (@ (class ,(conc "post " (cadr (assoc 'categories post)))))
